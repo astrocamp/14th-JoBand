@@ -1,0 +1,26 @@
+<h2>登入會員</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, "密碼" %><br />
+    <%= f.password_field :password, placeholder: "請輸入密碼", autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me, "記住我" %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "登入" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
