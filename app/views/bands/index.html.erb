@@ -1,0 +1,11 @@
+<h1>樂團列表</h1>
+
+
+  <ul>
+      <% @bands.each do |band| %>
+    <li>
+      <%= link_to band.name, band_path(band)  %>
+      <p><%= band.content.truncate(100)  %></p>
+    </li>
+  </ul>
+<% end %>

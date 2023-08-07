@@ -1,0 +1,38 @@
+<h1>創建樂團</h1>
+<%= form_with(model: @band , data:{ trubo: false } ) do |f| %>
+
+  <div>
+    <%= f.label :name, '團名' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :styles, '曲風' %>
+    <%= f.collection_check_boxes :styles, Band.styles, :to_s, :to_s %>
+  </div>
+
+  <div>
+    <%= f.label :area, '地區' %>
+    <%= f.select :area , Band.areas.map{|k, v| [k.to_s, k.to_s]} %>
+  </div>
+
+  <div>
+    <%= f.label :founded_at, '創立時間' %>
+    <%= f.date_field :founded_at %>
+  </div>
+
+  <div>
+    <%= f.label :content, '介紹' %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.label :state, '狀態' %>
+    <%= f.select :state , Band.states.map{|k, v| [k.to_s, k.to_s]} %>
+  </div>
+
+  <div class="btn">
+    <%=f.submit %  '創建樂團'  %>
+  </div>
+
+<% end %>

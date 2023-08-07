@@ -1,0 +1,32 @@
+<h1><%= @band.name %></h1>
+
+<p>Status: <%= @band.state %></p>
+
+  <%# if @band.active? %>
+    <%#= button_to '招募中', new_registration_path(band_id: @band.id), method: :get %>
+  <%# end %>
+<article >
+
+    <% if @band.styles.present? %>
+      <ul>
+        <% @band.styles.each do |style| %>
+          <li><%= style %></li>
+          <% end %>
+     </ul>
+    <% else %>
+      <p> </p>
+    <% end %>
+  <div>
+    <%= @band.founded_at %>
+  </div>
+  <div>
+    <%= @band.area %>
+  </div>
+  <div>
+    <%= @band.content %>
+  </div>
+  
+  
+</article>
+
+
