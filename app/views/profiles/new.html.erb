@@ -1,0 +1,52 @@
+<div>
+    <h1>新增個人profile</h1>
+</div>
+
+<div>
+    <%= form_with( model: @profile,
+                   data: { turbo: false } ) do |f| %>
+
+                   <%# # 個人頭像 %>
+        <div>
+            <%= f.label :name, "名稱" %>
+            <%= f.text_field :name %>
+        </div>
+        <div>
+            <%= f.label :phone, "電話" %>
+            <%= f.phone_field :phone, placeholder: '輸入電話號碼' %>
+        </div>
+        <div>
+            <%= f.label :location, "居住城市" %>
+            <%= f.text_field :location %>
+        </div>
+        <div>
+            <%= f.label :seniority, "樂齡" %>
+            <%= f.number_field :seniority, min: 0 %>
+        </div>
+        <div>
+            <%= f.label :content, "簡介" %>
+            <%= f.text_area :content %>
+        </div>
+        <p>使用樂器 instrument </p>
+        <div>
+            <%= f.label :vocal, "主唱" %>
+            <%= f.check_box :vocal %>
+
+            <%= f.label :guitar, "吉他" %>
+            <%= f.check_box :guitar %>
+
+            <%= f.label :bass, "貝斯" %>
+            <%= f.check_box :bass %>
+
+            <%= f.label :keyboard, "鍵盤" %>
+            <%= f.check_box :keyboard %>
+
+            <%= f.label :drummer, "鼓手" %>
+            <%= f.check_box :drummer %>
+
+            <%= f.label :others, "其他" %>
+            <%= f.text_field :others %>
+        </div>
+        <%= f.submit %>
+    <% end %>
+</div>
