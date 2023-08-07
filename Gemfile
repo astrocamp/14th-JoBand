@@ -15,6 +15,7 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "devise", "~> 4.9"
+gem "omniauth", "~> 2.1"
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
@@ -50,4 +51,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
 
