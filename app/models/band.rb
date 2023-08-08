@@ -63,11 +63,14 @@ class Band < ApplicationRecord
     def set_styles
       self.styles = self.styles.reject{|e| e.empty? }
     end
+<<<<<<< HEAD
   
 
   
 
 >>>>>>> 54d4f6e (feat: add Band's CRU)
 
+=======
+>>>>>>> 2e0aeda (fix: change redirect_to from band's update)
 
 end
