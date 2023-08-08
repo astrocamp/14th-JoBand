@@ -135,14 +135,13 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.3-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.3-x86_64-linux)
+      racc (~> 1.4)
     omniauth (2.1.1)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
     orm_adapter (0.5.0)
-    pg (1.5.3)
-    nokogiri (1.15.3-x86_64-linux)
-      racc (~> 1.4)
     pg (1.4.0)
     public_suffix (5.0.3)
     puma (5.6.6)
@@ -245,12 +244,8 @@ DEPENDENCIES
   devise (~> 4.9)
   importmap-rails
   jbuilder
-<<<<<<< HEAD
   omniauth (~> 2.1)
-  pg (~> 1.1)
-=======
   pg (= 1.4)
->>>>>>> a4e936f (feat: add Band's CRU)
   puma (~> 5.0)
   rails (~> 7.0.6)
   selenium-webdriver

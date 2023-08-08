@@ -1,13 +1,11 @@
 class BandsController < ApplicationController
     before_action :set_band, only: [:show, :edit, :update ]
-    # before_save :set_styles, only: [:create, :update ]
   
     def index
       @bands = Band.order(id: :desc)
     end
     
     def show
-      
     end
   
     def new
@@ -16,11 +14,7 @@ class BandsController < ApplicationController
   
     def create
       @band = Band.new(band_params)
-      # if @band.styles?
-      #   @band.set_styles
-      # else
-      #   #
-      # end
+      
       if @band.save
         redirect_to band_path(@band) , notice: '成功創立樂團'
       else
@@ -49,8 +43,5 @@ class BandsController < ApplicationController
     band_params = params.require(:band).permit(:name, :content, :area, :state, :founded_at, styles:[] )
   end
 
-  # def set_styles
-  #   set_styles = @band.styles.reject { |c| c.empty? }
-  # end
 
 end
