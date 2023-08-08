@@ -35,10 +35,5 @@ class Band < ApplicationRecord
     def set_styles
       self.styles = self.styles.reject{|e| e.empty? }
     end
-  
-
-  
-
-
 
 end

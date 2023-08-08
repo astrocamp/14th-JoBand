@@ -245,7 +245,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   omniauth (~> 2.1)
-  pg (= 1.4)
+  pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)
   selenium-webdriver
