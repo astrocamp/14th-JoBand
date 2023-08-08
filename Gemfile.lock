@@ -152,6 +152,8 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
+    nokogiri (1.15.3-x86_64-linux)
+      racc (~> 1.4)
     omniauth (2.1.1)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
