@@ -27,26 +27,31 @@
             <%= f.label :content, "簡介" %>
             <%= f.text_area :content %>
         </div>
+        
         <p>使用樂器 instrument </p>
-        <div>
-            <%= f.label :vocal, "主唱" %>
-            <%= f.check_box :vocal %>
+        
+        <%= f.fields_for :instruments do |form| %>
+            <div>
+                <%= form.label :vocal, "主唱" %>
+                <%= form.check_box :vocal %>
 
-            <%= f.label :guitar, "吉他" %>
-            <%= f.check_box :guitar %>
+                <%= form.label :guitar, "吉他" %>
+                <%= form.check_box :guitar %>
 
-            <%= f.label :bass, "貝斯" %>
-            <%= f.check_box :bass %>
+                <%= form.label :bass, "貝斯" %>
+                <%= form.check_box :bass %>
 
-            <%= f.label :keyboard, "鍵盤" %>
-            <%= f.check_box :keyboard %>
+                <%= form.label :keyboard, "鍵盤" %>
+                <%= form.check_box :keyboard %>
 
-            <%= f.label :drum, "鼓手" %>
-            <%= f.check_box :drum %>
+                <%= form.label :drum, "鼓手" %>
+                <%= form.check_box :drum %>
 
-            <%= f.label :others, "其他" %>
-            <%= f.text_field :others %>
-        </div>
+                <%= form.label :others, "其他" %>
+                <%= form.text_field :others %>
+            </div>
+        <% end %>
+
         <%= f.submit %>
     <% end %>
 </div>
