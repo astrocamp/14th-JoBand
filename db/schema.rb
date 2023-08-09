@@ -45,9 +45,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_152932) do
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_07_092912) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_09_030758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "instruments", force: :cascade do |t|
+    t.boolean "vocal"
+    t.boolean "guitar"
+    t.boolean "bass"
+    t.boolean "keyboard"
+    t.boolean "drum"
+    t.string "others"
+    t.bigint "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profile_id"], name: "index_instruments_on_profile_id"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"

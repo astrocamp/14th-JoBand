@@ -6,7 +6,7 @@
     <%= form_with( model: @profile,
                    data: { turbo: false } ) do |f| %>
 
-                   <%# # 個人頭像 %>
+                
         <div>
             <%= f.label :name, "名稱" %>
             <%= f.text_field :name %>
@@ -44,13 +44,8 @@
                 <%= form.label :keyboard, "鍵盤" %>
                 <%= form.check_box :keyboard %>
 
-                <%= form.label :drum, "鼓手" %>
-                <%= form.check_box :drum %>
-
-                <%= form.label :others, "其他" %>
-                <%= form.text_field :others %>
-            </div>
-        <% end %>
+            <%= f.label :drum, "鼓手" %>
+            <%= f.check_box :drum %>
 
         <%= f.submit %>
     <% end %>
