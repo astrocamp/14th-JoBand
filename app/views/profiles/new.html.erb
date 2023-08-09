@@ -44,8 +44,13 @@
                 <%= form.label :keyboard, "鍵盤" %>
                 <%= form.check_box :keyboard %>
 
-            <%= f.label :drum, "鼓手" %>
-            <%= f.check_box :drum %>
+                <%= form.label :drum, "鼓手" %>
+                <%= form.check_box :drum %>
+
+                <%= form.label :others, "其他" %>
+                <%= form.text_field :others %>
+            </div>
+        <% end %>
 
         <%= f.submit %>
     <% end %>
