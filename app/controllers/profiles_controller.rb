@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
     before_action :set_profile, only: [ :edit, :update, :show ]
     
     def index
-        
+        @profiles = Profile.order(id: :desc)
     end
     
     def new
@@ -31,7 +31,6 @@ class ProfilesController < ApplicationController
     def update
         
     end
-    
     private
     
     def params_profile
