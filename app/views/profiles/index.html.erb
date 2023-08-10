@@ -1,3 +1,12 @@
 <h1>PLAYERS LIST</h1>
 
 <%= link_to "新增profile", new_profile_path %>
+
+    <ul>
+        <% @profiles.each do |profile| %>
+            <li> 
+                <%= link_to profile.name, profile_path(profile) %>
+                <%= link_to '更新', edit_profile_path(profile) %>
+            </li>
+        <% end %>
+    </ul>
