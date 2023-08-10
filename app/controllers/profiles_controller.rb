@@ -25,12 +25,12 @@ class ProfilesController < ApplicationController
     end
     
     def edit
-        @profile = Profile.find(params[:id])
     end
     
     def update
         
     end
+    
     private
     
     def params_profile
@@ -38,6 +38,6 @@ class ProfilesController < ApplicationController
     end
 
     def set_profile
-        @profile = Profile.find(params[:id])
+        @profile = Profile.find_by(params[:id])
     end
 end
