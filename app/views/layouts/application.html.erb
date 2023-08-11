@@ -6,15 +6,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body data-theme="dark">
     <%= render 'shared/flash' %>
     <%= render 'shared/navbar' %>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto flex justify-center">
       <%= yield %>
     </main>
   </body>
