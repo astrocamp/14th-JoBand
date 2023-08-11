@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.2.2"
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem "rails", "~> 7.0.6"
 gem "sprockets-rails"
 gem "pg", "~> 1.1"
@@ -16,6 +17,9 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 gem "devise", "~> 4.9"
 gem "omniauth", "~> 2.1"
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

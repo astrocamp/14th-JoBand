@@ -4,11 +4,10 @@
       "previewLimit": 50,
       "server": "localhost",
       "port": 5432,
-      "askForPassword": true,
       "driver": "PostgreSQL",
       "name": "JoBand",
-      "database": "Joband_development",
-      "username": "weber"
+      "username": "james",
+      "database": "Joband_development"
     }
   ]
 }
