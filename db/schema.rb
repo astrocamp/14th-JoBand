@@ -127,9 +127,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_05_101630) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "band_styles", force: :cascade do |t|
+    t.bigint "band_id", null: false
+    t.bigint "style_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_band_styles_on_band_id"
+    t.index ["style_id"], name: "index_band_styles_on_style_id"
+  end
+
   create_table "bands", force: :cascade do |t|
     t.string "name"
-    t.string "styles"
     t.text "content"
     t.integer "area"
     t.integer "state"
