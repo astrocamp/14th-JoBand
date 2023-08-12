@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2023_08_12_152932) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_08_11_025201) do
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,13 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_025201) do
     t.string "fb_token"
     t.string "google_uid"
     t.string "google_token"
-<<<<<<< HEAD
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-=======
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -66,22 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_025201) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "fb_uid"
-    t.string "fb_token"
-    t.string "google_uid"
-    t.string "google_token"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   add_foreign_key "band_styles", "bands"
   add_foreign_key "band_styles", "styles"

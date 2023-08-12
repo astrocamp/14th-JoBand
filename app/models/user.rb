@@ -2,11 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,
-<<<<<<< HEAD
          :recoverable, :rememberable, :validatable, :confirmable,
-=======
-         :recoverable, :rememberable, :validatable, 
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
 
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)

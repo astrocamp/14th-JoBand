@@ -2,6 +2,9 @@ class Band < ApplicationRecord
   validates :name ,presence: true
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3078744 (refactor: Update Band-Style relationship)
   has_many :band_styles
   has_many :styles, through: :band_styles
 
@@ -34,6 +37,7 @@ class Band < ApplicationRecord
     South: 2,
     East: 3,
   },_prefix: true
+<<<<<<< HEAD
 =======
     south: 2,
     north: 3,
@@ -72,5 +76,8 @@ class Band < ApplicationRecord
 
 =======
 >>>>>>> 2e0aeda (fix: change redirect_to from band's update)
+=======
+
+>>>>>>> 3078744 (refactor: Update Band-Style relationship)
 
 end

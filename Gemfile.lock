@@ -98,10 +98,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
-<<<<<<< HEAD
     diff-lcs (1.5.0)
-=======
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     erubi (1.12.0)
     faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
@@ -122,13 +119,10 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.7.1)
-<<<<<<< HEAD
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
-=======
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -163,8 +157,6 @@ GEM
       rack (>= 1.2, < 4)
       snaky_hash (~> 2.0)
       version_gem (~> 1.1)
-    nokogiri (1.15.3-x86_64-linux)
-      racc (~> 1.4)
     omniauth (2.1.1)
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
