@@ -10,6 +10,7 @@ class BandsController < ApplicationController
   
     def new
       @band = Band.new
+      @styles = Style.all
     end
   
     def create
@@ -40,7 +41,7 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    band_params = params.require(:band).permit(:name, :content, :area, :state, :founded_at, styles:[] )
+   params.require(:band).permit(:name, :content, :area, :state, :founded_at, style_ids:[] )
   end
 
 

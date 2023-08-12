@@ -5,7 +5,7 @@
       <% @bands.each do |band| %>
     <li>
       <%= link_to band.name, band_path(band)  %>
-      <p><%= band.content.truncate(100)  %></p>
+      <p><%= band.styles  %></p>
     </li>
   </ul>
 <% end %>

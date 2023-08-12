@@ -6,16 +6,13 @@
     <%#= button_to '招募中', new_registration_path(band_id: @band.id), method: :get %>
   <%# end %>
 <article >
-
-    <% if @band.styles.present? %>
-      <ul>
-        <% @band.styles.each do |style| %>
-          <li><%= style %></li>
-          <% end %>
-     </ul>
-    <% else %>
-      <p> </p>
-    <% end %>
+  <div>
+    <ul>
+      <% @band.styles.each do |style| %>
+        <li><%= style.name %></li>
+      <% end %>
+    </ul>
+  </div>
   <div>
     <%= @band.founded_at %>
   </div>
@@ -25,7 +22,10 @@
   <div>
     <%= @band.content %>
   </div>
-  
+
+  <div>
+    <%= link_to '編輯', edit_band_path(@band) %>
+  </div>
   
 </article>
 
