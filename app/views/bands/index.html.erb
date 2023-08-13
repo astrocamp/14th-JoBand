@@ -5,7 +5,17 @@
       <% @bands.each do |band| %>
     <li>
       <%= link_to band.name, band_path(band)  %>
-      <p><%= band.styles  %></p>
+      <ul>
+        <% band.styles.each do |style| %>
+          <li><%= style.name %></li>
+        <% end %>
+      </ul> 
+      <%= link_to '編輯', edit_band_path(band) %>
     </li>
   </ul>
+
+  <div>
+   
+  </div>
+
 <% end %>
