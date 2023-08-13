@@ -24,9 +24,11 @@ class BandsController < ApplicationController
     end
   
     def edit
+      @styles = Style.all
     end
   
     def update
+      
       if @band.update(band_params)
         redirect_to band_path(@band), notice: '更新成功'
       else
