@@ -47,7 +47,7 @@ tw:
       password_change:
         subject: "密碼修改步驟"
     omniauth_callbacks:
-      failure: "無法從 %{kind} 驗證，因為 \"%{reason}\"。"
+      failure: '無法從 %{kind} 驗證，因為 "%{reason}"。'
       success: "成功從 %{kind} 驗證。"
     passwords:
       no_token: "這是密碼重設頁面，僅能透過密碼重設信件進入。如果您是透過重設信件進入的，請確認您的網址是完整的。"
