@@ -1,26 +1,33 @@
-<h2><%= t("user.login") %></h2>
+<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
+  <header class="block w-100% text-white">
+    <h2 class="h2"><%= t("user.login") %></h2>
+  </header>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, t("user.password")%><br />
-    <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
+<div class="block mx-auto w-100%">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, t("user.remember_me") %>
+      <%= f.label :email, class: "text-white" %><br />
+      <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field my-2">
+      <%= f.label :password, t("user.password"), class: "text-white" %><br />
+      <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field my-2">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, t("user.remember_me"), class: "text-white" %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit t("user.login"), class: "btn" %>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit t("user.login") %>
+</div>
+  <div class="aside-info text-white">
+    <%= render "users/shared/links" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

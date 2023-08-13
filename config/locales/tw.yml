@@ -9,6 +9,8 @@ tw:
     remember_me: "記住我"
     forgot_password: "忘記密碼？"
     forgot_password_submit: "發送重設密碼信件"
+    not_yet: "還不是會員嗎？"
+    already: "已經是會員了嗎？"
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"
