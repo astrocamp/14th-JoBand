@@ -3,8 +3,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: "users/registrations",
     passwords: "users/passwords",
+<<<<<<< HEAD
     omniauth_callbacks: "users/omniauth_callbacks",
     confirmations: "users/confirmations"
+=======
+    omniauth_callbacks: "users/omniauth_callbacks"
+>>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
   }
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -13,4 +17,6 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:index]
 
+
+  resources :bands , except: [ :destroy ]
 end

@@ -98,7 +98,10 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+<<<<<<< HEAD
     diff-lcs (1.5.0)
+=======
+>>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     erubi (1.12.0)
     faraday (2.7.10)
       faraday-net_http (>= 2.0, < 3.1)
@@ -119,10 +122,13 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.7.1)
+<<<<<<< HEAD
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
       launchy (>= 2.2, < 3)
+=======
+>>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -175,7 +181,7 @@ GEM
       actionpack (>= 4.2)
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
-    pg (1.5.3)
+    pg (1.4.0)
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
@@ -222,6 +228,7 @@ GEM
       railties (>= 5.2)
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
+<<<<<<< HEAD
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -239,6 +246,8 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
+=======
+>>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -257,6 +266,8 @@ GEM
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.30-x86_64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.30-x86_64-linux)
       railties (>= 6.0.0)
     thor (1.2.2)
     timeout (0.4.0)
@@ -288,6 +299,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap
@@ -303,6 +315,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
   pg (~> 1.1)
+  pg (= 1.4)
   puma (~> 5.0)
   rails (~> 7.0.6)
   rspec-rails (~> 6.0)
