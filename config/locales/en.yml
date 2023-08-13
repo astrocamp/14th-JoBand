@@ -42,6 +42,8 @@ en:
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
     forgot_password_submit: "Send mail to reset password"
+    not_yet: "Don’t have an account?"
+    already: "Already a member?"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
