@@ -38,6 +38,10 @@ class BandsController < ApplicationController
   def set_band
     @band = Band.find(params[:id])
   end
+    
+  def styles_all
+    @styles = Style.all
+  end
 
   def band_params
     params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :banner, style_ids: [])
