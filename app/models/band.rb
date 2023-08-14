@@ -10,6 +10,7 @@ class Band < ApplicationRecord
   has_one_attached :banner
   has_many :band_styles
   has_many :styles, through: :band_styles
+  # has_many :recruit
 
   # enum
   enum state: {
