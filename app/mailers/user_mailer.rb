@@ -9,4 +9,12 @@ class UserMailer < Devise::Mailer
     opt[:reply_to] = "support@joband.co"
     super
   end
+
+  def reset_password_instructions(record, token, opt={})
+    headers["Custom-header"] = "Bar"
+    opt[:subject] = "密碼重設步驟"
+    opt[:from] = "noreply@joband.co"
+    opt[:reply_to] = "support@joband.co"
+    super
+  end
 end
