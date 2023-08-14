@@ -3,6 +3,7 @@ class Band < ApplicationRecord
 
   has_many :band_styles
   has_many :styles, through: :band_styles
+  # has_many :recruit
 
   enum state: {
     active: 0,          # 活躍中

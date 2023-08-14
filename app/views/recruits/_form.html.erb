@@ -1,0 +1,31 @@
+<%= form_with(model: @recruit , data:{ turbo: false } ) do |f| %>
+
+<div>
+  <%= f.label :recruit_title %>
+  <%= f.text_field :recruit_title %>
+</div>
+
+<div>
+  <%= f.label :instrument %>
+  <%= f.select :instrument , 
+        Recruit.instruments.map{|k, v| [k.to_s, k.to_s]} %>       
+</div>
+
+<div>
+  <%= f.label :condition %>
+  <%= f.text_area :condition %>
+</div>
+
+<div>
+  <%= f.label :practice_time %>
+  <%= f.text_field :practice_time %>
+</div>
+
+<div>
+  <%= f.label :area %>
+  <%= f.select :area,
+        Recruit.areas.map{|k, v| [k.to_s , k.to_s]} %>
+</div>
+ <%= f.submit %>
+
+ <% end %>
