@@ -1,22 +1,23 @@
-<h1>PLAYERS LIST</h1>
+<div class="w-fullflex flex-col " >
 
-<%= link_to "新增profile", new_profile_path %>
+    <div class="font-bold flex flex-col items-center tracking-wide  p-5 ">
+        <h1 class=" text-xl text-yellow-300 " >展示你的音樂作品集</h1>
 
-    <ul>
-        <% @profiles.each do |profile| %>
-            <li> 
-                <div class="bg-white shadow-md p-6 rounded-lg max-w-md mx-auto my-4">
-                    <div class="bg-blue-100">
-                        <p><%= profile.location %></p>
+        <button class=" bg-slate-500 hover:bg-slate-600 rounded p-2 text-base  text-white my-4" ><%= link_to "新增 個人檔案", new_profile_path %></button>
+    </div>
+
+    <div class=" w-full flex flex-wrap justify-center" >
+            <% @profiles.each do |profile| %>
+                <div class="bg-white p-6 w-5/12 mx-4 rounded-lg max-w-md my-4">
+                    <div class="">
+                        <p class="bg-blue-100" ><%= profile.location %></p>
                     </div>
                     
                     <h2 class="text-xl font-semibold mb-2"><%= link_to profile.name, profile_path(profile) %></h2>
                     <p class="text-gray-700"><%= link_to profile.content, profile_path(profile) %></p>
                     <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Action Button</button>
                 </div>
+            <% end %>
+    </div>
 
-            </li>
-                    
-
-        <% end %>
-    </ul>
+</div>
