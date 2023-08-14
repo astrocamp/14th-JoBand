@@ -15,3 +15,11 @@
     </div>  
     
 </div>
+<h1><%= @profile.name %></h1>
+<p><%= @profile.content %></p>
+
+<% if @profile.avatar.attached? %>
+  <%= image_tag @profile.avatar, class: " rounded-full w-20" %>
+<% else %>
+  <p>No avatar uploaded.</p>
+<% end %>
