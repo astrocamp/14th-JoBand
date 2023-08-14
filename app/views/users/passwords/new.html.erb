@@ -1,16 +1,23 @@
-<h2><%= t("user.forgot_password") %></h2>
+<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
+  <header class="block w-100% text-white">
+    <h2 class="h2"><%= t("user.forgot_password") %></h2>
+  </header>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+  <div class="block mx-auto w-100%">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
+      <div class="field my-2">
+        <%= f.label :email, class: "text-white" %><br />
+        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("user.forgot_password_submit"), class: "btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="actions">
-    <%= f.submit t("user.forgot_password_submit") %>
+  <div class="aside-info text-white">
+    <%= render "users/shared/links" %>
   </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

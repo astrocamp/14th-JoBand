@@ -1,0 +1,30 @@
+<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
+  <header class="block w-100% text-white">
+    <h2 class="h2"><%= t("user.change_your_password")%></h2>
+  </header>
+
+  <div class="block mx-auto w-100%">
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+      <%= f.hidden_field :reset_password_token %>
+
+      <div class="field my-2">
+        <%= f.label :password, t("user.new_password"), class: "text-white" %><br />
+        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: t("user.min_password_placeholder") %>
+      </div>
+
+      <div class="field my-2">
+        <%= f.label :password_confirmation, t("user.confirm_new_password"), class: "text-white" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("user.password_confirmation_placeholder") %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("user.change_your_password"), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="aside-info text-white">
+    <%= render "users/shared/links" %>
+  </div>
+</div>

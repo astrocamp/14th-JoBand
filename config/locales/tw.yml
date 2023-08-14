@@ -2,7 +2,7 @@ tw:
   user:
     sign_up: "加入 JoBand！"
     password: "密碼"
-    min_password_placeholder: "請輸入至少 8 字元"
+    min_password_placeholder: "請輸入 8 - 16 字元"
     password_confirmation: "確認密碼"
     password_confirmation_placeholder: "請再次確認密碼"
     not_receive_confirm: "沒有收到認證信嗎？"
@@ -12,9 +12,16 @@ tw:
     remember_me: "記住我"
     forgot_password: "忘記密碼？"
     forgot_password_submit: "發送重設密碼信件"
+    change_your_password: "更改您的密碼"
+    new_password: "新密碼"
+    confirm_new_password: "確認新密碼"
     not_yet: "還不是會員嗎？"
     already: "已經是會員了嗎？"
-    
+  email:
+    by_joband: "JoBand 開發團隊"
+    reset_password_warning: "有人向我們發出變更密碼的請求，您可以透過以下按鈕來變更密碼："
+    reset_my_password: "變更我的密碼"
+    reset_password_cancel: "如果不是您發出的變更請求，請忽略並刪除此信件，您的密碼將不會變更。"
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"
