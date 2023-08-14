@@ -5,8 +5,18 @@
     <ul>
         <% @profiles.each do |profile| %>
             <li> 
-                <%= link_to profile.name, profile_path(profile) %>
-                <%= link_to '更新', edit_profile_path(profile) %>
+                <div class="bg-white shadow-md p-6 rounded-lg max-w-md mx-auto my-4">
+                    <div class="bg-blue-100">
+                        <p><%= profile.location %></p>
+                    </div>
+                    
+                    <h2 class="text-xl font-semibold mb-2"><%= link_to profile.name, profile_path(profile) %></h2>
+                    <p class="text-gray-700"><%= link_to profile.content, profile_path(profile) %></p>
+                    <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Action Button</button>
+                </div>
+
             </li>
+                    
+
         <% end %>
     </ul>
