@@ -1,5 +1,15 @@
-<div class="bg-white shadow-md p-6 rounded-lg width-full mx-auto">    
-    <h1 class="text-xl font-semibold mb-2"><%= @profile.name %></h1>
-    <p class="text-gray-700"><%= @profile.content %></p>
-    <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">按鈕</button>
+<div class="bg-slate-100 shadow-md p-6 rounded-lg w-11/12 h-auto mx-auto">  
+
+    <div class=" flex flex-col items-center justify-center">
+        <div class=" flex flex-col items-center my-3">
+            <img class="w-2/5 rounded-full" src="https://picsum.photos/400/400?random=1" alt=""> 
+        </div>
+        <h1 class="text-2xl mb-2 text-black font-bold my-3"><%= @profile.name %></h1>
+        <p class="text-gray-700 my-3"><%= @profile.phone %></p>
+        <p class="text-gray-700 my-3"><%= @profile.location %></p>
+        <p class="text-gray-700 my-3"><%= @profile.seniority %></p>
+        <p class="text-gray-700 my-3"><%= @profile.content %></p>
+        <button class="mt-4 bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">按鈕</button>
+    </div>  
+    
 </div>
