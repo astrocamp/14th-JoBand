@@ -1,0 +1,23 @@
+<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
+  <header class="block w-100% text-white">
+    <h2 class="h2"><%= t("user.resend_confirm_email")%></h2>
+  </header>
+
+  <div class="block mx-auto w-100%">
+    <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field my-2">
+        <%= f.label :email, class: "text-white" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "email@example.com" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("user.resend_button"), class: "btn" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="aside-info text-white">
+    <%= render "users/shared/links" %>
+  </div>
+</div>
