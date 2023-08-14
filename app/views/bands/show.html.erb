@@ -1,22 +1,21 @@
 <h1><%= @band.name %></h1>
 
 <p>Status: <%= @band.state %></p>
-
  
-<article >
+<article>
+  
   <div>
-    <ul>
-      <% @band.styles.each do |style| %>
-        <li><%= style.name %></li>
-      <% end %>
-    </ul>
+    <%= render 'style', band: @band %>
   </div>
+
   <div>
     <%= @band.founded_at %>
   </div>
+
   <div>
     <%= @band.area %>
   </div>
+
   <div>
     <%= @band.content %>
   </div>

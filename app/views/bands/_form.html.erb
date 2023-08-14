@@ -1,5 +1,4 @@
-<h1>創建樂團</h1>
-<%= form_with(model: @band , data:{ trubo: false } ) do |f| %>
+<%= form_with(model: @band , data:{ turbo: false } ) do |f| %>
 
   <div>
     <%= f.label :name, '團名' %>
@@ -15,7 +14,7 @@
 
   <div>
     <%= f.label :area, '地區' %>
-    <%= f.select :area , Band.areas.map{|k, v| [k.to_s, k.to_s]} %>
+    <%= f.select :area , Band.areas.keys %>
   </div>
 
   <div>
@@ -30,11 +29,11 @@
 
   <div>
     <%= f.label :state, '狀態' %>
-    <%= f.select :state , Band.states.map{|k, v| [k.to_s, k.to_s]} %>
+    <%= f.select :state , Band.states.keys %>
   </div>
 
   <div class="btn">
-    <%=f.submit  '送出'  %>
+    <%=f.submit '送出' %>
   </div>
 
 <% end %>
