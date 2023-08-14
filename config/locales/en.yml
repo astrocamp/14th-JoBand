@@ -2,7 +2,7 @@ en:
   user:
     sign_up: "Sign Up"
     password: "Password"
-    min_password_placeholder: "8 characters minimum"
+    min_password_placeholder: "8 - 16 characters"
     password_confirmation: "Password confirmation"
     password_confirmation_placeholder: "Please confirmation your password again"
     not_receive_confirm: "Didn't receive confirmation email?"
@@ -12,9 +12,16 @@ en:
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
     forgot_password_submit: "Send mail to reset password"
+    change_your_password: "Change your password"
+    new_password: "New password"
+    confirm_new_password: "Confirm new password"
     not_yet: "Don’t have an account?"
     already: "Already a member?"
-
+  email:
+    by_joband: "JoBand Team"
+    reset_password_warning: "Someone has requested to change your password. You can do this through the link below."
+    reset_my_password: "Reset My Password"
+    reset_password_cancel: "If you didn't request this, please ignore and delete this email, your password won't be change."
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
