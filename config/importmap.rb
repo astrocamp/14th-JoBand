@@ -7,6 +7,8 @@ pin '@hotwired/turbo-rails', to: 'turbo.min.js', preload: true
 pin '@hotwired/stimulus', to: 'stimulus.min.js', preload: true
 pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js', preload: true
 pin_all_from 'app/javascript/controllers', under: 'controllers'
+pin "trix"
+pin "@rails/actiontext", to: "actiontext.js"
 pin 'daisyui', to: 'https://ga.jspm.io/npm:daisyui@3.5.1/src/index.js'
 pin 'buffer', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/buffer.js'
 pin 'camelcase-css', to: 'https://ga.jspm.io/npm:camelcase-css@2.0.1/index-es5.js'

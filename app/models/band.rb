@@ -5,6 +5,7 @@ class Band < ApplicationRecord
   validates :name, presence: true
 
   # associations
+  has_rich_text :content
   has_one_attached :avatar
   has_one_attached :banner
   has_many :band_styles
