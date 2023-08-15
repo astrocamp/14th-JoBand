@@ -94,12 +94,12 @@ tw:
       band: 
         create: 創立
         update: 更新
-    enum:
+    enums:
       band:
         area:
           North: 北部地區
           Central: 中部地區
           South: 南部地區
           East: 東部地區
-    band:
+    
       

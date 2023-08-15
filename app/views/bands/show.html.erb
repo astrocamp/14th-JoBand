@@ -1,41 +1,49 @@
-<article class="flex flex-wrap justify-center">
-  <section>
-    <picture style="w-100%">
+<article class="">
+
+  <section class="mb-10">
+    <picture>
       <%= render "shared/banner", model: @band  %>
     </picture>
   </section>
-  <%= render "shared/avatar", model: @band  %>
   
-  <h1 class="text-2xl"><%= @band.name %></h1>
-
-  <p class="block">Status: <%= @band.state %></p>
-
+  <section class="flex justify-center">
+    <div class="flex justify-around items-baseline w-4/5">
+      <%= render "shared/avatar", model: @band  %>
+      <h1 class="text-2xl "><%= @band.name %></h1>
+      <p class="block">Status: <%= @band.state %></p>
+    </div>
+  </section>
   
-  <article >
-    <div>
-      <ul class="flex p-8">
-        <% @band.styles.each do |style| %>
-          <li class="p-5"><%= style.name %></li>
-        <% end %>
-      </ul>
-    </div>
+  <article class="flex justify-center ">
+    
+    <section class="m-10">
 
-    <div>
-      <%= @band.founded_at %>
-    </div>
+      <div>
+        <p>曲風</p> <%= render 'style', band: @band %>
+      </div>
 
-    <div>
-      <%= @band.area %>
-    </div>
+      <div class="my-5">
+        <p class="mb-3">創立時間</p>
+        <%= @band.founded_at %>
+      </div>
 
-    <div>
-      <%= @band.content %>
-    </div>
+      <div class="my-5">
+        <p class="mb-3">地區 </p>
+        <%= @band.area %>
+      </div>
 
-    <div>
-      <%= link_to '編輯', edit_band_path(@band) %>
+    </section>
+    
+    <div class="w-2/4 m-10 ">
+      <p class=" m-10">
+        <%= @band.content %>
+      </p>
     </div>
 
   </article>
+
+  <div class="flex justify-center">
+      <%= link_to '編輯', edit_band_path(@band), class:"btn w-60" %>
+  </div>
 
 </article>
