@@ -1,33 +1,41 @@
-<%= render "shared/banner", model: @band  %>
-
-<h1 class="text-2xl"><%= @band.name %></h1>
-
-<%= render "shared/avatar", model: @band  %>
-
-<p>Status: <%= @band.state %></p>
- 
-<article>
+<article class="flex flex-wrap justify-center">
+  <section>
+    <picture style="w-100%">
+      <%= render "shared/banner", model: @band  %>
+    </picture>
+  </section>
+  <%= render "shared/avatar", model: @band  %>
   
-  <div>
-    <%= render 'style', band: @band %>
-  </div>
+  <h1 class="text-2xl"><%= @band.name %></h1>
 
-  <div>
-    <%= @band.founded_at %>
-  </div>
+  <p class="block">Status: <%= @band.state %></p>
 
-  <div>
-    <%= @band.area %>
-  </div>
-
-  <div>
-    <%= @band.content %>
-  </div>
-
-  <div>
-    <%= link_to '編輯', edit_band_path(@band) %>
-  </div>
   
+  <article >
+    <div>
+      <ul class="flex p-8">
+        <% @band.styles.each do |style| %>
+          <li class="p-5"><%= style.name %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div>
+      <%= @band.founded_at %>
+    </div>
+
+    <div>
+      <%= @band.area %>
+    </div>
+
+    <div>
+      <%= @band.content %>
+    </div>
+
+    <div>
+      <%= link_to '編輯', edit_band_path(@band) %>
+    </div>
+
+  </article>
+
 </article>
-
-

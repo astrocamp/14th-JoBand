@@ -20,9 +20,9 @@
     <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
   </div>
 
-  <div>
-    <%= f.label :area, '地區' %>
-    <%= f.select :area , Band.areas.keys %>
+  <div class="m-5">
+    <%= f.label :area, class:"mr-8"%>
+    <%= f.select :area , Band.areas.keys , class:"text-black" %>
   </div>
 
   <div class="m-5">
@@ -32,7 +32,7 @@
 
   <div class="m-5">
     <%= f.label :state, class:"mr-8" %>
-    <%= f.select :state , Band.states.map{|k, v| [k.to_s, k.to_s]} , class:"text-black"%>
+    <%= f.select :state , Band.states.keys , class:"text-black"%>
   </div>
 
   <div  class="m-5">
@@ -44,4 +44,8 @@
     <%=f.submit class:"btn text-white " %>
   </div>
 
+<<<<<<< HEAD
 <% end %>
+=======
+<% end %>
+>>>>>>> 6f1f7d0 (wip)
