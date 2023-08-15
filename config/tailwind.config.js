@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+// const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
@@ -17,9 +17,9 @@ module.exports = {
       '2xl': ['30px', '36px'],
     },
     extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
+      // fontFamily: {
+      //   sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+      // },
       colors: {
         'dark': '#444',
         'nav-hov': '#2f3136',
@@ -27,11 +27,11 @@ module.exports = {
       
     },
   },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/container-queries'),
-  ],
-  plugins: [require("daisyui")],
+  // plugins: [
+  //   require('@tailwindcss/forms'),
+  //   require('@tailwindcss/aspect-ratio'),
+  //   require('@tailwindcss/typography'),
+  //   require('@tailwindcss/container-queries'),
+  // ],
+  // plugins: [require("daisyui")],
 }
