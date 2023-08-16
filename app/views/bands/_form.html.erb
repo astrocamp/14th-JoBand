@@ -1,4 +1,3 @@
-
 <%= form_with(model: @band , data:{ turbo: false } ) do |f| %>
 
   <div class="m-5">
@@ -16,8 +15,11 @@
     <%= f.file_field :avatar %>
   </div>
   
-  <div>
-    <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
+  <div class="m-5 flex flex-wrap">
+    <%= f.label :style_ids %>
+    <div id="check-boxes">
+      <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
+    </div>
   </div>
 
   <div class="m-5">

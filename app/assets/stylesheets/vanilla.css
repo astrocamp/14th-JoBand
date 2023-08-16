@@ -1,7 +1,9 @@
+/* Band CSS */
 #edit-form div label {
   color: #000;
 }
 #new-form div label {
+  color: #000;
   font-weight: bold; 
 }
 
@@ -21,12 +23,14 @@
   padding: 0.5rem 1rem;;
   margin: 0.25rem;
   font-weight: bold; 
-  background-color: #111827;
-  color: #fff ;
+  background-color: #444444;
+  color: #a7a6a6 ;
 }
 
 #check-boxes input[type=checkbox]:checked+label {
-  color: #f00c;
+  color: rgba(255, 0, 0, 0.922);
+  background-color: #c9c9c9;
   font-size: large;
 }
+
 

@@ -25,5 +25,4 @@ class Band < ApplicationRecord
     South: 2,
     East: 3
   }, _prefix: true
-      
 end

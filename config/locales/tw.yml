@@ -90,6 +90,7 @@ tw:
         content: 介紹
         state: 狀態
         founded_at: 創立時間
+        style_ids: 曲風
     submit:
       band: 
         create: 創立

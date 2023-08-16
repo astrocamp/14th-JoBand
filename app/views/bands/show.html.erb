@@ -1,4 +1,4 @@
-<article class="">
+<article id="band_show">
 
   <section class="mb-10">
     <picture>
@@ -6,17 +6,17 @@
     </picture>
   </section>
   
-  <section class="flex justify-center">
+  <section class="flex justify-center mb-5">
     <div class="flex justify-around items-baseline w-4/5">
       <%= render "shared/avatar", model: @band  %>
-      <h1 class="text-2xl "><%= @band.name %></h1>
-      <p class="block">Status: <%= @band.state %></p>
+      <h1 class="text-2xl"><%= @band.name %></h1>
+      <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
     </div>
   </section>
   
-  <article class="flex justify-center ">
+  <article class="flex justify-center bg-gray-200">
     
-    <section class="m-10">
+    <section class="my-10 mr-10 w-60">
 
       <div>
         <p>曲風</p> <%= render 'style', band: @band %>
@@ -28,14 +28,14 @@
       </div>
 
       <div class="my-5">
-        <p class="mb-3">地區 </p>
+        <p class="mb-3">地區</p>
         <%= @band.area %>
       </div>
 
     </section>
     
-    <div class="w-2/4 m-10 ">
-      <p class=" m-10">
+    <div class="w-2/4 mt-10">
+      <p class="'text-black'">
         <%= @band.content %>
       </p>
     </div>

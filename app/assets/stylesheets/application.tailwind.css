@@ -13,7 +13,7 @@
   }
 }
 
-Font Style
+/* Font Style */
 .h1 {
   @apply text-2xl block my-5;
 }
@@ -69,4 +69,18 @@ Font Style
 }
 
 */
+
+/* check boxes */
+
+.check-boxes {
+  @apply block select-none cursor-pointer rounded-lg border-2 border-gray-200
+  py-3 px-5 mx-1 font-bold text-gray-200 transition-colors duration-200 ease-in-out peer-checked:bg-gray-200 peer-checked:text-gray-900 peer-checked:border-gray-200
+}
+
+/* Center */
+
+.center {
+  @apply flex justify-center 
+}
+
 @import 'actiontext.css';

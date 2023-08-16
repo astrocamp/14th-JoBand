@@ -42,7 +42,7 @@ class BandsController < ApplicationController
   def set_band
     @band = Band.find(params[:id])
   end
-    
+
   def styles_all
     @styles = Style.all
   end
