@@ -4,11 +4,7 @@
       <% @bands.each do |band| %>
     <li>
       <%= link_to band.name, band_path(band)  %>
-      <ul>
-        <% band.styles.each do |style| %>
-          <li><%= style.name %></li>
-        <% end %>
-      </ul> 
+      <%= render 'style', band: band %>
       <%= link_to '編輯', edit_band_path(band) %>
     </li>
   </ul>
