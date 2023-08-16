@@ -86,6 +86,20 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
     t.datetime 'updated_at', null: false
     t.index ['instrument_id'], name: 'index_profile_and_instruments_on_instrument_id'
     t.index ['profile_id'], name: 'index_profile_and_instruments_on_profile_id'
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.integer "phone"
+    t.string "location"
+    t.integer "seniority"
+    t.text "content"
+  end
+  create_table "recruits", force: :cascade do |t|
+    t.string "recruit_title"
+    t.text "condition"
+    t.string "practice_time"
+    t.integer "area"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table 'profiles', force: :cascade do |t|
