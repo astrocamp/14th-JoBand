@@ -1,0 +1,32 @@
+#edit-form div label {
+  color: #000;
+}
+#new-form div label {
+  font-weight: bold; 
+}
+
+#check-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#check-boxes input {
+  display: none;
+}
+
+#check-boxes label {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: 0.125rem solid #E5E7EB;
+  padding: 0.5rem 1rem;;
+  margin: 0.25rem;
+  font-weight: bold; 
+  background-color: #111827;
+  color: #fff ;
+}
+
+#check-boxes input[type=checkbox]:checked+label {
+  color: #f00c;
+  font-size: large;
+}
+
