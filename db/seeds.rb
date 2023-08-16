@@ -15,3 +15,10 @@ Style.create([
                { name: "Classical" },
                { name: "Electronic" }
               ])
+Instrument.create([
+	{ name: "Guitar" },
+	{ name: "Bass" },
+	{ name: "Vocal" },
+	{ name: "Drum" },
+	{ name: "Keyboard" }
+])
