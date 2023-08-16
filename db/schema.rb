@@ -82,6 +82,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_040921) do
     t.string "location"
     t.integer "seniority"
     t.text "content"
+  end
+  create_table "recruits", force: :cascade do |t|
+    t.string "recruit_title"
+    t.text "condition"
+    t.string "practice_time"
+    t.integer "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
