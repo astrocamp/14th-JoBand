@@ -1,35 +1,35 @@
 <div>
-	<%= form_with( model: profile, data: { turbo: false } ) do |f| %>
-		<div>
-			<%= f.file_field :avatar %>
-		</div>
-		<div>
-			<%= f.label :name, "名稱" %>
-			<%= f.text_field :name %>
-		</div>
-		<div>
-			<%= f.label :phone, "電話" %>
-			<%= f.phone_field :phone, placeholder: '請輸入電話號碼' %>
-		</div>
-		<div>
-			<%= f.label :location, "居住城市" %>
-			<%= f.text_field :location %>
-		</div>
-		<div>
-			<%= f.label :seniority, "樂齡" %>
-			<%= f.number_field :seniority, min: 0 %>
-		</div>
-		<div>
-			<%= f.label :content, "簡介" %>
-			<%= f.text_area :content %>
-		</div>
-		<p>使用樂器 instrument </p>
-		<div>
-			<%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
-				<%= i.label %>
-				<%= i.check_box %>
-			<% end %>
-		</div>
-		<%= f.submit %>
-	<% end %>
+  <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
+    <div>
+      <%= f.file_field :avatar %>
+    </div>
+    <div>
+      <%= f.label :name, "名稱" %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :phone, "電話" %>
+      <%= f.phone_field :phone, placeholder: '請輸入電話號碼' %>
+    </div>
+    <div>
+      <%= f.label :location, "居住城市" %>
+      <%= f.text_field :location %>
+    </div>
+    <div>
+      <%= f.label :seniority, "樂齡" %>
+      <%= f.number_field :seniority, min: 0 %>
+    </div>
+    <div>
+      <%= f.label :content, "簡介" %>
+      <%= f.text_area :content %>
+    </div>
+    <p>使用樂器 instrument </p>
+    <div>
+      <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
+        <%= i.label %>
+        <%= i.check_box %>
+      <% end %>
+    </div>
+    <%= f.submit %>
+  <% end %>
 </div>
