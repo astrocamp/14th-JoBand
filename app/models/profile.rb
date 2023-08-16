@@ -7,7 +7,7 @@ class Profile < ApplicationRecord
   
   # associations
   has_one_attached :avatar
-  has_many :instruments
-  accepts_nested_attributes_for :instruments, allow_destroy: true
+  has_many :profile_and_instrument
+  has_many :instruments, through: :profile_and_instrument
   
 end

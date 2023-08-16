@@ -21,6 +21,7 @@ gem "omniauth", "~> 2.1"
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+gem "image_processing", "~> 1.2"
 
 
 
@@ -29,6 +30,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails", "~> 6.0"
   gem "letter_opener", "~> 1.8"
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -40,6 +42,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-
-gem "image_processing", "~> 1.2"
