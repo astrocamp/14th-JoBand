@@ -224,7 +224,6 @@ GEM
       railties (>= 5.2)
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
-<<<<<<< HEAD
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -242,8 +241,6 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-=======
->>>>>>> f5a2218 (新增Google & Facebook 第三方登入 feat: add OAuth -login (#9))
     rubyzip (2.3.2)
     selenium-webdriver (4.10.0)
       rexml (~> 3.2, >= 3.2.5)
