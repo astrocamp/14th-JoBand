@@ -1,19 +1,20 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
-  
   # mail SMTP set
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.mailgun.org',
-    port:                 587,
-    domain:               'joband.co',
-    user_name:            ENV['MAIL_USER_NAME'],
-    password:             ENV['MAIL_PASSWORD'],
-    authentication:       'plain',
+    address: 'smtp.mailgun.org',
+    port: 587,
+    domain: 'joband.co',
+    user_name: ENV['MAIL_USER_NAME'],
+    password: ENV['MAIL_PASSWORD'],
+    authentication: 'plain',
     enable_starttls_auto: true,
-    open_timeout:         5,
-    read_timeout:         5 
+    open_timeout: 5,
+    read_timeout: 5
   }
 
   # letter opener
@@ -38,13 +39,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Instrument < ApplicationRecord
   # validates
   validates :name, uniqueness: true
