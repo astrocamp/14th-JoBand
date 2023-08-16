@@ -6,10 +6,7 @@
   </div>
 
   <div>
-    <%= f.collection_check_boxes :style_ids, @styles, :id, :name do |s| %>
-      <%= s.check_box %>
-      <%= s.label %>
-    <% end %>
+    <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
   </div>
 
   <div>

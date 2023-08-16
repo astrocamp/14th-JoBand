@@ -16,6 +16,6 @@ class Band < ApplicationRecord
     Central: 1,
     South: 2,
     East: 3,
-  },_prefix: true
+  }, _prefix: true
   
 end

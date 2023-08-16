@@ -1,6 +1,5 @@
 class BandsController < ApplicationController
   before_action :set_band, only: [:show, :edit, :update]
-  before_action :styles_all, only: [:edit, :new]
   
   def index
     @bands = Band.order(id: :desc)
@@ -36,10 +35,6 @@ class BandsController < ApplicationController
 
   def set_band
     @band = Band.find(params[:id])
-  end
-    
-  def styles_all
-    @styles = Style.all
   end
 
   def band_params
