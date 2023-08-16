@@ -1,8 +1,10 @@
 <div class="flex flex-col w-full " >
+
 	<div class="flex flex-col items-center p-5 font-bold tracking-wide ">
 		<h1 class="text-xl text-red-500 " >展示你的音樂作品集</h1>
 		<button class="p-2 my-4 text-base text-white rounded bg-slate-500 hover:bg-slate-600" ><%= link_to "新增 個人檔案", new_profile_path %></button>
 	</div>
+
 	<div class="flex flex-wrap justify-center w-full " >
 		<% @profiles.each do |profile| %>
 			<div class="w-5/12 max-w-md p-6 mx-4 my-4 bg-white rounded-lg">
@@ -14,34 +16,33 @@
 				<p class="p-1 mb-2 text-white rounded bg-slate-700"><%= profile.location %></p>
 				<h2 class="mb-2 text-xl font-semibold text-black"><%= link_to profile.name, profile_path(profile) %></h2>
 				<p class="mb-2 text-gray-700"><%= link_to profile.content, profile_path(profile) %></p>
-					<div class="flex ">
-							<button class="p-1 mr-2 bg-yellow-300 rounded text-slate-500 hover:bg-yellow-400"><%= profile.seniority %> 年</button>
-							
-							<% profile.instruments.each do |instrument| %>
+				<div class="flex ">
+					<button class="p-1 mr-2 bg-yellow-300 rounded text-slate-500 hover:bg-yellow-400"><%= profile.seniority %> 年</button>
+					
+					<% profile.instruments.each do |instrument| %>
 
-								<% if instrument.name == "Vocal" %>
-								<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >主唱</button>
-								<% end %>
-								
-								<% if instrument.name == "Guitar" %>
-								<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >吉他</button>
-								<% end %>
-								
-								<% if instrument.name == "Bass" %>
-								<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >貝斯</button>
-								<% end %>
-								
-								<% if instrument.name == "Keyboard" %>
-								<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >鍵盤</button>
-								<% end %>
-								
-								<% if instrument.name == "Drum" %>
-								<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >鼓手</button>
-								<% end %>
+						<% if instrument.name == "Vocal" %>
+						<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >主唱</button>
+						<% end %>
+						
+						<% if instrument.name == "Guitar" %>
+						<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >吉他</button>
+						<% end %>
+						
+						<% if instrument.name == "Bass" %>
+						<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >貝斯</button>
+						<% end %>
+						
+						<% if instrument.name == "Keyboard" %>
+						<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >鍵盤</button>
+						<% end %>
+						
+						<% if instrument.name == "Drum" %>
+						<button class="p-1 mr-2 text-black bg-blue-300 rounded hover:bg-blue-400" >鼓手</button>
+						<% end %>
 
-							<% end %>
-							
-					</div>
+					<% end %>
+				</div>
 			</div>
 		<% end %>
 	</div>
