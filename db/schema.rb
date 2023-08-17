@@ -35,4 +35,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_152932) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "band_styles", force: :cascade do |t|
+    t.bigint "band_id", null: false
+    t.bigint "style_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_band_styles_on_band_id"
+    t.index ["style_id"], name: "index_band_styles_on_style_id"
+  end
+
+  create_table "bands", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.integer "area"
+    t.integer "state"
+    t.date "founded_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "styles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "band_styles", "bands"
+  add_foreign_key "band_styles", "styles"
 end

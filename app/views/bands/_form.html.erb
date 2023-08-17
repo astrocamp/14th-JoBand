@@ -1,0 +1,36 @@
+<%= form_with(model: @band , data:{ turbo: false } ) do |f| %>
+
+  <div>
+    <%= f.label :name, '團名' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
+  </div>
+
+  <div>
+    <%= f.label :area, '地區' %>
+    <%= f.select :area , Band.areas.keys %>
+  </div>
+
+  <div>
+    <%= f.label :founded_at, '創立時間' %>
+    <%= f.date_field :founded_at %>
+  </div>
+
+  <div>
+    <%= f.label :content, '介紹' %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.label :state, '狀態' %>
+    <%= f.select :state , Band.states.keys %>
+  </div>
+
+  <div class="btn">
+    <%=f.submit '送出' %>
+  </div>
+
+<% end %>

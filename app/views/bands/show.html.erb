@@ -1,0 +1,29 @@
+<h1><%= @band.name %></h1>
+
+<p>Status: <%= @band.state %></p>
+ 
+<article>
+  
+  <div>
+    <%= render 'style', band: @band %>
+  </div>
+
+  <div>
+    <%= @band.founded_at %>
+  </div>
+
+  <div>
+    <%= @band.area %>
+  </div>
+
+  <div>
+    <%= @band.content %>
+  </div>
+
+  <div>
+    <%= link_to '編輯', edit_band_path(@band) %>
+  </div>
+  
+</article>
+
+

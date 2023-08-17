@@ -1,0 +1,12 @@
+<h1>樂團列表</h1>
+
+  <ul>
+      <% @bands.each do |band| %>
+    <li>
+      <%= link_to band.name, band_path(band)  %>
+      <%= render 'style', band: band %>
+      <%= link_to '編輯', edit_band_path(band) %>
+    </li>
+  </ul>
+
+<% end %>
