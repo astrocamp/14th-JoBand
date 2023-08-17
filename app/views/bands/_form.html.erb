@@ -4,7 +4,11 @@
     <%= f.label :name, '團名' %>
     <%= f.text_field :name %>
   </div>
-
+  
+  <div>
+    <%= f.file_field :avatar %>
+  </div>
+  
   <div>
     <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
   </div>

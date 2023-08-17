@@ -1,5 +1,11 @@
 <h1><%= @band.name %></h1>
 
+<% if @band.avatar.attached? %>
+  <%= image_tag @band.avatar, class: "rounded-full w-32" %>
+<% else %>
+  <img src="/default_avatar.png" alt="default_avatar" class="w-32 rounded-full" >
+<% end %>
+
 <p>Status: <%= @band.state %></p>
  
 <article>
