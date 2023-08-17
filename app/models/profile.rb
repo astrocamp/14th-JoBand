@@ -11,4 +11,5 @@ class Profile < ApplicationRecord
   has_one_attached :video
   has_many :profile_and_instrument
   has_many :instruments, through: :profile_and_instrument
+  belongs_to :user
 end
