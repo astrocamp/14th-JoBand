@@ -9,23 +9,11 @@ module.exports = {
   ],
   
   theme: {
-    fontSize: {
-      xs: ['12px', '14px'],
-      sm: ['14px', '20px'],
-      base: ['16px', '24px'],
-      lg: ['20px', '28px'],
-      xl: ['24px', '32px'],
-      '2xl': ['30px', '36px'],
-    },
     extend: {
-      // fontFamily: {
-      //   sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      // },
       colors: {
         'dark': '#444',
         'nav-hov': '#2f3136',
       },
-      
     },
   },
   // plugins: [

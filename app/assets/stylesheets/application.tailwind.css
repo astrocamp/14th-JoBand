@@ -13,51 +13,10 @@
   }
 }
 
-/* Font Style */
-.h1 {
-  @apply text-2xl block my-5;
-}
-
-.h2 {
-  @apply text-xl block my-5;
-}
-
-.h3 {
-  @apply text-lg block;
-}
-
-.h4 {
-  @apply text-base block;
-}
-
-/* session style */
-
-.logo-icon {
-  @apply cursor-pointer select-none text-xl;
-}
-
-.nav-link {
-  @apply cursor-pointer select-none hover:bg-nav-hov hover:duration-300 text-lg;
-}
-
-.aside-info {
-  @apply my-5;
-}
-
 /* link style */
 
 .blink {
   @apply underline cursor-pointer text-amber-500;
-}
-
-/* button style */
-
-.confirm-btn {
-  @apply cursor-pointer select-none rounded-lg bg-white text-black px-4 py-2 hover:bg-slate-100 hover:duration-300 my-5 ;
-}
-
-.cancel-btn {
-  @apply cursor-pointer select-none rounded-md
 }
 
 /*
