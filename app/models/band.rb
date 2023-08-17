@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Band < ApplicationRecord
   validates :name ,presence: true
 
@@ -16,27 +18,27 @@ class Band < ApplicationRecord
     North: 0,
     Central: 1,
     South: 2,
-    East: 3,
-  },_prefix: true
-  
-    #表單序列化
-    serialize :styles, Array  
-    def self.styles
-        [
-        "Pop",
-        "Folk",
-        "Rock",
-        "Hip-hop",
-        "Metal",
-        "Jazz",
-        "Classical",
-        "Electronic"
-      ]
-    end
+    East: 3
+  }, _prefix: true
 
-    before_save :set_styles
+  # 表單序列化
+  serialize :styles, Array
+  def self.styles
+    %w[
+      Pop
+      Folk
+      Rock
+      Hip-hop
+      Metal
+      Jazz
+      Classical
+      Electronic
+    ]
+  end
 
-    def set_styles
-      self.styles = self.styles.reject{|e| e.empty? }
-    end
+  before_save :set_styles
+
+  def set_styles
+    self.styles = styles.reject(&:empty?)
+  end
 end

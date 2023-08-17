@@ -1,12 +1,15 @@
+
+
 <div>
    <h1>
       <%= @recruit.recruit_title %>
    </h1>
 </div>
    
-
-<div>
-   <%= @recruit.instrument %>
+   <div>
+  <% @recruit.instruments.each do |instrument| %>
+    <%= instrument.name %>
+  <% end %>
 </div>
 
 <div>

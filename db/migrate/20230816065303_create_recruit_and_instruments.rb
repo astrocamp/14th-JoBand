@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateRecruitAndInstruments < ActiveRecord::Migration[7.0]
   def change
     create_table :recruit_and_instruments do |t|
