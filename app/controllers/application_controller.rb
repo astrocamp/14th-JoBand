@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   def not_found
     render file: Rails.root.join('public', '404.html'), status: 404, layout: false
   end
-  
 
   def switch_locale(&action)
     locale = params[:locale] || I18n.default_locale
