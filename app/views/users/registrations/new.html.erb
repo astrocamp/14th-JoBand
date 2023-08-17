@@ -1,35 +1,43 @@
-<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
-  <header class="block w-100% text-white">
-    <h2 class="h2"><%= t("user.sign_up") %></h2>
-  </header>
+<div class="bg-dark rounded-md px-20 py-5 my-10 mx-auto flex justify-center w-2/4">
+  <div class="mx-auto">
+    <header class="flex text-white">
+      <h2 class="h2"><%= t("user.sign_up") %></h2>
+    </header>
 
-  <div class="block mx-auto w-100%">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+    <div class="flex mx-auto">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
 
-      <div class="field my-2">
-        <%= f.label :email, class: "text-white" %><br />
-        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email" %>
-      </div>
+        <div class="field my-3">
+          <%= f.label :name, t("user.display_name"),class: "text-white" %><br />
+          <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "input-md" %><br />
+          <em class="text-xs leading-3"><%= t("user.display_describe") %></em>  
+        </div>
 
-      <div class="field my-2">
-        <%= f.label :password, t("user.password"), class: "text-white" %>
-        <% if @minimum_password_length %>
-        <% end %><br />
-        <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password" %>
-      </div>
+        <div class="field my-3">
+          <%= f.label :email, class: "text-white" %><br />
+          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input-md" %>
+        </div>
 
-      <div class="field my-2">
-        <%= f.label :password_confirmation, t("user.password_confirmation"), class: "text-white" %><br />
-        <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password" %>
-      </div>
+        <div class="field my-3">
+          <%= f.label :password, t("user.password"), class: "text-white" %>
+          <% if @minimum_password_length %>
+          <% end %><br />
+          <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "input-md" %>
+        </div>
 
-      <div class="actions">
-        <%= f.submit t("user.sign_up"), class: "btn" %>
-      </div>
-    <% end %>
-  </div>
-  <div class="aside-info text-white">
-    <%= render "users/shared/links" %>
+        <div class="field my-3">
+          <%= f.label :password_confirmation, t("user.password_confirmation"), class: "text-white" %><br />
+          <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "input-md" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit t("user.sign_up"), class: "btn btn-block" %>
+        </div>
+      <% end %>
+    </div>
+    <div class="my-5 text-white">
+      <%= render "users/shared/links" %>
+    </div>
   </div>
 </div>
