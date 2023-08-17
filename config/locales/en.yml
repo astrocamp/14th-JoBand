@@ -1,6 +1,8 @@
 en:
   user:
     sign_up: "Sign Up"
+    display_name: "Display Name"
+    display_describe: "Enter your display name. You can change it later"
     password: "Password"
     min_password_placeholder: "8 - 16 characters"
     password_confirmation: "Password confirmation"

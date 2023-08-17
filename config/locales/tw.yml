@@ -1,6 +1,8 @@
 tw:
   user:
     sign_up: "加入 JoBand！"
+    display_name: "暱稱"
+    display_describe: "輸入的暱稱之後還可以進行變更"
     password: "密碼"
     min_password_placeholder: "請輸入 8 - 16 字元"
     password_confirmation: "確認密碼"
