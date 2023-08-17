@@ -39,6 +39,10 @@ class BandsController < ApplicationController
   end
 
   def band_params
+<<<<<<< HEAD
     params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :banner, style_ids: [])
+=======
+    params.require(:band).permit(:name, :content, :area, :state, :founded_at, style_ids: [])
+>>>>>>> 7e84111 (feat:add recruit model , CRUD and rubucp)
   end
 end

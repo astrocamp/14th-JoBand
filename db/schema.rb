@@ -15,16 +15,6 @@
 ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
-  create_table 'action_text_rich_texts', force: :cascade do |t|
-    t.string 'name', null: false
-    t.text 'body'
-    t.string 'record_type', null: false
-    t.bigint 'record_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index %w[record_type record_id name], name: 'index_action_text_rich_texts_uniqueness', unique: true
-  end
-
   create_table 'active_storage_attachments', force: :cascade do |t|
     t.string 'name', null: false
     t.string 'record_type', null: false
@@ -86,20 +76,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
     t.datetime 'updated_at', null: false
     t.index ['instrument_id'], name: 'index_profile_and_instruments_on_instrument_id'
     t.index ['profile_id'], name: 'index_profile_and_instruments_on_profile_id'
-  create_table "profiles", force: :cascade do |t|
-    t.string "name"
-    t.integer "phone"
-    t.string "location"
-    t.integer "seniority"
-    t.text "content"
-  end
-  create_table "recruits", force: :cascade do |t|
-    t.string "recruit_title"
-    t.text "condition"
-    t.string "practice_time"
-    t.integer "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table 'profiles', force: :cascade do |t|
@@ -112,6 +88,25 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
     t.datetime 'updated_at', null: false
     t.bigint 'user_id'
     t.index ['user_id'], name: 'index_profiles_on_user_id'
+  end
+
+  create_table 'recruit_and_instruments', force: :cascade do |t|
+    t.bigint 'recruit_id', null: false
+    t.bigint 'instrument_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['instrument_id'], name: 'index_recruit_and_instruments_on_instrument_id'
+    t.index ['recruit_id'], name: 'index_recruit_and_instruments_on_recruit_id'
+  end
+
+  create_table 'recruits', force: :cascade do |t|
+    t.string 'recruit_title'
+    t.text 'condition'
+    t.string 'practice_time'
+    t.integer 'area'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'band_id'
   end
 
   create_table 'styles', force: :cascade do |t|
@@ -147,4 +142,6 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
   add_foreign_key 'band_styles', 'styles'
   add_foreign_key 'profile_and_instruments', 'instruments'
   add_foreign_key 'profile_and_instruments', 'profiles'
+  add_foreign_key 'recruit_and_instruments', 'instruments'
+  add_foreign_key 'recruit_and_instruments', 'recruits'
 end

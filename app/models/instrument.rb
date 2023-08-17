@@ -7,4 +7,6 @@ class Instrument < ApplicationRecord
   # associations
   has_many :profiles, through: :profile_and_instrument
   has_many :profile_and_instrument
+  has_many :recruits, through: :recruit_and_instrument
+  has_many :recruit_and_instrument
 end

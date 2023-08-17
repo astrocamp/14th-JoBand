@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   }
   resources :profiles, except: [:destroy]
   resources :bands, except: [:destroy]
+
+  resources :recruits
 end
