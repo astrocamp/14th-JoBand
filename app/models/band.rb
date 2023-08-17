@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 class Band < ApplicationRecord
   # validates
-  validates :name ,presence: true
+  validates :name, presence: true
 
   # associations
   has_one_attached :avatar
+  has_one_attached :banner
   has_many :band_styles
   has_many :styles, through: :band_styles
 
@@ -19,7 +22,6 @@ class Band < ApplicationRecord
     North: 0,
     Central: 1,
     South: 2,
-    East: 3,
+    East: 3
   }, _prefix: true
-  
 end

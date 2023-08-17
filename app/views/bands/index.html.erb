@@ -3,11 +3,7 @@
   <ul>
       <% @bands.each do |band| %>
       <div>
-        <% if band.avatar.attached? %>
-          <%= image_tag band.avatar, class: "rounded-full w-32" %>
-        <% else %>
-          <img src="/default_avatar.png" alt="default_avatar" class="w-32 rounded-full" >
-        <% end %>
+        <%= render "shared/avatar", model: band  %>
       </div>
     <li>
       <%= link_to band.name, band_path(band)  %>
