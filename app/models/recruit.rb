@@ -1,6 +1,7 @@
 class Recruit < ApplicationRecord 
  
     belongs_to :band
+    has_many :recruit_and_instrument
     has_many :instrument, through: :recruit_and_instrument
  
         enum area:{
