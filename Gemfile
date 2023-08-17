@@ -23,11 +23,11 @@ gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem 'pundit', '~> 2.3"
+gem "pundit", "~> 2.3"
+gem "dotenv-rails", "~> 2.8"
+
 
 group :development, :test do
-  gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'dotenv-rails'
   gem 'letter_opener', '~> 1.8'
   gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', require: false
@@ -42,3 +42,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+

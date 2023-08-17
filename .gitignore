@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Mac Store files
+.DS_Store
+
 # Ignore vscode setting
 /.vscode/.json
 
@@ -38,3 +41,4 @@
 
 #API KEY FILE
 .env
+.vscode/settings.json
