@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: true
-
 class Band < ApplicationRecord
   # validates
   validates :name, presence: true
