@@ -20,25 +20,4 @@ class Band < ApplicationRecord
     South: 2,
     East: 3
   }, _prefix: true
-
-  # 表單序列化
-  serialize :styles, Array
-  def self.styles
-    %w[
-      Pop
-      Folk
-      Rock
-      Hip-hop
-      Metal
-      Jazz
-      Classical
-      Electronic
-    ]
-  end
-
-  before_save :set_styles
-
-  def set_styles
-    self.styles = styles.reject(&:empty?)
-  end
 end

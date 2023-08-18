@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
-  before_action :set_recruit, only: %i[edit update show destroy]
 
   def index
     @recruits = Recruit.order(id: :desc)
@@ -14,9 +13,6 @@ class RecruitsController < ApplicationController
 
   def create
     @recruit = Recruit.new(recruit_params)
-
-    @instruments = Instrument.all
-
     if @recruit.save!
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
@@ -52,7 +48,7 @@ class RecruitsController < ApplicationController
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :instrument, :condition, :practice_time, :area,
+    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area,
                                     instrument_ids: [])
   end
 end
