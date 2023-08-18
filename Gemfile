@@ -10,6 +10,7 @@ gem 'sprockets-rails'
 
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
+gem 'dotenv-rails', '~> 2.8'
 gem 'image_processing', '~> 1.2'
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -19,13 +20,11 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
+gem 'pundit', '~> 2.3'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-gem "pundit", "~> 2.3"
-gem "dotenv-rails", "~> 2.8"
-
 
 group :development, :test do
   gem 'letter_opener', '~> 1.8'
@@ -42,5 +41,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-
