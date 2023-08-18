@@ -4,7 +4,17 @@
     <%= f.label :name, '團名' %>
     <%= f.text_field :name %>
   </div>
+  
+  <div>
+    <%= f.label :banner, '上傳樂團佈景' %>
+    <%= f.file_field :banner %>
+  </div>
 
+  <div>
+    <%= f.label :avatar, '上傳樂團頭像' %>
+    <%= f.file_field :avatar %>
+  </div>
+  
   <div>
     <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
   </div>

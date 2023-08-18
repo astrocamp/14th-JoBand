@@ -2,6 +2,9 @@
 
   <ul>
       <% @bands.each do |band| %>
+      <div>
+        <%= render "shared/avatar", model: band  %>
+      </div>
     <li>
       <%= link_to band.name, band_path(band)  %>
       <%= render 'style', band: band %>
