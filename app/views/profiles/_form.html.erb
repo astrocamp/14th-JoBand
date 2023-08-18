@@ -1,7 +1,8 @@
 <div>
   <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
     <div>
-      <%= f.file_field :avatar %>
+      <%= f.label :avatar, "上傳大頭照" %>
+      <%= f.file_field :avatar, accept: "image/png, image/jpeg" %>
     </div>
     <div>
       <%= f.label :name, "名稱" %>
@@ -29,6 +30,10 @@
         <%= i.label %>
         <%= i.check_box %>
       <% end %>
+    </div>
+    <div>
+      <%= f.label :music, "上傳音樂" %>
+      <%= f.file_field :music, accept: "audio/mpeg" %>
     </div>
     <%= f.submit %>
   <% end %>
