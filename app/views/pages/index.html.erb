@@ -1,10 +1,27 @@
-<div class="flex items-center justify-center w-screen">
-  <div class="w-screen">
-    <img src="/Joband_index.jpg" alt="Joband_Banner" class="object-cover w-full h-full">
+<header class="flex items-center justify-center w-full">
+  <div class="relative w-full h-[675px] overflow-hidden">
+    <div class="absolute w-full h-full bg-gray-500/[0.3]"></div>
+    <%# <img src="/Joband_index.jpg" alt="Joband_Banner" class="object-cover w-full h-full"> %>
+    <video width="640" height="360" autoplay muted loop class="object-cover w-full h-full">
+      <source src="/Joband_video.mp4" type="video/mp4">
+    </video>
   </div>
-  <img src="Joband.svg" alt="Joband_LOGO" class="absolute">
-</div>
-<div class="relative">
-  <%= render 'shared/navbar', class:"sticky" %>
-</div>
-<div style="height: 1024px;"></div>
+  <div class="absolute flex flex-wrap justify-center w-[550px] drop-shadow-lg">
+    <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full">
+    <p class="w-full mt-10 text-xl text-center text-white">拓展音樂之路，找尋完美夥伴</p>
+    <%= link_to '現在就加入', new_user_registration_path, class: "mt-10 joband-btn" %>
+  </div>
+</header>
+<nav class="sticky top-0 z-10">
+  <%= render 'shared/navbar'%>
+</nav>
+<section class="flex flex-wrap justify-center mt-10 drop-shadow-lg">
+  <p class="w-full my-10 text-xl text-center text-white">在 Joband 你可以展示你的音樂作品集</p>
+  <div class="my-10">
+    <%= render "shared/profile_card", profile: Profile.first %>
+  </div>
+  <div class="my-10">
+    <%= render "shared/profile_card", profile: Profile.first %>
+  </div>
+</section>
+

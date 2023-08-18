@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_圖層_1" data-name="圖層 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 469.71 126.07">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 18.72px;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-2" width="469.71" height="126.07"/>
+    </clipPath>
+  </defs>
+  <g class="cls-1">
+    <g>
+      <path class="cls-3" d="m84.52,79.13c0,20.76-16.83,37.58-37.58,37.58S9.36,99.89,9.36,79.13"/>
+      <path class="cls-3" d="m122.11,116.71c20.75,0,37.58-16.83,37.58-37.58s-16.83-37.58-37.58-37.58-37.58,16.83-37.58,37.58,16.82,37.58,37.58,37.58Z"/>
+      <path class="cls-3" d="m197.27,116.71c20.76,0,37.58-16.83,37.58-37.58s-16.82-37.58-37.58-37.58-37.58,16.83-37.58,37.58,16.82,37.58,37.58,37.58Z"/>
+      <path class="cls-3" d="m272.44,116.71c20.76,0,37.58-16.83,37.58-37.58s-16.83-37.58-37.58-37.58-37.58,16.83-37.58,37.58,16.82,37.58,37.58,37.58Z"/>
+      <path class="cls-3" d="m310.02,79.13c0-20.76,16.83-37.58,37.58-37.58s37.58,16.83,37.58,37.58"/>
+      <path class="cls-3" d="m422.77,116.71c20.76,0,37.58-16.83,37.58-37.58s-16.82-37.58-37.58-37.58-37.58,16.83-37.58,37.58,16.83,37.58,37.58,37.58Z"/>
+      <path class="cls-3" d="m84.52,79.13V9.36"/>
+      <path class="cls-3" d="m159.69,79.13V9.36"/>
+      <path class="cls-3" d="m460.35,79.13V9.36"/>
+      <path class="cls-3" d="m84.52,9.36h-37.58"/>
+    </g>
+  </g>
+</svg>
