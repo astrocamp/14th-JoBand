@@ -1,6 +1,6 @@
 # frozen_string_literal: true
-class RecruitsController < ApplicationController
 
+class RecruitsController < ApplicationController
   before_action :set_recruit, only: %i[edit update show destroy]
   def index
     @recruits = Recruit.order(id: :desc)
@@ -48,6 +48,6 @@ class RecruitsController < ApplicationController
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area,instrument_ids: [])
+    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, instrument_ids: [])
   end
 end
