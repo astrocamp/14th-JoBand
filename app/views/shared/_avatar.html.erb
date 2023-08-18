@@ -1,6 +1,6 @@
-
 <% if model.avatar.attached? %>
-  <%= image_tag model.avatar, class: "rounded-full w-32 h-32 object-cover" %>
+    <%= image_tag model.avatar, class: "z-[1] absolute rounded-full w-full h-full object-cover" %>
+    <div class="absolute w-full h-full bg-white rounded-full drop-shadow-2xl"></div>
 <% else %>
-  <img src="/default_avatar.png" alt="default_avatar" class="w-32 rounded-full" >
+  <img src="/default_avatar.png" alt="default_avatar" class="w-full rounded-full" >
 <% end %>
