@@ -2,38 +2,30 @@
   <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
     <div>
       <%= f.label :avatar, "上傳大頭照" %>
-      <%= f.file_field :avatar, accept: "image/png, image/jpeg" %>
+      <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
     <div>
-      <%= f.label :phone, "電話" %>
-      <%= f.phone_field :phone, placeholder: '請輸入電話號碼' %>
+      <%= f.label :phone, "電話", class: "text-white" %><br />
+      <%= f.phone_field :phone, placeholder: '請輸入電話號碼', class: "input-md input-bordered w-full max-w-xs" %>
     </div>
     <div>
-      <%= f.label :location, "居住城市" %>
-      <%= f.text_field :location %>
+      <%= f.label :location, "居住城市", class: "text-white" %><br />
+      <%= f.text_field :location, placeholder: '請輸入居住城市', class: "input-md input-bordered w-full max-w-xs" %>
     </div>
     <div>
-      <%= f.label :seniority, "樂齡" %>
-      <%= f.number_field :seniority, min: 0 %>
+      <%= f.label :seniority, "樂齡", class: "text-white" %><br />
+      <%= f.number_field :seniority, min: 1, placeholder: '1年', class: "input-md input-bordered w-full max-w-xs" %>
     </div>
     <div>
-      <%= f.label :content, "簡介" %>
-      <%= f.text_area :content %>
+      <%= f.label :content, "簡介", class: "text-white" %><br />
+      <%= f.text_area :content, placeholder: '跟大家介紹一下自己。', class: "input-md input-bordered w-full max-w-xs" %>
     </div>
-    <p>使用樂器 instrument </p>
+    <p class="text-white">使用樂器 instrument </p>
     <div>
       <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
         <%= i.label %>
         <%= i.check_box %>
       <% end %>
-    </div>
-    <div>
-      <%= f.label :music, "上傳音樂" %>
-      <%= f.file_field :music, accept: "audio/mpeg" %>
-    </div>
-    <div>
-      <%= f.label :video, "上傳影片" %>
-      <%= f.file_field :video, accept: "video/mp4" %>
     </div>
     <%= f.submit %>
   <% end %>
