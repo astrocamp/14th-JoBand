@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
-
   def index
     @recruits = Recruit.order(id: :desc)
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Band < ApplicationRecord
-  validates :name ,presence: true
+  validates :name, presence: true
 
   has_many :band_styles
   has_many :styles, through: :band_styles
