@@ -14,7 +14,11 @@
               <%= link_to current_user.name, "#"%>
             </label>
             <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-              <li><%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %></li>
+              <% if current_user.profile.present?%>
+                <li><%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %></li>
+              <% else %>
+                <li><%= link_to "個人檔案", new_profile_path, class: "nav-link" %></li>
+              <% end %>
               <li><%= link_to "我的樂團", "#", class: "nav-link" %></li>
               <li><%= link_to "設定", edit_user_registration_path, class: "nav-link" %></li>
               <li><%= link_to "登出", destroy_user_session_path,
