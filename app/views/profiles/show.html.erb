@@ -18,8 +18,9 @@
 
 
       <% if @profile.music.attached? %>
-        <audio controls>
+        <audio controls controlsList="nodownload">
           <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
+          您的瀏覽器不支持音頻元素
         </audio>
       <% else %>
         <p>沒有上傳任何音樂檔案</p>
