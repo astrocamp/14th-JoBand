@@ -13,7 +13,6 @@ class RecruitsController < ApplicationController
 
   def create
     @recruit = Recruit.new(recruit_params)
-    @instruments = Instrument.all
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
