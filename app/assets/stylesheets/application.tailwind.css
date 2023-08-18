@@ -13,17 +13,70 @@
   }
 }
 
+Font Style
+.h1 {
+  @apply block my-5 text-2xl;
+}
+
+.h2 {
+  @apply block my-5 text-xl;
+}
+
+.h3 {
+  @apply block text-lg;
+}
+
+.h4 {
+  @apply block text-base;
+}
+
+/* session style */
+
+.logo-icon {
+  @apply text-xl cursor-pointer select-none;
+}
+
+.nav-link {
+  @apply text-lg cursor-pointer select-none hover:bg-nav-hov hover:duration-300;
+}
+
+.aside-info {
+  @apply my-5;
+}
+
 /* link style */
 
 .blink {
   @apply underline cursor-pointer text-amber-500;
 }
 
+/* button style */
+
+.confirm-btn {
+  @apply px-4 py-2 my-5 text-black bg-white rounded-lg cursor-pointer select-none hover:bg-slate-100 hover:duration-300 ;
+}
+
+.cancel-btn {
+  @apply cursor-pointer select-none rounded-md
+}
+
+.joband-btn {
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300
+}
+
+.joband-tag-location {
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300
+}
+
+.joband-tag-seniority {
+  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#eb656b] hover:duration-300
+}
+
 /*
 
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply px-4 py-2 bg-blue-200;
   }
 }
 
