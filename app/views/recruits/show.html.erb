@@ -1,29 +1,33 @@
+<article>
 
-
-<div>
-   <h1>
-      <%= @recruit.recruit_title %>
-   </h1>
-</div>
+  <div>
+    <h1><%= @recruit.recruit_title %></h1>
+  </div>
    
-   <div>
-  <% @recruit.instruments.each do |instrument| %>
-    <%= instrument.name %>
-  <% end %>
-</div>
+  <div>
+    <% @recruit.instruments.each do |instrument| %>
+      <%= instrument.name %>
+    <% end %>
+  </div>
 
-<div>
-   <%= @recruit.condition %>
-</div>
+  <div>
+    <%= @recruit.condition %>
+  </div>
 
-<div>
-   <%= @recruit.practice_time %>
-</div>
+  <div>
+    <%= @recruit.practice_time %>
+  </div>
 
-<div>
-   <%= @recruit.area %>
-</div>
+  <div>
+    <%= @recruit.area %>
+  </div>
 
-<%= link_to "返回招募列表", recruits_path %>
+  <div>
+    <%= link_to "返回招募列表", recruits_path %>
+  </div>
 
-<%= link_to "好想趕快加入" %>
+  <div>
+    <%= link_to "好想趕快加入" %>
+  </div>
+
+</article>
