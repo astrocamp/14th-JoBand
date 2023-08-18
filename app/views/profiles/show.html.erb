@@ -15,8 +15,6 @@
     <p class="my-3 text-gray-700">樂齡：<%= @profile.seniority %></p>
     <p class="text-gray-700">內容：<%= @profile.content %></p>
     <div class="flex flex-col items-center my-3 ">
-
-
       <% if @profile.music.attached? %>
         <audio controls controlsList="nodownload">
           <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
@@ -25,7 +23,6 @@
       <% else %>
         <p>沒有上傳任何音樂檔案</p>
       <% end %>
-      
     </div>
   </div>  
 </div>
