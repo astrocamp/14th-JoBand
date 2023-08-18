@@ -28,7 +28,7 @@
       <% if @profile.video.attached? %>
         <video width="640" height="360" controls controlsList="nodownload">
           <source src="<%= url_for(@profile.video) %>" type="video/mp4">
-          您的瀏覽器不支持視頻
+          您的瀏覽器不支持影片
         </video>
       <% else %>
         <p>沒有上傳任何影片檔案</p>
