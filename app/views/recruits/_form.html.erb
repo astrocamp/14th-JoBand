@@ -24,12 +24,11 @@
 
   <div>
     <%= f.label :area, "地區" %>
-    <%= f.select :area,
-          Recruit.areas.map{|k, v| [k.to_s , k.to_s]} %>
+    <%= f.select :area, Recruit.areas.keys %>
   </div>
+
   <div>
     <%= f.submit %>
   </div>
-  
-
 <% end %>
+ 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
+  before_action :load_instruments
   before_action :set_recruit, only: %i[edit update show destroy]
   def index
     @recruits = Recruit.order(id: :desc)
@@ -8,7 +9,6 @@ class RecruitsController < ApplicationController
 
   def new
     @recruit = Recruit.new
-    @instruments = Instrument.all
   end
 
   def create
@@ -20,9 +20,7 @@ class RecruitsController < ApplicationController
     end
   end
 
-  def edit
-    @instruments = Instrument.all
-  end
+  def edit; end
 
   def update
     if @recruit.update(recruit_params)
@@ -33,7 +31,6 @@ class RecruitsController < ApplicationController
   end
 
   def destroy
-    @recruit.instrument_ids = []
     @recruit.destroy
     redirect_to recruits_path, notice: '刪除成功'
   end
@@ -41,6 +38,10 @@ class RecruitsController < ApplicationController
   def show; end
 
   private
+
+  def load_instruments
+    @instruments = Instrument.all
+  end
 
   def set_recruit
     @recruit = Recruit.find(params[:id])
