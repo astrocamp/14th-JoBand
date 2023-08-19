@@ -104,6 +104,8 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
     t.integer "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
+    t.index ["band_id"], name: "index_recruits_on_band_id"
   end
 
   create_table "styles", force: :cascade do |t|
@@ -141,4 +143,5 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
   add_foreign_key "profile_and_instruments", "profiles"
   add_foreign_key "recruit_and_instruments", "instruments"
   add_foreign_key "recruit_and_instruments", "recruits"
+  add_foreign_key "recruits", "bands"
 end
