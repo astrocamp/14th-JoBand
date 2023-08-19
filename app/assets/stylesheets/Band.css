@@ -7,6 +7,7 @@
   font-weight: bold; 
 }
 
+/* Check Box */
 #check-boxes {
   display: flex;
   flex-wrap: wrap;

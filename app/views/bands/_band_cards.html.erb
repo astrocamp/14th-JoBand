@@ -1,0 +1,20 @@
+<ul class="w-2/4">
+  <% @bands.each do |band| %>
+    <%= link_to band_path(band), action: 'go' do %>
+      <li class="my-5">
+        <div class="card lg:card-side bg-gray-400 shadow-xl">
+          <figure class="m-5">
+              <%= render "shared/avatar", model: band %>
+          </figure>
+          <div class="card-body">
+            <%= link_to band.name, band_path(band), class:'card-title' %>
+            <%= render 'style', band: band %>
+            <%= band.area %>
+            <%= band.state %>
+          <div class="card-actions justify-end">
+          <button class="btn btn-primary">報名</button>
+        </div> 
+      </li>
+    <% end %>
+  <% end %>
+</ul>

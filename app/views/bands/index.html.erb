@@ -1,21 +1,6 @@
 <h1 class="text-2xl text-white text-center">找樂團</h1>
 <div class="bg-gray-200 flex justify-center rounded-lg">
-  <ul class="w-3/4">
-    <% @bands.each do |band| %>
-      <li class="my-5">
-        <div class="card lg:card-side bg-gray-400 shadow-xl">
-            <%= render "shared/avatar", model: band  %>
-            <div class="card-body">
-            <%= link_to band.name, band_path(band), class:'card-title' %>
-            <%= render 'style', band: band %>
-            <%= band.area %>
-            <%= band.state %>
-            <div class="card-actions justify-end">
-          <button class="btn btn-primary">報名</button>
-        </div> 
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'band_cards' %>
 </div>
 
 
