@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_19_154426) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_19_161600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -102,6 +102,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_154426) do
     t.integer "area"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
+    t.index ["band_id"], name: "index_recruits_on_band_id"
   end
 
   create_table "styles", force: :cascade do |t|
@@ -139,4 +141,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_19_154426) do
   add_foreign_key "profile_and_instruments", "profiles"
   add_foreign_key "recruit_and_instruments", "instruments"
   add_foreign_key "recruit_and_instruments", "recruits"
+  add_foreign_key "recruits", "bands"
 end
