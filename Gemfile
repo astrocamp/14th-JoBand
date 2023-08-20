@@ -8,6 +8,7 @@ ruby '3.2.2'
 gem 'rails', '~> 7.0.6'
 gem 'sprockets-rails'
 
+gem "ransack", "~> 4.0"
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
 gem 'dotenv-rails', '~> 2.8'
@@ -41,3 +42,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+
