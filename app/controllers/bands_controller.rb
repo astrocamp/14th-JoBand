@@ -4,7 +4,8 @@ class BandsController < ApplicationController
   before_action :set_band, only: %i[show edit update]
 
   def index
-    @bands = Band.order(id: :desc)
+    @b = Band.ransack(params[:q])  
+	  @bands = @b.result(distinct: true)
   end
 
   def show; end

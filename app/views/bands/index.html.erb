@@ -1,10 +1,17 @@
 <h1 class="text-2xl text-white text-center">找樂團</h1>
 <div class="bg-gray-200 flex justify-center rounded-lg">
-  <%= render 'band_cards' %>
+  <div class="text-center">
+    <%= search_form_for @b do |f| %>
+      <div class="m-5 flex justify-center">
+        <%= f.search_field :name_or_styles_name_cont, class:'mr-3'%>
+        <%= f.submit class:'btn btn-sm' %>
+      </div>
+        <% Style.all.uniq.each do |style| %>
+            <%= check_box_tag('q[styles_name_cont_any][]', style.name) %>
+            <%= style.name %>
+        <% end %>
+    <% end %>
+    <%= render 'band_cards' %>
+  </div>
+
 </div>
-
-
-    
-  
-  
-

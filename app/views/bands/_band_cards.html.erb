@@ -1,4 +1,4 @@
-<ul class="w-2/4">
+<ul class="text-black">
   <% @bands.each do |band| %>
     <%= link_to band_path(band), action: 'go' do %>
       <li class="my-5">
@@ -9,8 +9,12 @@
           <div class="card-body">
             <%= link_to band.name, band_path(band), class:'card-title' %>
             <%= render 'style', band: band %>
-            <%= band.area %>
-            <%= band.state %>
+            <div>
+              <%= band.area %>
+            </div>
+            <div>
+              <%= band.state %>
+            </div>
           <div class="card-actions justify-end">
           <button class="btn btn-primary">報名</button>
         </div> 
