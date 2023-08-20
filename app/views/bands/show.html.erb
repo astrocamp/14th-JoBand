@@ -1,33 +1,49 @@
-<%= render "shared/banner", model: @band  %>
+<article id="band_show">
 
-<h1><%= @band.name %></h1>
-
-<%= render "shared/avatar", model: @band  %>
-
-<p>Status: <%= @band.state %></p>
- 
-<article>
+  <section class="mb-10">
+    <picture>
+      <%= render "shared/banner", model: @band  %>
+    </picture>
+  </section>
   
-  <div>
-    <%= render 'style', band: @band %>
-  </div>
-
-  <div>
-    <%= @band.founded_at %>
-  </div>
-
-  <div>
-    <%= @band.area %>
-  </div>
-
-  <div>
-    <%= @band.content %>
-  </div>
-
-  <div>
-    <%= link_to '編輯', edit_band_path(@band) %>
-  </div>
+  <section class="flex justify-center mb-5">
+    <div class="flex justify-around items-baseline w-4/5">
+      <%= render "shared/avatar", model: @band  %>
+      <h1 class="text-2xl"><%= @band.name %></h1>
+      <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
+    </div>
+  </section>
   
+  <article class="flex justify-center bg-gray-200">
+    
+    <section class="my-10 mr-10 w-60">
+
+      <div>
+        <p>曲風</p> <%= render 'style', band: @band %>
+      </div>
+
+      <div class="my-5">
+        <p class="mb-3">創立時間</p>
+        <%= @band.founded_at %>
+      </div>
+
+      <div class="my-5">
+        <p class="mb-3">地區</p>
+        <%= @band.area %>
+      </div>
+
+    </section>
+    
+    <div class="w-2/4 mt-10">
+      <p class="text-black">
+        <%= @band.content %>
+      </p>
+    </div>
+
+  </article>
+
+  <div class="flex justify-center my-5">
+      <%= link_to '編輯', edit_band_path(@band), class:"btn btn-outline w-60" %>
+  </div>
+
 </article>
-
-

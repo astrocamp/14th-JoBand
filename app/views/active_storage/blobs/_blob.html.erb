@@ -1,0 +1,5 @@
+<figure class="attachment attachment--<%= blob.representable? ? "preview" : "file" %> attachment--<%= blob.filename.extension %>">
+  <% if blob.representable? %>
+    <%= image_tag blob %>
+  <% end %>
+</figure>
