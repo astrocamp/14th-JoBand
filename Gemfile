@@ -8,7 +8,6 @@ ruby '3.2.2'
 gem 'rails', '~> 7.0.6'
 gem 'sprockets-rails'
 
-gem "ransack", "~> 4.0"
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
 gem 'dotenv-rails', '~> 2.8'
@@ -22,6 +21,7 @@ gem 'omniauth-rails_csrf_protection'
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.3'
+gem 'ransack', '~> 4.0'
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
@@ -42,5 +42,3 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
-
