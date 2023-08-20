@@ -6,7 +6,7 @@ class Style < ApplicationRecord
 
   validates :name, uniqueness: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["name"]
+  def self.ransackable_attributes(_auth_object = nil)
+    ['name']
   end
 end
