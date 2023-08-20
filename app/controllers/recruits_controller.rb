@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
-  before_action :load_instruments
+  before_action :load_instruments, only: %i[new edit]
   before_action :set_recruit, only: %i[edit update show destroy]
   def index
     @recruits = Recruit.order(id: :desc)
