@@ -12,4 +12,12 @@ class Profile < ApplicationRecord
   has_many :profile_and_instrument
   has_many :instruments, through: :profile_and_instrument
   belongs_to :user
+
+  def default_instrument(profile)
+    if profile.instruments != []
+      instruments.first.name
+    else
+      'listener'
+    end
+  end
 end
