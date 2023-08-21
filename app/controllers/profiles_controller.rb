@@ -11,7 +11,6 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
-    @instruments = Instrument.all
   end
 
   def create
@@ -25,9 +24,7 @@ class ProfilesController < ApplicationController
 
   def show; end
 
-  def edit
-    @instruments = Instrument.all
-  end
+  def edit; end
 
   def update
     if @profile.update(params_profile)

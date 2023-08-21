@@ -17,7 +17,6 @@
 </nav>
 <section class="flex flex-wrap justify-center mt-10 drop-shadow-lg">
   <p class="w-full my-10 text-xl text-center text-white">在 Joband 你可以展示你的音樂作品集</p>
-    <%= render "profiles/profile", profile: Profile.first %>
-    <%= render "profiles/profile", profile: Profile.first %>
+    <%= render "profiles/profile", profile: Profile.find_by(id: "1") %>
 </section>
 
