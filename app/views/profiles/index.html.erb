@@ -1,8 +1,16 @@
-<div class="flex flex-col w-full " >
+<div class="flex flex-col w-full" >
 
   <div class="flex flex-col items-center p-5 font-bold tracking-wide ">
     <h1 class="text-xl text-red-500 " >展示你的音樂作品集</h1>
-    <button class="p-2 my-4 text-base text-white rounded bg-slate-500 hover:bg-slate-600" ><%= link_to "新增 個人檔案", new_profile_path %></button>
+    <% if user_signed_in?%>
+      <% if current_user.profile.present? %>
+        
+      <% else %>
+        <button class="p-2 my-4 text-base text-white rounded bg-slate-500 hover:bg-slate-600" ><%= link_to "新增 個人檔案", new_profile_path %></button>
+      <% end %>
+    <% else %>
+      <button class="p-2 my-4 text-base text-white rounded bg-slate-500 hover:bg-slate-600" ><%= link_to "加入會員", new_user_registration_path %></button>
+    <% end %>
   </div>
 
   <div class="flex flex-wrap justify-center w-full " >

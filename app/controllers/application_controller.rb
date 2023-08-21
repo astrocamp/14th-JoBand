@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   around_action :switch_locale
+  include Pundit::Authorization
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   def not_found

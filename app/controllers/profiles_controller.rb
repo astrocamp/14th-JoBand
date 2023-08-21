@@ -2,9 +2,11 @@
 
 class ProfilesController < ApplicationController
   before_action :set_profile, only: %i[edit update show]
+  before_action :set_user, only: %i[show]
 
   def index
     @profiles = Profile.order(id: :desc)
+    @users = User.all
   end
 
   def new
@@ -13,9 +15,9 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(params_profile)
+    @profile = current_user.create_profile(params_profile)
     if @profile.save
-      redirect_to profiles_path, notice: '新增 profile 成功'
+      redirect_to profile_path(@profile), notice: '新增 profile 成功'
     else
       render :new
     end
@@ -29,7 +31,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(params_profile)
-      redirect_to profiles_path, notice: '新增 profile 成功'
+      redirect_to profiles_path(@profile), notice: '新增 profile 成功'
     else
       render :edit
     end
@@ -43,5 +45,9 @@ class ProfilesController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

@@ -87,9 +87,6 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    debug (1.8.0)
-      irb (>= 1.5.0)
-      reline (>= 0.3.1)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -118,9 +115,6 @@ GEM
     importmap-rails (1.2.1)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
-    io-console (0.6.0)
-    irb (1.7.4)
-      reline (>= 0.3.6)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -196,6 +190,8 @@ GEM
     public_suffix (5.0.3)
     puma (5.6.6)
       nio4r (~> 2.0)
+    pundit (2.3.1)
+      activesupport (>= 3.0.0)
     racc (1.7.1)
     rack (2.2.8)
     rack-protection (3.1.0)
@@ -233,8 +229,6 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     regexp_parser (2.8.1)
-    reline (0.3.7)
-      io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -334,9 +328,8 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   capybara
-  debug
   devise (~> 4.9)
-  dotenv-rails
+  dotenv-rails (~> 2.8)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
@@ -347,6 +340,7 @@ DEPENDENCIES
   omniauth-rails_csrf_protection
   pg (~> 1.1)
   puma (~> 5.0)
+  pundit (~> 2.3)
   rails (~> 7.0.6)
   rspec-rails (~> 6.0)
   rubocop
