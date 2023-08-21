@@ -8,8 +8,13 @@
   <div class="flex flex-wrap justify-center w-full " >
     <% @profiles.each do |profile| %>
       <div class="w-5/12 max-w-md p-6 mx-4 my-4 bg-white rounded-lg">
-        <%= render "shared/avatar", model: profile  %>
-        <p class="p-1 mb-2 text-white rounded bg-slate-700"><%= profile.location %></p>
+        <% if profile.avatar.attached? %>
+          <%= image_tag profile.avatar, class: "rounded-full w-28" %>
+        <% else %>
+          <img src="/default_avatar.png" alt="default_avatar" class="rounded-full w-28" >
+        <% end %>
+        <p class="p-1 my-2 text-white rounded bg-slate-700"><%= profile.location %></p>
+
         <h2 class="mb-2 text-xl font-semibold text-black"><%= link_to profile.name, profile_path(profile) %></h2>
         <p class="mb-2 text-gray-700"><%= link_to profile.content, profile_path(profile) %></p>
         <div class="flex ">
