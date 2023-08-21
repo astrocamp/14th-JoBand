@@ -7,12 +7,12 @@
   
   <div>
     <%= f.label :banner, '上傳樂團佈景' %>
-    <%= f.file_field :banner %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg" %>
   </div>
 
   <div>
     <%= f.label :avatar, '上傳樂團頭像' %>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :avatar, accept: "image/png, image/jpeg" %>
   </div>
   
   <div class="m-5 flex flex-wrap">
@@ -20,6 +20,16 @@
     <div id="check-boxes">
       <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
     </div>
+  </div>
+
+  <div>
+    <%= f.label :music, '上傳音樂' %>
+    <%= f.file_field :music, accept: "audio/mpeg" %>
+  </div>
+
+  <div>
+    <%= f.label :video, '上傳影片' %>
+    <%= f.file_field :video, accept: "video/mp4" %>
   </div>
 
   <div class="m-5">
