@@ -4,7 +4,7 @@
     <%= f.label :recruit_title, "招募標題" %>
     <%= f.text_field :recruit_title %>
   </div>
-    <p>使用樂器 instrument </p>
+    <p>需求樂器 instrument </p>
   <div>
     <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
       <%= i.label %>

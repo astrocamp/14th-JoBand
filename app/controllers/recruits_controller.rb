@@ -39,10 +39,6 @@ class RecruitsController < ApplicationController
 
   private
 
-  def load_instruments
-    @instruments = Instrument.all
-  end
-
   def set_recruit
     @recruit = Recruit.find(params[:id])
   end
