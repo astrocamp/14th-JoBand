@@ -13,8 +13,8 @@
     <% end %>
   </div>
   <div class="flex flex-wrap justify-center w-full " >
-    <% @profiles.each do |profile| %>
-      <%= render "shared/profile_card", profile: profile %>
-    <% end %>
+    <div class="my-10">
+      <%= render @profiles %>
+    </div>
   </div>
 </div>
