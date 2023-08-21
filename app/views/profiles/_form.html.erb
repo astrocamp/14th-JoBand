@@ -27,6 +27,14 @@
         <%= i.check_box %>
       <% end %>
     </div>
+    <div>
+      <%= f.label :music, "上傳音樂" %>
+      <%= f.file_field :music, accept: "audio/mpeg" %>
+    </div>
+    <div>
+      <%= f.label :video, "上傳影片" %>
+      <%= f.file_field :video, accept: "video/mp4" %>
+    </div>
     <%= f.submit %>
   <% end %>
 </div>
