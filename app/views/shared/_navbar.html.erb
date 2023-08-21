@@ -1,21 +1,21 @@
-<nav class="flex justify-between text-white navbar bg-base-100 self-start">
-  <div class="flex-1 self-start gap-5">
+<nav class="flex self-start justify-between text-white navbar bg-base-100">
+  <div class="self-start flex-1 gap-5">
     <%= link_to 'JoBand', root_path, class: "logo-icon" %>
     <%= link_to '找樂手', profiles_path, class: "btn btn-ghost normal-case text-xl" %>
     <%= link_to '找樂團', bands_path, class: "btn btn-ghost normal-case text-xl" %>
-    <a href="#" class="btn btn-ghost normal-case text-xl">找活動</a>
+    <a href="#" class="text-xl normal-case btn btn-ghost">找活動</a>
   </div>
   <div class="flex">
     <ul class="flex gap-5">
       <% if user_signed_in? %>
         <li>
-          <div class="dropdown dropdown-hover dropdown-end mb-1">
+          <div class="mb-1 dropdown dropdown-hover dropdown-end">
             <label class="m-1 btn">
               <%= link_to current_user.name, "#"%>
             </label>
             <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
               <% if current_user.profile.present?%>
-                <li><%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %></li>
+                <li><%= link_to "個人檔案", profile_path(current_user), class: "nav-link" %></li>
               <% else %>
                 <li><%= link_to "個人檔案", new_profile_path, class: "nav-link" %></li>
               <% end %>

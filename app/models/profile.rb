@@ -2,7 +2,6 @@
 
 class Profile < ApplicationRecord
   # validates
-  validates :name, presence: true
   validates :phone, presence: true
 
   # associations
