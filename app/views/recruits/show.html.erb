@@ -1,9 +1,9 @@
 <article>
 
   <div>
-    <h1><%= @recruit.recruit_title %></h1>
+    標題:<h1><%= @recruit.recruit_title %></h1>
   </div>
-     <p>需求樂器 instrument </p>
+     <p>需求樂器</p>
   <div>
     <% @recruit.instruments.each do |instrument| %>
       <%= instrument.name %>
@@ -11,15 +11,15 @@
   </div>
 
   <div>
-    <%= @recruit.condition %>
+    希望條件:<%= @recruit.condition %>
   </div>
 
   <div>
-    <%= @recruit.practice_time %>
+    練習時間:<%= @recruit.practice_time %>
   </div>
 
   <div>
-    <%= @recruit.area %>
+    地區:<%= @recruit.area %>
   </div>
 
   <div>
