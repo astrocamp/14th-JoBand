@@ -40,6 +40,6 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :banner, style_ids: [])
+    params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner, style_ids: [])
   end
 end

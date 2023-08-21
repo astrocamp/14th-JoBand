@@ -7,39 +7,61 @@
   </section>
   
   <section class="flex justify-center mb-5">
-    <div class="flex justify-around items-baseline w-4/5">
-      <%= render "shared/avatar", model: @band  %>
+    <div class="flex justify-around items-center w-4/5">
+      <%= render "shared/avatar", model: @band %>
       <h1 class="text-2xl"><%= @band.name %></h1>
       <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
     </div>
   </section>
   
-  <article class="flex justify-center bg-gray-200">
+  <article class="flex flex-col justify-center items-center w-full bg-gray-200">
     
-    <section class="my-10 mr-10 w-60">
-
-      <div>
-        <p>曲風</p> <%= render 'style', band: @band %>
+    <section class="flex justify-around w-9/12 mt-6 ">
+      <div class="flex flex-col items-center justify-center">
+        <p class="font-bold mb-2 text-lg" >曲風</p> 
+        <%= render 'style', band: @band %>
       </div>
 
-      <div class="my-5">
-        <p class="mb-3">創立時間</p>
+      <div class="flex flex-col items-center justify-center">
+        <p class="font-bold mb-2 text-lg">創立時間</p>
         <%= @band.founded_at %>
       </div>
 
-      <div class="my-5">
-        <p class="mb-3">地區</p>
+      <div class="flex flex-col items-center justify-center">
+        <p class="font-bold mb-2 text-lg">地區</p>
         <%= @band.area %>
       </div>
-
     </section>
     
-    <div class="w-2/4 mt-10">
-      <p class="text-black">
-        <%= @band.content %>
-      </p>
-    </div>
+    <section class="w-7/12  p-6">
+        <p class="text-black text-justify">
+          <%= @band.content %>
+        </p>
+    </section>
 
+    <section class=" w-9/12  flex flex-col items-center">
+      <div>
+        <% if @band.music.attached? %>
+          <audio controls controlsList="nodownload" class="mb-5">
+            <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
+            您的瀏覽器不支援音樂格式
+          </audio>
+        <% else %>
+          <p>沒有上傳任何音樂檔案</p>
+        <% end %>
+      </div>
+      <div>
+        <% if @band.video.attached? %>
+          <video width="640" height="360" controls controlsList="nodownload" class="mb-5">
+            <source src="<%= url_for(@band.video) %>" type="video/mp4">
+            您的瀏覽器不支援影片格式
+          </video>
+        <% else %>
+          <p>沒有上傳任何影片檔案</p>
+        <% end %>
+      </div>
+    </section>
+    
   </article>
 
   <div class="flex justify-center my-5">

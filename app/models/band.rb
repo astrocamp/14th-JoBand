@@ -7,6 +7,8 @@ class Band < ApplicationRecord
   has_rich_text :content
   has_one_attached :avatar
   has_one_attached :banner
+  has_one_attached :music
+  has_one_attached :video
   has_many :band_styles
   has_many :styles, through: :band_styles
 
