@@ -1,36 +1,49 @@
 <%= form_with(model: @band , data:{ turbo: false } ) do |f| %>
 
+  <div class="m-5">
+    <%= f.label :name, class:"mr-8" %>
+    <%= f.text_field :name , class:"text-black"%>
+  </div>
+  
   <div>
-    <%= f.label :name, '團名' %>
-    <%= f.text_field :name %>
+    <%= f.label :banner, '上傳樂團佈景' %>
+    <%= f.file_field :banner %>
   </div>
 
   <div>
-    <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
+    <%= f.label :avatar, '上傳樂團頭像' %>
+    <%= f.file_field :avatar %>
+  </div>
+  
+  <div class="m-5 flex flex-wrap">
+    <%= f.label :style_ids %>
+    <div id="check-boxes">
+      <%= f.collection_check_boxes :style_ids, style_collection, :id, :name %>
+    </div>
   </div>
 
-  <div>
-    <%= f.label :area, '地區' %>
-    <%= f.select :area , Band.areas.keys %>
+  <div class="m-5">
+    <%= f.label :area, class:"mr-8"%>
+    <%= f.select :area , Band.areas.keys , class:"text-black" %>
   </div>
 
-  <div>
-    <%= f.label :founded_at, '創立時間' %>
-    <%= f.date_field :founded_at %>
+  <div class="m-5">
+    <%= f.label :content , class:"mr-8"%>
+    <%= f.rich_text_area :content, class:"text-black bg-white" %>
   </div>
 
-  <div>
-    <%= f.label :content, '介紹' %>
-    <%= f.text_area :content %>
+  <div class="m-5">
+    <%= f.label :state, class:"mr-8" %>
+    <%= f.select :state , Band.states.keys , class:"text-black"%>
   </div>
 
-  <div>
-    <%= f.label :state, '狀態' %>
-    <%= f.select :state , Band.states.keys %>
+  <div  class="m-5">
+    <%= f.label :founded_at %>
+    <%= f.date_field :founded_at, class:"text-black" %>
   </div>
 
-  <div class="btn">
-    <%=f.submit '送出' %>
+  <div class="text-center">
+    <%=f.submit class:"btn btn-accent w-40" %>
   </div>
 
 <% end %>

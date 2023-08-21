@@ -14,6 +14,7 @@
           <img src="/default_avatar.png" alt="default_avatar" class="rounded-full w-28" >
         <% end %>
         <p class="p-1 my-2 text-white rounded bg-slate-700"><%= profile.location %></p>
+
         <h2 class="mb-2 text-xl font-semibold text-black"><%= link_to profile.name, profile_path(profile) %></h2>
         <p class="mb-2 text-gray-700"><%= link_to profile.content, profile_path(profile) %></p>
         <div class="flex ">
