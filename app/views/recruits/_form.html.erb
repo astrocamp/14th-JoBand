@@ -1,0 +1,34 @@
+<%= form_with(model: @recruit , data:{ turbo: false } ) do |f| %>
+
+  <div>
+    <%= f.label :recruit_title, "招募標題" %>
+    <%= f.text_field :recruit_title %>
+  </div>
+    <p>需求樂器</p>
+  <div>
+    <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
+      <%= i.label %>
+      <%= i.check_box %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :condition, "希望條件" %>
+    <%= f.text_area :condition %>
+  </div>
+
+  <div>
+    <%= f.label :practice_time, "練習時間" %>
+    <%= f.text_field :practice_time %>
+  </div>
+
+  <div>
+    <%= f.label :area, "地區" %>
+    <%= f.select :area, Recruit.areas.keys %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
+ 

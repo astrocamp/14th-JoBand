@@ -1,0 +1,18 @@
+<h1>招募中文章</h1>
+
+  <ul>
+    <% @recruits.each do |recruit| %>
+      <li>
+        <article>
+          <%= link_to recruit.recruit_title, recruit_path(recruit)%>
+          <%= link_to '更新', edit_recruit_path(recruit) %>
+          <%= link_to '刪除', recruit_path(recruit),
+                            data: {
+                              turbo_method: 'delete',
+                              turbo_confirm: '確定刪除？'
+                            } %>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+

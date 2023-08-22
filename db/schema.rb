@@ -12,9 +12,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
+ActiveRecord::Schema[7.0].define(version: 20_230_819_161_600) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
   create_table 'action_text_rich_texts', force: :cascade do |t|
     t.string 'name', null: false
     t.text 'body'
@@ -100,6 +101,26 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
     t.index ['user_id'], name: 'index_profiles_on_user_id'
   end
 
+  create_table 'recruit_and_instruments', force: :cascade do |t|
+    t.bigint 'recruit_id', null: false
+    t.bigint 'instrument_id', null: false
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['instrument_id'], name: 'index_recruit_and_instruments_on_instrument_id'
+    t.index ['recruit_id'], name: 'index_recruit_and_instruments_on_recruit_id'
+  end
+
+  create_table 'recruits', force: :cascade do |t|
+    t.string 'recruit_title'
+    t.text 'condition'
+    t.string 'practice_time'
+    t.integer 'area'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'band_id'
+    t.index ['band_id'], name: 'index_recruits_on_band_id'
+  end
+
   create_table 'styles', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', null: false
@@ -133,4 +154,7 @@ ActiveRecord::Schema[7.0].define(version: 20_230_817_120_153) do
   add_foreign_key 'band_styles', 'styles'
   add_foreign_key 'profile_and_instruments', 'instruments'
   add_foreign_key 'profile_and_instruments', 'profiles'
+  add_foreign_key 'recruit_and_instruments', 'instruments'
+  add_foreign_key 'recruit_and_instruments', 'recruits'
+  add_foreign_key 'recruits', 'bands'
 end

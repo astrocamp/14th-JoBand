@@ -1,0 +1,36 @@
+<article>
+
+  <div>
+    標題:<h1><%= @recruit.recruit_title %></h1>
+  </div>
+     <p>需求樂器</p>
+  <div>
+    <% @recruit.instruments.each do |instrument| %>
+      <%= instrument.name %>
+    <% end %>
+  </div>
+
+  <div>
+    <p>希望條件:</p>
+    <%= @recruit.condition %>
+  </div>
+
+  <div>
+    <p>練習時間:</p>
+    <%= @recruit.practice_time %>
+  </div>
+
+  <div>
+    <p>地區:</p>
+    <%= @recruit.area %>
+  </div>
+
+  <div>
+    <%= link_to "返回招募列表", recruits_path %>
+  </div>
+
+  <div>
+    <%= link_to "好想趕快加入" %>
+  </div>
+
+</article>
