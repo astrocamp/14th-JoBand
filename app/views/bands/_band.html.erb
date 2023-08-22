@@ -2,7 +2,7 @@
     <%= link_to band_path(band), action: 'go' do %>
       <li class="my-5">
         <div class="card lg:card-side bg-gray-800 shadow-xl">
-          <figure class="m-5">
+          <figure class="m-5 h-[200px] w-[200px] relative">
               <%= render "shared/avatar", model: band %>
           </figure>
           <div class="card-body">

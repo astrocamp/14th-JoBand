@@ -1,14 +1,16 @@
 <article id="band_show">
 
   <section class="mb-10">
-    <picture>
+    <figure>
       <%= render "shared/banner", model: @band  %>
-    </picture>
+    </figure>
   </section>
   
   <section class="flex justify-center mb-5">
     <div class="flex justify-around items-center w-4/5">
-      <%= render "shared/avatar", model: @band %>
+      <figure class="h-[200px] w-[200px] relative">
+        <%= render "shared/avatar", model: @band %>
+      </figure>
       <h1 class="text-2xl"><%= @band.name %></h1>
       <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
     </div>
