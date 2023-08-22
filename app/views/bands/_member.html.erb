@@ -1,4 +1,3 @@
-
 <% @band.users.each do |user| %>
   <p class="font-bold text-lg">成員</p><br>
   <%= link_to profile_path(user.profile), action: 'go' do %>
