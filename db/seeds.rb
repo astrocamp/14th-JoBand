@@ -24,3 +24,26 @@ Instrument.create([
                     { name: 'Drum' },
                     { name: 'Keyboard' }
                   ])
+
+demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
+
+User.create!(
+  name: 'Zooey Deschanel',
+  email: 'zooey@gg.gg',
+  password: '123123123'
+)
+
+demo_profile = User.find_by(email: 'zooey@gg.gg').create_profile(
+  phone: '3345678',
+  location: 'Mars',
+  seniority: '999',
+  content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
+)
+
+demo_profile.instruments << Instrument.find_by(name: 'Vocal')
+
+demo_profile.avatar.attach(
+  io: StringIO.new(demo_avatar),
+  filename: 'zooey.png',
+  content_type: 'image/png'
+)
