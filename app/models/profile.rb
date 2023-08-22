@@ -2,7 +2,7 @@
 
 class Profile < ApplicationRecord
   # validates
-  validates :phone, presence: true
+  # validates :phone, presence: true
 
   # associations
   has_one_attached :avatar
@@ -10,6 +10,8 @@ class Profile < ApplicationRecord
   has_one_attached :video
   has_many :profile_and_instrument
   has_many :instruments, through: :profile_and_instrument
+  has_many :band_members
+  has_many :bands, through: :band_members
   belongs_to :user
 
   def default_instrument(profile)

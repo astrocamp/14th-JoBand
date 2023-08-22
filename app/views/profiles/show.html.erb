@@ -3,6 +3,7 @@
     <div class="flex flex-col items-center my-3 h-[200px] w-[200px] relative ">
       <%= render "shared/avatar", model: @profile  %>
     </div>
+    <%= link_to '創建樂團', new_band_path, class:'btn btn-sm' %>
     <h1 class="my-3 mb-2 text-2xl font-bold text-black"><%= @user.name %></h1>
     <p class="my-3 text-gray-700">電話號碼：<%= @profile.phone %></p>
     <p class="my-3 text-gray-700">居住城市：<%= @profile.location %></p>
@@ -28,6 +29,7 @@
         <p>沒有上傳任何影片檔案</p>
       <% end %>
     </div>
+    <%= link_to '資料更新', edit_profile_path, class:'btn btn-sm' %>
   </div>  
 </div>
 
