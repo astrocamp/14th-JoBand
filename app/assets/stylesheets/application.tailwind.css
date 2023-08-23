@@ -80,7 +80,7 @@
   @apply bg-[#EE9545] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#e9ab75] hover:duration-300
 }
 
-.joband-text-bk{
+.joband-bk{
   @apply text-[#2A323A]
 }
 
