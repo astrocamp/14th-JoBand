@@ -4,7 +4,6 @@
     <h1 class="text-xl text-red-500 " >展示你的音樂作品集</h1>
     <% if user_signed_in?%>
       <% if current_user.profile.present? %>
-        
       <% else %>
         <button class="p-2 my-4 text-base text-white rounded bg-slate-500 hover:bg-slate-600" ><%= link_to "新增 個人檔案", new_profile_path %></button>
       <% end %>

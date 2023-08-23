@@ -1,0 +1,9 @@
+<% @band.users.each do |user| %>
+  <p class="font-bold text-lg">成員</p><br>
+  <%= link_to profile_path(user.profile), action: 'go' do %>
+    <%= user.name %>
+    <div class="h-20 w-20 relative">
+     <%= render "shared/avatar", model: user.profile %>
+    </div>
+  <% end %>
+<% end %>

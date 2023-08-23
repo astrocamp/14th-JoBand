@@ -11,6 +11,8 @@ class Band < ApplicationRecord
   has_one_attached :video
   has_many :band_styles
   has_many :styles, through: :band_styles
+  has_many :band_members
+  has_many :users, through: :band_members
 
   # enum
   enum state: {
