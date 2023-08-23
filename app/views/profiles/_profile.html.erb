@@ -67,7 +67,7 @@
           <p class="block mt-2 font-semibold text-[#2A323A]">KEYBOARD</p>
         </div>
       <% end %>
-
+      
       <% if profile.default_instrument(profile) == "listener" %>
         <div class="flex flex-wrap justify-center w-[150px] relative">
           <a href="#" class="flex items-center justify-center z-[1]">
@@ -78,5 +78,5 @@
         </div>
       <% end %>
   </div>
-  <%= link_to "", profile_path(profile), class: "block w-full h-full absolute" %>
+  <%= link_to '', profile_path(profile), class: "block w-full h-full absolute" %>
 </div>

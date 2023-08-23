@@ -22,7 +22,7 @@
     </div>
     <p class="text-white">使用樂器 instrument </p>
     <div>
-      <%= f.collection_check_boxes :instrument_ids, Instrument.all, :id, :name %>
+      <%= f.collection_check_boxes :instrument_ids, instruments_all, :id, :name %>
     </div>
     <div>
       <%= f.label :music, "上傳音樂" %>
