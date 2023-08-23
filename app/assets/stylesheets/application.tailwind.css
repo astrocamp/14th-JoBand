@@ -13,7 +13,8 @@
   }
 }
 
-Font Style
+/* Font Style */
+
 .h1 {
   @apply block my-5 text-2xl;
 }
@@ -23,17 +24,17 @@ Font Style
 }
 
 .h3 {
-  @apply block text-lg;
+  @apply block my-3 text-lg;
 }
 
 .h4 {
-  @apply block text-base;
+  @apply block my-3 text-base;
 }
 
 /* session style */
 
 .logo-icon {
-  @apply text-xl cursor-pointer select-none;
+  @apply mx-5 my-2 text-xl cursor-pointer;
 }
 
 .nav-link {
@@ -60,8 +61,8 @@ Font Style
   @apply cursor-pointer select-none rounded-md
 }
 
-.joband-btn {
-  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300
+.joband-action-btn {
+  @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300
 }
 
 .joband-tag-location {
@@ -72,6 +73,17 @@ Font Style
   @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#eb656b] hover:duration-300
 }
 
+.joband-tag-style {
+  @apply bg-[#EE9545] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#e9ab75] hover:duration-300
+}
+
+.joband-bk{
+  @apply text-[#2A323A]
+}
+
+.joband-shadow{
+  @apply drop-shadow-2xl
+}
 /*
 
 @layer components {
