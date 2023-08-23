@@ -1,34 +1,36 @@
-<%= form_with(model: @recruit , data:{ turbo: false } ) do |f| %>
+<div class="flex justify-center mt-5 text-white">
+  <%= form_with(model: @recruit , data:{ turbo: false } ) do |f| %>
 
-  <div>
-    <%= f.label :recruit_title, "招募標題" %>
-    <%= f.text_field :recruit_title %>
+  <div class="mb-5">
+    <%= f.label :recruit_title, "標題" %>
+    <%= f.text_field :recruit_title, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
   </div>
-    <p>需求樂器</p>
-  <div>
+
+  <div class="mb-5">
+    <%= f.label :condition, "希望條件" %>
+    <%= f.text_area :condition, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+  </div>
+
+  <div class="mb-5">
+    <%= f.label :practice_time, "練習時間" %>
+    <%= f.text_field :practice_time, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+  </div>
+
+  <p>需求樂器</p>
+  <div class="mt-1 mb-5">
     <%= f.collection_check_boxes :instrument_ids, @instruments, :id, :name do |i| %>
-      <%= i.label %>
       <%= i.check_box %>
+      <%= i.label %>
     <% end %>
   </div>
 
-  <div>
-    <%= f.label :condition, "希望條件" %>
-    <%= f.text_area :condition %>
-  </div>
-
-  <div>
-    <%= f.label :practice_time, "練習時間" %>
-    <%= f.text_field :practice_time %>
-  </div>
-
-  <div>
+  <div class="mb-8">
     <%= f.label :area, "地區" %>
     <%= f.select :area, Recruit.areas.keys %>
   </div>
 
-  <div>
+  <div class="bg-blue-500 hover:bg-blue-600 font-semibold rounded-lg p-1 w-32 mb-5 mx-auto text-center">
     <%= f.submit %>
   </div>
-<% end %>
- 
+  <% end %>
+</div>
