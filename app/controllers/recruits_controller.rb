@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
+  before_action :set_band
+  before_action :load_instruments, only: %i[new edit]
   before_action :set_recruit, only: %i[edit update show destroy]
-  def index
-    @recruits = Recruit.order(id: :desc)
-  end
+  # def index
+  #   @recruits = Recruit.order(id: :desc)
+  # end
 
   def new
     @recruit = Recruit.new
@@ -43,6 +45,6 @@ class RecruitsController < ApplicationController
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, instrument_ids: [])
+    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area,  instrument_ids: [])
   end
 end

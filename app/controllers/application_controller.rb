@@ -17,4 +17,25 @@ class ApplicationController < ActionController::Base
   def default_url_options
     { locale: I18n.locale }
   end
+
+  private
+
+  def load_instruments
+    @instruments = Instrument.all
+  end
+
+def current_band
+  if band_signed_in?
+    @current_band ||= Band.find_by(id: session[:band_id])
+  else
+    nil
+  end
+end
+
+
+def set_band
+  @band = Band.find(params[:id])
+end
+
+
 end

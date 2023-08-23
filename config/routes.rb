@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   resources :profiles, except: [:destroy]
-  resources :bands, except: [:destroy]
-
-  resources :recruits
+  resources :bands, except: [:destroy] do
+    member do
+      resources :recruits
+    end
+  end
 end
