@@ -21,4 +21,13 @@ class Profile < ApplicationRecord
       'listener'
     end
   end
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["content", "location", "name", "seniority"]
+  end
+
+  def self.ransackable_associations(auth_object = nil)
+    ["band_members", "bands", "instruments", "profile_and_instrument", "user"]
+  end
+
 end

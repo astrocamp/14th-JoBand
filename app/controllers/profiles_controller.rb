@@ -5,8 +5,8 @@ class ProfilesController < ApplicationController
   before_action :set_user, only: %i[show]
 
   def index
-    @profiles = Profile.order(id: :desc)
-    @users = User.all
+    @p = Profile.ransack(params[:q])
+    @profiles = @p.result(distinct: true)
   end
 
   def new
