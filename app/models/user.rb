@@ -12,10 +12,13 @@ class User < ApplicationRecord
   has_many :band_members
   has_many :bands, through: :band_members
 
-
   # ransack
-  def self.ransackable_attributes(auth_object = nil)
-    ["name"]
+  def self.ransackable_attributes(_auth_object = nil)
+    ['name']
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[band_members bands profile]
   end
 
   def self.find_for_google_oauth2(access_token, _signed_in_resource = nil)

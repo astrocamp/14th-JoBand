@@ -5,7 +5,7 @@
 
     <%= search_form_for @p do |user| %>
       <div class="m-5 flex justify-center">
-        <%= user.search_field :user_name_cont, class:'mr-3'%>
+        <%= user.search_field :user_name_or_instruments_name_cont, class:'mr-3'%>
         <%= user.submit class:'btn btn-sm' %>
       </div>
       <% instruments_all.each do |instrument| %>

@@ -22,12 +22,11 @@ class Profile < ApplicationRecord
     end
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["content", "location", "name", "seniority"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[content location name seniority]
   end
 
-  def self.ransackable_associations(auth_object = nil)
-    ["band_members", "bands", "instruments", "profile_and_instrument", "user"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[band_members bands instruments profile_and_instrument user]
   end
-
 end
