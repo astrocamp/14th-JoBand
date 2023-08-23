@@ -1,22 +1,23 @@
-<h1 class="font-bold text-xl mx-auto text-red-500 p-5 text-center" >招募中的文章</h1>
+<h1 class="font-bold text-xl mx-auto text-red-500 p-5 text-center">招募中的文章</h1>
 
-<div class="bg-red-300 flex justify-center text-gray-700">
+<div class="flex justify-center text-gray-700 mt-2">
   <ul class="w-3/5">
     <% @recruits.each do |recruit| %>
-      <li class="bg-[#D9D9D9] flex rounded-lg h-40 mb-4 p-4">
-        <article>
+      <li class="bg-[#D9D9D9] rounded-lg h-48 mb-5 p-5">
+        <article class="flex justify-between">
           <div class="flex flex-col">
-            <h2 class="font-bold text-[#2A323A] hover:text-gray-600 text-xl mb-3"><%= link_to recruit.recruit_title, recruit_path(recruit)%></h2>
-            <p class="text-sm mb-3"><%= recruit.condition %></p>
-            <p class="text-sm"><%= recruit.practice_time %></p>
+            <h2 class="font-bold text-[#2A323A] hover:text-gray-600 text-xl mb-5"><%= link_to recruit.recruit_title, recruit_path(recruit)%></h2>
+            <p class="text-sm mb-5"><%= recruit.condition %></p>
+            <p class="text-sm mb-5"><%= recruit.practice_time %></p>
+            <a href="#" class="bg-white text-sm rounded-lg w-20 text-center"><%= recruit.area %></a>
           </div>
-          <div class="flex flex-col">
-            <p><%= link_to '更新', edit_recruit_path(recruit) %></p>
-            <p><%= link_to '刪除', recruit_path(recruit),
+          <div class="flex flex-col mt-12">
+            <button class="mb-5 bg-[#2A323A] text-white rounded-lg p-1 text-sm"><%= link_to '更新', edit_recruit_path(recruit) %></button>
+            <button class="bg-[#2A323A] text-white rounded-lg p-1 text-sm"><%= link_to '刪除', recruit_path(recruit),
                               data: {
                                 turbo_method: 'delete',
                                 turbo_confirm: '確定刪除？'
-                              } %></p>
+                              } %></button>
           </div>
         </article>
       </li>
