@@ -4,8 +4,8 @@
   </div>
 
   <div class="w-[450px] flex flex-wrap p-5">
-    <p class=" w-full font-semibold text-[#2A323A] h2 drop-shadow-md"><%= profile.user.name %></p>
-    <p class=" w-full block h-[70px] text-gray-700"><%= profile.content.truncate(100) %></p>
+    <p class="w-full font-semibold joband-text-bk h2 drop-shadow-md"><%= profile.user.name %></p>
+    <p class=" w-full block h-[70px] joband-text-bk"><%= profile.content.truncate(100) %></p>
     <div class="flex w-full mt-4">
       <% if profile.location.present? %>
         <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= profile.location %></a>
@@ -16,67 +16,8 @@
     </div>
   </div>
 
-  <div class="w-[200px] h-[200px] flex justify-center items-center">
-  
-      <% if profile.default_instrument(profile) == "Vocal" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/vocal.svg" alt="vocal_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">VOCAL</p>
-        </div>
-      <% end %>
-      
-      <% if profile.default_instrument(profile) == "Guitar" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/guitar.svg" alt="guitar_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">GUITAR</p>
-        </div>
-      <% end %>
-
-      <% if profile.default_instrument(profile) == "Drum" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/drum.svg" alt="drum_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">DRUM</p>
-        </div>
-      <% end %>
-
-      <% if profile.default_instrument(profile) == "Bass" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/bass.svg" alt="bass_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">BASS</p>
-        </div>
-      <% end %>
-
-      <% if profile.default_instrument(profile) == "Keyboard" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/keyboard.svg" alt="keyboard_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">KEYBOARD</p>
-        </div>
-      <% end %>
-      
-      <% if profile.default_instrument(profile) == "listener" %>
-        <div class="flex flex-wrap justify-center w-[150px] relative">
-          <a href="#" class="flex items-center justify-center z-[1]">
-            <img src="/icon_img/listener.svg" alt="listener_icon" class="absolute w-1/2 p-1 drop-shadow">
-            <div class="block w-[120px] h-[120px] bg-white rounded-full shadow-inner"></div>
-          </a>
-          <p class="block mt-2 font-semibold text-[#2A323A]">LISTENER</p>
-        </div>
-      <% end %>
+  <div class="w-[150px] h-[150px] flex justify-center items-center">
+    <%= render "/shared/instrument", instrument: profile.default_instrument(profile) %>
   </div>
   <%= link_to '', profile_path(profile), class: "block w-full h-full absolute" %>
 </div>

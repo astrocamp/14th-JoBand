@@ -1,41 +1,47 @@
-<div class="flex justify-center w-11/12 h-auto p-6 mx-auto rounded-lg shadow-md bg-slate-100">  
-  <div class="flex flex-col items-center w-full p-2 ">
-
-    <div class="flex flex-col items-center my-3 h-[200px] w-[200px] relative ">
-      <%= render "shared/avatar", model: @profile  %>
-    </div>
+<div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto p-10 rounded-[50px] shadow-md bg-slate-100">  
+  <div class="my-10 h-[200px] w-[200px] relative ">
+    <%= render "shared/avatar", model: @profile  %>
+  </div>
+  <h1 class="w-full mb-10 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @user.name %></h1>
     
-    <%= link_to '創建樂團', new_band_path, class:'btn btn-sm' %>
-    <h1 class="my-3 mb-2 text-2xl font-bold text-black"><%= @user.name %></h1>
-    <p class="my-3 text-gray-700">電話號碼：<%= @profile.phone %></p>
-    <p class="my-3 text-gray-700">居住城市：<%= @profile.location %></p>
-    <p class="my-3 text-gray-700">樂齡：<%= @profile.seniority %></p>
-    <p class="text-gray-700">內容：<%= @profile.content %></p>
-    <p>所屬樂團</p>
-    <div class="center">
-      <%= render 'band' %>
-    </div>
-      
-    <div class="flex flex-col items-center my-3 ">
-      <% if @profile.music.attached? %>
-        <audio controls controlsList="nodownload">
-          <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
-          您的瀏覽器不支援音樂格式
-        </audio>
-      <% else %>
-        <p>沒有上傳任何音樂檔案</p>
+  <div class="flex flex-wrap justify-center w-full px-40 joband-text-bk">
+    <div class="flex justify-around w-auto mb-12">
+      <% @profile.instruments.each do |instrument| %>
+        <div class="w-[80px] h-[80px] flex relative mx-3 my-3">
+          <%= render "/shared/instrument", instrument: instrument %>
+        </div>
       <% end %>
     </div>
-
-    <div class="flex flex-col items-center my-3 ">
-      <% if @profile.video.attached? %>
-        <video width="640" height="360" controls controlsList="nodownload">
-          <source src="<%= url_for(@profile.video) %>" type="video/mp4">
-          您的瀏覽器不支援影片格式
-        </video>
-      <% else %>
-        <p>沒有上傳任何影片檔案</p>
-      <% end %>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">電話號碼：<%= @profile.phone %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">居住城市：<%= @profile.location %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">樂齡：<%= @profile.seniority %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">內容：<%= @profile.content %></p>
+    <span class="w-full joband-line-bk"></span>
+    <div class="flex flex-col w-full my-5">
+      <div class="my-3 ">
+        <% if @profile.music.attached? %>
+          <audio controls controlsList="nodownload" class="w-full">
+            <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
+            您的瀏覽器不支援音樂格式
+          </audio>
+        <% else %>
+          <p class="w-full">沒有上傳任何音樂檔案</p>
+        <% end %>
+      </div>
+      <div class="my-3 ">
+        <% if @profile.video.attached? %>
+          <video width="640" height="360" controls controlsList="nodownload" class="w-full">
+            <source src="<%= url_for(@profile.video) %>" type="video/mp4">
+            您的瀏覽器不支援影片格式
+          </video>
+        <% else %>
+          <p class="w-full">沒有上傳任何影片檔案</p>
+        <% end %>
+      </div>
     </div>
     <%= link_to '資料更新', edit_profile_path, class:'btn btn-sm' %>
 
