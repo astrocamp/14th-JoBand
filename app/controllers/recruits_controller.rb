@@ -2,7 +2,7 @@
 
 class RecruitsController < ApplicationController
   before_action :set_band
-  before_action :load_instruments, only: %i[new edit]
+  before_action :load_instruments, only: %i[new edit create]
   before_action :set_recruit, only: %i[edit update show destroy]
   # def index
   #   @recruits = Recruit.order(id: :desc)
@@ -33,7 +33,7 @@ class RecruitsController < ApplicationController
 
   def destroy
     @recruit.destroy
-    redirect_to recruits_path, notice: '刪除成功'
+    redirect_to band_path, notice: '刪除成功'
   end
 
   def show; end
@@ -45,6 +45,6 @@ class RecruitsController < ApplicationController
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area,  instrument_ids: [])
+    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, :band_id, instrument_ids: [])
   end
 end
