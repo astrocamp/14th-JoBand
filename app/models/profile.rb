@@ -16,7 +16,7 @@ class Profile < ApplicationRecord
 
   def default_instrument(profile)
     if profile.instruments != []
-      instruments.first.name
+      instruments.first
     else
       'listener'
     end
