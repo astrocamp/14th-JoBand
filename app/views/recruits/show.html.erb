@@ -9,15 +9,15 @@
       <% end %>
     </p>
 
-  <div>
-    <p>希望條件:</p>
-    <%= @recruit.condition %>
-  </div>
+    <p class="my-3">需求樂器 :
+      <% @recruit.instruments.each do |instrument| %>
+        <%= instrument.name %>
+      <% end %>
+    </p>
 
-  <div>
-    <p>練習時間:</p>
-    <%= @recruit.practice_time %>
-  </div>
+    <p class="my-3">希望條件 :
+      <%= @recruit.condition %>
+    </p>
 
     <p class="my-3">地區 :
       <%= @recruit.area %>
