@@ -12,9 +12,11 @@
   </head>
 
   <body data-theme="dark">
-    <%= render 'shared/navbar' %>
+    <nav class="fixed top-0 z-10 w-full">
+      <%= render 'shared/navbar' %>
+    </nav>
     <%= render 'shared/flash' %>
-    <main class="container mx-auto">
+    <main class="w-[90%] mx-auto mt-28 mb-20">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>

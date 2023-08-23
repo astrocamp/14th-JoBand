@@ -7,16 +7,16 @@
     </video>
   </div>
   <div class="absolute flex flex-wrap justify-center w-[550px] drop-shadow-lg">
-    <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full">
-    <p class="w-full mt-10 text-xl text-center text-white">拓展音樂之路，找尋完美夥伴</p>
-    <%= link_to '現在就加入', new_user_registration_path, class: "mt-10 joband-btn" %>
+    <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full my-8">
+    <p class="w-full text-center text-white h1">拓展音樂之路，找尋完美夥伴</p>
+    <%= link_to '現在就加入', new_user_registration_path, class: "my-8 joband-action-btn" %>
   </div>
 </header>
 <nav class="sticky top-0 z-10">
   <%= render 'shared/navbar'%>
 </nav>
-<section class="flex flex-wrap justify-center mt-10 drop-shadow-lg">
-  <p class="w-full my-10 text-xl text-center text-white">在 Joband 你可以展示你的音樂作品集</p>
+<section class="w-[90%] mx-auto flex flex-wrap justify-center mt-20 drop-shadow-lg mb-20">
+  <p class="w-full text-center text-white h2">在 Joband 你可以展示你的音樂作品集</p>
     <%= render "profiles/profile", profile: User.find_by(email: "zooey@gg.gg").profile %>
 </section>
 
