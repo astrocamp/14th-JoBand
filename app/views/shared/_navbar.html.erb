@@ -1,6 +1,8 @@
-<nav class="flex self-start justify-between text-white navbar bg-base-100">
+<nav class="flex self-start justify-between text-white navbar bg-base-100 joband-shadow">
   <div class="self-start flex-1 gap-5">
-    <%= link_to 'JoBand', root_path, class: "logo-icon" %>
+    <%= link_to root_path, class: "logo-icon" do %>
+      <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10">
+    <% end %>
     <%= link_to '找樂手', profiles_path, class: "btn btn-ghost normal-case text-xl" %>
     <%= link_to '找樂團', bands_path, class: "btn btn-ghost normal-case text-xl" %>
     <a href="#" class="text-xl normal-case btn btn-ghost">找活動</a>
@@ -8,11 +10,20 @@
   <div class="flex">
     <ul class="flex gap-5">
       <% if user_signed_in? %>
-        <li>
-          <div class="mb-1 dropdown dropdown-hover dropdown-end">
-            <label class="m-1 btn">
-              <%= link_to current_user.name, "#"%>
-            </label>
+        <li class="flex align-middle">
+          <div class="dropdown dropdown-hover dropdown-end">
+            <ul class="flex items-center mx-5 cursor-pointer">
+              <% if current_user.profile.present?%>
+                <li class="relative items-center w-10 joband-shadow">
+                  <%= render "shared/avatar", model: current_user.profile %>
+                </li>
+              <% else %>
+                <li class="relative items-center w-10 joband-shadow">
+                  <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full" >
+                  <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
+                </li>
+              <% end %>  
+            </ul>
             <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
               <% if current_user.profile.present?%>
                 <li><%= link_to "個人檔案", profile_path(current_user), class: "nav-link" %></li>
