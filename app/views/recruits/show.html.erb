@@ -1,36 +1,29 @@
-<article>
+<article class="flex justify-center w-9/12 h-auto p-6 mx-auto rounded-lg shadow-md bg-slate-100 text-gray-700 ">
 
-  <div>
-    標題:<h1><%= @recruit.recruit_title %></h1>
-  </div>
-     <p>需求樂器</p>
-  <div>
-    <% @recruit.instruments.each do |instrument| %>
-      <%= instrument.name %>
-    <% end %>
-  </div>
+  <div class="flex flex-col items-center">
+    <h1 class="font-bold text-xl text-[#2A323A] mb-5"><%= @recruit.recruit_title %>
+    </h1>
 
-  <div>
-    <p>希望條件:</p>
-    <%= @recruit.condition %>
-  </div>
+    <p class="my-3">需求樂器 :
+      <% @recruit.instruments.each do |instrument| %>
+        <%= instrument.name %>
+      <% end %>
+    </p>
 
-  <div>
-    <p>練習時間:</p>
-    <%= @recruit.practice_time %>
-  </div>
+    <p class="my-3">希望條件 :
+      <%= @recruit.condition %>
+    </p>
 
-  <div>
-    <p>地區:</p>
-    <%= @recruit.area %>
-  </div>
+    <p class="my-3">練習時間 :
+      <%= @recruit.practice_time %>
+    </p>
 
-  <div>
-    <%= link_to "返回招募列表", recruits_path %>
-  </div>
+     <p class="my-3">地區 :
+      <%= @recruit.area %>
+    </p>
 
-  <div>
-    <%= link_to "好想趕快加入" %>
+    <button class="my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"><%= link_to "好想趕快加入" %></button>
+    <button class="bg-[#2A323A] text-white rounded-md p-2"><%= link_to "返回招募列表", recruits_path %></button>
   </div>
 
 </article>
