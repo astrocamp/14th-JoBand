@@ -12,8 +12,8 @@
             <a href="#" class="bg-white text-sm rounded-lg w-20 text-center"><%= recruit.area %></a>
           </div>
           <div class="flex flex-col mt-12">
-            <%= link_to '更新', edit_recruit_path(@recruit), class:"mb-3 bg-[#2A323A] text-white rounded-lg p-1 text-sm" %>
-            <%= link_to '刪除', recruit_path(@recruit), class="bg-[#2A323A] text-white rounded-lg p-1 text-sm",
+            <%= link_to '更新', edit_recruit_path(@recruit), class: "mb-3 bg-[#2A323A] text-white rounded-lg p-1 text-sm" %>
+            <%= link_to '刪除', recruit_path(@recruit), class: "bg-[#2A323A] text-white rounded-lg p-1 text-sm",
                               data: {
                                 turbo_method: 'delete',
                                 turbo_confirm: '確定刪除？'
