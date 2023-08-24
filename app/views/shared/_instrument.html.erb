@@ -1,4 +1,4 @@
-<% if instrument.name == "Vocal" %>
+<% if instrument == "Vocal" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
     <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/vocal.svg" alt="vocal_icon" class="absolute w-1/2 p-1 drop-shadow">
@@ -8,7 +8,7 @@
   </div>
 <% end %>
 
-<% if instrument.name == "Guitar" %>
+<% if instrument == "Guitar" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
     <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/guitar.svg" alt="guitar_icon" class="absolute w-1/2 p-1 drop-shadow">
@@ -18,7 +18,7 @@
   </div>
 <% end %>
 
-<% if instrument.name == "Drum" %>
+<% if instrument == "Drum" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
     <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/drum.svg" alt="drum_icon" class="absolute w-1/2 p-1 drop-shadow">
@@ -28,7 +28,7 @@
   </div>
 <% end %>
 
-<% if instrument.name == "Bass" %>
+<% if instrument == "Bass" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
     <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/bass.svg" alt="bass_icon" class="absolute w-1/2 p-1 drop-shadow">
@@ -38,7 +38,7 @@
   </div>
 <% end %>
 
-<% if instrument.name == "Keyboard" %>
+<% if instrument == "Keyboard" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
     <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/keyboard.svg" alt="keyboard_icon" class="absolute w-1/2 p-1 drop-shadow">
@@ -48,11 +48,11 @@
   </div>
 <% end %>
 
-<% if instrument.name == "listener" %>
+<% if instrument == "listener" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex items-center justify-center z-[1]">
+    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
       <img src="/icon_img/listener.svg" alt="listener_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="block bg-white rounded-full shadow-inner w-h-full"></div>
+      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
     </a>
     <p class="block mt-2 font-semibold joband-text-bk">LISTENER</p>
   </div>
