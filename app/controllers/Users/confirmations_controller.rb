@@ -17,14 +17,15 @@ module Users
     # protected
 
     # The path used after resending confirmation instructions.
-    # def after_resending_confirmation_instructions_path_for(resource_name)
-    #   super(resource_name)
-    # end
+    def after_resending_confirmation_instructions_path_for(resource_name)
+      sign_in(resource)
+      letsjam_profile_path(resource)
+    end
 
     # The path used after confirmation.
     def after_confirmation_path_for(resource_name, resource)
       sign_in(resource)
-      super(resource_name, resource)
+      letsjam_profile_path(resource)
     end
   end
 end

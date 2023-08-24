@@ -22,6 +22,12 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def welcome
+  end
+
+  def letsjam
+  end
+
   def show; end
 
   def edit; end

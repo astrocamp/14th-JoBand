@@ -24,6 +24,11 @@ en:
     current_password: "Current Password"
     need_current_password: "(we need your current password to confirm your changes)"
     leave_blank: "(leave blank if you don't want to change it)"
+  step:
+    one: "Register"
+    two: "Confirmation"
+    three: "Create Your Profile"
+    four: "Create/Join a Band"
   email:
     by_joband: "JoBand Team"
     reset_password_warning: "Someone has requested to change your password. You can do this through the link below."
