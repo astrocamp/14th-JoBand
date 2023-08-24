@@ -24,6 +24,11 @@ tw:
     current_password: "目前密碼"
     need_current_password: "(我們需要您目前的密碼來確認您的變更。)"
     leave_blank: "（留白如果您不打算更換密碼）"
+  step:
+    one: "會員註冊"
+    two: "信箱驗證"
+    three: "建立個人檔案"
+    four: "成立/加入樂團！"
   email:
     by_joband: "JoBand 開發團隊"
     reset_password_warning: "有人向我們發出變更密碼的請求，您可以透過以下按鈕來變更密碼："

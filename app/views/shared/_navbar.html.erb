@@ -28,7 +28,7 @@
               <% if current_user.profile.present?%>
                 <li><%= link_to "個人檔案", profile_path(current_user), class: "nav-link" %></li>
               <% else %>
-                <li><%= link_to "個人檔案", new_profile_path, class: "nav-link" %></li>
+                <li><%= link_to "個人檔案", letsjam_profile_path(current_user), class: "nav-link" %></li>
               <% end %>
               <li><%= link_to "我的樂團", "#", class: "nav-link" %></li>
               <li><%= link_to "設定", edit_user_registration_path, class: "nav-link" %></li>

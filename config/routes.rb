@@ -12,7 +12,13 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     confirmations: 'users/confirmations'
   }
-  resources :profiles, except: [:destroy]
+  resources :profiles, except: [:destroy] do
+    member do
+      get :welcome
+      get :letsjam
+    end
+  end
+  
   resources :bands, except: [:destroy] do
     resources :recruits, shallow: true
   end
