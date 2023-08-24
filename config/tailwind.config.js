@@ -13,6 +13,8 @@ module.exports = {
       colors: {
         'dark': '#444',
         'nav-hov': '#2f3136',
+        'facebook': '#1877f2',
+        'google': '#ea4335'
       },
     },
   },
