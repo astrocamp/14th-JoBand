@@ -1,14 +1,16 @@
 <% if @profile.user.bands.any? %>
   <% @profile.user.bands.each do |band| %>
     <%= link_to band_path(band), action: 'go' do %>
-    <div class="mx-2">
-      <%= band.name %>
-      <div class="w-20 h-20 relative">
+    <div class="flex justify-center flex-wrap mx-2 w-[180px]">
+      <div class="relative w-[120px] h-[120px] mt-5">
         <%= render 'shared/avatar' , model: band %>
+      </div>
+      <div class="text-center h2 joband-text-bk joband-shadow">
+        <%= band.name %>
       </div>
     </div>
     <% end %>
   <% end %>
 <% else %>
-  <p>未加入樂團</p>
+  <p class="w-full my-3 text-gray-400 h4">未加入樂團</p>
 <% end %>

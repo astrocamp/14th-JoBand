@@ -85,7 +85,7 @@
 }
 
 .joband-shadow{
-  @apply drop-shadow-2xl
+  @apply drop-shadow-xl
 }
 
 .joband-line-bk{

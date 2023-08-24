@@ -2,12 +2,14 @@
   <div class="my-10 h-[200px] w-[200px] relative ">
     <%= render "shared/avatar", model: @profile  %>
   </div>
-  <h1 class="w-full mb-10 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @user.name %></h1>
-    
-  <div class="flex flex-wrap justify-center w-full px-40 joband-text-bk">
+  <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @user.name %></h1>
+  <% if current_user&.id == @profile.id %>
+    <%= link_to '創建樂團', new_band_path, class:'joband-action-btn' %>
+  <% end %>
+  <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
-        <div class="w-[80px] h-[80px] flex relative mx-3 my-3">
+        <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
           <%= render "/shared/instrument", instrument: instrument %>
         </div>
       <% end %>
@@ -21,6 +23,11 @@
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">內容：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">所屬樂團：</p>
+    <div class="flex flex-wrap w-full my-5 ">
+      <%= render 'band' %>
+    </div>
+    <span class="w-full joband-line-bk"></span>
     <div class="flex flex-col w-full my-5">
       <div class="my-3 ">
         <% if @profile.music.attached? %>
@@ -29,7 +36,7 @@
             您的瀏覽器不支援音樂格式
           </audio>
         <% else %>
-          <p class="w-full">沒有上傳任何音樂檔案</p>
+          <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
         <% end %>
       </div>
       <div class="my-3 ">
@@ -39,12 +46,13 @@
             您的瀏覽器不支援影片格式
           </video>
         <% else %>
-          <p class="w-full">沒有上傳任何影片檔案</p>
+          <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
         <% end %>
       </div>
     </div>
-    <%= link_to '資料更新', edit_profile_path, class:'btn btn-sm' %>
-
+    <% if current_user&.id == @profile.id %>
+      <%= link_to '資料更新', edit_profile_path, class:'joband-action-btn' %>
+    <% end %>
   </div>  
 </div>
 
