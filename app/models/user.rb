@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+# 三方登入按鈕
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -37,7 +38,7 @@ class User < ApplicationRecord
       User.create(
         name: data['name'],
         email: data['email'],
-        password: Devise.friendly_token[0, 20],
+        password: Devise.friendly_token[0, 16],
         google_token: access_token.credentials.token,
         google_uid: access_token.uid
       )
@@ -65,7 +66,7 @@ class User < ApplicationRecord
     user.fb_uid = auth.uid
     user.fb_token = auth.credentials.token
     user.email = auth.info.email
-    user.password = Devise.friendly_token[0, 20]
+    user.password = Devise.friendly_token[0, 16]
     user.name = auth.info.name
     user.save!
     user
