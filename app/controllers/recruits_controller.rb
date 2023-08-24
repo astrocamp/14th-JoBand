@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
+  before_action :set_band_id, only: %i[new create]
   before_action :set_recruit, only: %i[edit update show destroy]
-  def index
-    @recruits = Recruit.order(id: :desc)
-  end
 
   def new
     @recruit = Recruit.new
   end
 
   def create
-    @recruit = Recruit.new(recruit_params)
+    @recruit = @band.build_recruit(recruit_params)
+
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
@@ -31,12 +30,16 @@ class RecruitsController < ApplicationController
 
   def destroy
     @recruit.destroy
-    redirect_to recruits_path, notice: '刪除成功'
+    redirect_to band_path(@recruit.band), notice: '刪除成功'
   end
 
   def show; end
 
   private
+
+  def set_band_id
+    @band = Band.find(params[:band_id])
+  end
 
   def set_recruit
     @recruit = Recruit.find(params[:id])

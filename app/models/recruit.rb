@@ -5,6 +5,7 @@ class Recruit < ApplicationRecord
 
   has_many :recruit_and_instrument
   has_many :instruments, through: :recruit_and_instrument, dependent: :destroy
+  belongs_to :band
 
   enum area: {
     north: 0,

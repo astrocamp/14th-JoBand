@@ -1,5 +1,4 @@
 <article class="flex justify-center w-9/12 h-auto p-6 mx-auto rounded-lg shadow-md bg-slate-100 text-gray-700 ">
-
   <div class="flex flex-col items-center">
     <h1 class="font-bold text-xl text-[#2A323A] mb-5"><%= @recruit.recruit_title %>
     </h1>
@@ -18,12 +17,19 @@
       <%= @recruit.practice_time %>
     </p>
 
-     <p class="my-3">地區 :
+    <p class="my-3">地區 :
       <%= @recruit.area %>
     </p>
-
-    <button class="my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"><%= link_to "好想趕快加入" %></button>
-    <button class="bg-[#2A323A] text-white rounded-md p-2"><%= link_to "返回招募列表", recruits_path %></button>
+      <div>
+        <%= link_to '更新', edit_recruit_path(@recruit), class: "mb-3 bg-[#2A323A] text-white rounded-lg p-1 text-sm" %>
+        <%= link_to '刪除', recruit_path(@recruit), class: "bg-[#2A323A] text-white rounded-lg p-1 text-sm",
+                          data: {
+                            turbo_method: 'delete',
+                            turbo_confirm: '確定刪除？'
+                          } %>
+      </div>                  
+  <div class="flex flex-col mt-12">
+      <%= link_to "申請加入樂團", "#", class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"%>
+      <%= link_to "返回社團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
   </div>
-
 </article>
