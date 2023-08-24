@@ -16,11 +16,13 @@
   </head>
 
   <body data-theme="dark">
-    <%= render 'shared/navbar' %>
+    <nav class="fixed top-0 z-10 w-full">
+      <%= render 'shared/navbar' %>
+    </nav>
     <div data-controller="flash">
       <p class="hidden"><%= flash[:notice] %><%= flash[:alert] %></p>
     </div>
-    <main class="container mx-auto">
+    <main class="w-[90%] mx-auto mt-28 mb-20">
       <%= yield %>
     </main>
     <%= render 'shared/footer' %>
