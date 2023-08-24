@@ -10,7 +10,7 @@
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
-          <%= render "/shared/instrument", instrument: instrument %>
+          <%= render "/shared/instrument", instrument: instrument.name %>
         </div>
       <% end %>
     </div>
