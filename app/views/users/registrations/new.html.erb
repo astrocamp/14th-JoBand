@@ -1,42 +1,53 @@
-<div class="bg-dark rounded-md px-20 py-5 my-10 mx-auto flex justify-center w-2/4">
-  <div class="mx-auto">
-    <header class="flex text-white">
-      <h2 class="h2"><%= t("user.sign_up") %></h2>
-    </header>
 
-    <div class="flex mx-auto">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= render "users/shared/error_messages", resource: resource %>
+<div class="hero min-h-screen rounded-lg bg-contain" style="background-image: url(https://static.wixstatic.com/media/89d386_ec4ca9be72c84dfba49634b689a0ef32~mv2.jpg/v1/fill/w_640,h_800,al_c,q_85,enc_auto/89d386_ec4ca9be72c84dfba49634b689a0ef32~mv2.jpg);">
+  <div class="hero-overlay bg-opacity-60 rounded-lg"></div>
+  <div class="hero-content block absolute top-20 lg:absolute top-20">
+    <ul class="steps">
+      <li class="step step-warning"><%= t("step.one") %></li>
+      <li class="step"><%= t("step.two") %></li>
+      <li class="step"><%= t("step.three") %></li>
+      <li class="step"><%= t("step.four") %></li>
+    </ul>
+</div>
+<div class="hero-content flex-col lg:flex-row-reverse">
+  <div class="text-center lg:text-left">
+    <h1 class="text-5xl font-bold"><%= t("user.sign_up") %></h1>
+    <p class="py-6">JoBand 是一個原創型的樂團社群網站，專為音樂家、樂手和音樂愛好者打造的線上平台。我們的目標是連結世界各地的音樂人，促進合作、交流和音樂創作。透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。</p>
+  </div>
+  <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div class="card-body">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
 
-        <div class="field my-3">
-          <%= f.label :name, t("user.display_name"),class: "text-white" %><br />
-          <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "input-md" %><br />
-          <em class="text-xs leading-3"><%= t("user.display_describe") %></em>  
-        </div>
-
-        <div class="field my-3">
-          <%= f.label :email, class: "text-white" %><br />
-          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input-md" %>
-        </div>
-
-        <div class="field my-3">
-          <%= f.label :password, t("user.password"), class: "text-white" %>
-          <% if @minimum_password_length %>
-          <% end %><br />
-          <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "input-md" %>
-        </div>
-
-        <div class="field my-3">
-          <%= f.label :password_confirmation, t("user.password_confirmation"), class: "text-white" %><br />
-          <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "input-md" %>
-        </div>
-
-        <div class="actions">
-          <%= f.submit t("user.sign_up"), class: "btn btn-block" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="my-5 text-white">
+      <div class="form-control">
+        <label class="label">
+          <%= f.label :name, t("user.display_name"),class: "label-text" %>
+        </label>
+        <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "input input-bordered" %>
+        <em class="text-xs leading-3"><%= t("user.display_describe") %></em>  
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <%= f.label :email, class: "label-text" %>
+        </label>
+        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered" %>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <%= f.label :password, t("user.password"), class: "label-text" %>
+        </label>
+        <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "input input-bordered" %>
+      </div>
+      <div class="form-control">
+        <label class="label">
+          <%= f.label :password_confirmation, t("user.password_confirmation"), class: "label-text" %>
+        </label>
+        <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "input input-bordered" %>
+      </div>
+      <div class="form-control mt-3">
+        <%= f.submit t("user.sign_up"), class: "btn btn-block btn-warning" %>
+      </div>
+    <% end %>
       <%= render "users/shared/links" %>
     </div>
   </div>
