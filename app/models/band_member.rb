@@ -5,14 +5,14 @@ class BandMember < ApplicationRecord
   belongs_to :band
 
   enum identity: %i[leader manager member]
-  
+
   def self.default_roles
-    [
-     'Guitar',
-     'Bass',
-     'Vocal',
-     'Drum',
-     'Keyboard'
+    %w[
+      Guitar
+      Bass
+      Vocal
+      Drum
+      Keyboard
     ]
   end
 end
