@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-# 三方登入按鈕
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:

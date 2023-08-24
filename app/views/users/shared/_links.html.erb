@@ -1,4 +1,3 @@
-<%# 三方登入按鈕 %>
 <%- if controller_name != 'sessions' %>
   <span><%= t("user.already") %></span><%= link_to t("user.login"), new_session_path(resource_name), class: "blink" %><br />
 <% end %>
