@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
-  before_action :set_instruments, only: %i[new edit create]
+  before_action :set_band_id, only: %i[new create]
   before_action :set_recruit, only: %i[edit update show destroy]
 
   def new
-    @band = Band.find(params[:band_id])
     @recruit = Recruit.new
   end
 
   def create
-    @band = Band.find(params[:band_id])
     @recruit = @band.build_recruit(recruit_params)
 
     if @recruit.save
@@ -39,8 +37,8 @@ class RecruitsController < ApplicationController
 
   private
 
-  def set_instruments
-    @instruments = Instrument.all
+  def set_band_id
+    @band = Band.find(params[:band_id])
   end
 
   def set_recruit
