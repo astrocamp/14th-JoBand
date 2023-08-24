@@ -9,7 +9,10 @@
   <div class="absolute flex flex-wrap justify-center w-[550px] drop-shadow-lg">
     <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full my-8">
     <p class="w-full text-center text-white h1">拓展音樂之路，找尋完美夥伴</p>
-    <%= link_to '現在就加入', new_user_registration_path, class: "my-8 joband-action-btn" %>
+    <% if user_signed_in? %>
+    <% else %>
+      <%= link_to '現在就加入', new_user_registration_path, class: "my-8 joband-action-btn" %>
+    <% end %>
   </div>
 </header>
 <nav class="sticky top-0 z-10">
