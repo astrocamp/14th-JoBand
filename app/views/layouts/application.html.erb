@@ -9,7 +9,37 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <!-- 引入 SweetAlert2 的 CSS 和 JavaScript 資源 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
     <%= javascript_importmap_tags %>
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    <% if flash[:success] %>
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      });
+
+      Toast.fire({
+        icon: 'success',
+        title: '<%= flash[:success] %>'
+      });
+
+      // 3秒後重新導向到 profile_path(@profile)
+      setTimeout(function() {
+        window.location.href = '<%= profile_path(@profile) %>';
+      }, 3000);
+    <% end %>
+  });
+</script>
   </head>
 
   <body data-theme="dark">
