@@ -1,19 +1,18 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
-  before_action :set_band
-  before_action :load_instruments, only: %i[new edit create]
+  before_action :set_instruments, only: %i[new edit create]
   before_action :set_recruit, only: %i[edit update show destroy]
-  # def index
-  #   @recruits = Recruit.order(id: :desc)
-  # end
 
   def new
+    @band = Band.find(params[:band_id])
     @recruit = Recruit.new
   end
 
   def create
-    @recruit = Recruit.new(recruit_params)
+    @band = Band.find(params[:band_id])
+    @recruit = @band.build_recruit(recruit_params)
+
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
@@ -33,18 +32,22 @@ class RecruitsController < ApplicationController
 
   def destroy
     @recruit.destroy
-    redirect_to band_path, notice: '刪除成功'
+    redirect_to band_path(@recruit.band), notice: '刪除成功'
   end
 
   def show; end
 
   private
 
+  def set_instruments
+    @instruments = Instrument.all
+  end
+
   def set_recruit
     @recruit = Recruit.find(params[:id])
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, :band_id, instrument_ids: [])
+    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, instrument_ids: [])
   end
 end

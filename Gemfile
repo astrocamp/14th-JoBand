@@ -31,6 +31,7 @@ group :development, :test do
   gem 'letter_opener', '~> 1.8'
   gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', require: false
+  gem 'byebug', '~> 11.1', '>= 11.1.3'
 end
 
 group :development do

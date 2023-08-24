@@ -20,18 +20,4 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def load_instruments
-    @instruments = Instrument.all
-  end
-
-
-  # def current_band
-  #   @current_band || Band.find_by(id: session[:band_id])
-  # end
-
-  def set_band
-    @band = Band.find(params[:id])
-  end
-
-
 end
