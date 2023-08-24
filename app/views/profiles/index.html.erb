@@ -2,6 +2,18 @@
 
   <div class="flex flex-col items-center p-5 font-bold tracking-wide ">
     <h1 class="text-xl text-red-500 " >展示你的音樂作品集</h1>
+
+    <%= search_form_for @p do |user| %>
+      <div class="m-5 flex justify-center">
+        <%= user.search_field :user_name_or_instruments_name_cont, class:'mr-3'%>
+        <%= user.submit class:'btn btn-sm' %>
+      </div>
+      <% instruments_all.each do |instrument| %>
+        <%= check_box_tag('q[instruments_name_cont_any][]', instrument.name) %>
+        <%= instrument.name %>
+      <% end %>
+    <% end %>
+
     <% if user_signed_in?%>
       <% if current_user.profile.present? %>
       <% else %>

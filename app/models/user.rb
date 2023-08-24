@@ -12,12 +12,21 @@ class User < ApplicationRecord
   has_many :band_members
   has_many :bands, through: :band_members
 
+  # ransack
+  def self.ransackable_attributes(_auth_object = nil)
+    ['name']
+  end
+
+  def self.ransackable_associations(_auth_object = nil)
+    %w[band_members bands profile]
+  end
+
   def self.find_for_google_oauth2(access_token, _signed_in_resource = nil)
     data = access_token.info
-    user = User.where(google_token: access_token.credentials.token, google_uid: access_token.uid).first
+    user = User.find_by(google_token: access_token.credentials.token, google_uid: access_token.uid)
     return user if user
 
-    existing_user = User.where(email: data['email']).first
+    existing_user = User.find_by(email: data['email'])
     if existing_user
       existing_user.google_uid = access_token.uid
       existing_user.google_token = access_token.credentials.token

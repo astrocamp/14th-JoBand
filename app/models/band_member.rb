@@ -5,4 +5,5 @@ class BandMember < ApplicationRecord
   belongs_to :band
 
   enum band_role: %i[leader manager member]
+  
 end

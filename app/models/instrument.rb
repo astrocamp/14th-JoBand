@@ -9,4 +9,8 @@ class Instrument < ApplicationRecord
   has_many :profile_and_instrument
   has_many :recruits, through: :recruit_and_instrument
   has_many :recruit_and_instrument
+
+  def self.ransackable_attributes(_auth_object = nil)
+    ['name']
+  end
 end
