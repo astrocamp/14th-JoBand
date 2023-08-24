@@ -55,8 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_085424) do
   create_table "band_members", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "band_id", null: false
-    t.string "role"
-    t.integer "admin"
+    t.integer "band_role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["band_id"], name: "index_band_members_on_band_id"
