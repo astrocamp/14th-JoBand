@@ -15,9 +15,10 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = Band.new(band_params)
+    @band = Band.new(band_params.except(:role))
+    @role = band_params[:role]
     if @band.save
-      BandMember.create(user: current_user, band: @band, band_role: :leader)
+      @band.band_members.create(user: current_user, identity: :leader, role: @role)
       redirect_to band_path(@band), notice: '成功創立樂團'
     else
       render :new, notice: '失敗'
@@ -41,7 +42,7 @@ class BandsController < ApplicationController
   end
 
   def band_params
-    params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner,
+    params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner, :role,
                                  style_ids: [])
   end
 end

@@ -4,13 +4,18 @@
     <%= f.label :name, class:"mr-8" %>
     <%= f.text_field :name , class:"text-black"%>
   </div>
+
+   <div class="m-5">
+    <%= f.label :role, '您演奏的樂器' %>
+    <%= f.select :role, BandMember.default_roles %>
+  </div>
   
-  <div>
+  <div class="m-5">
     <%= f.label :banner, '上傳樂團佈景' %>
     <%= f.file_field :banner, accept: "image/png, image/jpeg" %>
   </div>
 
-  <div>
+  <div class="m-5">
     <%= f.label :avatar, '上傳樂團頭像' %>
     <%= f.file_field :avatar, accept: "image/png, image/jpeg" %>
   </div>
@@ -22,12 +27,12 @@
     </div>
   </div>
 
-  <div>
+  <div class="m-5">
     <%= f.label :music, '上傳音樂' %>
     <%= f.file_field :music, accept: "audio/mpeg" %>
   </div>
 
-  <div>
+  <div class="m-5">
     <%= f.label :video, '上傳影片' %>
     <%= f.file_field :video, accept: "video/mp4" %>
   </div>
