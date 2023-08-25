@@ -15,7 +15,7 @@ class Profile < ApplicationRecord
   belongs_to :user
 
   def default_instrument(profile)
-    if profile.instruments != []
+    if profile.instruments.present?
       instruments.first.name
     else
       'listener'
