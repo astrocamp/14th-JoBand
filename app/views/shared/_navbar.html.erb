@@ -26,7 +26,7 @@
             </ul>
             <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
               <% if current_user.profile.present?%>
-                <li><%= link_to "個人檔案", profile_path(current_user), class: "nav-link" %></li>
+                <li><%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %></li>
               <% else %>
                 <li><%= link_to "個人檔案", letsjam_profile_path(current_user), class: "nav-link" %></li>
               <% end %>
