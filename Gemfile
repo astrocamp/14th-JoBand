@@ -5,12 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
-gem 'rails', '~> 7.0.6'
+gem 'rails', '~> 7.0.7.2'
 gem 'sprockets-rails'
 
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
-gem 'dotenv-rails', '~> 2.8'
 gem 'image_processing', '~> 1.2'
 gem 'importmap-rails'
 gem 'jbuilder'
@@ -28,8 +27,8 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
+  gem 'dotenv-rails', '~> 2.8'
   gem 'letter_opener', '~> 1.8'
-  gem 'rspec-rails', '~> 6.0'
   gem 'rubocop', require: false
   gem 'byebug', '~> 11.1', '>= 11.1.3'
 end
