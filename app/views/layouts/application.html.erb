@@ -20,7 +20,7 @@
       <%= render 'shared/navbar' %>
     </nav>
     <div data-controller="flash">
-      <p class="hidden"><%= flash[:notice] %><%= flash[:alert] %></p>
+      <%= render 'shared/flash' %>
     </div>
     <main class="w-[90%] mx-auto mt-28 mb-20">
       <%= yield %>
