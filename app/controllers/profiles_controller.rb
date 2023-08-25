@@ -15,13 +15,11 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = current_user.create_profile(params_profile)
-    respond_to do |format|
       if @profile.save
-        format.html { redirect_to profile_path(@profile), flash: { notice: '新增 profile 成功' } }
+        redirect_to profile_path(@profile), notice: '新增 profile 成功'
       else
         render :new
       end
-    end
   end
 
   def welcome; end
