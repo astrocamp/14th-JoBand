@@ -34,7 +34,7 @@
         <%= @band.area %>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <%= render 'member' %>
+        <%= render partial: 'member', collection: @members %>
       </div>
     </section>
     
