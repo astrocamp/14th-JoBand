@@ -13,7 +13,8 @@
       </div>
       <h1 class="text-2xl"><%= @band.name %></h1>
       <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
-      <%= link_to "建立招募", new_recruit_path, class: "btn btn-primary" %>
+      <%= link_to "建立招募", new_band_recruit_path(@band), class: "btn btn-primary" %>
+      
     </div>
   </section>
   
