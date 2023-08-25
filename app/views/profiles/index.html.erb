@@ -3,7 +3,7 @@
   <div class="flex flex-col items-center p-5 tracking-wide ">
     <h1 class="text-white h2" >展示你的音樂作品集</h1>
 
-    <%= search_form_for @p do |user| %>
+    <%= search_form_for @search_profile do |user| %>
       <div class="flex justify-center m-5">
         <%= user.search_field :user_name_or_instruments_name_cont, class:'mr-3'%>
         <%= user.submit class:'btn btn-sm' %>
