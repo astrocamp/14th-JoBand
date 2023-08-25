@@ -2,8 +2,8 @@
   <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, recruit] : [recruit]), data: { turbo: false }) do |f| %>
 
   <div class="mb-5">
-    <%= f.label :recruit_title, "標題" %>
-    <%= f.text_field :recruit_title, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+    <%= f.label :title, "標題" %>
+    <%= f.text_field :title, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
   </div>
   <div class="mb-5">
     <%= f.label :condition, "希望條件" %>
