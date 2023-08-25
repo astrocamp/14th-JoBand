@@ -46,6 +46,6 @@ class RecruitsController < ApplicationController
   end
 
   def recruit_params
-    params.require(:recruit).permit(:recruit_title, :condition, :practice_time, :area, instrument_ids: [])
+    params.require(:recruit).permit(:title, :condition, :practice_time, :area, instrument_ids: [])
   end
 end
