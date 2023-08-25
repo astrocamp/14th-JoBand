@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get :letsjam
     end
   end
-  
+
   resources :bands, except: [:destroy] do
     resources :recruits, shallow: true
   end
