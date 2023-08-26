@@ -1,0 +1,11 @@
+
+<%= link_to profile_path(band_member.user.profile), action: 'go' do %>
+  <%= band_member.role %>
+  <%= band_member.user.name %>
+  <div class="h-20 w-20 relative">
+   <%= render "shared/avatar", model: band_member.user.profile %>
+  </div>
+  <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
+    <%= link_to '編輯', edit_band_band_member_path(@band, band_member) , class: 'btn btn-xs mt-2'%>
+  <% end %>
+<% end %>

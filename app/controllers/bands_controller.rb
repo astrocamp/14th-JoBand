@@ -9,7 +9,7 @@ class BandsController < ApplicationController
   end
 
   def show
-    @members = @band.band_members
+    @band_members = @band.band_members
   end
 
   def new

@@ -1,0 +1,23 @@
+<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl my-10 ">
+  <%= form_with(model: [@band, @band_members] , data:{ trubo: false } ) do |f| %>
+  
+    <div class="m-5">
+      <%= @band_members.user.name %>
+    </div>
+  
+    <div class="m-5">
+      <%= f.label :identity, '權限' %>
+      <%= f.select :identity, BandMember.identities.keys %>
+    </div>
+  
+    <div class="m-5">
+      <%= f.label :role , '職位' %>
+      <%= f.select :role, BandMember.default_roles %>
+    </div> 
+  
+    <div>
+      <%=f.submit '更新', class:'btn btn-accent text-center' %>
+    </div>
+    
+  <% end %>
+</div>
