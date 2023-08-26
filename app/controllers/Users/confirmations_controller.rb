@@ -2,20 +2,6 @@
 
 module Users
   class ConfirmationsController < Devise::ConfirmationsController
-    # GET /resource/confirmation/new
-
-    # POST /resource/confirmation
-    # def create
-    #   super
-    # end
-
-    # GET /resource/confirmation?confirmation_token=abcdef
-    # def show
-    #   super
-    # end
-
-    # protected
-
     # The path used after resending confirmation instructions.
     def after_resending_confirmation_instructions_path_for(_resource_name)
       sign_in(resource)
