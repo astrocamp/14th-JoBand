@@ -6,7 +6,7 @@
         <%= f.search_field :name_or_styles_name_cont, class:'mr-3'%>
         <%= f.submit class:'btn btn-sm' %>
       </div>
-        <% style_all.each do |style| %>
+        <% Style.all.each do |style| %>
           <%= check_box_tag('q[styles_name_cont_any][]', style.name) %>
           <%= style.name %>
         <% end %>

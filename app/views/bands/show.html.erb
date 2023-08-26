@@ -34,7 +34,8 @@
         <%= @band.area %>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <%= render partial: 'member', collection: @members %>
+        <p class="font-bold text-lg">成員</p><br>
+        <%= render @band_members %>
       </div>
     </section>
     
