@@ -1,0 +1,21 @@
+<%= form_with(model: [@recruit, @resume_list], data: { turbo: false }) do |form| %>
+
+  <div class="field">
+    <%= form.label :role %>
+    <%= form.text_field :role %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.select :status, ResumeList.statuses.keys.map { |status| [status.humanize, status] } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

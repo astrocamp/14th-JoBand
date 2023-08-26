@@ -18,7 +18,9 @@ Rails.application.routes.draw do
   end
 
   resources :bands, except: [:destroy] do
-    resources :recruits, shallow: true
     resources :band_members, except: %i[new show index]
+    resources :recruits, shallow: true do
+      resources :resume_lists
+    end
   end
 end
