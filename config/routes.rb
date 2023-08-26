@@ -3,8 +3,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
 
-  resources :pages, only: [:index]
-
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations',
@@ -13,7 +11,7 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   resources :profiles, except: [:destroy] do
-    member do
+    collection do
       get :welcome
       get :letsjam
     end
