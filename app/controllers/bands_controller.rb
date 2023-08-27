@@ -4,8 +4,8 @@ class BandsController < ApplicationController
   before_action :set_band, only: %i[show edit update]
 
   def index
-    @serach_band = Band.ransack(params[:q])
-    @bands = @serach_band.result(distinct: true)
+    @search_band = Band.ransack(params[:q])
+    @bands = @search_band.result(distinct: true)
   end
 
   def show
