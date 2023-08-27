@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   resources :profiles, except: [:destroy] do
-    collection do
+    member do
       get :welcome
       get :letsjam
     end
