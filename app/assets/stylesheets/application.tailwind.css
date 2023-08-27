@@ -5,11 +5,9 @@
 /* Font family */
 @layer base {
   html {
-    font-family: 'Noto Sans TC', sans-serif;
-    font-family: 'Courgette', cursive;
-    font-family: 'Permanent Marker', cursive;
-    font-family: 'Racing Sans One', cursive;
-    font-family: 'Rock Salt', cursive;
+    font-family: 'Noto Sans TC', "Squada One", BlinkMacSystemFont,
+    "Segoe UI", "Microsoft JhengHei", "Helvetica Neue", monospace, Arial,
+    "cursive", sans-serif;
   }
 }
 
@@ -115,3 +113,4 @@
 }
 
 @import 'actiontext.css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
