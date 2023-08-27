@@ -11,8 +11,8 @@ gem 'sprockets-rails'
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
 gem 'image_processing', '~> 1.2'
-gem 'importmap-rails'
 gem 'jbuilder'
+gem "jsbundling-rails", "~> 1.1"
 gem 'omniauth', '~> 2.1'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'

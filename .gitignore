@@ -6,11 +6,11 @@
 
 # Local setting files
 .DS_Store
-.vscode/settings.json
 .session.sql
 
 # Ignore vscode setting
 /.vscode/.json
+.vscode/settings.json
 
 # Ignore bundler config.
 /.bundle
@@ -41,5 +41,7 @@
 /app/assets/builds/*
 !/app/assets/builds/.keep
 
-#API KEY FILE
 .env
+
+# Ignore node modules
+/node_modules

@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "private": "true",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^7.3.0",
+    "@rails/actiontext": "^7.0.7-2",
+    "esbuild": "^0.19.2",
+    "stimulus-textarea-autogrow": "^4.1.0",
+    "trix": "^2.0.5"
+  },
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=/assets"
+  },
+  "devDependencies": {
+    "daisyui": "^3.6.3"
+  }
+}
