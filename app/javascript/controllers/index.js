@@ -3,7 +3,4 @@
 // ./bin/rails generate stimulus controllerName
 
 import { application } from "./application"
-import TextareaAutogrow from "stimulus-textarea-autogrow"
 
-const application = Application.start()
-application.register("textarea-autogrow", TextareaAutogrow)
