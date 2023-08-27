@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class BandMembersController < ApplicationController
-  before_action :set_band_member, only: [:edit,:update, :index, :destroy]
-  before_action :set_band_id, only: [:edit, :update]
+  before_action :set_band_member, only: %i[edit update index destroy]
+  before_action :set_band_id, only: %i[edit update]
 
   def edit; end
 
   def update
-     if @band_members.update(band_member_params)
+    if @band_members.update(band_member_params)
       redirect_to band_path(@band)
-     else
+    else
       render :edit, notice: '失敗'
-     end
+    end
   end
 
   def destroy
@@ -30,5 +32,4 @@ class BandMembersController < ApplicationController
   def band_member_params
     params.require(:band_member).permit(:role, :identity)
   end
-
 end
