@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class RecruitsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create edit update destroy]
   before_action :set_band_id, only: %i[new create]
   before_action :set_recruit, only: %i[edit update show destroy]
 
