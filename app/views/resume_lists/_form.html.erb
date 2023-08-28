@@ -1,21 +1,23 @@
-<%= form_with(model: [@recruit, @resume_list], data: { turbo: false }) do |form| %>
+<div class="center items-center w-3/4 bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl my-10 p-8 ">
+  <%= form_with(model:, data: { turbo: false }) do |f| %>
 
-  <div class="field">
-    <%= form.label :role %>
-    <%= form.text_field :role %>
-  </div>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+  
+    <h1 class="h1 text-center">介紹你自己</h1>
+    
+    <div class="m-5 text-center">
+      <%= f.label :role, '應徵職位'%> <br>
+      <%= f.select :role, recruits_roles %>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="m-5 text-center ">
+      <%= f.label :description, '簡短描述' %> <br>
+      <%= f.text_area :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.select :status, ResumeList.statuses.keys.map { |status| [status.humanize, status] } %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="center mb-3">
+      <%= f.submit '送出申請' ,class:'btn btn-accent' %>
+    </div>
+    
+  <% end %>
+</div> 

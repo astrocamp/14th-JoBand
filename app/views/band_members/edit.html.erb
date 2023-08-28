@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl my-10 ">
+<div class="flex flex-wrap justify-evenly items-center w-2/4 h-[300px] bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl my-10 ">
   <%= form_with(model: [@band, @band_members] , data:{ trubo: false } ) do |f| %>
   
     <div class="m-5">
@@ -15,8 +15,8 @@
       <%= f.select :role, BandMember.default_roles %>
     </div> 
   
-    <div>
-      <%=f.submit '更新', class:'btn btn-accent text-center' %>
+    <div class="center">
+      <%=f.submit '更新', class:'btn btn-accent' %>
     </div>
     
   <% end %>
