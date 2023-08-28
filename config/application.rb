@@ -13,12 +13,9 @@ module Joband
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
     config.i18n.default_locale = :tw
-    # Configuration for the application, engines, and railties goes here.
-    #
-    # These settings can be overridden in specific environments using the files
-    # in config/environments, which are processed later.
-    #
+    I18n.available_locales = [:tw, :en]
     config.time_zone = 'Taipei'
+    config.active_record.default_timezone = :local
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
