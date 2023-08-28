@@ -2,7 +2,7 @@
 
   <section class="mb-10">
     <div>
-      <%= render "shared/banner", model: @band  %>
+      <%= render "shared/banner", model: @band %>
     </div>
   </section>
   
@@ -65,9 +65,13 @@
           <p>沒有上傳任何影片檔案</p>
         <% end %>
       </div>
-      <p>樂團招募中文章</p>
+      <h2 class="h2">樂團招募</h2>
       <div>
-        <h2 class="font-bold text-[#2A323A] hover:text-gray-600 text-xl mb-5"><%= link_to @band.recruit.title, recruit_path(@band.recruit) %></h2>
+        <% if @band.recruit.present?%>
+          <%= link_to @band.recruit.title, recruit_path(@band.recruit), class: "btn btn-accent hover:text-white text-xl mb-5" %>
+        <% else %>
+          <%= link_to "招募團員", new_band_recruit_path(@band), class: "btn font-bold text-[#2A323A] hover:text-white text-xl mb-5" %>
+        <% end %>
       </div>  
     </section>
     
