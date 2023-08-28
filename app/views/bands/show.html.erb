@@ -8,11 +8,13 @@
   
   <section class="flex justify-center mb-5">
     <div class="flex justify-around items-center w-4/5">
+
       <div class="h-[200px] w-[200px] relative">
         <%= render "shared/avatar", model: @band %>
       </div>
       <h1 class="text-2xl"><%= @band.name %></h1>
       <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
+
       <%= link_to "建立招募", new_band_recruit_path(@band), class: "btn btn-primary" %>
       
     </div>
@@ -54,24 +56,24 @@
             <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
             您的瀏覽器不支援音樂格式
           </audio>
-        <% else %>
-          <p>沒有上傳任何音樂檔案</p>
         <% end %>
       </div>
+
       <div>
         <% if @band.video.attached? %>
           <video width="640" height="360" controls controlsList="nodownload" class="mb-5">
             <source src="<%= url_for(@band.video) %>" type="video/mp4">
             您的瀏覽器不支援影片格式
           </video>
-        <% else %>
-          <p>沒有上傳任何影片檔案</p>
         <% end %>
       </div>
-      <p>樂團招募中文章</p>
-      <div>
-        <h2 class="font-bold text-[#2A323A] hover:text-gray-600 text-xl mb-5"><%= link_to @band.recruit.title, recruit_path(@band.recruit) %></h2>
-      </div>  
+
+      <div class="my-8">
+        <% if @band.recruit.present? %>
+          <%= link_to '團員招募中', recruit_path(@band.recruit), class:'joband-action-btn' %>
+        <% end %>
+      </div>
+
     </section>
     
   </article>

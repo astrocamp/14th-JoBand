@@ -1,7 +1,28 @@
 <!-- app/views/resume_lists/show.html.erb -->
-<h1>Resume List Details</h1>
-<p><strong>Description:</strong> <%= @description %></p>
-<p><strong>Role:</strong> <%= @role %></p>
-<p><strong>Status:</strong> <%= @status %></p>
+<article>
+  <%= link_to profile_path(@resume_list.user.profile), action: 'go' do %>
+    <%= User.find(@resume_list.user_id).name %>
+    <div class="w-20 h-20 relative ">
+      <%= render 'shared/avatar', model: @resume_list.user.profile %>
+    </div>
+  <% end %>
+  <p>
+    <strong>Role:</strong> 
+    <%= @resume_list.role %>
+  </p>
+  <p>
+    <strong>Status:</strong> 
+    <%= @resume_list.status %>
+  </p>
+  <p>
+    <strong>Description:</strong><br>
+    <%= @resume_list.description %>
+  </p>
+  <% if current_user&.id === @resume_list.recruit.band.band_members.find_by(identity: :leader).user_id %>                              
+    <%= link_to "Approve", approve_resume_list_path(@resume_list),
+                           data: {turbo_method: :post}, 
+                           class: 'btn btn-accent'%>
+  <% end %>
 
+</article>
 

@@ -33,7 +33,9 @@ class RecruitsController < ApplicationController
     redirect_to band_path(@recruit.band), notice: '刪除成功'
   end
 
-  def show; end
+  def show
+    @resume_lists = @recruit.resume_lists
+  end
 
   private
 
