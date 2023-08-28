@@ -2,7 +2,7 @@
   <div class="my-10 h-[200px] w-[200px] relative ">
     <%= render "shared/avatar", model: @profile  %>
   </div>
-  <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @user.name %></h1>
+  <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
   <% if current_user&.id == @profile.user_id %>
     <%= link_to '創建樂團', new_band_path, class:'joband-action-btn' %>
   <% end %>

@@ -24,6 +24,8 @@ tw:
     current_password: "目前密碼"
     need_current_password: "(我們需要您目前的密碼來確認您的變更。)"
     leave_blank: "（留白如果您不打算更換密碼）"
+    update: "更新"
+    back: "返回"
   step:
     one: "會員註冊"
     two: "信箱驗證"
@@ -62,6 +64,7 @@ tw:
       failure: "無法從 %{kind} 驗證，因為 \"%{reason}\"。"
       success: "成功從 %{kind} 驗證。"
     passwords:
+      too_short: "密碼長度太短，需要 %{count} 個字元"
       no_token: "這是密碼重設頁面，僅能透過密碼重設信件進入。如果您是透過重設信件進入的，請確認您的網址是完整的。"
       send_instructions: "您將在幾分鐘後收到一封電子郵件，內有重新設定密碼的步驟說明。"
       send_paranoid_instructions: "如果我們有您的信箱，您將會收到一封內含可重新設定密碼連結的電子郵件。"
@@ -114,5 +117,13 @@ tw:
           Central: 中部地區
           South: 南部地區
           East: 東部地區
-    
-      
+activerecord:
+  errors:
+    models:
+      user:
+        attributes:
+          password:
+            too_short: "密碼長度太短，需要 %{count} 個字元"
+          password_confirmation:
+            confirmation: "密碼確認不一致"
+

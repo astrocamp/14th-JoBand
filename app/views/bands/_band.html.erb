@@ -1,22 +1,31 @@
 <ul class="text-black">
-    <%= link_to band_path(band), action: 'go' do %>
-      <li class="my-5">
-        <div class="card lg:card-side bg-gray-800 shadow-xl">
-          <div class="m-5 h-[200px] w-[200px] relative">
-              <%= render "shared/avatar", model: band %>
-          </div>
-          <div class="card-body">
-            <%= link_to band.name, band_path(band), class:'card-title' %>
-            <%= render 'style', band: band %>
-            <div>
-              <%= band.area %>
-            </div>
-            <div>
-              <%= band.state %>
-            </div>
-          <div class="card-actions justify-end">
-          <button class="btn btn-primary">報名</button>
-        </div> 
-      </li>
-    <% end %>
+  <%= link_to band_path(band), action: 'go' do %>
+  <li class="my-5">
+    <div class="card lg:card-side bg-gray-800 shadow-xl">
+      <div class="m-5 h-[200px] w-[200px] relative">
+        <%= render "shared/avatar", model: band %>
+      </div>
+      <div class="card-body">
+        <%= link_to band.name, band_path(band), class:'card-title text-white text-xl block border-b-2 px-2.5 py-2 text-end' %>
+        <em class="text-xs text-white text-end mb-3">成立於： <%= band.founded_at%></em>
+        <div class="mr-auto badge badge-error gap-3"><%= render 'style', band: band %></div>
+        <div>
+          <p class="text-white text-start">活動地區： <%= band.area %></p>
+        </div>
+        <div>
+          <p class="text-white text-start">狀態：<%= band.state %></p>
+        </div>
+      <div class="card-actions justify-end">
+      <% if user_signed_in? %>
+        <% if current_user.confirmed? && urrent_user.profile.present?%>
+          <%= link_to "申請加入", "#", class: "btn btn-primary" %>
+        <% else %>
+          <%= link_to "申請加入", "#", class: "btn btn-primary", alert: "請先完成個人資料！" %>
+        <% end %>
+      <% else %>
+        <%= link_to "申請加入", new_user_session_path, class: "btn btn-primary", alert: "請先登入！" %>
+      <% end %>
+    </div> 
+  </li>
+  <% end %>
 </ul>

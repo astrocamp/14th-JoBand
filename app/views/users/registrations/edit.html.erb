@@ -1,15 +1,22 @@
 <h2 class="text-4xl font-bold text-white my-5"><%= t("user.settings") %></h2>
   <div class="field mb-5">
-    <label class="text-white">Email Account</label><br />
-    <input type="text" placeholder="<%= @current_user.email %>" class="input input-bordered w-full max-w-xs" disabled />
+    <label class="text-white">Email</label><br />
+    <input type="text" placeholder="<%= @current_user.email %>" class="input input-bordered w-full max-w-xs" disabled /><br/>
+    <% if current_user.confirmed? %>
+      <span class="text-lime-400"> Email 已驗證</span>
+    <% else %>  
+      <span class="text-orange-400"> Email 尚未驗證</span><br/>
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <%= link_to t("user.not_receive_confirm"), new_confirmation_path(resource_name), class: "link" %><br />
+      <% end %>
+    <% end %> 
   </div>
-
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "users/shared/error_messages", resource: resource %>
 
-  <div class="field mb-5">
+  <div class="field my-5">
     <%= f.label :name, t("user.display_name"),class: "text-white" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: :off, class: "input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: :off, class: "text-white input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -18,23 +25,23 @@
 
   <div class="field mb-5">
     <%= f.label :password, t("user.new_password"), class: "text-white" %> <br />
-    <%= f.password_field :password, placeholder: t("user.min_password_placeholder"),autocomplete: "new-password", class: "input-md input-bordered w-full max-w-xs" %>
+    <%= f.password_field :password, placeholder: t("user.min_password_placeholder"),autocomplete: "new-password", class: "text-white input-md input-bordered w-full max-w-xs" %>
     <br /><i><%= t("user.leave_blank") %></i>
   </div>
 
   <div class="field mb-5">
     <%= f.label :password_confirmation, t("user.password_confirmation"), class: "text-white" %><br />
-    <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "input-md input-bordered w-full max-w-xs" %>
+    <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "text-white input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="field mb-5">
     <%= f.label :current_password, t("user.current_password"), class: "text-white" %><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "input-md input-bordered w-full max-w-xs" %>
+    <%= f.password_field :current_password, autocomplete: "current-password", class: "text-white input-md input-bordered w-full max-w-xs" %>
     <br /><i><%= t("user.need_current_password") %></i>
   </div>
 
   <div class="actions">
-    <%= f.submit "Update", class: "btn btn-success rounded-md my-5 w-32 mr-5" %>
-    <%= link_to "Back", :back, class: "btn btn-error rounded-md my-5 w-32" %>
+    <%= f.submit t("user.update"), class: "btn btn-success rounded-md my-5 w-32 mr-5" %>
+    <%= link_to t("user.back"), :back, class: "btn btn-error rounded-md my-5 w-32" %>
   </div>
 <% end %>
