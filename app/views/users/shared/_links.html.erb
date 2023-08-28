@@ -20,6 +20,7 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= button_to "", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
     <% case provider.to_sym %>
       <% when :facebook %>
         <%= button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: "mb-2 inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg", style: "background-color: #1877f2" do %>
