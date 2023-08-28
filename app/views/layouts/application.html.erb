@@ -19,9 +19,7 @@
     <nav class="fixed top-0 z-10 w-full">
       <%= render 'shared/navbar' %>
     </nav>
-    <div data-controller="flash">
-      <%= render 'shared/flash' %>
-    </div>
+    <%= render 'shared/flash' %>
     <main class="w-[90%] mx-auto mt-28 mb-20">
       <%= yield %>
     </main>

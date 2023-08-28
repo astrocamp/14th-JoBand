@@ -15,8 +15,10 @@
  */
 
  .swal2-toast{
-  margin-top: 80px !important;
   display: flex !important;
   justify-content: center !important;
   background-color: rgb(241 245 249) !important
+ }
+ .swal2-toast h2{
+  color: #2A323A !important;
  }

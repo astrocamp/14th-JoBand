@@ -15,11 +15,11 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = current_user.create_profile(params_profile)
-      if @profile.save
-        redirect_to profile_path(@profile), notice: '新增 profile 成功'
-      else
-        render :new
-      end
+    if @profile.save
+      redirect_to profile_path(@profile), notice: '新增 profile 成功'
+    else
+      render :new
+    end
   end
 
   def welcome; end

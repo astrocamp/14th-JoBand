@@ -3,7 +3,10 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="flash"
 export default class extends Controller {
   connect() {
-    const message = this.element.childNodes[1].innerHTML
+
+    const message = this.element.textContent.trim();
+    const { icon } = this.element.dataset
+
     if( message ){
       const Toast = Swal.mixin({
         toast: true,
@@ -18,7 +21,7 @@ export default class extends Controller {
       });
   
       Toast.fire({
-        icon: 'success',
+        icon: icon,
         title: message
       });
     }
