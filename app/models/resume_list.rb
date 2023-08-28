@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResumeList < ApplicationRecord
   belongs_to :user
   belongs_to :recruit
@@ -6,9 +8,8 @@ class ResumeList < ApplicationRecord
 
   # enum
   enum status: {
-    pending: 0,      # 未申請
-    approved: 1,  # 申請通過
-    rejected: 2,    # 申請被拒絕
+    pending: 0,
+    approved: 1,
+    rejected: 2
   }, _prefix: true
-  
 end
