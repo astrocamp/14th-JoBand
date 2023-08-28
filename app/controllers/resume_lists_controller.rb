@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResumeListsController < ApplicationController
   before_action :set_recruit_id,  only: %i[new create]
   before_action :set_resume_list, only: %i[show edit update destroy approve]
@@ -19,8 +21,7 @@ class ResumeListsController < ApplicationController
 
   def edit; end
 
-  def update
-  end
+  def update; end
 
   def approve
     @recruit = @resume_list.recruit

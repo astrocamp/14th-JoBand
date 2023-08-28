@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateResumeLists < ActiveRecord::Migration[7.0]
   def change
     create_table :resume_lists do |t|
@@ -6,7 +8,7 @@ class CreateResumeLists < ActiveRecord::Migration[7.0]
       t.string :role
       t.text :description
       t.integer :status
-      
+
       t.timestamps
     end
   end
