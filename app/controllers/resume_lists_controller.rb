@@ -1,6 +1,6 @@
 class ResumeListsController < ApplicationController
   before_action :set_recruit_id,  only: %i[new create]
-  before_action :set_resume_list, only: %i[show edit update destroy]
+  before_action :set_resume_list, only: %i[show edit update destroy approve]
 
   def show; end
 
@@ -10,8 +10,8 @@ class ResumeListsController < ApplicationController
 
   def create
     @resume_list = @recruit.resume_lists.build(resume_list_params)
-    if @resume_list.save
-      redirect_to resume_list_path(@resume_list), notice: 'Resume list was successfully created.'
+    if @resume_list.save!
+      redirect_to resume_list_path(@resume_list), notice: '申請成功'
     else
       render :new
     end
@@ -20,16 +20,25 @@ class ResumeListsController < ApplicationController
   def edit; end
 
   def update
-    # if @resume_list.update(resume_list_params)
-    #   redirect_to resume_list_path(@resume_list), notice: '編輯成功'
-    # else
-    #   render :edit
-    # end
   end
 
-  def destroy
-    # @resume_list.destroy
-    # redirect_to recruit_path(@band, @recruit), notice: '已刪除'
+  def approve
+    @recruit = @resume_list.recruit
+    @band = @recruit.band
+    @role = @resume_list.role
+    @user = @resume_list.user
+    new_band_member = @band.band_members.new(user: @user, identity: :member, role: @role)
+    if new_band_member.save
+      @resume_list.update(status: :approved)
+      redirect_to recruit_path(@recruit)
+    else
+      flash[:alert] = 'Failed to approve resume list.'
+      render :show
+    end
+  end
+
+  def reject
+    @resume_list.update(status: :rejected)
   end
 
   private
@@ -43,6 +52,6 @@ class ResumeListsController < ApplicationController
   end
 
   def resume_list_params
-    params.require(:resume_list).permit(:description, :role, :status)
+    params.require(:resume_list).permit(:user_id, :description, :role)
   end
 end

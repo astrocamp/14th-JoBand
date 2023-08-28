@@ -20,7 +20,11 @@ Rails.application.routes.draw do
   resources :bands, except: [:destroy] do
     resources :band_members, except: %i[new show index]
     resources :recruits, shallow: true do
-      resources :resume_lists
+      resources :resume_lists ,except: [:destroy, :index] do
+        member do
+          post :approve 
+        end
+      end
     end
   end
 end
