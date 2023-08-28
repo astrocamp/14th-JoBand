@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class BandMembersController < ApplicationController
-  before_action :set_band_member, only: %i[edit update index destroy]
-  before_action :set_band_id, only: %i[edit update]
+  before_action :set_band_member, only: %i[edit update destroy]
+  before_action :set_band, only: %i[edit update]
 
   def edit; end
 
@@ -21,12 +21,12 @@ class BandMembersController < ApplicationController
 
   private
 
-  def set_band_id
+  def set_band
     @band = Band.find(params[:band_id])
   end
 
   def set_band_member
-    @band_members = BandMember.find(params[:id])
+    @band_member = BandMember.find(params[:id])
   end
 
   def band_member_params
