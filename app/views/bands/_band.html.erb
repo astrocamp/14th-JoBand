@@ -1,31 +1,26 @@
-<ul class="text-black">
-  <%= link_to band_path(band), action: 'go' do %>
-  <li class="my-5">
-    <div class="card lg:card-side bg-gray-800 shadow-xl">
-      <div class="m-5 h-[200px] w-[200px] relative">
-        <%= render "shared/avatar", model: band %>
-      </div>
-      <div class="card-body">
-        <%= link_to band.name, band_path(band), class:'card-title text-white text-xl block border-b-2 px-2.5 py-2 text-end' %>
-        <em class="text-xs text-white text-end mb-3">成立於： <%= band.founded_at%></em>
-        <div><%= render 'style', band: band %></div>
-        <div>
-          <p class="text-white text-start">活動地區： <%= band.area %></p>
-        </div>
-        <div>
-          <p class="text-white text-start">狀態：<%= band.state %></p>
-        </div>
-      <div class="card-actions justify-end">
-      <% if user_signed_in? %>
-        <% if current_user.confirmed? && current_user.profile.present?%>
-          <%= link_to "申請加入", "#", class: "btn btn-primary" %>
-        <% else %>
-          <%= link_to "申請加入", "#", class: "btn btn-primary", alert: "請先完成個人資料！" %>
-        <% end %>
-      <% else %>
-        <%= link_to "申請加入", new_user_session_path, class: "btn btn-primary", alert: "請先登入！" %>
+<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#bdcbd2] rounded-[80px] drop-shadow-2xl my-10 ">
+  <div class="w-[200px] h-[200px] relative">
+    <%= render "shared/avatar", model: band  %>
+  </div>
+
+  <div class="w-[450px] flex flex-wrap p-5">
+    <p class="w-full font-semibold joband-text-bk h2 drop-shadow-md"><%= band.name %></p>
+    <p class=" w-full block h-[70px] joband-text-bk"><%= band.content.body.to_plain_text.truncate(100) %></p>
+    <div class="flex w-full mt-4">
+      <% if band.area.present? %>
+        <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= band.area %></a>
       <% end %>
-    </div> 
-  </li>
-  <% end %>
-</ul>
+      <% if band.state.present? %>
+        <a href="#" class="z-[1] mr-5 shadow-md joband-tag-style"><%= band.state %></a>
+      <% end %>
+      <% if band.recruit.present? %>
+        <%= link_to '招募中', recruit_path(band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="w-[150px] h-[150px] flex justify-center items-center">
+    <%= render "style", band: band %>
+  </div>
+  <%= link_to '', band_path(band), class: "block w-full h-full absolute" %>
+</div>
