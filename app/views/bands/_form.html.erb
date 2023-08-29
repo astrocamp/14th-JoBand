@@ -22,7 +22,7 @@
     <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-bordered file-input-info w-full max-w-xs" %>
   </div>
   
-  <div class="m-5 flex">
+  <div class="flex m-5">
     <%= f.label :style_ids, "演奏風格：", class: "mr-8 text-xl text-black" %>
     <div id="check-boxes">
       <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
