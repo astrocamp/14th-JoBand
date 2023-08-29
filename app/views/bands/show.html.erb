@@ -17,10 +17,18 @@
     <% end %>  
   </section>
 
-  <div class="flex justify-around w-auto mb-12">
-    <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
-      <%= render "style", band: @band %>
-    </div>
+  <div class="flex flex-wrap justify-around mb-12">
+    <% if @band.styles.present? %>
+      <% @band.styles.each do |style| %>
+        <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
+          <%= render "style", style: style %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="relative flex flex-wrap justify-center w-[100px] h-[100px]">
+        <%= render "freestyle" %>
+      </div>
+    <% end %>
   </div>
     
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">

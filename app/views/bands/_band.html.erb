@@ -20,7 +20,15 @@
   </div>
 
   <div class="w-[150px] h-[150px] flex justify-center items-center">
-    <%= render "style", band: band %>
+    <% if band.styles.present? %>
+      <div class="w-[150px] h-[150px] flex relative">
+        <%= render "style", style: band.styles.first %>
+      </div>
+    <% else %>
+      <div class="relative flex flex-wrap justify-center w-h-full">
+        <%= render "freestyle" %>
+      </div>
+    <% end %>
   </div>
   <%= link_to '', band_path(band), class: "block w-full h-full absolute" %>
 </div>
