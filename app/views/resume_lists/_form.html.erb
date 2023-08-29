@@ -2,6 +2,7 @@
   <%= form_with(model:, data: { turbo: false }) do |f| %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :status, value: :pending %>
   
     <h1 class="h1 text-center">介紹你自己</h1>
     

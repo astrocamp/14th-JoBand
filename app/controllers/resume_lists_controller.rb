@@ -12,7 +12,7 @@ class ResumeListsController < ApplicationController
 
   def create
     @resume_list = @recruit.resume_lists.build(resume_list_params)
-    if @resume_list.save!
+    if @resume_list.save
       redirect_to resume_list_path(@resume_list), notice: '申請成功'
     else
       render :new
@@ -53,6 +53,6 @@ class ResumeListsController < ApplicationController
   end
 
   def resume_list_params
-    params.require(:resume_list).permit(:user_id, :description, :role)
+    params.require(:resume_list).permit(:user_id, :description, :role, :status)
   end
 end
