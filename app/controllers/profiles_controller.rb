@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
 
   def update
     if @profile.update(params_profile)
-      redirect_to profiles_path(@profile), notice: '新增 profile 成功'
+      redirect_to profile_path(@profile), notice: '修改profile 成功'
     else
       render :edit
     end
