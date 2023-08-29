@@ -24,6 +24,8 @@ en:
     current_password: "Current Password"
     need_current_password: "(we need your current password to confirm your changes)"
     leave_blank: "(leave blank if you don't want to change it)"
+    update: "Update"
+    back: "Back"
   step:
     one: "Register"
     two: "Confirmation"

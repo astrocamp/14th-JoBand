@@ -13,15 +13,6 @@
         <%= instrument.name %>
       <% end %>
     <% end %>
-
-    <% if user_signed_in?%>
-      <% if current_user.profile.present? %>
-      <% else %>
-        <button class="joband-action-btn" ><%= link_to "新增 個人檔案", new_profile_path %></button>
-      <% end %>
-    <% else %>
-      <button class="joband-action-btn" ><%= link_to "加入會員", new_user_registration_path %></button>
-    <% end %>
   </div>
   <div class="flex flex-wrap justify-center w-full">
     <div class="my-10">
