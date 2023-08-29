@@ -7,7 +7,7 @@ class BandMembersController < ApplicationController
   def edit; end
 
   def update
-    if @band_members.update(band_member_params)
+    if @band_member.update(band_member_params)
       redirect_to band_path(@band)
     else
       render :edit, notice: '失敗'
