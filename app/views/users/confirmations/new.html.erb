@@ -9,7 +9,7 @@
 
       <div class="field my-2">
         <%= f.label :email, class: "text-white" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "email@example.com" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "email@example.com", class: "text-white input input-bordered" %>
       </div>
 
       <div class="actions">

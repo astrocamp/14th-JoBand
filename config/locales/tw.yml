@@ -24,6 +24,8 @@ tw:
     current_password: "目前密碼"
     need_current_password: "(我們需要您目前的密碼來確認您的變更。)"
     leave_blank: "（留白如果您不打算更換密碼）"
+    update: "更新"
+    back: "返回"
   step:
     one: "會員註冊"
     two: "信箱驗證"
@@ -114,5 +116,3 @@ tw:
           Central: 中部地區
           South: 南部地區
           East: 東部地區
-    
-      
