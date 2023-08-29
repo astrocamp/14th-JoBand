@@ -41,3 +41,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "aws-sdk-s3", require: false
