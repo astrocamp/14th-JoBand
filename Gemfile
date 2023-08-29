@@ -13,8 +13,7 @@ gem 'devise', '~> 4.9'
 gem 'image_processing', '~> 1.2'
 gem 'importmap-rails'
 gem 'jbuilder'
-gem 'omniauth', '~> 2.1'
-gem 'omniauth-facebook'
+gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'pg', '~> 1.1'
@@ -27,7 +26,7 @@ gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem 'dotenv-rails', '~> 2.8'
+  gem 'dotenv-rails'
   gem 'letter_opener', '~> 1.8'
   gem 'rubocop', require: false
   gem 'byebug', '~> 11.1', '>= 11.1.3'
