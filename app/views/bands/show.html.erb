@@ -66,9 +66,11 @@
         <% end %>
       </div>
       <p>樂團招募中文章</p>
+        <% if @band.recruit.present? %>
       <div>
         <h2 class="font-bold text-[#2A323A] hover:text-gray-600 text-xl mb-5"><%= link_to @band.recruit.title, recruit_path(@band.recruit) %></h2>
-      </div>  
+      </div> 
+        <% end %>  
     </section>
     
   </article>
