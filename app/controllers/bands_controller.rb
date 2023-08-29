@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class BandsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_band, only: %i[show edit update]
 
   def index

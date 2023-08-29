@@ -7,6 +7,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
+  # validates
+  validates :password, presence: true, length: { in: 8..16 }
+  validates :password_confirmation, presence: true
+  validates :email, presence: true, format: { with: Devise.email_regexp }
+
   # associations
   has_one :profile
   has_many :band_members
