@@ -25,7 +25,7 @@
   <div class="m-5 flex">
     <%= f.label :style_ids, "演奏風格：", class: "mr-8 text-xl text-black" %>
     <div id="check-boxes">
-      <%= f.collection_check_boxes :style_ids, style_all, :id, :name %>
+      <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
     </div>
   </div>
 
