@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_25_100739) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_29_043256) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,7 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_100739) do
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
-    t.integer "phone"
+    t.string "phone"
     t.string "location"
     t.integer "seniority"
     t.text "content"
@@ -127,6 +127,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_100739) do
     t.datetime "updated_at", null: false
     t.bigint "band_id"
     t.index ["band_id"], name: "index_recruits_on_band_id"
+  end
+
+  create_table "resume_lists", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recruit_id", null: false
+    t.string "role"
+    t.text "description"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recruit_id"], name: "index_resume_lists_on_recruit_id"
+    t.index ["user_id"], name: "index_resume_lists_on_user_id"
   end
 
   create_table "styles", force: :cascade do |t|
@@ -167,4 +179,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_25_100739) do
   add_foreign_key "recruit_and_instruments", "instruments"
   add_foreign_key "recruit_and_instruments", "recruits"
   add_foreign_key "recruits", "bands"
+  add_foreign_key "resume_lists", "recruits"
+  add_foreign_key "resume_lists", "users"
 end
