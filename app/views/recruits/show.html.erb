@@ -29,7 +29,9 @@
                           } %>
       </div>                  
   <div class="flex flex-col mt-12">
+    <% if !current_user&.band_members&.pluck(:band_id).include?(@recruit.band_id) %>
       <%= link_to "申請加入樂團", "#", class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"%>
+    <% end %>
       <%= link_to "返回社團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
   </div>
 </article>
