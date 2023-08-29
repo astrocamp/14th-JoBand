@@ -7,13 +7,12 @@
   </section>
   
   <section class="flex justify-center mb-5">
-    <div class="flex justify-around items-center w-4/5">
-
+    <div class="flex items-center justify-around w-4/5">
       <div class="h-[200px] w-[200px] relative">
         <%= render "shared/avatar", model: @band %>
       </div>
       <h1 class="text-2xl"><%= @band.name %></h1>
-      <p class="border-double border-2 border-sky-500 p-2 rounded-lg bg-sky-700 text-white"><%= @band.state %></p>
+      <p class="p-2 text-white border-2 border-double rounded-lg border-sky-500 bg-sky-700"><%= @band.state %></p>
 
       <h2 class="h2">樂團招募</h2>
       <div>
@@ -27,36 +26,36 @@
     </div>
   </section>
   
-  <article class="flex flex-col justify-center items-center w-full bg-gray-200">
+  <article class="flex flex-col items-center justify-center w-full bg-gray-200">
     
     <section class="flex justify-around w-9/12 mt-6 ">
       <div class="flex flex-col items-center justify-center">
-        <p class="font-bold mb-2 text-lg" >曲風</p> 
+        <p class="w-[120px] mb-2 text-lg font-bold" >曲風</p> 
         <%= render 'style', band: @band %>
       </div>
 
       <div class="flex flex-col items-center justify-center">
-        <p class="font-bold mb-2 text-lg">創立時間</p>
+        <p class="mb-2 text-lg font-bold">創立時間</p>
         <%= @band.founded_at %>
       </div>
 
       <div class="flex flex-col items-center justify-center">
-        <p class="font-bold mb-2 text-lg">地區</p>
+        <p class="mb-2 text-lg font-bold">地區</p>
         <%= @band.area %>
       </div>
       <div class="flex flex-col items-center justify-center">
-        <p class="font-bold text-lg">成員</p><br>
+        <p class="text-lg font-bold">成員</p><br>
         <%= render @band_members %>
       </div>
     </section>
     
-    <section class="w-7/12  p-6">
+    <section class="w-7/12 p-6">
         <p class= "text-justify">
           <%= @band.content %>
         </p>
     </section>
 
-    <section class=" w-9/12  flex flex-col items-center">
+    <section class="flex flex-col items-center w-9/12 ">
       <div>
         <% if @band.music.attached? %>
           <audio controls controlsList="nodownload" class="mb-5">

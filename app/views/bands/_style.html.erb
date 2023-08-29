@@ -1,7 +1,12 @@
-<ul class="flex flex-wrap">
-  <% band.styles.each do |style| %>
-    <li class="mr-auto badge badge-error gap-3">
-      <%= style.name %>
-    </li>
-  <% end %>
-</ul>
+  <div class="relative flex flex-wrap justify-center w-h-full">
+    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
+      <div class="rounded-full h-w-full"></div>
+      <%# <img src="/icon_img/vocal.svg" alt="vocal_icon" class="absolute w-1/2 p-1 drop-shadow"> %>
+      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+    </a>
+    <% if band.styles.present? %>
+      <p class="block mt-2 font-semibold joband-text-bk"><%= band.styles.first.name.upcase %></p>
+    <% else %>
+      <p class="block mt-2 font-semibold joband-text-bk">FREE STYLE</p>
+    <% end %>
+  </div>
