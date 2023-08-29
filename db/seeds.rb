@@ -35,8 +35,8 @@ User.create!(
 
 demo_profile = User.find_by(email: 'zooey@gg.gg').create_profile(
   phone: '3345678',
-  location: 'Mars',
-  seniority: '999',
+  location: 'Los Angeles',
+  seniority: '20',
   content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
 )
 
