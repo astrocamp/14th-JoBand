@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ .swal2-toast{
+  display: flex !important;
+  justify-content: center !important;
+  background-color: rgb(241 245 249) !important
+ }
+ .swal2-toast h2{
+  color: #2A323A !important;
+ }

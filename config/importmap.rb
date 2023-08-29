@@ -33,3 +33,4 @@ pin 'source-map-js', to: 'https://ga.jspm.io/npm:source-map-js@1.0.2/source-map.
 pin 'tailwindcss/colors', to: 'https://ga.jspm.io/npm:tailwindcss@3.3.3/colors.js'
 pin 'tailwindcss/plugin', to: 'https://ga.jspm.io/npm:tailwindcss@3.3.3/plugin.js'
 pin 'url', to: 'https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/url.js'
+pin 'sweetalert2', to: 'https://ga.jspm.io/npm:sweetalert2@11.7.27/dist/sweetalert2.all.js'
