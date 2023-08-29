@@ -4,11 +4,13 @@
     <%= f.label :name, class:"mr-8" %>
     <%= f.text_field :name , class:"text-black"%>
   </div>
-
+  
+  <% if action_name.in?(['new', 'create']) %>
    <div class="m-5">
     <%= f.label :role, '您演奏的樂器' %>
     <%= f.select :role, BandMember.default_roles %>
-  </div>
+   </div>
+  <% end %>
   
   <div class="m-5">
     <%= f.label :banner, '上傳樂團佈景' %>
