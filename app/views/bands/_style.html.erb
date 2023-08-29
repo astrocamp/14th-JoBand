@@ -1,5 +1,7 @@
 <ul class="flex flex-wrap">
   <% band.styles.each do |style| %>
-    <li><%= style.name %></li>
+    <li class="mr-auto badge badge-error gap-3">
+      <%= style.name %>
+    </li>
   <% end %>
 </ul>

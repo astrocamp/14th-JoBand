@@ -8,7 +8,7 @@
       <div class="card-body">
         <%= link_to band.name, band_path(band), class:'card-title text-white text-xl block border-b-2 px-2.5 py-2 text-end' %>
         <em class="text-xs text-white text-end mb-3">成立於： <%= band.founded_at%></em>
-        <div class="mr-auto badge badge-error gap-3"><%= render 'style', band: band %></div>
+        <div><%= render 'style', band: band %></div>
         <div>
           <p class="text-white text-start">活動地區： <%= band.area %></p>
         </div>
