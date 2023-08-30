@@ -1,14 +1,12 @@
-<%= link_to profile_path(band_member.user.profile), action: 'go' do %>
-    <div class="flex justify-center flex-wrap mx-2 w-[180px]">
-      <div class="relative w-[120px] h-[120px] mt-5">
-        <%= render 'shared/avatar' , model: band_member.user.profile %>
-      </div>
-      <div class="w-full text-center h2 joband-text-bk joband-shadow">
-        <%= band_member.role %>
-      </div>
-      <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
-        <%= link_to '編輯', edit_band_band_member_path(@band, band_member) , class: 'btn btn-xs mt-2'%>
-      <% end %>
-    </div>
+<div class="flex justify-center flex-wrap mx-2 w-[180px]">
+  <div class="relative w-[120px] h-[120px] mt-5 joband-shadow">
+    <%= link_to '', profile_path(band_member.user.profile), class: "block w-full h-full absolute z-[1]" %>
+    <%= render 'shared/avatar' , model: band_member.user.profile %>
   </div>
-<% end %>
+  <div class="w-full text-center h2 joband-text-bk joband-shadow">
+    <%= band_member.role %>
+  </div>
+  <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
+    <%= link_to '編輯', edit_band_band_member_path(@band, band_member) , class: 'btn btn-xs mt-2'%>
+  <% end %>
+</div>
