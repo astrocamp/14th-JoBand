@@ -5,7 +5,7 @@
 
   <div class="w-[450px] flex flex-wrap p-5">
     <p class="w-full font-semibold joband-text-bk h2 drop-shadow-md"><%= band.name %></p>
-    <p class=" w-full block h-[70px] joband-text-bk"><%= band.content.body.to_plain_text.truncate(100) %></p>
+    <p class=" w-full block h-[70px] joband-text-bk"><%= band.content.body.to_plain_text.truncate(70) %></p>
     <div class="flex w-full mt-4">
       <% if band.area.present? %>
         <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= band.area %></a>
