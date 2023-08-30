@@ -43,8 +43,9 @@
     <div class="flex flex-wrap w-full my-5 ">
       <%= render @band_members %>
     </div>
-    <span class="w-full mx-40 joband-line-bk"></span>
-    <div class="w-full px-40 my-5">
+    
+    <span class="w-full joband-line-bk"></span>
+    <div class="w-full my-5">
       <% if @band.music.attached? %>
         <audio controls controlsList="nodownload" class="w-full">
           <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
@@ -54,8 +55,8 @@
         <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
       <% end %>
     </div>
-    <span class="w-full mx-40 joband-line-bk"></span>
-    <div class="w-full px-40 my-5">
+    <span class="w-full joband-line-bk"></span>
+    <div class="w-full my-5">
       <% if @band.video.attached? %>
         <video width="640" height="360" controls controlsList="nodownload" class="w-full">
           <source src="<%= url_for(@band.video) %>" type="video/mp4">
@@ -65,10 +66,28 @@
         <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
       <% end %>
     </div>
-    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
-      <div class="mb-10 align-middle">
-        <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
-      </div>
-    <% end %>  
+    <div class="flex flex-wrap justify-center my-10">
+
+      <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+        <div class="w-full mb-10 align-middle">
+          <div class="w-32 mx-auto text-center ">
+            <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
+          </div>
+        </div>
+      <% else %>
+        <% if @band.recruit.present? %>
+          <% if user_signed_in? %>
+            <% if current_user.confirmed? && current_user.profile.present?%>
+              <%= link_to '招募中', recruit_path(@band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
+            <% else %>
+              <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先完成個人資料！" %>
+            <% end %>
+          <% else %>
+            <%= link_to "招募中", new_user_session_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先登入！" %>
+          <% end %>
+        <% end %>
+      <% end %>  
+    </div>
+
   </div>
 </div>

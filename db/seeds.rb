@@ -30,7 +30,8 @@ demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
 User.create!(
   name: 'Zooey Deschanel',
   email: 'zooey@gg.gg',
-  password: '123123123'
+  password: '123123123',
+  password_confirmation: "123123123"
 )
 
 demo_profile = User.find_by(email: 'zooey@gg.gg').create_profile(

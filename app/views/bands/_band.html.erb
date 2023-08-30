@@ -14,7 +14,15 @@
         <a href="#" class="z-[1] mr-5 shadow-md joband-tag-style"><%= band.state %></a>
       <% end %>
       <% if band.recruit.present? %>
-        <%= link_to '招募中', recruit_path(band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
+        <% if user_signed_in? %>
+          <% if current_user.confirmed? && current_user.profile.present?%>
+            <%= link_to '招募中', recruit_path(band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
+          <% else %>
+            <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先完成個人資料！" %>
+          <% end %>
+        <% else %>
+          <%= link_to "招募中", new_user_session_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先登入！" %>
+        <% end %>
       <% end %>
     </div>
   </div>

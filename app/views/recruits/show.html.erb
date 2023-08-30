@@ -1,4 +1,4 @@
-<article class="flex justify-center flex-wrap w-9/12 h-auto p-6 mx-auto rounded-lg shadow-md bg-slate-100 text-gray-700 ">
+<article class="flex flex-wrap justify-center w-9/12 h-auto p-6 mx-auto text-gray-700 rounded-lg shadow-md bg-slate-100 ">
   
   <% @resume_lists.where(status: :pending).each do |list| %>
     <div class="m-3">
@@ -43,10 +43,13 @@
     </div>
 
     <div class="flex flex-col mt-12">
+    <% if user_signed_in? %>
       <% if !current_user&.band_members&.pluck(:band_id).include?(@recruit.band_id) %>
         <%= link_to "申請加入樂團",  new_recruit_resume_list_path(@recruit), class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"%>
       <% end %>
-        <%= link_to "返回社團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
+    <% end %>
+    <%= link_to "返回社團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
+   
     </div>    
   </div>
   
