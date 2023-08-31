@@ -26,7 +26,7 @@ class User < ApplicationRecord
   def self.ransackable_associations(_auth_object = nil)
     %w[band_members bands profile]
   end
-  
+
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -38,5 +38,4 @@ class User < ApplicationRecord
     )
     user
   end
-  
 end
