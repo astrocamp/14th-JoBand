@@ -7,11 +7,11 @@
     </div>
   <% end %>
   <p>
-    <strong>Role:</strong> 
+    <strong>Role:</strong>
     <%= @resume_list.role %>
   </p>
   <p>
-    <strong>Status:</strong> 
+    <strong>Status:</strong>
     <%= @resume_list.status %>
   </p>
   <p>
@@ -19,9 +19,14 @@
     <%= @resume_list.description %>
   </p>
   <% if current_user&.id === @resume_list.recruit.band.band_members.find_by(identity: :leader).user_id %>                              
-    <%= link_to "Approve", approve_resume_list_path(@resume_list),
-                           data: {turbo_method: :post}, 
-                           class: 'btn btn-accent'%>
+    <%= link_to "加入", approve_resume_list_path(@resume_list),
+                          data: {turbo_method: :post,
+                                  turbo_confirm: '確認加入?'},
+                                  class: 'btn btn-accent'%>
+    <%= link_to '拒絕', reject_resume_list_path(@resume_list) , 
+                          data: {turbo_method: :patch,
+                                  turbo_confirm: '拒絕此申請'}, 
+                                  class: 'joband-action-btn'%>
   <% end %>
 
 </article>

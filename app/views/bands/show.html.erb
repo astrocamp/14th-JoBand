@@ -10,7 +10,7 @@
     <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
     <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
       <% if @band.recruit.present? %>
-        <%= link_to '查看招募', recruit_path(@band), class: "joband-action-btn"%>
+        <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
       <% else %>
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
@@ -37,7 +37,7 @@
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">地區：<%= @band.area %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">介紹：<%= @band.content.body.to_plain_text %></p>
+    <p class="w-full h3">介紹：<%= @band.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">成員：</p>
     <div class="flex flex-wrap w-full my-5 ">
