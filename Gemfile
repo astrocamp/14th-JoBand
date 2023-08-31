@@ -30,6 +30,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'letter_opener', '~> 1.8'
   gem 'rubocop', require: false
+  gem "faker", "~> 3.2"
   gem 'byebug', '~> 11.1', '>= 11.1.3'
 end
 
