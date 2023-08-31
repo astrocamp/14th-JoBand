@@ -1,49 +1,54 @@
 <% if instrument == "Vocal" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/vocal.svg" alt="vocal_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
-    </a>
+    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>["Vocal"]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+      <div class="flex items-center justify-center w-full h-full">
+        <img src="/icon_img/vocal.svg" alt="vocal_icon" class="absolute w-1/2 p-1 drop-shadow">
+        <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+      </div>
     <p class="block mt-2 font-semibold joband-text-bk">VOCAL</p>
   </div>
 <% end %>
 
 <% if instrument == "Guitar" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/guitar.svg" alt="guitar_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
-    </a>
+    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>["Guitar"]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+      <div class="flex items-center justify-center w-full h-full">
+        <img src="/icon_img/guitar.svg" alt="guitar_icon" class="absolute w-1/2 p-1 drop-shadow">
+        <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+      </div>
     <p class="block mt-2 font-semibold joband-text-bk">GUITAR</p>
   </div>
 <% end %>
 
 <% if instrument == "Drum" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/drum.svg" alt="drum_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
-    </a>
+    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>["Drum"]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+      <div class="flex items-center justify-center w-full h-full">
+        <img src="/icon_img/drum.svg" alt="drum_icon" class="absolute w-1/2 p-1 drop-shadow">
+        <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+      </div>
     <p class="block mt-2 font-semibold joband-text-bk">DRUM</p>
   </div>
 <% end %>
 
 <% if instrument == "Bass" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/bass.svg" alt="bass_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
-    </a>
+    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>["Bass"]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+      <div class="flex items-center justify-center w-full h-full">
+        <img src="/icon_img/bass.svg" alt="bass_icon" class="absolute w-1/2 p-1 drop-shadow">
+        <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+      </div>
     <p class="block mt-2 font-semibold joband-text-bk">BASS</p>
   </div>
 <% end %>
 
 <% if instrument == "Keyboard" %>
   <div class="relative flex flex-wrap justify-center w-h-full">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/keyboard.svg" alt="keyboard_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="bg-white rounded-full shadow-inner w-h-full"></div>
-    </a>
+    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>["Keyboard"]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+      <div class="flex items-center justify-center w-full h-full">
+        <img src="/icon_img/keyboard.svg" alt="keyboard_icon" class="absolute w-1/2 p-1 drop-shadow">
+        <div class="bg-white rounded-full shadow-inner w-h-full"></div>
+      </div>
     <p class="block mt-2 font-semibold joband-text-bk">KEYBOARD</p>
   </div>
 <% end %>
