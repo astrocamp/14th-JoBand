@@ -14,19 +14,19 @@
 /* Font Style */
 
 .h1 {
-  @apply block my-5 text-2xl;
+  @apply block text-2xl;
 }
 
 .h2 {
-  @apply block my-5 text-xl;
+  @apply block text-xl;
 }
 
 .h3 {
-  @apply block my-3 text-lg;
+  @apply block text-lg;
 }
 
 .h4 {
-  @apply block my-3 text-base;
+  @apply block text-base;
 }
 
 /* session style */

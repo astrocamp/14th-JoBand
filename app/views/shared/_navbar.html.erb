@@ -1,11 +1,11 @@
-<nav class="flex self-start justify-between text-white navbar bg-base-100 joband-shadow">
-  <div class="self-start flex-1 gap-5">
+<nav class="flex self-start justify-between text-white navbar bg-neutral joband-shadow">
+  <div class="self-start flex-1 gap-8">
     <%= link_to root_path, class: "logo-icon" do %>
       <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10">
     <% end %>
-    <%= link_to '找樂手', profiles_path, class: "btn btn-ghost normal-case text-xl" %>
-    <%= link_to '找樂團', bands_path, class: "btn btn-ghost normal-case text-xl" %>
-    <a href="#" class="text-xl normal-case btn btn-ghost">找活動</a>
+    <%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %>
+    <%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %>
+    <a href="#" class="text-xl btn btn-ghost">找活動</a>
   </div>
   <div class="flex">
     <ul class="flex gap-5">

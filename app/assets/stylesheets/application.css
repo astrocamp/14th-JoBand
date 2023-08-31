@@ -22,3 +22,8 @@
  .swal2-toast h2{
   color: #2A323A !important;
  }
+ .btn{
+  border-radius: 20px !important;
+  font-size: 1rem/* 20px */ !important;
+  line-height: 1.5rem/* 28px */ !important;
+ }

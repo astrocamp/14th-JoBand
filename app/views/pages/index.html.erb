@@ -7,19 +7,23 @@
     </video>
   </div>
   <div class="absolute flex flex-wrap justify-center w-[550px] drop-shadow-lg">
-    <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full my-8">
-    <p class="w-full text-center text-white h1">拓展音樂之路，找尋完美夥伴</p>
+    <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full my-10">
+    <p class="w-full my-5 text-4xl text-center text-white">拓展音樂之路，找尋完美夥伴</p>
     <% if user_signed_in? %>
     <% else %>
-      <%= link_to '現在就加入', new_user_registration_path, class: "my-8 joband-action-btn" %>
+      <%= link_to '現在就加入', new_user_registration_path, class: "joband-action-btn my-12" %>
     <% end %>
   </div>
 </header>
-<nav class="sticky top-0 z-10">
-  <%= render 'shared/navbar'%>
-</nav>
-<section class="w-[90%] mx-auto flex flex-wrap justify-center mt-20 drop-shadow-lg mb-20">
-  <p class="w-full text-center text-white h2">在 Joband 你可以展示你的音樂作品集</p>
+<section class="flex flex-wrap justify-center mt-32 drop-shadow-lg">
+  <div>
+    <p class="w-[1000px] text-white  text-6xl">展示你的音樂作品集</p>
+    <p class="w-[1000px] text-white text-2xl py-6">藉由簡潔明瞭的音樂人小卡快速展示自己</p>
     <%= render "profiles/profile", profile: User.find_by(email: "zooey@gg.gg").profile %>
+  </div>
+  <div class="mt-28">
+    <p class="w-[1000px] text-right text-white text-6xl">秀出你的樂團</p>
+    <p class="w-[1000px] text-right text-white text-2xl py-6 leading-10">樂團小卡記錄每個重要時刻<br/>讓您的音樂旅程無時不刻地閃耀</p>
+  </div>
 </section>
 
