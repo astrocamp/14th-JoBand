@@ -1,22 +1,23 @@
-<div class="flex flex-col w-full" >
-
-  <div class="flex flex-col items-center p-5">
-    <h1 class="text-white h2" >展示你的音樂作品集</h1>
-
-    <%= search_form_for @search_profile do |user| %>
-      <div class="flex justify-center m-5">
-        <%= user.search_field :user_name_or_instruments_name_cont, class:'mr-3'%>
-        <%= user.submit class:'btn btn-sm' %>
-      </div>
-      <% instruments_all.each do |instrument| %>
-        <%= check_box_tag('q[instruments_name_cont_any][]', instrument.name) %>
-        <%= instrument.name %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="flex flex-wrap justify-center w-full">
-    <div class="my-10">
-      <%= render @profiles %>
+<div class="flex flex-wrap justify-center p-10">
+<h1 class="text-white h1" >展示你的音樂作品集</h1>
+<div class="w-full">
+  <%= search_form_for @search_profile do |user| %>
+    <div class="flex justify-center my-10">
+      <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl'%>
+      <%= user.submit class:'joband-action-btn' %>
     </div>
+  <% end %>
+</div>
+<div class="flex search_by_instruments">
+  <% instruments_all.each do |instrument| %>
+    <div class="w-[90px] h-[90px] flex mx-5">
+      <%= render "shared/instrument", instrument: instrument.name %>
+    </div>
+  <% end %>
+</div>
+</div>
+<div class="flex flex-wrap justify-center w-full">
+  <div class="my-10">
+    <%= render @profiles %>
   </div>
 </div>
