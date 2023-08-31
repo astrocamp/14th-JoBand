@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     resources :recruits, shallow: true do
       resources :resume_lists, except: %i[destroy index] do
         member do
+          patch :reject
           post :approve
         end
       end

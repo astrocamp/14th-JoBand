@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class ResumeListsController < ApplicationController
-  before_action :set_recruit_id,  only: %i[new create]
-  before_action :set_resume_list, only: %i[show edit update destroy approve]
+  before_action :set_resume_list, only: %i[show edit update destroy approve reject]
+  before_action :set_recruit,  only: %i[new create]
 
   def show; end
 
@@ -31,7 +31,7 @@ class ResumeListsController < ApplicationController
     new_band_member = @band.band_members.new(user: @user, identity: :member, role: @role)
     if new_band_member.save
       @resume_list.update(status: :approved)
-      redirect_to recruit_path(@recruit)
+      redirect_to recruit_path(@recruit), notice: '已加入樂團'
     else
       flash[:alert] = 'Failed to approve resume list.'
       render :show
@@ -39,12 +39,16 @@ class ResumeListsController < ApplicationController
   end
 
   def reject
-    @resume_list.update(status: :rejected)
+    if @resume_list.update(status: :rejected)
+      redirect_to recruit_path(@resume_list.recruit), notice: '已拒絕申請'
+    else
+      reder resume_list_path(@resume_list), alert: '操作失敗'
+    end
   end
 
   private
 
-  def set_recruit_id
+  def set_recruit
     @recruit = Recruit.find(params[:recruit_id])
   end
 
