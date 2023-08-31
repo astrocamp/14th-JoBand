@@ -29,6 +29,19 @@ I18n.with_locale do
   
 end
 
+fakewords = [
+  "萬物於我皆為春秋，而吾將與時俱舞。",
+  "塵世煙雲，皆是虛幻之事，莫過於心靈之清明。",
+  "大道之行也，天下為公，吾其獨樂樂乎？",
+  "人生如夢，一切皆虛。悟己者智，悟道者明。",
+  "天地萬物，與我何干？內觀自心，得天地之間。",
+  "虛無即是真實，真實亦可化為虛無。",
+  "逍遙於自然之間，心隨物動，物隨心生。",
+  "欲去一切，方得無所不在。",
+  "萬物皆妄，吾亦妄言之。妄言既妄，妄言誰妄？",
+  "安得為紅顏，不負春風？吾有心而忘形。"
+]
+
 15.times do |i|
   fakername = Faker::Name.unique.name
   fakeremail = Faker::Internet.unique.email
@@ -36,7 +49,7 @@ end
   fakerphone = Faker::PhoneNumber.phone_number
   fakerlocation = Faker::Address.city
   fakerseniority = rand(1..20).to_s
-  fakercontent = Faker::Lorem.sentence
+  fakercontent = fakewords.sample
 
   user = User.create!(
     name: fakername,
@@ -54,6 +67,10 @@ end
 
   random_instrument = Instrument.order('RANDOM()').first
   demo_profile.instruments << random_instrument
+
+  avatar_url = Net::HTTP.get(URI.parse("https://avatars.dicebear.com/api/shapes/Cookie.svg"))
+
+  demo_profile.avatar.attach(io: StringIO.new(avatar_url), filename: 'avatar.svg', content_type: 'image/svg+xml')
 
   demo_avatar = File.binread(Rails.root.join('public', 'default_avatar.png'))
   demo_profile.avatar.attach(io: StringIO.new(demo_avatar), filename: 'default_avatar.png', content_type: 'image/png')
