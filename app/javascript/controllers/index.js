@@ -4,3 +4,8 @@
 
 import { application } from "./application"
 
+import FlashController from "./flash_controller"
+application.register("flash", FlashController)
+
+import ShowbandController from "./showband_controller"
+application.register("showband", ShowbandController)
