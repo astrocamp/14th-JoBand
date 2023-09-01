@@ -39,7 +39,7 @@ class ActivitiesController < ApplicationController
 
   private
   def activity_params
-    params.require(:activity).permit(:title, :content, :founded_at, :location)
+    params.require(:activity).permit(:title, :content, :founded_at, :location, :activity_banner)
   end
 
   def set_activity

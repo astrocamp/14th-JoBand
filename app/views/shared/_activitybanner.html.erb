@@ -1,0 +1,5 @@
+<% if model.activity_banner.attached? %>
+  <%= image_tag model.activity_banner %>
+<% else %>
+  <img src="/default_banner.jpg" alt="default_banner"> 
+<% end %>

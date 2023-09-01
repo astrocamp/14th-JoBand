@@ -6,6 +6,11 @@
     </div>
 
     <div>
+        <%= f.label :activity_banner, '上傳活動照片' %>
+        <%= f.file_field :banner, accept: "image/png, image/jpeg" %>
+    </div>
+
+    <div>
         <%= f.label '活動內容' %>
         <%= f.text_area :content %>
     </div>
