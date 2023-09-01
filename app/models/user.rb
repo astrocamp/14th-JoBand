@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   # validates
   validates :password, presence: true, length: { in: 8..16 }
-  validates :password_confirmation, presence: true
+  # validates :password_confirmation, presence: true
   validates :email, presence: true, format: { with: Devise.email_regexp }
 
   # associations
