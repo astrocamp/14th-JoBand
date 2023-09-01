@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
 
     if @activity.save
-      redirect_to activities_path, notice: '成功建立活動'
+      redirect_to activity_path(@activity), notice: '成功建立活動'
     else
       render :new, notice: '建立失敗'
     end
@@ -26,7 +26,7 @@ class ActivitiesController < ApplicationController
 
   def update
     if @activity.update(activity_params)
-      redirect_to activities_path, notice: '更新成功'
+      redirect_to activity_path(@activity), notice: '更新成功'
     else
       render :edit, notice: '更新失敗'
     end
@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to activity_path, notice: '刪除成功'
+    redirect_to activities_path, notice: '刪除成功'
   end
 
   private

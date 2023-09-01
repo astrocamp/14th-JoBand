@@ -6,8 +6,6 @@
     <% @activities.each do |activity| %>
         <li> 
             <%= link_to activity.title, activity_path(activity) %>
-            <%= link_to '更新', edit_activity_path(activity) %>
-            <%= link_to '刪除', activity_path(activity), data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' } %>
         </li>
     <% end %>
 </ul>

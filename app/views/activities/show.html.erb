@@ -10,3 +10,12 @@
     <%= render "shared/banner", model: @activity %>
 </section>
 
+<%# <% if current_user&.id == @activity.user_id %> 
+    <div class="w-32 mx-auto text-center ">
+        <%= link_to '更新活動', edit_activity_path(@activity), class:"joband-action-btn mb-6" %>
+        <%= link_to '刪除', activity_path(@activity), data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, class:"joband-action-btn" %> 
+    </div>
+
+
+    <%# <%= link_to '刪除', activity_path(activity), data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' } %> 
+
