@@ -27,6 +27,8 @@ Rails.application.routes.draw do
           patch :reject
           post :approve
         end
+
+        resources :comments, only: %i[create destroy], shallow: true
       end
     end
   end

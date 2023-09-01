@@ -93,6 +93,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "user_id", null: false
+    t.string "commentable_type", null: false
+    t.bigint "commentable_id", null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
+    t.index ["deleted_at"], name: "index_comments_on_deleted_at"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "instruments", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -183,6 +196,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
   add_foreign_key "band_members", "users"
   add_foreign_key "band_styles", "bands"
   add_foreign_key "band_styles", "styles"
+  add_foreign_key "comments", "users"
   add_foreign_key "profile_and_instruments", "instruments"
   add_foreign_key "profile_and_instruments", "profiles"
   add_foreign_key "recruit_and_instruments", "instruments"

@@ -3,6 +3,7 @@
 class ResumeList < ApplicationRecord
   belongs_to :user
   belongs_to :recruit
+  has_many :comments, as: :commentable
 
   validates :user_id, uniqueness: true
 

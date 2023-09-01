@@ -4,7 +4,10 @@ class ResumeListsController < ApplicationController
   before_action :set_resume_list, only: %i[show edit update destroy approve reject]
   before_action :set_recruit, only: %i[new create]
 
-  def show; end
+  def show
+    @comment = Comment.new
+    @comments = @resume_list.comments
+  end
 
   def new
     @resume_list = ResumeList.new
