@@ -1,11 +1,11 @@
-<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#D9D9D9] rounded-[60px] drop-shadow-2xl my-10 ">
+<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#D9D9D9] rounded-[60px] joband-shadow my-10 ">
   <div class="w-[200px] h-[200px] relative">
     <%= render "shared/avatar", model: profile  %>
   </div>
 
   <div class="w-[450px] flex flex-wrap p-5">
-    <p class="w-full font-semibold joband-text-bk h2 drop-shadow-md"><%= profile.user.name %></p>
-    <p class=" w-full block h-[70px] joband-text-bk"><%= profile.content.truncate(70) %></p>
+    <p class="w-full font-semibold joband-text-bk h2 joband-shadow"><%= profile.user.name %></p>
+    <p class="w-full h-[70px] h4 mt-5 joband-text-bk"><%= profile.content.truncate(70) %></p>
     <div class="flex w-full mt-4">
       <% if profile.location.present? %>
         <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= profile.location %></a>

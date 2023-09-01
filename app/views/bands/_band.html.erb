@@ -30,11 +30,11 @@
   <div class="w-[150px] h-[150px] flex justify-center items-center">
     <% if band.styles.present? %>
       <div class="w-[150px] h-[150px] flex relative">
-        <%= render "style", style: band.styles.first %>
+        <%= render "bands/style", style: band.styles.first %>
       </div>
     <% else %>
       <div class="relative flex flex-wrap justify-center w-h-full">
-        <%= render "freestyle" %>
+        <%= render "bands/freestyle" %>
       </div>
     <% end %>
   </div>

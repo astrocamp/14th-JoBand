@@ -1,4 +1,4 @@
-<div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto p-10 rounded-[50px] shadow-md bg-slate-100">  
+<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto mt-20 p-10 rounded-[100px] joband-shadow bg-slate-100">  
   <div class="my-10 h-[200px] w-[200px] relative ">
     <%= render "shared/avatar", model: @profile  %>
   </div>
@@ -6,7 +6,7 @@
   <% if current_user&.id == @profile.user_id %>
     <%= link_to '創建樂團', new_band_path, class:'joband-action-btn' %>
   <% end %>
-  <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
+  <div class="flex flex-wrap justify-center w-full mt-5 px-28 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
@@ -24,7 +24,7 @@
     <p class="w-full h3">內容：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
-    <div class="flex flex-wrap w-full my-5 ">
+    <div class="flex flex-wrap w-full ">
       <%= render 'band' %>
     </div>
     <span class="w-full joband-line-bk"></span>

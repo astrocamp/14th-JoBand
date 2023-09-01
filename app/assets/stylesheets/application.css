@@ -27,3 +27,11 @@
   font-size: 1rem/* 20px */ !important;
   line-height: 1.5rem/* 28px */ !important;
  }
+
+ .joband-action-btn{
+  background-color: #F46A5B !important;
+ }
+
+ .search_by_instruments p{
+  color: white !important
+ }

@@ -14,19 +14,19 @@
 /* Font Style */
 
 .h1 {
-  @apply block text-2xl;
+  @apply block text-4xl;
 }
 
 .h2 {
-  @apply block text-xl;
+  @apply block text-2xl;
 }
 
 .h3 {
-  @apply block text-lg;
+  @apply block text-xl;
 }
 
 .h4 {
-  @apply block text-base;
+  @apply block text-lg;
 }
 
 /* session style */
@@ -54,28 +54,28 @@
 
 /* button style */
 
-.confirm-btn {
+/* .confirm-btn {
   @apply px-4 py-2 my-5 text-black bg-white rounded-lg cursor-pointer select-none hover:bg-slate-100 hover:duration-300 ;
 }
 
 .cancel-btn {
   @apply cursor-pointer select-none rounded-md
-}
+} */
 
 .joband-action-btn {
-  @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300
+  @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
 .joband-tag-location {
-  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300 joband-shadow
 }
 
 .joband-tag-seniority {
-  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#eb656b] hover:duration-300
+  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#eb656b] hover:duration-300 joband-shadow
 }
 
 .joband-tag-style {
-  @apply bg-[#EE9545] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#e9ab75] hover:duration-300
+  @apply bg-[#EE9545] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#e9ab75] hover:duration-300 joband-shadow
 }
 
 .joband-text-bk{
@@ -87,7 +87,7 @@
 }
 
 .joband-line-bk{
-  @apply h-[2px] rounded-full my-2 bg-[#8c959d]
+  @apply h-[2px] rounded-full my-5 bg-[#8c959d]
 }
 /*
 
