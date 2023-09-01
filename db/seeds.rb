@@ -42,7 +42,7 @@ fakewords = [
   "安得為紅顏，不負春風？吾有心而忘形。"
 ]
 
-15.times do |i|
+5.times do |i|
   fakername = Faker::Name.unique.name
   fakeremail = Faker::Internet.unique.email
   fakerpassword = '123123123'
@@ -96,20 +96,19 @@ demo_profile = demo_user.create_profile(
   content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
 )
 
-demo_profile.instruments << Instrument.find_by(name: 'Vocal')
+demo_profile.instruments << Instrument.find_by(name: '主唱')
 
 demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
   name: "大貓會社",
-  style_ids: ["", "3"],
   area: "North",
   content: "你好～歡迎參觀我的樂團",
   state: "active",
   founded_at: "2023-09-01"
 )
 
-demo_band.band_members.first.update(identity: :leader, role: "Vocal")
+demo_band.band_members.first.update(identity: :leader, role: "主唱")
 
-demo_band.styles.update(name: 'Rock')
+demo_band.styles << Style.find_by(name: '搖滾')
 
 demo_profile.avatar.attach(
   io: StringIO.new(demo_avatar),
