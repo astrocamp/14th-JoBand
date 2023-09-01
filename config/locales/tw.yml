@@ -130,11 +130,11 @@ tw:
       psychedelic: "迷幻"
       rock: "搖滾"
     instrument:
-      guitar: "Guitar"
-      bass: "Bass"
-      vocal: "Vocal"
-      drum: "Drum"
-      keyboard: "Keyboard"
+      guitar: "吉他"
+      bass: "貝斯"
+      vocal: "主唱"
+      drum: "爵士鼓"
+      keyboard: "鍵盤"
 
   faker:
     address:

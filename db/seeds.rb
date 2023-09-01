@@ -47,7 +47,7 @@ fakewords = [
   fakeremail = Faker::Internet.unique.email
   fakerpassword = '123123123'
   fakerphone = Faker::PhoneNumber.phone_number
-  fakerlocation = Faker::Address.city
+  fakerlocation = Faker::Address.state
   fakerseniority = rand(1..20).to_s
   fakercontent = fakewords.sample
 
