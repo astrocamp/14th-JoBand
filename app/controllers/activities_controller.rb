@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activities_path, notice: '成功建立活動'
     else
-      render :new
+      render :new, notice: '建立失敗'
     end
   end
 
