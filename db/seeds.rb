@@ -80,14 +80,16 @@ end
 
 demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
 
-User.create!(
+demo_band_avatar = File.binread(Rails.root.join('public', 'band_avatar.png'))
+
+demo_user = User.create!(
   name: 'Zooey Deschanel',
   email: 'zooey@gg.gg',
   password: '123123123',
   confirmed_at: Time.now
 )
 
-demo_profile = User.find_by(email: 'zooey@gg.gg').create_profile(
+demo_profile = demo_user.create_profile(
   phone: '3345678',
   location: 'Los Angeles',
   seniority: '20',
@@ -96,9 +98,28 @@ demo_profile = User.find_by(email: 'zooey@gg.gg').create_profile(
 
 demo_profile.instruments << Instrument.find_by(name: 'Vocal')
 
+demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
+  name: "大貓會社",
+  style_ids: ["", "3"],
+  area: "North",
+  content: "你好～歡迎參觀我的樂團",
+  state: "active",
+  founded_at: "2023-09-01"
+)
+
+demo_band.band_members.first.update(identity: :leader, role: "Vocal")
+
+demo_band.styles.update(name: 'Rock')
+
 demo_profile.avatar.attach(
   io: StringIO.new(demo_avatar),
   filename: 'zooey.png',
   content_type: 'image/png'
 )
 puts "已建立使用者 Zooey"
+
+demo_band.avatar.attach(
+  io: StringIO.new(demo_band_avatar),
+  filename: 'band_avatar.png',
+  content_type: 'image/png'
+)
