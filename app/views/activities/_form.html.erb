@@ -1,0 +1,28 @@
+<%= form_with(model: activity, data: {turbo: false}) do |f| %>
+
+    <div>
+        <%= f.label '活動標題' %>
+        <%= f.text_field :title %>
+    </div>
+
+    <div>
+        <%= f.label '活動內容' %>
+        <%= f.text_area :content %>
+    </div>
+
+    <div>
+        <%= f.label '活動日期' %>
+        <%= f.date_field :founded_at %>
+    </div>
+    
+    <div>
+         <%= f.label '活動地點' %>
+         <%= f.text_field :location %>
+    </div>
+   
+
+    <div>
+        <%=f.submit class:"btn btn-accent w-40" %>
+    </div>
+
+<%end%>
