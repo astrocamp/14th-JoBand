@@ -1,11 +1,2 @@
 <h1 class="text-white h2" >尋找您想參加的活動</h1>
 
-<%= link_to '新增活動', new_activity_path %>
-
-<ul>
-    <% @activities.each do |activity| %>
-        <li> 
-            <%= link_to activity.title, activity_path(activity) %>
-        </li>
-    <% end %>
-</ul>
