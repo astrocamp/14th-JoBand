@@ -1,0 +1,17 @@
+<%= form_with model: @post, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form|  %>
+  <% if flash[:post_errors] %>
+    <div class="px-3 py-2 mx-3 mt-3 font-medium text-red-500 rounded-lg bg-red-50">
+      <ul>
+        <% flash[:post_errors].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.text_area :body, class: "border-b border-t-0 border-x-0 mb-6 px-6 pt-6 block w-full border-gray-200 focus:shadow-none focus:outline-none focus:ring-transparent focus:border-gray-300 resize-none min-h-[180px] text-lg", placeholder: t("post.post_holder") %>
+
+  <div class="flex justify-end px-6 -mt-20">
+    <%= form.submit "送出", class: "px-6 py-2 bg-sky-400 text-white font-semibold rounded-full text-center cursor-pointer inline-block hover:bg-sky-500 transition ease-in-out duration-300"%>
+  </div>
+<% end %>

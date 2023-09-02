@@ -13,7 +13,6 @@ class Band < ApplicationRecord
   has_many :styles, through: :band_styles
   has_many :band_members
   has_many :users, through: :band_members
-  has_many :posts
   has_one :recruit
 
   # enum

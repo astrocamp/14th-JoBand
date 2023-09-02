@@ -35,6 +35,6 @@ Rails.application.routes.draw do
   end
 
   scope "communities" do
-    resources :posts, only: %i[index create show destory]
+    resources :posts, only: %i[index create show destroy]
   end
 end
