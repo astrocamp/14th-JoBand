@@ -6,7 +6,7 @@ class ResumeListsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @resume_list.comments
+    @comments = @resume_list.comments.order(created_at: :desc)
   end
 
   def new
