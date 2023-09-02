@@ -36,6 +36,8 @@ tw:
     reset_password_warning: "有人向我們發出變更密碼的請求，您可以透過以下按鈕來變更密碼："
     reset_my_password: "變更我的密碼"
     reset_password_cancel: "如果不是您發出的變更請求，請忽略並刪除此信件，您的密碼將不會變更。"
+  post:
+    post_holder: "在想些什麼？"
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"

@@ -1,0 +1,40 @@
+
+<div class="grid h-screen grid-cols-1 pr-6 lg:grid-cols-12">
+  <div class="pt-6 pr-6 lg:col-span-2">
+    <ul class="mt-6 ml-5">
+      <li>
+        <%= link_to root_path, class: "rounded-full px-4 -ml-4 inline-flex items-center py-3 hover:bg-neutral-50 w-full text-lg transition ease-in-out duration-500" do %>
+          <%= image_tag("icon/home.svg", alt: "Home") %>
+          <span>Home</span>
+        <% end %>
+      </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to profile_path(current_user), class: "rounded-full px-4 -ml-4 inline-flex items-center py-3 hover:bg-neutral-50 w-full text-lg transition ease-in-out duration-500" do %>
+            <img src="public/icon_img/profile.svg" alt="Profile Icon">
+            <span>Profile</span>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="lg:col-span-6 border-x">
+    <%= form_with model: @post do |f| %>
+
+      <%= f.text_area :body, placeholder: t("post.post_holder"), class: "border-b border-t-0 border-x-0 mb-6 px-6 pt-6 block w-full border-gray-200
+    focus:shadow-none focus:outline-noe focus: rung-transparent focus:border-gray-300 resize-none min-h-[180px] text-lg" %>
+      <div class="flex justify-end">
+        <%= f.submit "送出", class: "btn" %>
+      </div>
+      
+    <% end %>
+  </div>
+  <div class="pt-6 pl-6 lg:col-span-4">
+    <div class="bg-gray-50 w-full min-h-[150px] rounded-lg p-6 mb-6">Sidebar stuff</div>
+  </div>
+</div>
+
+
+
+
+

@@ -36,6 +36,8 @@ en:
     reset_password_warning: "Someone has requested to change your password. You can do this through the link below."
     reset_my_password: "Reset My Password"
     reset_password_cancel: "If you didn't request this, please ignore and delete this email, your password won't be change."
+  post:
+    post_holder: "What's on your mind?"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
