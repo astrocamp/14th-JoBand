@@ -11,11 +11,11 @@
       </div>
       <div>
         (<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>)
-        <% if comment.user == current_user %>
-        <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id), data: {
-                           turbo_method: 'delete',
-                           turbo_confirm: '確定刪除？'
-                           } %>
+         <% if comment.user == current_user %>
+         <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id),
+                            data: {turbo_method: 'delete',
+                            turbo_confirm: '確定刪除？'
+                            } %>
         <% end %>
       </div>
       <hr>
