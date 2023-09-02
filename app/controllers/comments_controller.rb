@@ -3,15 +3,18 @@
 class CommentsController < ApplicationController
   before_action :find_commentable, only: %i[create destroy]
 
-  def create
-    @comment = @commentable.comments.build(comment_params)
+def create
+  @comment = @commentable.comments.build(comment_params)
 
-    if @comment.save
-      redirect_to @commentable, notice: '留言成功'
-    else
-      render :show
-    end
+  if @comment.save
+    redirect_to @commentable, notice: '留言成功'
+  else
+    @resume_list = @commentable
+    @comments = @resume_list.comments.order(created_at: :desc)
+    redirect_to @commentable, alert: '留言不得為空白'
   end
+
+end
 
   def destroy
     @comment = Comment.find(params[:id])

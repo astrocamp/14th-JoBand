@@ -45,7 +45,7 @@
   <%= f.submit '送出留言'%>
 <% end %>
 <h2>留言</h2>
-<ul>
+<ul id="comment_list">
   <%= render "comments/comment", comments: @comments, resume_list: @resume_list %>
 </ul>
 <hr>
