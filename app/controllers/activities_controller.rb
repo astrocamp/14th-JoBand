@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activity_path(@activity), notice: '成功建立活動'
     else
-      render :new, notice: '建立失敗'
+      render :new, alert: '建立失敗'
     end
   end
 
@@ -28,7 +28,7 @@ class ActivitiesController < ApplicationController
     if @activity.update(activity_params)
       redirect_to activity_path(@activity), notice: '更新成功'
     else
-      render :edit, notice: '更新失敗'
+      render :edit, alert: '更新失敗'
     end
   end 
 
@@ -39,7 +39,7 @@ class ActivitiesController < ApplicationController
 
   private
   def activity_params
-    params.require(:activity).permit(:title, :content, :founded_at, :location, :banner)
+    params.require(:activity).permit(:title, :content, :begin_at, :time_start, :time_end, :location, :banner)
   end
 
   def set_activity

@@ -55,7 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
   create_table "activities", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.date "founded_at"
+    t.date "begin_at"
+    t.time "time_start"
+    t.time "time_end"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
