@@ -1,0 +1,16 @@
+<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#D9D9D9] rounded-[60px] joband-shadow my-10">
+  <div class="w-[280px] h-[280px] relative">
+    <%= render "shared/activityBanner", model: activity %>
+  </div>
+
+  <div class="w-[450px] flex flex-wrap p-5">
+    <p class="w-full font-semibold joband-text-bk h2 joband-shadow"><%= activity.title %></p>
+    <p class="w-full h-[70px] h4 mt-5 joband-text-bk"><%= activity.content.truncate(70) %></p>
+    <div class="flex w-full mt-4">
+      <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= activity.location %></a>
+      <a href="#" class="z-[1] shadow-md joband-tag-seniority"><%= activity.founded_at %> </a>
+    </div>
+  </div>
+
+  <%= link_to '', activity_path(activity), class: "block w-full h-full absolute" %>
+</div>

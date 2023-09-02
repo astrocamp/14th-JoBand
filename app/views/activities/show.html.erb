@@ -1,16 +1,20 @@
-<div>
-    <h1><%= @activity.title %></h1>
-</div>
-
-<div>
-    <p><%= @activity.content %></p>
-</div>
-
-<section class="w-full mb-10">
+<div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto rounded-[50px] overflow-hidden shadow-md bg-slate-100">  
+  <section class="w-full h-[500px] overflow-hidden mb-10">
     <%= render "shared/banner", model: @activity %>
-</section>
-
-<div class="w-32 mx-auto text-center ">
-    <%= link_to '更新活動', edit_activity_path(@activity), class:"joband-action-btn mb-6" %>
-    <%= link_to '刪除', activity_path(@activity), data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, class:"joband-action-btn" %> 
+  </section>
+  
+  <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
+    <p class="mb-12 h1"><%= @activity.title %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">活動內容：<%= @activity.content %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">舉辦日期：<%= @activity.founded_at %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">舉辦地點：<%= @activity.location %></p>
+  </div>
+  
+  <div class="w-32 mx-auto mt-12 text-center">
+    <div class="mb-6"><%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location" %></div>
+    <div class="mb-6"><%= link_to '刪除活動', activity_path(@activity), data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, class: "joband-tag-seniority" %></div>
+  </div>
 </div>
