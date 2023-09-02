@@ -19,9 +19,17 @@ class ResumeListsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    @recruit = @resume_list.recruit
+  end
 
-  def update; end
+  def update
+    if @resume_list.update(resume_list_params)
+      redirect_to resume_list_path(@resume_list), notice: '更新成功'
+    else
+      render :edit
+    end
+  end
 
   def approve
     @recruit = @resume_list.recruit
