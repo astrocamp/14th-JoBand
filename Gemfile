@@ -16,6 +16,7 @@ gem "jsbundling-rails", "~> 1.1"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+gem "paranoia", "~> 2.6"
 gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.3'

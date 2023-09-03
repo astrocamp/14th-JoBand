@@ -205,6 +205,8 @@ GEM
       omniauth (~> 2.0)
     orm_adapter (0.5.0)
     parallel (1.23.0)
+    paranoia (2.6.2)
+      activerecord (>= 5.1, < 7.1)
     parser (3.2.2.3)
       ast (~> 2.4.1)
       racc
@@ -350,6 +352,7 @@ DEPENDENCIES
   omniauth
   omniauth-google-oauth2
   omniauth-rails_csrf_protection
+  paranoia (~> 2.6)
   pg (~> 1.1)
   puma (~> 5.0)
   pundit (~> 2.3)

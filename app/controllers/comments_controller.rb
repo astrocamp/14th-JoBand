@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    @comment.update(deleted_at: Time.now)
     redirect_to @commentable, notice: '留言已刪除'
   end
 
