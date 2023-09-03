@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
@@ -5,13 +7,13 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.order(id: :desc)
   end
-    
+
   def new
     @activity = Activity.new
   end
 
   def show; end
-    
+
   def create
     @activity = Activity.new(activity_params)
 
@@ -30,7 +32,7 @@ class ActivitiesController < ApplicationController
     else
       render :edit, alert: '更新失敗'
     end
-  end 
+  end
 
   def destroy
     @activity.destroy
@@ -38,6 +40,7 @@ class ActivitiesController < ApplicationController
   end
 
   private
+
   def activity_params
     params.require(:activity).permit(:title, :content, :begin_at, :time_start, :time_end, :location, :banner)
   end
