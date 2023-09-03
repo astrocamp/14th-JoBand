@@ -1,0 +1,28 @@
+<div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto rounded-[50px] overflow-hidden shadow-md bg-slate-100">  
+  <section class="w-full h-[500px] overflow-hidden mb-10">
+    <%= render "shared/banner", model: @activity %>
+  </section>
+  
+  <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
+    <p class="mb-12 h1"><%= @activity.title %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">內容：<%= @activity.content %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">日期：<%= @activity.begin_at %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">時間：<%= @activity.time_start.strftime('%H:%M') %> - <%= @activity.time_end.strftime('%H:%M') %></p>
+    <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">地點：<%= @activity.location %></p>
+  </div>
+  
+  <div class="w-32 mx-auto mt-12 text-center">
+    <div class="mb-6">
+      <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location" %>
+    </div>
+    <div class="mb-6">
+      <%= link_to '刪除活動', activity_path(@activity), 
+                            data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
+                            class: "joband-tag-seniority" %>
+    </div>
+  </div>
+</div>
