@@ -9,23 +9,21 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    respond_to do |format|
+    @post.user = current_user
       if @post.save
-        format.turbo_stream
+        redirect_to posts_path, notice: "貼文已發佈！"
       else
-        format.html do
-          flash[:post_errors] = @post.errors.full_messages
-          redirect_to posts_path
-        end
+        edirect_to posts_path, alert: "貼文失敗。"
       end
-    end
   end
+  
 
   def show
   end
 
   def destroy
     @post.destroy
+    redirect_to posts_path, notice: "貼文已刪除！"
   end
 
   private
@@ -37,5 +35,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end

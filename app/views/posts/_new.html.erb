@@ -1,8 +1,8 @@
-<%= form_with model: @post, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form|  %>
+<%= form_with model: post, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form|  %>
   <% if flash[:post_errors] %>
     <div class="px-3 py-2 mx-3 mt-3 font-medium text-red-500 rounded-lg bg-red-50">
       <ul>
-        <% flash[:post_errors].each do |error| %>
+        <% flash.now[:post_errors].each do |error| %>
           <li><%= error %></li>
         <% end %>
       </ul>

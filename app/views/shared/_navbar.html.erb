@@ -6,7 +6,7 @@
     <%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %>
     <%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %>
     <%= link_to '找活動', "#", class: "text-xl btn btn-ghost" %>
-    <%= link_to '找社群', posts_path, class: "text-xl btn btn-ghost" %>
+    <%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost" %>
   </div>
   <div class="flex">
     <ul class="flex gap-5">
@@ -38,7 +38,7 @@
               <% end %>
               <% if current_user&.bands.present? %>
                 <div data-controller="showband">
-                  <li><%= link_to "我的樂團", "#", class: "nav-link", data: { action:"click -> showband#show" } %></li>
+                  <li><%= button_to "我的樂團", "#",class: "nav-link", data: { action:"click -> showband#show" } %></li>
                   <div class="pl-2">
                     <%= render "shared/myband", user: current_user %>
                   </div>

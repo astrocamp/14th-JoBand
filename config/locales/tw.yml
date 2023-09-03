@@ -37,7 +37,11 @@ tw:
     reset_my_password: "變更我的密碼"
     reset_password_cancel: "如果不是您發出的變更請求，請忽略並刪除此信件，您的密碼將不會變更。"
   post:
+    lobby: "大廳"
+    profile: "個人檔案"
+    add_band: "新增一個樂團"
     post_holder: "在想些什麼？"
+    empty: "跟大家打聲招呼吧！"
   devise:
     confirmations:
       confirmed: "您的帳號已通過驗證，現在您已成功登入。"
@@ -71,6 +75,7 @@ tw:
       send_paranoid_instructions: "如果我們有您的信箱，您將會收到一封內含可重新設定密碼連結的電子郵件。"
       updated: "您的密碼已被修改，您現在已經登入。"
       updated_not_active: "您的密碼已被修改。"
+      invalid: "目前密碼輸入錯誤。"
     registrations:
       destroyed: "再會！您的帳號已被取消。有緣再會。"
       signed_up: "註冊成功，歡迎！"

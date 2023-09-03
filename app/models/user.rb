@@ -17,6 +17,7 @@ class User < ApplicationRecord
   has_many :bands, through: :band_members
   has_many :resume_lists
   has_many :recruits, through: :resume_lists
+  has_many :posts
 
   # ransack
   def self.ransackable_attributes(_auth_object = nil)
