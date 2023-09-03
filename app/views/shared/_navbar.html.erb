@@ -13,10 +13,10 @@
       <li class="flex align-middle">
         <div class="flex items-center mx-5 cursor-pointer dropdown dropdown-hover dropdown-bottom dropdown-end">
         <% if current_user.profile.present?%>
-          <div tabindex="0" class="relative items-center w-10 joband-shadow">
+          <div class="relative items-center w-10 joband-shadow">
             <%= render "shared/avatar", model: current_user.profile %>
           </div>
-          <ul tabindex="0" class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
               <%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %>
             </li>
