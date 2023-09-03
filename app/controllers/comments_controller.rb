@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @commentable, notice: '留言成功'
     else
-      render :show
+      redirect_to @commentable, alert: '留言不得為空白'
     end
   end
 

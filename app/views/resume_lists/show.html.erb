@@ -37,19 +37,19 @@
   <% end %>
   <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'btn btn-accent' %>
   <hr>
-<%= form_with(model: [@resume_list, @comment]) do |f| %>
-  <div>
-    <%= f.label :content, '留言內容' %><br />
-    <%= f.text_area :content%>
-  </div>
-    <%= f.submit '送出留言', class: 'btn btn-accent'%>
-  </div>
-<% end %>
-<h2>留言</h2>
-<ul>
-  <%= render "comments/comment", comments: @comments, resume_list: @resume_list %>
-</ul>
-<hr>
+  <%= form_with(model: [@resume_list, @comment]) do |f| %>
+    <div>
+      <%= f.label :content, '留言內容' %><br />
+      <%= f.text_area :content%>
+    </div>
+      <%= f.submit '送出留言', class: 'btn btn-accent'%>
+    </div>
+  <% end %>
+  <h2>留言</h2>
+    <ul>
+      <%= render "comments/comment", comments: @comments, resume_list: @resume_list %>
+    </ul>
+  <hr>
 
 </article>
 
