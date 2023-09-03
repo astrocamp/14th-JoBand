@@ -1,5 +1,5 @@
 <% if user.bands.present? %>
-  <ul class="hidden" data-showband-target="my_band">
+  <ul class="block" data-showband-target="my_band">
     <% user.bands.each do |band| %>
       <li><%= link_to band.name, band_path(band) %></li>
     <% end %>
