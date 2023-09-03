@@ -16,7 +16,7 @@
       <% end %>
     <% end %>  
 
-    <%= link_to '創建活動', new_activity_path, class:'joband-action-btn mx-5' %>
+    <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
 
   </section>
 
@@ -68,6 +68,7 @@
       <% else %>
         <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
       <% end %>
+      <div></div>
     </div>
     <div class="flex flex-wrap justify-center my-10">
 

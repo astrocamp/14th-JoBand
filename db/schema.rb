@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_03_082757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
+    t.index ["band_id"], name: "index_activities_on_band_id"
   end
 
   create_table "band_members", force: :cascade do |t|
@@ -192,6 +194,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_01_024732) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "activities", "bands"
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
   add_foreign_key "band_styles", "bands"

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :activities
+
 
   resources :bands, except: [:destroy] do
     resources :band_members, except: %i[new show index]
@@ -31,5 +31,6 @@ Rails.application.routes.draw do
         resources :comments, only: %i[create destroy], shallow: true
       end
     end
+    resources :activities, shallow: true
   end
 end

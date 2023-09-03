@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :set_band_id, only: %i[new create]
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
 
@@ -13,7 +14,7 @@ class ActivitiesController < ApplicationController
   def show; end
     
   def create
-    @activity = Activity.new(activity_params)
+    @activity = @band.activities.build(activity_params)
 
     if @activity.save
       redirect_to activity_path(@activity), notice: '成功建立活動'
@@ -34,7 +35,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to activities_path, notice: '刪除成功'
+    redirect_to band_path(@activity.band), notice: '刪除成功'
   end
 
   private
@@ -44,5 +45,8 @@ class ActivitiesController < ApplicationController
 
   def set_activity
     @activity = Activity.find(params[:id])
+  end
+  def set_band_id
+    @band = Band.find(params[:band_id])
   end
 end
