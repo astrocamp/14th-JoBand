@@ -12,7 +12,7 @@ export default class extends Controller {
     e.preventDefault();
     const displayStatus = this.my_bandTarget.style.display;
     if (displayStatus === "none") {
-      this.my_bandTarget.style.display = "inline";
+      this.my_bandTarget.style.display = "block";
     } else {
       this.my_bandTarget.style.display = "none";
     }
