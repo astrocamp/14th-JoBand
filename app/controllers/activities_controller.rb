@@ -1,18 +1,22 @@
+# frozen_string_literal: true
+
 class ActivitiesController < ApplicationController
-  before_action :set_band_id, only: %i[new create]
+  before_action :set_band_id, only: %i[new create index]
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
     @activities = Activity.order(id: :desc)
   end
-    
+
   def new
     @activity = Activity.new
   end
 
-  def show; end
-    
+  def show
+    @band = @activity.band
+  end
+
   def create
     @activity = @band.activities.build(activity_params)
 
@@ -31,7 +35,7 @@ class ActivitiesController < ApplicationController
     else
       render :edit, alert: '更新失敗'
     end
-  end 
+  end
 
   def destroy
     @activity.destroy
@@ -39,6 +43,7 @@ class ActivitiesController < ApplicationController
   end
 
   private
+
   def activity_params
     params.require(:activity).permit(:title, :content, :begin_at, :time_start, :time_end, :location, :banner)
   end
@@ -46,6 +51,7 @@ class ActivitiesController < ApplicationController
   def set_activity
     @activity = Activity.find(params[:id])
   end
+
   def set_band_id
     @band = Band.find(params[:band_id])
   end

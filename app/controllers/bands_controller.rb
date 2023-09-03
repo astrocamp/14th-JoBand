@@ -11,7 +11,6 @@ class BandsController < ApplicationController
 
   def show
     @band_members = @band.band_members
-    @activities = @band.activities
   end
 
   def new
