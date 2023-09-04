@@ -25,9 +25,7 @@
             <% if current_user&.bands.present? %>
             <div data-controller="showband">
               <li>
-                <%= button_to "#", data: { action:"click -> showband#show" } do %>
-                  <div class="nav-link">我的樂團</div>
-                <% end %>
+                <button data-action="click -> showband#show" class="nav-link">我的樂團</button>
               </li>
               <div class="pl-2">
                 <%= render "shared/myband", user: current_user %>
