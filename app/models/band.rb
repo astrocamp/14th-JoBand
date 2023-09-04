@@ -5,7 +5,7 @@ class Band < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   # associations
   has_rich_text :content

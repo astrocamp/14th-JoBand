@@ -1,5 +1,11 @@
 <div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto p-10 rounded-[50px] shadow-md bg-slate-100">
   <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk">創建樂團</h1>
+  <% if flash[:alert].present? %>
+  <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+    <strong class="font-bold">Error!</strong>
+    <span class="block sm:inline"><%= flash[:alert] %></span>
+  </div>
+<% end %>
   <div class="center">
       <%= render 'form', band: @band %>
   </div>
