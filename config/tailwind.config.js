@@ -1,6 +1,19 @@
 // const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+
+  daisyui: {
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["[data-theme=light]"],
+          "base-100": "#f3f3f2",
+        },
+      },
+      "dark"
+    ],
+  },
+
   content: [
     './public/*.html',
     './app/helpers/**/*.rb',
