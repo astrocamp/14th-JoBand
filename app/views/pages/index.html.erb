@@ -8,7 +8,7 @@
   </div>
   <div class="absolute flex flex-wrap justify-center w-[550px] drop-shadow-lg">
     <img src="/Joband_logo.svg" alt="Joband_LOGO" class="items-center w-full my-10">
-    <p class="w-full my-5 text-4xl text-center text-white">拓展音樂之路，找尋完美夥伴</p>
+    <h1 class="w-full my-5 text-4xl text-center text-white">拓展音樂之路，找尋完美夥伴</h1>
     <% if user_signed_in? %>
     <% else %>
       <%= link_to '現在就加入', new_user_registration_path, class: "joband-action-btn my-12" %>
@@ -17,13 +17,13 @@
 </header>
 <section class="flex flex-wrap justify-center mt-32 drop-shadow-lg">
   <div>
-    <p class="w-[1000px] text-white text-6xl">展示你的音樂作品集</p>
-    <p class="w-[1000px] text-white text-2xl py-6">藉由簡潔明瞭的音樂人小卡快速展示自己</p>
+    <p class="w-[1000px] text-6xl theme-text">展示你的音樂作品集</p>
+    <p class="w-[1000px] theme-text text-2xl py-6">藉由簡潔明瞭的音樂人小卡快速展示自己</p>
     <%= render "profiles/profile", profile: User.find_by(email: "zooey@gg.gg").profile %>
   </div>
   <div class="mt-40">
-    <p class="w-[1000px] text-right text-white text-6xl">秀出你的樂團</p>
-    <p class="w-[1000px] text-right text-white text-2xl py-6 leading-10">樂團小卡記錄每個重要時刻<br/>讓您的音樂旅程無時不刻地閃耀</p>
+    <p class="w-[1000px] text-right theme-text text-6xl">秀出你的樂團</p>
+    <p class="w-[1000px] text-right theme-text text-2xl py-6 leading-10">樂團小卡記錄每個重要時刻<br/>讓您的音樂旅程無時不刻地閃耀</p>
     <%= render "bands/band", band: User.find_by(email: "zooey@gg.gg").bands.first %>
   </div>
 </section>

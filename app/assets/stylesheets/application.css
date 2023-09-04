@@ -32,6 +32,10 @@
   background-color: #F46A5B !important;
  }
 
- .search_by_instruments p{
-  color: white !important
- }
+[data-theme="light"] .theme-text {
+  color: #2A323A
+}
+
+[data-theme="dark"] .theme-text {
+  color: #f3f3f2
+}
