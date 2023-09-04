@@ -8,12 +8,15 @@ ruby '3.2.2'
 gem 'rails', '~> 7.0.7.2'
 gem 'sprockets-rails'
 
+gem 'aasm'
+gem 'babosa'
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder'
 gem "jsbundling-rails", "~> 1.1"
+gem "mini_magick"
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
@@ -28,8 +31,6 @@ gem 'turbo-rails'
 gem "aws-sdk-s3", require: false
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'friendly_id', '~> 5.4.0'
-gem 'babosa'
-gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3'
