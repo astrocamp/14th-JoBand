@@ -41,7 +41,7 @@ class BandsController < ApplicationController
   private
 
   def set_band
-    @band = Band.find(params[:id])
+    @band = Band.friendly.find(params[:slug])
   end
 
   def band_params
