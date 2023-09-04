@@ -22,6 +22,9 @@ class ActivitiesController < ApplicationController
 
   def show
     @band = @activity.band
+    @comment = Comment.new
+    @comments = @activity.comments.order(created_at: :desc)
+    
   end
 
   def create

@@ -22,12 +22,16 @@ class CommentsController < ApplicationController
   private
 
   def find_commentable
-    @commentable = ResumeList.find(params[:resume_list_id])
+    if params[:resume_list_id]
+      @commentable = ResumeList.find(params[:resume_list_id])
+    elsif params[:activity_id]
+      @commentable = Activity.find(params[:activity_id])
+  end
   end
 
   def comment_params
     params.require(:comment)
           .permit(:content)
-          .merge(user: current_user)
+          .merge(user: current_user, commentable: @commentable)
   end
 end
