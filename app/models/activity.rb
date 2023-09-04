@@ -9,7 +9,7 @@ class Activity < ApplicationRecord
   end
   has_many :comments, as: :commentable
   belongs_to :band
-
+  
   enum city: {
     基隆市: 0,
     臺北市: 1,
