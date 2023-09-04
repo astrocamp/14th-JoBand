@@ -207,7 +207,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_02_160336) do
   add_foreign_key "band_styles", "bands"
   add_foreign_key "band_styles", "styles"
   add_foreign_key "comments", "users"
-  add_foreign_key "posts", "bands"
   add_foreign_key "profile_and_instruments", "instruments"
   add_foreign_key "profile_and_instruments", "profiles"
   add_foreign_key "recruit_and_instruments", "instruments"
