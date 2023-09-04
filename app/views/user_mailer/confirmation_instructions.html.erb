@@ -17,7 +17,7 @@
               </tr>
               <tr>
                 <td style="padding-bottom:16px;text-align:center">
-                  <%= link_to '確認是我的電子郵件', confirmation_url(@resource, confirmation_token: @token), class: "blink", style: "color:#fff;text-decoration:none;display:inline-block;color:#fff;border-radius:4px;border-bottom-width:2px;border-bottom-color:#00a462;border-bottom-style:solid;background:#00cb6f;padding:15px 40px;margin:10px auto;font-size:18px", target:"_blank" %>
+                  <%= link_to '確認是我的電子郵件', confirmation_url(@resource, confirmation_token: @token, host: ENV["DOMAIN"]), class: "blink", style: "color:#fff;text-decoration:none;display:inline-block;color:#fff;border-radius:4px;border-bottom-width:2px;border-bottom-color:#00a462;border-bottom-style:solid;background:#00cb6f;padding:15px 40px;margin:10px auto;font-size:18px", target:"_blank" %>
                 </td>
               </tr>
               <tr>
