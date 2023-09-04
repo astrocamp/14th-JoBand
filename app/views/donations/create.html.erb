@@ -1,0 +1,19 @@
+<%= form_with url: "https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5", 
+              method: :post, 
+              :html => {:'content-type' => 'application/x-www-form-urlencoded'}, 
+              authenticity_token: false, 
+              data: {controller: 'ecpay'} do |form| %>
+
+  <%= form.hidden_field :MerchantID, value: @ecpay_params["MerchantID"] %>
+  <%= form.hidden_field :TradeDesc, value: @ecpay_params["TradeDesc"] %>
+  <%= form.hidden_field :PaymentType, value: @ecpay_params["PaymentType"] %>
+  <%= form.hidden_field :MerchantTradeDate, value: @ecpay_params["MerchantTradeDate"] %>
+  <%= form.hidden_field :MerchantTradeNo, value: @ecpay_params["MerchantTradeNo"] %>
+  <%= form.hidden_field :ReturnURL, value: @ecpay_params["ReturnURL"] %>
+  <%= form.hidden_field :ItemName, value: @ecpay_params["ItemName"] %>
+  <%= form.hidden_field :TotalAmount, value: @ecpay_params["TotalAmount"] %>
+  <%= form.hidden_field :ChoosePayment, value: @ecpay_params["ChoosePayment"] %>
+  <%= form.hidden_field :IgnorePayment, value: @ecpay_params["IgnorePayment"] %>
+  <%= form.hidden_field :EncryptType, value: @ecpay_params["EncryptType"] %>
+  <%= form.hidden_field :CheckMacValue, value: @ecpay_params["CheckMacValue"] %>
+<% end %>
