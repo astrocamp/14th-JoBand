@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Band < ApplicationRecord
+  #friendly_id
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   validates :name, presence: true
 
   # associations
