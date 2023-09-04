@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ActivitiesController < ApplicationController
-  before_action :set_band_id, only: %i[new create]
+  before_action :set_band, only: %i[new create]
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
 
@@ -23,7 +23,7 @@ class ActivitiesController < ApplicationController
     if @activity.save
       redirect_to activity_path(@activity), notice: '成功建立活動'
     else
-      render @activity, alert: '建立失敗'
+      render :new, alert: '建立失敗'
     end
   end
 
@@ -52,7 +52,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
-  def set_band_id
+  def set_band
     @band = Band.find(params[:band_id])
   end
 end
