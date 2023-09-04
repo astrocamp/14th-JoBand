@@ -28,6 +28,7 @@ gem 'turbo-rails'
 gem "aws-sdk-s3", require: false
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'friendly_id', '~> 5.4.0'
+gem 'babosa'
 
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3'

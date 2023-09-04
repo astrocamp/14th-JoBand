@@ -4,7 +4,7 @@ class Band < ApplicationRecord
   #friendly_id
   extend FriendlyId
   friendly_id :name, use: :slugged
-  
+
   validates :name, presence: true
 
   # associations
@@ -40,5 +40,9 @@ class Band < ApplicationRecord
 
   def self.ransackable_associations(_auth_object = nil)
     %w[rich_text_content styles]
+  end
+
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize.to_s
   end
 end
