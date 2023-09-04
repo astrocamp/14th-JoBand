@@ -10,6 +10,7 @@ gem 'sprockets-rails'
 
 gem 'bootsnap', require: false
 gem 'devise', '~> 4.9'
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
 gem 'image_processing', '~> 1.2'
 gem 'jbuilder'
 gem "jsbundling-rails", "~> 1.1"
@@ -30,7 +31,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3'
   gem 'dotenv-rails'
-  gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'main'
   gem 'letter_opener', '~> 1.8'
   gem 'rubocop', require: false
 end
