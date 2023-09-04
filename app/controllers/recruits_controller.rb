@@ -41,7 +41,7 @@ class RecruitsController < ApplicationController
   private
 
   def set_band_id
-    @band = Band.find(params[:band_id])
+    @band = Band.friendly.find(params[:band_slug])
   end
 
   def set_recruit
