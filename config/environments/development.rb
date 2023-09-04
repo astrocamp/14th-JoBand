@@ -3,20 +3,6 @@
 require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
-  # mail SMTP set
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.mailgun.org',
-    port: 587,
-    domain: 'joband.co',
-    user_name: ENV['MAIL_USER_NAME'],
-    password: ENV['MAIL_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls_auto: true,
-    open_timeout: 5,
-    read_timeout: 5
-  }
-
   # letter opener
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
