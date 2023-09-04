@@ -24,7 +24,8 @@ class BandsController < ApplicationController
       @band.band_members.create(user: current_user, identity: :leader, role: @role)
       redirect_to band_path(@band), notice: '成功創立樂團'
     else
-      render :new, notice: '失敗'
+      flash.now[:alert] = '創建樂團失敗，樂團名稱重複。'
+      render :new
     end
   end
 
