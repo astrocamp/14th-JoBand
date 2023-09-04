@@ -32,7 +32,9 @@ Rails.application.routes.draw do
         resources :comments, only: %i[create destroy], shallow: true
       end
     end
-    resources :activities, shallow: true
+    resources :activities, shallow: true do
+      resources :comments, only: %i[create destroy], shallow: true
+    end
   end
 
 
