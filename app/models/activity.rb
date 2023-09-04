@@ -5,4 +5,6 @@ class Activity < ApplicationRecord
 
   # associations
   has_one_attached :banner
+  has_many :comments, as: :commentable
+  belongs_to :band
 end

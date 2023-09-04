@@ -61,6 +61,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072633) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
+    t.integer "city"
+    t.index ["band_id"], name: "index_activities_on_band_id"
   end
 
   create_table "band_members", force: :cascade do |t|
@@ -215,6 +218,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072633) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "activities", "bands"
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
   add_foreign_key "band_styles", "bands"

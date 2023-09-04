@@ -1,5 +1,4 @@
-<div class="w-[500px] joband-text-bk lg:flex lg:justify-center text-base lg:text-lg">
-<%= form_with(model: activity, data: {turbo: false}) do |f| %>
+ <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
 
   <div class="flex items-center my-5">
     <%= f.label '活動標題', class: "lg:w-[120px] block" %>
