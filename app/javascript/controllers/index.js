@@ -9,3 +9,6 @@ application.register("flash", FlashController)
 
 import ShowbandController from "./showband_controller"
 application.register("showband", ShowbandController)
+
+import SwitchController from "./switch_controller"
+application.register("switch", SwitchController)
