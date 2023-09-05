@@ -6,22 +6,50 @@ export default class extends Controller {
   static targets = ["mode_switch"];
 
   connect() {
+    this.assignCurrentMode()
   }
 
   switch_mode() {
+    let mode = this.element.dataset.theme
+    let theme_now = localStorage.getItem('color-theme')
 
-    let mode = this.element.dataset.theme 
-    let mode_img = this.mode_switchTarget.src
-
-    console.log(mode_img);
-
-    if (mode == "light") {
-      this.element.dataset.theme = "dark"
-      this.mode_switchTarget.src = "/icon_img/dark.svg"
+    if (theme_now){
+      if (theme_now == "light") {
+        this.set_dark_mode()
+      }
+      else{
+        this.set_light_mode()
+      }
     }
     else{
-      this.element.dataset.theme = "light"
-      this.mode_switchTarget.src = "/icon_img/light.svg"
+      if (mode == "light") {
+        this.set_dark_mode()
+      }
+      else{
+        this.set_light_mode()
+      }
+    }
+  }
+
+  set_light_mode(){
+    this.element.dataset.theme = "light"
+    this.mode_switchTarget.src = "/icon_img/light.svg"
+    localStorage.setItem('color-theme', 'light')
+  }
+
+  set_dark_mode(){
+    this.element.dataset.theme = "dark"
+    this.mode_switchTarget.src = "/icon_img/dark.svg"
+    localStorage.setItem('color-theme', 'dark')
+  }
+
+  assignCurrentMode() {
+    let theme_now = localStorage.getItem('color-theme')
+    if(theme_now == "light"){
+      this.set_light_mode()
+    }
+    else{
+      this.set_dark_mode()
     }
   }
 }
