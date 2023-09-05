@@ -15,7 +15,7 @@ class RecruitsController < ApplicationController
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
-      render :new, notice: '創建失敗'
+      render :new, alert: '創建失敗'
     end
   end
 
@@ -25,7 +25,7 @@ class RecruitsController < ApplicationController
     if @recruit.update(recruit_params)
       redirect_to recruit_path(@recruit), notice: '招募更新成功'
     else
-      render :edit, notice: '招募更新失敗'
+      render :edit, alert: '招募更新失敗'
     end
   end
 

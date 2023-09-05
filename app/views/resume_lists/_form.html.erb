@@ -1,22 +1,22 @@
-<div class="center items-center w-3/4 bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl my-10 p-8 ">
+<div class="center items-center w-3/4 theme-bg border-2 rounded-[80px] shadow-md my-10 p-8 ">
   <%= form_with(model:, data: { turbo: false }) do |f| %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :status, value: :pending %>
   
-    <h1 class="h1 text-center">介紹你自己</h1>
+    <h1 class="text-center h1 theme-text">為什麼想加入我們？</h1>
     
-    <div class="m-5 text-center">
-      <%= f.label :role, '應徵職位'%> <br>
+    <div class="m-5 text-center theme-text">
+      <%= f.label :role, '應徵位置'%> <br>
       <%= f.select :role, recruits_roles %>
     </div>
 
-    <div class="m-5 text-center ">
+    <div class="m-5 text-center theme-text">
       <%= f.label :description, '簡短描述' %> <br>
-      <%= f.text_area :description %>
+      <%= f.text_area :description, style: "resize: none;" autofocus: true required: true, maxlength: 400 %>
     </div>
 
-    <div class="center mb-3">
+    <div class="mb-3 center">
       <%= f.submit '送出申請' ,class:'btn btn-accent' %>
     </div>
     
