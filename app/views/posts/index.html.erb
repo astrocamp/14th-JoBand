@@ -1,44 +1,44 @@
 <div class="grid h-screen grid-cols-1 mx-auto lg:grid-cols-12">
   <div class="pt-6 pr-6 lg:col-span-2">
-    <div class="mt-6 ml-5">
+    <div class="mt-6 ml-5 theme-text">
       <ul>
         <li>
-          <%= link_to posts_path, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+          <%= link_to posts_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/home.svg" %><span class="ml-5 text-white"><%= t("post.lobby") %></span>
+              <%= image_tag "icon/home.svg" %><span class="ml-5 theme-text"><%= t("post.lobby") %></span>
             </div>
           <% end %>
         </li>
       <% if user_signed_in? %>
         <li>
-          <%= link_to profile_path(current_user), class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+          <%= link_to profile_path(current_user), class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/profile.svg" %><span class= "ml-4 text-white" ><%= t("post.profile") %></span>
+              <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
             </div>
           <% end %>
         </li>
         <% if current_user&.bands.present? %>
           <% current_user.bands.each do |band| %>
             <li>
-              <%= link_to "#", class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+              <%= link_to "#", class: "theme-text space-x-2 group flex items-center justify-center" do %>
                 <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-                  <%= image_tag "icon/play.svg" %><span class= "ml-4 text-white" ><%= band.name %></span>
+                  <%= image_tag "icon/play.svg" %><span class= "ml-4 theme-text" ><%= band.name %></span>
                 </div>
               <% end %>
             </li>
           <% end %>
         <% end %>
         <li>
-          <%= link_to bands_path, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+          <%= link_to bands_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/plus.svg" %><span class= "ml-4 text-white" ><%= t("post.add_band") %></span>
+              <%= image_tag "icon/plus.svg" %><span class= "ml-4 theme-text" ><%= t("post.add_band") %></span>
             </div>
           <% end %>
         </li>
       <% end %>
     </div>
   </div>
-  <div class="lg:col-span-6 border-x">
+  <div class="lg:col-span-6 border-x theme-border">
     <!-- new -->
     <div class="mb-8">
       <%= render 'new', post: @post %>
@@ -47,7 +47,7 @@
     <!-- show -->
     <%= turbo_frame_tag "post" do %>
       <% @posts.each do |post| %>
-        <div class="px-4 border-b border-1 border-x-0">
+        <div class="px-4 border-2 border-b border-x-0">
           <header class="flex justify-between">
             <%= link_to post.user.name, "#", class: "text-blue-500 hover:underline" %>
             <em class="inline-block pr-10 text-xs"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
@@ -77,7 +77,12 @@
     <% end %>
   </div>
   <div class="pt-6 pl-6 lg:col-span-3">
-    <div class="bg-gray-50 w-full min-h-[150px] rounded-lg p-6 mb-6">廣告？？？</div>
+    <div class="w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</div>
+    <div class="p-3 border-2 theme-bg rounded-xl">
+      <h2 class="h2">FuJi Rock Festival 2023</h2>
+      <p>Jul 28 - 30</p><span cleass="text-end">NAEBA SKI RESORT</span>
+      <%= image_tag "fuji.jpg", class: "rounded-lg my-3" %>
+    </div>
   </div>
 </div>
 
