@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     confirmations: 'users/confirmations'
   }
+
   resources :profiles, except: [:destroy] do
     collection do
       get :welcome
@@ -31,5 +32,9 @@ Rails.application.routes.draw do
         resources :comments, only: %i[create destroy], shallow: true
       end
     end
+  end
+
+  scope "communities" do
+    resources :posts, only: %i[index create show destroy]
   end
 end

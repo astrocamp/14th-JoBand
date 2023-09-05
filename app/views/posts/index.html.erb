@@ -1,0 +1,87 @@
+<div class="grid h-screen grid-cols-1 mx-auto lg:grid-cols-12">
+  <div class="pt-6 pr-6 lg:col-span-2">
+    <div class="mt-6 ml-5">
+      <ul>
+        <li>
+          <%= link_to posts_path, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+            <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+              <%= image_tag "icon/home.svg" %><span class="ml-5 text-white"><%= t("post.lobby") %></span>
+            </div>
+          <% end %>
+        </li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to profile_path(current_user), class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+            <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+              <%= image_tag "icon/profile.svg" %><span class= "ml-4 text-white" ><%= t("post.profile") %></span>
+            </div>
+          <% end %>
+        </li>
+        <% if current_user&.bands.present? %>
+          <% current_user.bands.each do |band| %>
+            <li>
+              <%= link_to "#", class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+                <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+                  <%= image_tag "icon/play.svg" %><span class= "ml-4 text-white" ><%= band.name %></span>
+                </div>
+              <% end %>
+            </li>
+          <% end %>
+        <% end %>
+        <li>
+          <%= link_to bands_path, class: "text-gray-500 space-x-2 group flex items-center justify-center" do %>
+            <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+              <%= image_tag "icon/plus.svg" %><span class= "ml-4 text-white" ><%= t("post.add_band") %></span>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+    </div>
+  </div>
+  <div class="lg:col-span-6 border-x">
+    <!-- new -->
+    <div class="mb-8">
+      <%= render 'new', post: @post %>
+
+    </div>
+    <!-- show -->
+    <%= turbo_frame_tag "post" do %>
+      <% @posts.each do |post| %>
+        <div class="px-4 border-b border-1 border-x-0">
+          <header class="flex justify-between">
+            <%= link_to post.user.name, "#", class: "text-blue-500 hover:underline" %>
+            <em class="inline-block pr-10 text-xs"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
+          </header>
+          <article class= "text-white">
+            <%= post.body %>
+          </article>
+          <footer class="flex justify-evenly">
+            <div class="btn btn-ghost"><%= image_tag "icon/like.svg" %></div>
+            <div class="btn btn-ghost"><%= image_tag "icon/comment.svg" %></div>
+            <% if user_signed_in? %>
+              <% if current_user.id == post.user.id %>
+                <%= link_to post_path(post.id), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
+                  <%= image_tag "icon/del.svg" %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </footer>
+        </div>
+      <% end %>
+    <% end %>
+
+    <%= turbo_frame_tag Post.new do %>
+      <% if Post.all.none? %>
+        <%= render "empty", post: @post %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="pt-6 pl-6 lg:col-span-3">
+    <div class="bg-gray-50 w-full min-h-[150px] rounded-lg p-6 mb-6">廣告？？？</div>
+  </div>
+</div>
+
+
+
+
+

@@ -5,7 +5,8 @@
     <% end %>
     <%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %>
     <%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %>
-    <a href="#" class="text-xl btn btn-ghost">找活動</a>
+    <%= link_to '找活動', activities_path, class: "text-xl btn btn-ghost" %>
+    <%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost" %>
   </div>
   <div class="flex">
     <ul class="flex gap-5">
@@ -13,19 +14,18 @@
       <li class="flex align-middle">
         <div class="flex items-center mx-5 cursor-pointer dropdown dropdown-hover dropdown-bottom dropdown-end">
         <% if current_user.profile.present?%>
-          <div class="relative items-center w-10 joband-shadow">
+          <div tabindex="0" class="relative items-center w-10 joband-shadow">
             <%= render "shared/avatar", model: current_user.profile %>
           </div>
-          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <span class="flex ml-2"><%= current_user.name %></span>
+          <ul tabindex="0" class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
               <%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %>
             </li>
             <% if current_user&.bands.present? %>
             <div data-controller="showband">
               <li>
-                <%= link_to "#", data: { action:"click -> showband#show" } do %>
-                  <div class="nav-link">我的樂團</div>
-                <% end %>
+                <button data-action="click -> showband#show" class="nav-link">我的樂團</button>
               </li>
               <div class="pl-2">
                 <%= render "shared/myband", user: current_user %>
@@ -41,6 +41,7 @@
             <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full" >
             <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
           </div>
+          <span class="flex ml-2"><%= current_user.name %></span>
           <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
               <%= link_to "個人檔案", current_user.confirmed? ? letsjam_profiles_path : welcome_profiles_path, class: "nav-link" %>
