@@ -4,15 +4,15 @@
   </div>
 
   <div class=" w-full lg:w-[450px] flex flex-wrap p-5">
-    <p class="w-full font-semibold joband-text-bk h2 joband-shadow"><%= profile.user.name %></p>
+    <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow"><%= profile.user.name %></p>
     <p class="w-full h-[70px] h4 mt-5 joband-text-bk hidden lg:block"><%= profile.content.truncate(70) %></p>
-    <p class="w-full h-[70px] h4 mt-5 joband-text-bk block lg:hidden"><%= profile.content.truncate(50) %></p>
-    <div class="flex w-full mt-4">
+    <p class="w-full h-[70px] h4 mt-5 joband-text-bk text-center block lg:hidden"><%= profile.content.truncate(50) %></p>
+    <div class="flex w-full mt-4 justify-evenly lg:justify-start">
       <% if profile.location.present? %>
-        <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= profile.location %></a>
+        <a href="#" class=" z-[1] mr-5 joband-tag-location"><%= profile.location %></a>
       <% end %>
       <% if profile.seniority.present? %>
-        <a href="#" class="z-[1] shadow-md joband-tag-seniority"><%= profile.seniority %> 年</a>
+        <a href="#" class="z-[1] joband-tag-seniority"><%= profile.seniority %> 年</a>
       <% end %>
     </div>
   </div>
@@ -20,5 +20,5 @@
   <div class="mx-auto w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] flex justify-center items-center">
     <%= render "/shared/instrument", instrument: profile.default_instrument(profile) %>
   </div>
-  <%= link_to '', profile_path(profile), class: "block w-full h-full absolute" %>
+  <%= link_to '', profile_path(profile), class: "block w-full h-full absolute top-0 left-0" %>
 </div>

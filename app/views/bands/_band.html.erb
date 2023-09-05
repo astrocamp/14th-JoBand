@@ -1,35 +1,31 @@
-<div class="flex flex-wrap justify-evenly items-center w-[1000px] h-[300px] bg-[#bdcbd2] rounded-[80px] drop-shadow-2xl my-10 ">
-  <div class="w-[200px] h-[200px] relative">
+<div class="mx-auto lg:flex lg:flex-wrap lg:justify-evenly items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#bdcbd2] rounded-[60px] joband-shadow my-10 p-5 lg:p-0">
+  <div class="mx-auto w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative">
     <%= render "shared/avatar", model: band  %>
   </div>
 
-  <div class="w-[450px] flex flex-wrap p-5">
-    <p class="w-full font-semibold joband-text-bk h2 drop-shadow-md"><%= band.name %></p>
-    <p class=" w-full block h-[70px] joband-text-bk"><%= band.content.body.to_plain_text.truncate(70) %></p>
-    <div class="flex w-full mt-4">
+  <div class="w-full lg:w-[450px] flex flex-wrap p-5">
+    <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow"><%= band.name %></p>
+    <div class="mx-auto mt-4 lg:hidden">
+      <%= render "bands/recruit", band: band %>
+    </div>
+    <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block"><%= band.content.body.to_plain_text.truncate(70) %></p>
+    <p class="w-full h-[50px] h4 mt-5 joband-text-bk text-center block lg:hidden"><%= band.content.body.to_plain_text.truncate(50) %></p>
+    <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
       <% if band.area.present? %>
-        <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location"><%= band.area %></a>
+        <a href="#" class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location"><%= band.area %></a>
       <% end %>
       <% if band.state.present? %>
-        <a href="#" class="z-[1] mr-5 shadow-md joband-tag-style"><%= band.state %></a>
+        <a href="#" class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style"><%= band.state %></a>
       <% end %>
-      <% if band.recruit.present? %>
-        <% if user_signed_in? %>
-          <% if current_user.confirmed? && current_user.profile.present?%>
-            <%= link_to '招募中', recruit_path(band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
-          <% else %>
-            <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先完成個人資料！" %>
-          <% end %>
-        <% else %>
-          <%= link_to "招募中", new_user_session_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先登入！" %>
-        <% end %>
-      <% end %>
+      <div class="hidden lg:flex">
+        <%= render "bands/recruit", band: band %>
+      </div>
     </div>
   </div>
 
-  <div class="w-[150px] h-[150px] flex justify-center items-center">
+  <div class="w-[100px] h-[100px] mx-auto lg:w-[150px] lg:h-[150px] flex justify-center items-center">
     <% if band.styles.present? %>
-      <div class="w-[150px] h-[150px] flex relative">
+      <div class="w-h-full lg:w-[150px] lg:h-[150px] flex relative">
         <%= render "bands/style", style: band.styles.first %>
       </div>
     <% else %>
@@ -38,5 +34,5 @@
       </div>
     <% end %>
   </div>
-  <%= link_to '', band_path(band), class: "block w-full h-full absolute" %>
+  <%= link_to '', band_path(band), class: "block w-full h-full absolute top-0 left-0" %>
 </div>
