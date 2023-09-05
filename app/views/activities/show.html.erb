@@ -20,14 +20,16 @@
   </div>
   
   <div class="w-32 mx-auto mt-12 text-center">
-    <div class="mb-6">
-      <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location h3" %>
-    </div>
-    <div class="mb-6">
-      <%= link_to '刪除活動', activity_path(@activity), 
-                            data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
-                            class: "joband-tag-seniority h3" %>
-    </div>
+    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+      <div class="mb-6">
+        <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location" %>
+      </div>
+      <div class="mb-6">
+        <%= link_to '刪除活動', activity_path(@activity), 
+                              data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
+                              class: "joband-tag-seniority" %>
+      </div>
+    <% end %>  
     <div>
       <%= link_to "返回活動列表", band_activities_path(@band), class: "joband-tag-location" %>
     </div>
