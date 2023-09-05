@@ -12,7 +12,7 @@
           <span class="block w-8 h-[2px] bg-white"></span>
         </div>
       </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-32">
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-neutral rounded-box w-32">
         <li><%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %></li>
         <li><%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %></li>
         <li><%= link_to '找活動', activities_path, class: "text-xl btn btn-ghost"%></li>
@@ -39,7 +39,7 @@
               <%= render "shared/avatar", model: current_user.profile %>
             </div>
           </summary>
-          <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <ul class="p-2 shadow menu dropdown-content z-[1] bg-neutral rounded-box w-52">
             <li>
               <%= link_to "個人檔案", profile_path(current_user.profile), class: "nav-link" %>
             </li>

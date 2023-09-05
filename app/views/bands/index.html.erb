@@ -1,25 +1,24 @@
-
-<div class="flex flex-col w-full" >
-
-  <div class="flex flex-col items-center p-5 tracking-wide ">
-    <h1 class="theme-text h2">找到最適合您的樂團</h1>
-
+<div class="flex flex-wrap justify-center p-10">
+  <h1 class="lg:text-4xl h2 theme-text" >找到最適合您的樂團</h1>
+  <div class="flex flex-wrap justify-center w-full">
     <%= search_form_for @search_band do |f| %>
       <div class="flex justify-center m-5">
         <%= f.search_field :name_or_styles_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset' %>
         <%= f.submit class:'joband-action-btn' %>
       </div>
+      <div class="w-full">
         <% Style.all.each do |style| %>
           <label>
             <%= check_box_tag('q[styles_name_cont_any][]', style.name, false, class: "checkbox checkbox-md checkbox-error", :uncheck => true) %>
             <span class="text-xl theme-text"><%= style.name %></span>
           </label>
         <% end %>
+      </div>
     <% end %>
   </div>
-  <div class="flex flex-wrap justify-center w-full">
-    <div class="my-10">
-      <%= render @bands %>
-    </div>
+</div>
+<div class="flex flex-wrap justify-center w-full">
+  <div class="my-10">
+    <%= render @bands %>
   </div>
 </div>

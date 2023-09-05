@@ -1,20 +1,20 @@
 <div class="flex flex-wrap justify-center p-10">
-<h1 class="lg:h1 h2 theme-text">搜尋音樂家</h1>
-<div class="w-full">
-  <%= search_form_for @search_profile do |user| %>
-    <div class="flex justify-center my-10">
-      <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset'%>
-      <%= user.submit class:'joband-action-btn' %>
-    </div>
-  <% end %>
-</div>
-<div class="flex search_by_instruments">
-  <% instruments_all.each do |instrument| %>
-    <div class="lg:w-[90px] lg:h-[90px] w-[30px] h-[30px] mx-5">
-      <%= render "shared/instrument_search", instrument: instrument.name %>
-    </div>
-  <% end %>
-</div>
+  <h1 class="lg:text-4xl h2 theme-text" >搜尋音樂家</h1>
+  <div class="w-full">
+    <%= search_form_for @search_profile do |user| %>
+      <div class="flex justify-center my-10">
+        <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset'%>
+        <%= user.submit class:'joband-action-btn' %>
+      </div>
+    <% end %>
+  </div>
+  <div class="flex search_by_instruments">
+    <% instruments_all.each do |instrument| %>
+      <div class="lg:w-[90px] lg:h-[90px] w-[30px] h-[30px] mx-5">
+        <%= render "shared/instrument_search", instrument: instrument.name %>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="flex flex-wrap justify-center w-full">
   <div class="my-10">
