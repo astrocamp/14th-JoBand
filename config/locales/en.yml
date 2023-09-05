@@ -119,6 +119,9 @@ en:
         band:
             create: Create
             update: Update
+        recruit:
+            create: Create
+            update: Update
 
   music:
     style:

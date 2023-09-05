@@ -1,4 +1,4 @@
-<div class="flex justify-center mt-5 text-white">
+<div class="flex justify-center mt-5 theme-text">
   <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, recruit] : [recruit]), data: { turbo: false }) do |f| %>
 
   <div class="mb-5">
@@ -24,7 +24,7 @@
     <%= f.label :area, "地區" %>
     <%= f.select :area, Recruit.areas.keys %>
   </div>
-  <div class="bg-blue-500 hover:bg-blue-600 font-semibold rounded-lg p-1 w-32 mb-5 mx-auto text-center">
+  <div class="w-32 p-1 mx-auto mb-5 font-semibold text-center bg-blue-500 rounded-lg hover:bg-blue-600">
     <%= f.submit %>
   </div>
   <% end %>
