@@ -1,37 +1,45 @@
-<div>
+<div class="w-[500px] joband-text-bk lg:flex lg:justify-center text-base lg:text-lg">
   <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
-    <div>
-      <%= f.label :avatar, "上傳大頭照" %>
+    <div class="flex items-center my-5">
+      <%= f.label :avatar, "上傳大頭照", class: "lg:w-[120px] block" %>
       <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
-    <div>
-      <%= f.label :phone, "電話", class: "text-white" %><br />
-      <%= f.phone_field :phone, placeholder: '請輸入電話號碼', class: "input-md input-bordered w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+      <%= f.label :phone, "電話", class: "lg:w-[120px] block" %>
+      <%= f.phone_field :phone, placeholder: '請輸入電話號碼', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
-    <div>
-      <%= f.label :location, "居住城市", class: "text-white" %><br />
-      <%= f.text_field :location, placeholder: '請輸入居住城市', class: "input-md input-bordered w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+      <%= f.label :location, "居住城市", class: "lg:w-[120px] block"  %>
+      <%= f.text_field :location, placeholder: '請輸入居住城市', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
-    <div>
-      <%= f.label :seniority, "樂齡", class: "text-white" %><br />
-      <%= f.number_field :seniority, min: 1, placeholder: '1年', class: "input-md input-bordered w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+      <%= f.label :seniority, "樂齡", class: "lg:w-[120px] block"  %>
+      <%= f.number_field :seniority, min: 1, placeholder: '1年', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
-    <div>
-      <%= f.label :content, "簡介", class: "text-white" %><br />
-      <%= f.text_area :content, placeholder: '跟大家介紹一下自己。', class: "input-md input-bordered w-full max-w-xs" %>
+    <div class="flex items-center my-5 ">
+      <%= f.label :content, "簡介", class: "lg:w-[120px] block"  %>
+      <%= f.text_area :content, placeholder: '跟大家介紹一下自己。', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
-    <p class="text-white">使用樂器 instrument </p>
-    <div>
-      <%= f.collection_check_boxes :instrument_ids, instruments_all, :id, :name %>
+    <div class="flex items-center my-5 ">
+      <p class="lg:w-[120px]">彈奏樂器 </p>
+      <div class="space-x-2">
+        <%= f.collection_check_boxes :instrument_ids, instruments_all, :id, :name %>
+      </div>
     </div>
-    <div>
-      <%= f.label :music, "上傳音樂" %>
-      <%= f.file_field :music, accept: "audio/mpeg" %>
+    <div class="flex items-center my-5 ">
+      <%= f.label :music, "上傳音樂",class: "lg:w-[120px] block" %>
+      <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
-    <div>
-      <%= f.label :video, "上傳影片" %>
-      <%= f.file_field :video, accept: "video/mp4" %>
+    <div class="flex items-center my-5 ">
+      <%= f.label :video, "上傳影片",class: "lg:w-[120px] block" %>
+      <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
-    <%= f.submit %>
+    <div class="flex items-center justify-center w-full mt-10">
+      <% if action_name == "new" %>
+        <%= f.submit "創建個人資料", class: "joband-action-btn" %>
+      <% else %>
+        <%= f.submit "修改個人資料", class: "joband-action-btn" %>
+      <% end %>
+    </div>
   <% end %>
 </div>

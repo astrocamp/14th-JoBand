@@ -1,13 +1,13 @@
-<div class="flex flex-wrap justify-center w-11/12 h-auto mx-auto rounded-[50px] overflow-hidden shadow-md bg-slate-100">  
-  <section class="w-full h-[500px] overflow-hidden mb-10">
+<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto rounded-[100px] mt-20 overflow-hidden joband-shadow bg-white">  
+  <section class="relative w-full h-[500px] overflow-hidden mb-10">
     <%= render "shared/banner", model: @band  %>
   </section>
   <div class="my-5 h-[200px] w-[200px] relative">
     <%= render "shared/avatar", model: @band  %>
   </div>
   <section class="flex flex-wrap justify-center w-full mb-5">
-    <a href="#" class="z-[1] shadow-md joband-tag-style"><%= @band.state %></a>
-    <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
+    <a href="#" class="z-[1] shadow-md joband-tag-style mb-2"><%= @band.state %></a>
+    <h1 class="w-full my-5 font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
     <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
       <% if @band.recruit.present? %>
         <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
@@ -15,12 +15,9 @@
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
     <% end %>  
-
     <%= link_to '創建活動', new_activity_path, class:'joband-action-btn mx-5' %>
-
   </section>
-
-  <div class="flex flex-wrap justify-around mb-12">
+  <div class="flex flex-wrap justify-around mb-5">
     <% if @band.styles.present? %>
       <% @band.styles.each do |style| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
