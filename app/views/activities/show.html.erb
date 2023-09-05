@@ -41,11 +41,15 @@
       <%= link_to "返回活動列表", band_activities_path(@band), class: "joband-tag-location" %>
     </div>
   </div>
+
+</div>
+<div class="justify-center">  
   <%= form_with(model: [@activity, @comment]) do |f| %>
     <div>
       <%= f.label :content, '留言內容' %><br />
       <%= f.text_area :content%>
     </div>
+    <div>
       <%= f.submit '送出留言', class: 'btn btn-accent'%>
     </div>
   <% end %>
