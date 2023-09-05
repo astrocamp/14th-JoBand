@@ -1,22 +1,8 @@
-<% if instrument == "listener" %>
-
-  <div class="relative flex flex-wrap justify-center w-h-full joband-shadow">
-    <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-      <img src="/icon_img/listener.svg" alt="listener_icon" class="absolute w-1/2 p-1 drop-shadow">
-      <div class="rounded-full shadow-inner circle-bg w-h-full"></div>
-    </a>
-    <p class="block mt-2 font-semibold joband-text-bk">LISTENER</p>
+<div class="relative flex flex-wrap justify-center w-h-full joband-shadow">
+  <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>[instrument]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+  <div class="flex items-center justify-center w-full h-full">
+    <img src="/icon_img/<%= instrument %>.svg" alt="<%= instrument %>_icon" class="absolute hidden w-1/2 p-1 joband-shadow lg:block">
+    <div class="rounded-full shadow-inner circle-bg w-h-full"></div>
   </div>
-
-<% else %>
-
-  <div class="relative flex flex-wrap justify-center w-h-full joband-shadow">
-    <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>[instrument]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
-      <div class="flex items-center justify-center w-full h-full">
-        <img src="/icon_img/<%= instrument %>.svg" alt="<%= instrument %>_icon" class="absolute w-1/2 p-1 drop-shadow">
-        <div class="rounded-full shadow-inner circle-bg w-h-full"></div>
-      </div>
-    <p class="block mt-2 font-semibold theme-text"><%= instrument.upcase %></p>
-  </div>
-
-<% end %>
+  <p class="block mt-2 font-semibold text-center theme-text"><%= instrument.upcase %></p>
+</div>
