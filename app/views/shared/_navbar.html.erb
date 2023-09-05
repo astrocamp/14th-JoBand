@@ -4,7 +4,7 @@
       <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10">
     <% end %>
     
-    <details class="lg:hidden dropdown dropdown-end">
+    <details class="lg:hidden dropdown dropdown-end theme-text">
       <summary class="m-1 btn btn-ghost">
         <div class="flex-col space-y-2">
           <span class="block w-8 h-[2px] bg-white"></span>
@@ -32,7 +32,7 @@
     </div>
     <% if user_signed_in? %>
       <li class="flex align-middle">
-        <details class="flex items-center mx-5 cursor-pointer dropdown dropdown-bottom dropdown-end">
+        <details class="flex items-center mx-5 cursor-pointer theme-text dropdown dropdown-bottom dropdown-end">
         <% if current_user.profile.present?%>
           <summary class="block">
             <div class="relative items-center w-10 joband-shadow">
