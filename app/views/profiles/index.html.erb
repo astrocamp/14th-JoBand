@@ -11,7 +11,7 @@
 <div class="flex search_by_instruments">
   <% instruments_all.each do |instrument| %>
     <div class="w-[90px] h-[90px] flex mx-5">
-      <%= render "shared/instrument", instrument: instrument.name %>
+      <%= render "shared/instrument_search", instrument: instrument.name %>
     </div>
   <% end %>
 </div>
