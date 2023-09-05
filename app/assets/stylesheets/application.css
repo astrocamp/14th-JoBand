@@ -39,3 +39,12 @@
 [data-theme="dark"] .theme-text {
   color: #f3f3f2
 }
+
+[data-theme="light"] .circle-bg {
+  background-color: #E3BE91
+}
+
+[data-theme="dark"] .circle-bg {
+  background-color: #f3f3f2
+}
+
