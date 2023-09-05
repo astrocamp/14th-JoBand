@@ -11,12 +11,12 @@
     <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block"><%= band.content.body.to_plain_text.truncate(70) %></p>
     <p class="w-full h-[50px] h4 mt-5 joband-text-bk text-center block lg:hidden"><%= band.content.body.to_plain_text.truncate(50) %></p>
     <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
-      <% if band.area.present? %>
-        <a href="#" class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location"><%= band.area %></a>
-      <% end %>
-      <% if band.state.present? %>
-        <a href="#" class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style"><%= band.state %></a>
-      <% end %>
+      <a href="#" class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
+        <%= band.area %>
+      </a>
+      <a href="#" class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
+        <%= band.state %>
+      </a>
       <div class="hidden lg:flex">
         <%= render "bands/recruit", band: band %>
       </div>

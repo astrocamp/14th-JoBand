@@ -29,9 +29,12 @@ class ProfilesController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    authorize @profile
+  end
 
   def update
+    authorize @profile
     if @profile.update(params_profile)
       redirect_to profile_path(@profile), notice: '修改profile 成功'
     else

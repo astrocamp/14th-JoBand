@@ -5,8 +5,8 @@ default: &default
 
 development:
   <<: *default
-  port: 5432
-  host: localhost
+  # port: 5432
+  # host: localhost
   #username: Joband
   #password:
   database: Joband_development

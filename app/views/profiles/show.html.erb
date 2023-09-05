@@ -3,8 +3,8 @@
     <%= render "shared/avatar", model: @profile  %>
   </div>
   <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
-  <% if current_user&.id == @profile.user_id %>
-    <%= link_to '創建樂團', new_band_path, class:'joband-action-btn' %>
+  <% if policy(@profile).profile? %>
+    <%= link_to '創建樂團', new_band_path, class:'joband-action-btn'%>
   <% end %>
   <div class="flex flex-wrap justify-center w-full mt-5 px-28 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
@@ -50,8 +50,8 @@
         <% end %>
       </div>
     </div>
-    <% if current_user&.id == @profile.user_id %>
-      <%= link_to '資料更新', edit_profile_path, class:'joband-action-btn' %>
+    <% if policy(@profile).update? %>
+      <%= link_to '資料更新', edit_profile_path, class:'joband-action-btn'%>
     <% end %>
   </div>  
 </div>
