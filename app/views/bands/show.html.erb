@@ -6,13 +6,15 @@
     <%= render "shared/avatar", model: @band  %>
   </div>
   <section class="flex flex-wrap justify-center w-full mb-5">
-    <a href="#" class="z-[1] shadow-md joband-tag-style mb-2"><%= @band.state %></a>
-    <h1 class="w-full my-5 font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
-    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+    <a href="#" class="z-[1] shadow-md joband-tag-style"><%= @band.state %></a>
+    <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
+
       <% if @band.recruit.present? %>
         <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
       <% else %>
-        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
+        <% if current_user === bnad_leader %>
+          <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
+        <% end %>
       <% end %>
     <% end %>  
     <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
@@ -75,7 +77,7 @@
     </div>
     <div class="flex flex-wrap justify-center my-10">
 
-      <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+      <% if current_user == bnad_leader || current_user == bnad_manager %>
         <div class="w-full mb-10 align-middle">
           <div class="w-32 mx-auto text-center ">
             <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
@@ -84,7 +86,7 @@
       <% else %>
         <% if @band.recruit.present? %>
           <% if user_signed_in? %>
-            <% if current_user.confirmed? && current_user.profile.present?%>
+            <% if current_user.profile.present? %>
               <%= link_to '招募中', recruit_path(@band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
             <% else %>
               <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先完成個人資料！" %>

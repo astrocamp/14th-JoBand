@@ -15,11 +15,13 @@ class BandsController < ApplicationController
 
   def new
     @band = Band.new
+    authorize @band
   end
 
   def create
     @band = Band.new(band_params.except(:role))
     @role = band_params[:role]
+    authorize @band
     if @band.save
       @band.band_members.create(user: current_user, identity: :leader, role: @role)
       redirect_to band_path(@band), notice: '成功創立樂團'
@@ -29,9 +31,12 @@ class BandsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @band
+  end
 
   def update
+    authorize @band
     if @band.update(band_params)
       redirect_to band_path(@band), notice: '更新成功'
     else
@@ -49,4 +54,5 @@ class BandsController < ApplicationController
     params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner, :role,
                                  style_ids: [])
   end
+
 end
