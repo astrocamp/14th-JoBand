@@ -3,7 +3,7 @@
     <%= link_to '', profile_path(band_member.user.profile), class: "block w-full h-full absolute z-[1]" %>
     <%= render 'shared/avatar' , model: band_member.user.profile %>
   </div>
-  <div class="w-full text-center h2 joband-text-bk joband-shadow">
+  <div class="w-full my-2 text-center h4 joband-text-bk joband-shadow">
     <%= band_member.role %>
   </div>
   <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
