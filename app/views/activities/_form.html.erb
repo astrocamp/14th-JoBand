@@ -1,42 +1,48 @@
+<div class="w-[500px] joband-text-bk lg:flex lg:justify-center text-base lg:text-lg">
 <%= form_with(model: activity, data: {turbo: false}) do |f| %>
 
-  <div>
-    <%= f.label '活動標題' %>
-    <%= f.text_field :title %>
+  <div class="flex items-center my-5">
+    <%= f.label '活動標題', class: "lg:w-[120px] block" %>
+    <%= f.text_field :title, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= f.label :banner, '上傳活動照片' %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg" %>
+    <div class="flex items-center my-5">
+    <%= f.label :banner, '上傳照片', class: "lg:w-[120px] block" %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg",class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= f.label '活動內容' %>
-    <%= f.text_area :content %>
+    <div class="flex items-center my-5">
+    <%= f.label '活動內容', class: "lg:w-[120px] block" %>
+    <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= f.label '活動日期' %>
-    <%= f.date_field :begin_at %>
+    <div class="flex items-center my-5">
+    <%= f.label '活動日期', class: "lg:w-[120px] block" %>
+    <%= f.date_field :begin_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= f.label '開始時間' %>
-    <%= f.time_field :time_start %>
+    <div class="flex items-center my-5">
+    <%= f.label '開始時間', class: "lg:w-[120px] block" %>
+    <%= f.time_field :time_start, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-  <div>
-    <%= f.label '結束時間' %>
-    <%= f.time_field :time_end %>
+    <div class="flex items-center my-5">
+    <%= f.label '結束時間', class: "lg:w-[120px] block" %>
+    <%= f.time_field :time_end, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
   
-  <div>
-    <%= f.label '活動地點' %>
-    <%= f.text_field :location %>
+    <div class="flex items-center my-5">
+    <%= f.label '活動地點', class: "lg:w-[120px] block" %>
+    <%= f.text_field :location, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
   
-  <div>
-    <%=f.submit class:"btn btn-accent w-40" %>
+  <div class="flex items-center justify-center w-full mt-10">
+    <% if action_name == "new" %>
+      <%= f.submit "創建活動", class: "joband-action-btn" %>
+    <% else %>
+      <%= f.submit "更新活動", class: "joband-action-btn" %>
+    <% end %>
   </div>
 
 <%end%>
+</div>
