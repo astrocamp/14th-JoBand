@@ -12,7 +12,7 @@
     <% if @band.recruit.present? %>
       <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
     <% else %>
-      <% if current_user === bnad_leader %>
+      <% if current_user === band_leader %>
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
     <% end %>  
