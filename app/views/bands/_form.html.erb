@@ -47,12 +47,12 @@
 
   <div class="flex flex-wrap items-center my-5">
     <%= f.label :content, "對樂團的描述：", class: "lg:w-full block my-5" %>
-    <%= f.rich_text_area :content, class:"text-black bg-white w-full" %>
+    <%= f.rich_text_area :content, class:"text-black bg-white w-full rounded-xl" %>
   </div>
 
     <div class="flex items-center my-5">
     <%= f.label :state, "樂團狀態：", class: "lg:w-[120px] block" %>
-    <%= f.select :state , Band.states.keys, class: "select select-bordered select-lg w-full max-w-xs" %>
+    <%= f.select :state , Band.states.keys%>
   </div>
 
     <div class="flex items-center my-5">
