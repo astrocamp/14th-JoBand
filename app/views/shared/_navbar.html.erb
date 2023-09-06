@@ -15,14 +15,14 @@
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-32">
         <li><%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %></li>
         <li><%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %></li>
-        <li><%= link_to '找活動', activities_path, class: "text-xl btn btn-ghost"%></li>
+        <li><%= link_to '找活動', activities_activity_index_path, class: "text-xl btn btn-ghost"%></li>
         <li><%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost" %></li>
       </ul>
     </details>
 
     <%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
     <%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
-    <%= link_to '找活動', activities_path, class: "text-xl btn btn-ghost hidden lg:inline-flex"%>
+    <%= link_to '找活動', activities_activity_index_path, class: "text-xl btn btn-ghost hidden lg:inline-flex"%>
     <%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
   </div>
   <div class="flex">

@@ -5,21 +5,17 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
 
+  def new
+    @activity = Activity.new
+  end
+
   def index
     @band = Band.find_by(slug: params[:band_slug]) 
     @activities = @band.activities.order(id: :desc)
   end
 
   def activity_index
-    # if 
-    #   @activity = Activity.find(params[:id])
-    # else
-      @activities = Activity.order(id: :desc)
-    # end
-  end
-
-  def new
-    @activity = Activity.new
+    @activities = Activity.order(id: :desc)
   end
 
   def show
