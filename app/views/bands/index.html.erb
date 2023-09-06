@@ -2,7 +2,7 @@
   <h1 class="lg:text-4xl h2 theme-text" >找到最適合您的樂團</h1>
   <div class="flex flex-wrap justify-center w-full">
     <%= search_form_for @search_band do |f| %>
-      <div class="flex justify-center m-5">
+      <div class="flex justify-center my-10">
         <%= f.search_field :name_or_styles_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset' %>
         <%= f.submit class:'joband-action-btn' %>
       </div>

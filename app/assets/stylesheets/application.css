@@ -72,3 +72,7 @@
 [data-theme="dark"] select {
   color: white;
 }
+
+.joband-action-btn {
+  color: white !important
+}
