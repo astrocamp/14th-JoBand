@@ -2,8 +2,13 @@
 
 class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   around_action :switch_locale
   include Pundit::Authorization
+
+  # def user_not_authorized
+  #   render file: Rails.root.join('public', '403.html'), status: 403, layout: false
+  # end
 
   def not_found
     render file: Rails.root.join('public', '404.html'), status: 404, layout: false

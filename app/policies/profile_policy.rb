@@ -37,6 +37,4 @@ class ProfilePolicy < ApplicationPolicy
     update?
   end
 
-
-
 end
