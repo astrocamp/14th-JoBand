@@ -1,5 +1,4 @@
-<div class="w-[500px] joband-text-bk lg:flex lg:justify-center text-base lg:text-lg">
-<%= form_with(model: activity, data: {turbo: false}) do |f| %>
+ <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
 
   <div class="flex items-center my-5">
     <%= f.label '活動標題', class: "lg:w-[120px] block" %>
@@ -30,11 +29,16 @@
     <%= f.label '結束時間', class: "lg:w-[120px] block" %>
     <%= f.time_field :time_end, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
+
+  <div>
+    <%= f.label :city, '活動縣市' %>
+    <%= f.select :city, Activity.cities.keys %>
+  </div>
   
     <div class="flex items-center my-5">
-    <%= f.label '活動地點', class: "lg:w-[120px] block" %>
-    <%= f.text_field :location, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
-  </div>
+      <%= f.label '活動地點', class: "lg:w-[120px] block" %>
+      <%= f.text_field :location, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    </div>
   
   <div class="flex items-center justify-center w-full mt-10">
     <% if action_name == "new" %>

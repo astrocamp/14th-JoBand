@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :activities
+  get 'activities/activity_index'
 
   resources :bands, param: :slug, except: [:destroy] do
     resources :band_members, except: %i[new show index]
@@ -28,11 +28,13 @@ Rails.application.routes.draw do
           patch :reject
           post :approve
         end
-
+        
         resources :comments, only: %i[create destroy], shallow: true
       end
     end
+    resources :activities, shallow: true
   end
+
 
   scope "communities" do
     resources :posts, only: %i[index create show destroy]

@@ -10,23 +10,32 @@
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
     <p class="mb-12 h1"><%= @activity.title %></p>
     <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">主辦：<%= link_to @activity.band.name, band_path(@activity.band_id) %></p>
+    <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">內容：<%= @activity.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">日期：<%= @activity.begin_at %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">時間：<%= @activity.time_start.strftime('%H:%M') %> - <%= @activity.time_end.strftime('%H:%M') %></p>
     <span class="w-full joband-line-bk"></span>
+    <p class="w-full h3">縣市：<%= @activity.city %></p>
+    <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">地點：<%= @activity.location %></p>
   </div>
   
   <div class="w-32 mx-auto mt-12 text-center">
-    <div class="mb-6">
-      <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location h3" %>
-    </div>
-    <div class="mb-6">
-      <%= link_to '刪除活動', activity_path(@activity), 
-                            data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
-                            class: "joband-tag-seniority h3" %>
+    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+      <div class="mb-6">
+        <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location" %>
+      </div>
+      <div class="mb-6">
+        <%= link_to '刪除活動', activity_path(@activity), 
+                              data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
+                              class: "joband-tag-seniority" %>
+      </div>
+    <% end %>  
+    <div>
+      <%= link_to "返回樂團活動列表", band_activities_path(@band), class: "joband-tag-location" %>
     </div>
   </div>
 </div>

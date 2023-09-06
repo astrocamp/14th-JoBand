@@ -15,7 +15,13 @@
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
     <% end %>  
-    <%= link_to '創建活動', new_activity_path, class:'joband-action-btn mx-5' %>
+    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+      <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
+    <% end %>  
+    <% if @band.activities.present? %>
+      <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-action-btn mx-5' %>
+    <% end %>  
+
   </section>
   <div class="flex flex-wrap justify-around mb-5">
     <% if @band.styles.present? %>
@@ -65,6 +71,7 @@
       <% else %>
         <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
       <% end %>
+      
     </div>
     <div class="flex flex-wrap justify-center my-10">
 
