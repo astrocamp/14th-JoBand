@@ -31,7 +31,7 @@
 
  .joband-action-btn{
   background-color: #F46A5B !important;
- }
+}
 
 [data-theme="light"] .theme-text {
   color: #2A323A
@@ -46,6 +46,29 @@
 }
 
 [data-theme="dark"] .circle-bg {
-  background-color: #f3f3f2
+  background-color: #f3f3f2;
 }
 
+[data-theme="light"] input {
+  color: #2A323A 
+}
+
+[data-theme="light"] textarea {
+  color: #2A323A 
+}
+
+[data-theme="dark"] input {
+  color: white
+}
+
+[data-theme="dark"] textarea {
+  color: white
+}
+
+[data-theme="dark"] select {
+  color: white;
+}
+
+[data-theme="dark"] select {
+  color: white;
+}
