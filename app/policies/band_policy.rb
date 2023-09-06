@@ -5,12 +5,12 @@ class BandPolicy < ApplicationPolicy
     @band = band
   end
 
-  def manager? 
-    @band.band_members.find_by(identity: :manager)&.user == user
+  def band_manager? 
+    manager.exists?(band_id: @band.id)
   end
 
-  def leader?
-    @band.band_members.find_by(identity: :leader).user == user
+  def band_leader?
+    leader.exists?(band_id: @band.id)
   end
 
   def create?
@@ -22,7 +22,7 @@ class BandPolicy < ApplicationPolicy
   end
 
   def update?
-    leader? || manager?
+    band_leader? || band_manager?
   end
 
   def edit
