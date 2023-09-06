@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 class BandPolicy < ApplicationPolicy
-  
   def initialize(user, band)
     @user = user
     @band = band
   end
 
-  def band_manager? 
+  def band_manager?
     manager.exists?(band_id: @band.id)
   end
 
@@ -28,5 +29,4 @@ class BandPolicy < ApplicationPolicy
   def edit
     update?
   end
-
 end

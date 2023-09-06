@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Band < ApplicationRecord
-  #friendly_id
+  # friendly_id
   extend FriendlyId
   friendly_id :name, use: :slugged
 

@@ -1,5 +1,6 @@
-class ProfilePolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class ProfilePolicy < ApplicationPolicy
   def initialize(user, profile)
     @user = user
     @profile = profile
@@ -36,5 +37,4 @@ class ProfilePolicy < ApplicationPolicy
   def edit?
     update?
   end
-
 end

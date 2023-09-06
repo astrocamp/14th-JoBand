@@ -12,11 +12,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-      if @post.save
-        redirect_to posts_path, notice: '貼文已發佈！'
-      else
-        redirect_to posts_path, alert: '貼文失敗。'
-      end
+    if @post.save
+      redirect_to posts_path, notice: '貼文已發佈！'
+    else
+      redirect_to posts_path, alert: '貼文失敗。'
+    end
   end
 
   def show; end

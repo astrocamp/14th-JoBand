@@ -54,5 +54,4 @@ class BandsController < ApplicationController
     params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner, :role,
                                  style_ids: [])
   end
-
 end

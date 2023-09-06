@@ -16,7 +16,7 @@ class Activity < ApplicationRecord
     新竹縣: 4,
     新竹市: 5,
     苗栗縣: 6,
-    苗栗市: 7, 
+    苗栗市: 7,
     臺中市: 8,
     南投縣: 9,
     南投市: 10,
@@ -39,5 +39,4 @@ class Activity < ApplicationRecord
     金門縣: 27,
     連江縣: 28
   }, _prefix: true
-  
 end
