@@ -77,7 +77,7 @@
     </div>
     <div class="flex flex-wrap justify-center my-10">
 
-      <% if current_user == bnad_leader || current_user == bnad_manager %>
+      <% if user_signed_in? && policy(@band).update? %>
         <div class="w-full mb-10 align-middle">
           <div class="w-32 mx-auto text-center ">
             <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
