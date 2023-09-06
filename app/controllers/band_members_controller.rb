@@ -22,7 +22,7 @@ class BandMembersController < ApplicationController
   private
 
   def set_band
-    @band = Band.find(params[:band_id])
+    @band = Band.friendly.find(params[:band_slug])
   end
 
   def set_band_member

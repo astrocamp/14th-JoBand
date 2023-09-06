@@ -58,11 +58,12 @@
             </li>
             <% end %>
         <% else %>
-          <div class="relative items-center w-10 joband-shadow">
-            <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full" >
-            <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
-          </div>
-          <span class="flex ml-2"><%= current_user.name %></span>
+          <summary class="flex">
+            <div class="relative items-center w-10 joband-shadow">
+              <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full" >
+              <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
+            </div>
+          </summary>
           <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
             <li>
               <%= link_to "個人檔案", current_user.confirmed? ? letsjam_profiles_path : welcome_profiles_path, class: "nav-link" %>
