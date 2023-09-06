@@ -9,12 +9,11 @@
     <a href="#" class="z-[1] shadow-md joband-tag-style"><%= @band.state %></a>
     <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
 
-      <% if @band.recruit.present? %>
-        <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
-      <% else %>
-        <% if current_user === bnad_leader %>
-          <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
-        <% end %>
+    <% if @band.recruit.present? %>
+      <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
+    <% else %>
+      <% if current_user === bnad_leader %>
+        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
     <% end %>  
     <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
