@@ -6,7 +6,8 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: %i[show edit update destroy]
 
   def index
-    @activities = Activity.order(id: :desc)
+    @band = Band.find_by(slug: params[:band_slug]) 
+    @activities = @band.activities.order(id: :desc)
   end
 
   def new
