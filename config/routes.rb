@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :activities
+  get 'activities/activity_index'
 
   resources :bands, param: :slug, except: [:destroy] do
     resources :band_members, except: %i[new show index]

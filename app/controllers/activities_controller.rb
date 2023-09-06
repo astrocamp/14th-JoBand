@@ -10,6 +10,14 @@ class ActivitiesController < ApplicationController
     @activities = @band.activities.order(id: :desc)
   end
 
+  def activity_index
+    # if 
+    #   @activity = Activity.find(params[:id])
+    # else
+      @activities = Activity.order(id: :desc)
+    # end
+  end
+
   def new
     @activity = Activity.new
   end
@@ -46,7 +54,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:title, :content, :begin_at, :time_start, :time_end, :location, :banner)
+    params.require(:activity).permit(:title, :content, :begin_at, :time_start, :time_end, :location, :banner, :city)
   end
 
   def set_activity
