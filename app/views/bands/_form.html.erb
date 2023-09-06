@@ -1,66 +1,72 @@
+<div class="w-full text-base joband-text-bk lg:flex lg:justify-center lg:text-lg">
 <%= form_with(model: band , data:{ turbo: false } ) do |f| %>
 
-  <div class="m-5">
-    <%= f.label :name, "樂團名稱：", class: "mr-8 text-xl text-black" %>
-    <%= f.text_field :name , class: "text-white input input-bordered mb-3"%>
+    <div class="flex items-center my-5">
+    <%= f.label :name, "樂團名稱：", class: "lg:w-[120px] block" %>
+    <%= f.text_field :name , class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
   </div>
   
   <% if action_name.in?(['new', 'create']) %>
-  <div class="m-5">
-    <%= f.label :role, '您的角色：', class: "mr-8 text-xl text-black" %>
+    <div class="flex items-center my-5">
+    <%= f.label :role, '您的角色：', class: "lg:w-[120px] block" %>
     <%= f.select :role, BandMember.default_roles, class: "select select-bordered select-lg w-full max-w-xs" %>
   </div>
   <% end %>
   
-  <div class="m-5">
-    <%= f.label :banner, '樂團佈景：', class: "mr-8 text-xl text-black" %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-bordered file-input-info w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+    <%= f.label :banner, '樂團佈景：', class: "lg:w-[120px] block" %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :avatar, '樂團頭像：', class: "mr-8 text-xl text-black" %>
-    <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-bordered file-input-info w-full max-w-xs" %>
+  <div class="flex items-center my-5">
+    <%= f.label :avatar, '樂團頭像：', class: "lg:w-[120px] block" %>
+    <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
   
-  <div class="flex m-5">
-    <%= f.label :style_ids, "演奏風格：", class: "mr-8 text-xl text-black" %>
-    <div id="check-boxes">
+  <div class="flex items-center my-5">
+    <%= f.label :style_ids, "演奏風格：", class: "lg:w-[120px] block" %>
+    <div class="space-x-2">
       <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
     </div>
   </div>
 
-  <div class="m-5">
-    <%= f.label :music, '上傳音樂：', class: "mr-8 text-xl text-black" %>
-    <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-bordered file-input-info w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+    <%= f.label :music, '上傳音樂：', class: "lg:w-[120px] block" %>
+    <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :video, '上傳影片：', class: "mr-8 text-xl text-black" %>
-    <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-bordered file-input-info w-full max-w-xs" %>
+    <div class="flex items-center my-5">
+    <%= f.label :video, '上傳影片：', class: "lg:w-[120px] block" %>
+    <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :area, "活動地區：", class: "mr-8 text-xl text-black" %>
+  <div class="flex items-center my-5">
+    <%= f.label :area, "活動地區：", class: "lg:w-[120px] block" %>
     <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg w-full max-w-xs" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :content, "對樂團的描述：", class: "mr-8 text-xl text-black" %>
-    <%= f.rich_text_area :content, class:"text-black bg-white" %>
+  <div class="flex flex-wrap items-center my-5">
+    <%= f.label :content, "對樂團的描述：", class: "lg:w-full block my-5" %>
+    <%= f.rich_text_area :content, class:"text-black bg-white w-full" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :state, "樂團狀態：",class: "mr-8 text-xl text-black" %>
+    <div class="flex items-center my-5">
+    <%= f.label :state, "樂團狀態：", class: "lg:w-[120px] block" %>
     <%= f.select :state , Band.states.keys, class: "select select-bordered select-lg w-full max-w-xs" %>
   </div>
 
-  <div class="m-5">
-    <%= f.label :founded_at, "成立時間：", class: "mr-8 text-xl text-black" %>
-    <%= f.date_field :founded_at, class:"text-white" %>
+    <div class="flex items-center my-5">
+    <%= f.label :founded_at, "成立時間：", class: "lg:w-[120px] block" %>
+    <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-  <div class="text-center">
-    <%=f.submit class:"btn btn-accent w-40" %>
+  <div class="flex items-center justify-center w-full mt-10">
+    <% if action_name == "new" %>
+      <%= f.submit "創建樂團", class: "joband-action-btn" %>
+    <% else %>
+      <%= f.submit "修改樂團資料", class: "joband-action-btn" %>
+    <% end %>
   </div>
 
 <% end %>
+</div>
