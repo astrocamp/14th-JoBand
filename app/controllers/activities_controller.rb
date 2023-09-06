@@ -10,7 +10,7 @@ class ActivitiesController < ApplicationController
   end
 
   def index
-    @band = Band.find_by(slug: params[:band_slug]) 
+    @band = Band.find_by(slug: params[:band_slug])
     @activities = @band.activities.order(id: :desc)
   end
 
