@@ -68,10 +68,6 @@
   @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
-.joband-search-btn{
-  @apply h3 bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
-}
-
 .joband-tag-location {
   @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300 joband-shadow
 }
