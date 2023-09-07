@@ -23,7 +23,7 @@
     <div class="flex items-center my-5 ">
       <p class="lg:w-[120px]">彈奏樂器 </p>
       <div class="space-x-2">
-        <%= f.collection_check_boxes :instrument_ids, instruments_all, :id, :name %>
+        <%= f.collection_check_boxes :instrument_ids, Instrument.all, :id, :name %>
       </div>
     </div>
     <div class="flex items-center my-5 ">
