@@ -9,6 +9,8 @@ en:
               too_long: "is too long"
             password_confirmation:
               confirmation: "does not match"
+            email:
+              taken: "have been taken"
     attributes:
       user:
         password: "Password"
