@@ -7,9 +7,6 @@ import { application } from "./application";
 import FlashController from "./flash_controller";
 application.register("flash", FlashController);
 
-import EcpayController from "./ecpay_controller"
-application.register("ecpay", EcpayController)
-
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
