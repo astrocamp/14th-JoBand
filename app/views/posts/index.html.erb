@@ -11,7 +11,7 @@
         </li>
       <% if user_signed_in? %>
         <li>
-          <%= link_to profile_path(current_user), class: "theme-text space-x-2 group flex items-center justify-center" do %>
+          <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
               <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
             </div>
