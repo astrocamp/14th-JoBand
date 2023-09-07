@@ -9,6 +9,8 @@ tw:
               too_long: "多過 16 個字元"
             password_confirmation:
               confirmation: "有誤，請再試一次！"
+            email:
+              taken: "已被註冊"
     attributes:
       user:
         password: "密碼"
