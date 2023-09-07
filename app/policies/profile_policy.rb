@@ -7,11 +7,11 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def owner?
-    user.profile == @profile
+    user&.profile == @profile
   end
 
   def profile?
-    user.profile.present? && owner?
+    user&.profile.present? && owner?
   end
 
   def index?

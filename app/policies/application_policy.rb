@@ -9,11 +9,11 @@ class ApplicationPolicy
   end
 
   def leader
-    user.band_members&.leader
+    user&.band_members&.leader
   end
 
   def manager
-    user.band_members&.manager
+    user&.band_members&.manager
   end
 
   def index?
