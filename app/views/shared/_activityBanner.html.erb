@@ -1,7 +1,7 @@
 <% if model.banner.attached? %>
-  <%= image_tag model.banner, class: "absolute rounded-full w-full h-full object-cover joband-shadow" %>
+  <%= image_tag model.banner.variant(:thumb), class: "absolute rounded-full w-full h-full object-cover joband-shadow" %>
   <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
 <% else %>
-  <img src="/default_activityBanner.jpg" alt="default_activityBanner" class="absolute object-cover w-full h-full rounded-full joband-shadow"> 
+  <img src="/default_banner.jpg" alt="default_banner" class="absolute object-cover w-full h-full rounded-full joband-shadow"> 
   <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
 <% end %>
