@@ -4,7 +4,9 @@ class Activity < ApplicationRecord
   validates :title, :content, :location, :time_start, :time_end, presence: true
 
   # associations
-  has_one_attached :banner
+  has_one_attached :banner do |attachable|
+    attachable.variant :thumb, resize_to_limit: [800, 800]
+  end
   has_many :comments, as: :commentable
   belongs_to :band
 

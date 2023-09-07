@@ -9,8 +9,12 @@ class Band < ApplicationRecord
 
   # associations
   has_rich_text :content
-  has_one_attached :avatar
-  has_one_attached :banner
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+  end
+  has_one_attached :banner do |attachable|
+    attachable.variant :thumb, resize_to_limit: [800, 800]
+  end
   has_one_attached :music
   has_one_attached :video
   has_many :band_styles

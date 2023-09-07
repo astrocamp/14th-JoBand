@@ -5,7 +5,9 @@ class Profile < ApplicationRecord
   # validates :phone, presence: true
 
   # associations
-  has_one_attached :avatar
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+  end
   has_one_attached :music
   has_one_attached :video
   has_many :profile_and_instrument
