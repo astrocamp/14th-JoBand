@@ -41,4 +41,11 @@ class Activity < ApplicationRecord
     金門縣: 27,
     連江縣: 28
   }, _prefix: true
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[title content name]
+  end
+  def self.ransackable_associations(_auth_object = nil)
+    %w[band]
+  end
 end

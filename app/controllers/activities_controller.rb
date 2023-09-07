@@ -15,7 +15,9 @@ class ActivitiesController < ApplicationController
   end
 
   def activity_index
-    @activities = Activity.order(id: :desc)
+    # @activities = Activity.order(id: :desc)
+    @search_activity = Activity.ransack(params[:q])
+    @activities = @search_activity.result(distinct: true)
   end
 
   def show
