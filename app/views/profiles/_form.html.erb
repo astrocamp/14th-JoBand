@@ -2,7 +2,7 @@
   <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
     <div class="flex items-center my-5">
       <%= f.label :avatar, "上傳大頭照", class: "lg:w-[120px] block" %>
-      <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
     <div class="flex items-center my-5">
       <%= f.label :phone, "電話", class: "lg:w-[120px] block" %>
@@ -28,11 +28,11 @@
     </div>
     <div class="flex items-center my-5 ">
       <%= f.label :music, "上傳音樂",class: "lg:w-[120px] block" %>
-      <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
     <div class="flex items-center my-5 ">
       <%= f.label :video, "上傳影片",class: "lg:w-[120px] block" %>
-      <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
     </div>
     <div class="flex items-center justify-center w-full mt-10">
       <% if action_name == "new" %>

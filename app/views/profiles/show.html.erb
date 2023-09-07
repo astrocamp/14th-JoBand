@@ -31,7 +31,7 @@
     <div class="flex flex-col w-full my-5">
       <div class="my-3 ">
         <% if @profile.music.attached? %>
-          <audio controls controlsList="nodownload" class="w-full">
+          <audio controls controlsList="nodownload" class="w-full custom-audio-player">
             <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
             您的瀏覽器不支援音樂格式
           </audio>

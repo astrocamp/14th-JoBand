@@ -7,7 +7,7 @@
 
   <div class="flex items-center my-5">
     <%= f.label :banner, '上傳照片', class: "lg:w-[120px] block" %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg",class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">

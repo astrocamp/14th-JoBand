@@ -54,7 +54,7 @@
     <span class="w-full joband-line-bk"></span>
     <div class="w-full my-5">
       <% if @band.music.attached? %>
-        <audio controls controlsList="nodownload" class="w-full">
+        <audio controls controlsList="nodownload" class="w-full custom-audio-player">
           <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
           您的瀏覽器不支援音樂格式
         </audio>
