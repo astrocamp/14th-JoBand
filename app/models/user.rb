@@ -41,4 +41,19 @@ class User < ApplicationRecord
     )
     user
   end
+
+  #like
+  def liked?(record)
+    liked_posts.include?(record)
+  end
+
+  def like!(record)
+    liked_posts << record
+  end
+
+
+  def unlike!(record)
+    liked_posts.destroy(record)
+  end
+  
 end

@@ -56,7 +56,21 @@
             <%= post.body %>
           </article>
           <footer class="flex justify-evenly">
-            <div class="btn btn-ghost"><%= image_tag "icon/like.svg" %></div>
+            <!-- 按♥ -->
+            <div class="btn btn-ghost">
+                <div data-controller="like" 
+                  data-liked="<%= current_user.liked?(post) %>" 
+                  data-id="<%= post.id %>">
+                <div class="flex">
+                  <a href="#" data-like-target="likeBtn" data-action="click->like#toggle"></a>
+                  <span data-like-target="count" class="mx-2">
+                  <%= post.like_logs.count %>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- ♡ -->
+            
             <div class="btn btn-ghost"><%= image_tag "icon/comment.svg" %></div>
             <% if user_signed_in? %>
               <% if current_user.id == post.user.id %>
@@ -85,8 +99,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
