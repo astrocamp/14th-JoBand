@@ -6,12 +6,11 @@
         <%= f.search_field :name_or_styles_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset' %>
         <%= f.submit class:'joband-action-btn' %>
       </div>
-      <div class="w-full">
+      <div class="flex search_by_instruments">
         <% Style.all.each do |style| %>
-          <label>
-            <%= check_box_tag('q[styles_name_cont_any][]', style.name, false, class: "checkbox checkbox-md checkbox-error", :uncheck => true) %>
-            <span class="text-xl theme-text"><%= style.name %></span>
-          </label>
+          <div class="lg:w-[60px] lg:h-[60px] w-[20px] h-[20px] mx-5">
+            <%= render "shared/style_search", style: style.name %>
+          </div>
         <% end %>
       </div>
     <% end %>

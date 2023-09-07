@@ -9,7 +9,7 @@
     <% end %>
   </div>
   <div class="flex search_by_instruments">
-    <% instruments_all.each do |instrument| %>
+    <% Instrument.all.each do |instrument| %>
       <div class="lg:w-[90px] lg:h-[90px] w-[30px] h-[30px] mx-5">
         <%= render "shared/instrument_search", instrument: instrument.name %>
       </div>
