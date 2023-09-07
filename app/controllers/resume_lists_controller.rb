@@ -5,16 +5,19 @@ class ResumeListsController < ApplicationController
   before_action :set_recruit, only: %i[new create]
 
   def show
+    authorize @resume_list
     @comment = Comment.new
     @comments = @resume_list.comments.order(created_at: :desc)
   end
 
   def new
-    @resume_list = ResumeList.new
+    @resume_list = ResumeList.new(recruit: @recruit)
+    authorize @resume_list
   end
 
   def create
     @resume_list = @recruit.resume_lists.build(resume_list_params)
+    authorize @resume_list
     if @resume_list.save
       redirect_to resume_list_path(@resume_list), notice: '申請成功'
     else
@@ -23,10 +26,12 @@ class ResumeListsController < ApplicationController
   end
 
   def edit
+    authorize @resume_list
     @recruit = @resume_list.recruit
   end
 
   def update
+    authorize @resume_list
     if @resume_list.update(resume_list_params)
       redirect_to resume_list_path(@resume_list), notice: '更新成功'
     else
@@ -35,6 +40,7 @@ class ResumeListsController < ApplicationController
   end
 
   def approve
+    authorize @resume_list
     @recruit = @resume_list.recruit
     @band = @recruit.band
     @role = @resume_list.role
@@ -44,12 +50,12 @@ class ResumeListsController < ApplicationController
       @resume_list.update(status: :approved)
       redirect_to recruit_path(@recruit), notice: '已加入樂團'
     else
-      flash[:alert] = 'Failed to approve resume list.'
-      render :show
+      render :show, alert: '加入失敗'
     end
   end
 
   def reject
+    authorize @resume_list
     if @resume_list.update(status: :rejected)
       redirect_to recruit_path(@resume_list.recruit), notice: '已拒絕申請'
     else

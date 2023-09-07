@@ -35,12 +35,16 @@
         </div>
       <% end %>
       <div class="flex flex-col mt-12">
-        <% if user_signed_in? %>
-          <% if !current_user&.band_members&.pluck(:band_id).include?(@recruit.band_id) %>
+        <% if current_user&.profile.present? %>
+          <% if policy(@recruit).apply? %>
             <%= link_to "申請加入樂團",  new_recruit_resume_list_path(@recruit), class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"%>
           <% end %>
+        <% else %>
+          <%= link_to '申請加入樂團', letsjam_profiles_path, class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2", alert: "請先完成個人資料！" %>
         <% end %>
-        <%= link_to "返回社團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
+        
+        <%= link_to "返回樂團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
+
       </div>    
     </div>
   </article>
@@ -49,7 +53,12 @@
       <div class="m-3">
         <%= link_to resume_list_path(list), action: 'go' do %>
           <div class="p-10 mt-20 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]">
-            <p class="my-3 text-sm border-b">應徵: <span class="text-xl"><%= list.role %></span></p>
+            <p class="my-3 text-sm border-b">
+              應徵: 
+              <span class="text-xl">
+                <%= list.role %>
+              </span>
+            </p>
             <span>
               <%= link_to list.user.name %><br/>
               <%= list.description %>

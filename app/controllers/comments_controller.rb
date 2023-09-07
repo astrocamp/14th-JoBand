@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
 
     if @comment.save
-      redirect_to @commentable, notice: '留言成功'
+      redirect_to @commentable
     else
       redirect_to @commentable, alert: '留言不得為空白'
     end
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to @commentable, notice: '留言已刪除'
+    redirect_to @commentable
   end
 
   private
