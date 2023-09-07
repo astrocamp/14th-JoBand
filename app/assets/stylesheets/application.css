@@ -96,3 +96,12 @@
 .joband-action-btn {
   color: white !important
 }
+
+#instrnment_search:hover #instrument_name {
+  opacity: 1;  
+  transition-duration: 1000ms
+}
+
+#instrument_name {
+  opacity: 0;
+}
