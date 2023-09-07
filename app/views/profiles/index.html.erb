@@ -2,9 +2,13 @@
   <h1 class="lg:text-4xl h2 theme-text" >搜尋音樂家</h1>
   <div class="w-full">
     <%= search_form_for @search_profile do |user| %>
-      <div class="flex justify-center my-10">
-        <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset'%>
-        <%= user.submit class:'joband-search-btn' %>
+      <div class="flex items-center justify-center my-10">
+        <div>
+          <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset'%>
+        </div>
+        <button class="flex justify-center mx-2 w-14 h-14">
+          <%= render "shared/search_btn" %>
+        </button>
       </div>
     <% end %>
   </div>
