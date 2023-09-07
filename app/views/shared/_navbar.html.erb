@@ -1,4 +1,4 @@
-<nav class="flex self-start justify-between text-white navbar bg-neutral joband-shadow">
+<nav class="flex self-start justify-between text-white navbar navbg nav-shadow">
   <div class="flex-1 lg:gap-8 ">
     <%= link_to root_path, class: "logo-icon" do %>
       <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10">
@@ -13,17 +13,17 @@
         </div>
       </summary>
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-32">
-        <li><%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost" %></li>
-        <li><%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost" %></li>
-        <li><%= link_to '找活動', activities_activity_index_path, class: "text-xl btn btn-ghost"%></li>
-        <li><%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost" %></li>
+        <li><%= link_to '找樂手', profiles_path, class: "theme-text btn btn-ghost" %></li>
+        <li><%= link_to '找樂團', bands_path, class: "theme-text btn btn-ghost" %></li>
+        <li><%= link_to '找活動', activities_activity_index_path, class: "theme-text btn btn-ghost"%></li>
+        <li><%= link_to '討論區', posts_path, class: "theme-text btn btn-ghost" %></li>
       </ul>
     </details>
 
-    <%= link_to '找樂手', profiles_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
-    <%= link_to '找樂團', bands_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
-    <%= link_to '找活動', activities_activity_index_path, class: "text-xl btn btn-ghost hidden lg:inline-flex"%>
-    <%= link_to '討論區', posts_path, class: "text-xl btn btn-ghost hidden lg:inline-flex" %>
+    <%= link_to '找樂手', profiles_path, class: "theme-text btn btn-ghost hidden lg:inline-flex" %>
+    <%= link_to '找樂團', bands_path, class: "theme-text btn btn-ghost hidden lg:inline-flex" %>
+    <%= link_to '找活動', activities_activity_index_path, class: "theme-text btn btn-ghost hidden lg:inline-flex"%>
+    <%= link_to '討論區', posts_path, class: "theme-text btn btn-ghost hidden lg:inline-flex" %>
   </div>
   <div class="flex">
     <ul class="flex gap-0 lg:gap-5">
@@ -79,8 +79,8 @@
         </details>
       </li>        
     <% else %>
-      <li><%= link_to "登入", new_user_session_path, class: "btn btn-ghost normal-case text-xl" %></li>
-      <li><%= link_to "註冊", new_user_registration_path, class: "btn btn-ghost normal-case text-xl" %></li>
+      <li><%= link_to "登入", new_user_session_path, class: "btn btn-ghost normal-case text-xl theme-text" %></li>
+      <li><%= link_to "註冊", new_user_registration_path, class: "btn btn-ghost normal-case text-xl theme-text" %></li>
     <% end %>
     </ul>
   </div>

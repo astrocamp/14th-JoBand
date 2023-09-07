@@ -90,6 +90,10 @@
   @apply drop-shadow-xl
 }
 
+.nav-shadow{
+  @apply drop-shadow-md
+}
+
 .joband-line-bk{
   @apply h-[2px] rounded-full my-5 bg-[#8c959d]
 }

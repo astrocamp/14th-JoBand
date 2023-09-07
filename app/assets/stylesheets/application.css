@@ -73,6 +73,14 @@
   color: white;
 }
 
+[data-theme="light"] .navbg {
+  background-color: #edede9;
+}
+
+[data-theme="dark"] .navbg {
+  background-color: rgb(43 50 59);
+}
+
 .joband-action-btn {
   color: white !important
 }
