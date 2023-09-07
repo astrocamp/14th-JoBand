@@ -34,28 +34,28 @@
                               class: "joband-tag-seniority" %>
       </div>
     <% end %>  
-    <div>
-      <%= link_to "返回樂團活動列表", band_activities_path(@band), class: "joband-tag-location" %>
-    </div>
-    <div>
-      <%= link_to "返回活動列表", band_activities_path(@band), class: "joband-tag-location" %>
-    </div>
+      <div>
+        <%= link_to "返回活動列表", band_activities_path(@band), class: "joband-tag-location" %>
+      </div>
   </div>
 
 </div>
-<div class="justify-center">  
+<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto rounded-[100px] mt-30 overflow-hidden joband-shadow bg-white m-5 p-10 text-center"> 
+<div>  
   <%= form_with(model: [@activity, @comment]) do |f| %>
     <div>
       <%= f.label :content, '留言內容' %><br />
-      <%= f.text_area :content%>
+      <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs " %>
     </div>
     <div>
       <%= f.submit '送出留言', class: 'btn btn-accent'%>
     </div>
   <% end %>
-  <h2>留言</h2>
+  <div class="m-5 text-center"><h2>留言</h2></div>
+  
     <ul>
       <%= render "comments/comment_activity", comments: @comments, activities: @activities %>
     </ul>
   <hr>
+</div>
 </div>
