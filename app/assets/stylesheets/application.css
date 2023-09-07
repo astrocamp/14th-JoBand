@@ -81,6 +81,18 @@
   background-color: rgb(43 50 59);
 }
 
+[data-theme="light"] .nav-link:hover {
+  background-color: hsl(var(--bc)/.1) !important;
+}
+
+[data-theme="light"] .hamberger {
+  background-color: #2A323A
+}
+
+[data-theme="dark"] .hamberger {
+  background-color: white
+}
+
 .joband-action-btn {
   color: white !important
 }
