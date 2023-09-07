@@ -25,6 +25,7 @@ tw:
     resend_confirm_email: "重新發送認證信"
     resend_button: "重新發送"
     login: "登入"
+    google_login: "使用 Google 帳戶登入"
     remember_me: "記住我"
     forgot_password: "忘記密碼？"
     forgot_password_submit: "發送重設密碼信件"
@@ -44,7 +45,7 @@ tw:
     one: "會員註冊"
     two: "信箱驗證"
     three: "建立個人檔案"
-    four: "成立/加入樂團！"
+    four: "組織樂團！"
   email:
     by_joband: "JoBand 開發團隊"
     reset_password_warning: "有人向我們發出變更密碼的請求，您可以透過以下按鈕來變更密碼："

@@ -1,53 +1,56 @@
 
-<div class="hero min-h-screen rounded-lg bg-contain bg-[url('app/assets/images/musicians_horizontal_banner.jpg')]">
-  <div class="rounded-lg hero-overlay bg-opacity-60"></div>
-  <div class="absolute block hero-content top-20 lg:absolute">
+<div class="min-h-screen my-20 rounded-lg theme-text theme-bg">
+  <div class="block text-center theme-bg">
     <ul class="steps">
       <li class="step step-warning"><%= t("step.one") %></li>
       <li class="step"><%= t("step.two") %></li>
       <li class="step"><%= t("step.three") %></li>
       <li class="step"><%= t("step.four") %></li>
     </ul>
-</div>
-<div class="flex-col hero-content lg:flex-row-reverse">
-  <div class="text-center lg:text-left">
-    <h1 class="text-5xl font-bold"><%= t("user.sign_up") %></h1>
-    <p class="py-6">JoBand 是一個原創型的樂團社群網站，專為音樂家、樂手和音樂愛好者打造的線上平台。我們的目標是連結世界各地的音樂人，促進合作、交流和音樂創作。透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。</p>
   </div>
-  <div class="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
-    <div class="card-body">
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-      <div class="form-control">
-        <label class="label">
-          <%= f.label :name, t("user.display_name"),class: "label-text" %>
-        </label>
-        <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "text-white input input-bordered mb-3", required: true %>
-        <em class="text-xs leading-3"><%= t("user.display_describe") %></em>  
+  <div class="flex-col theme-text theme-bg hero-content lg:flex-row-reverse">
+    <div class="text-center lg:text-left">
+      <h1 class="text-5xl font-bold"><%= t("user.sign_up") %></h1>
+      <p class="py-6">
+        JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台。<br/>
+        透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。
+      </p>
+    </div>
+    <div class="flex-shrink-0 w-full max-w-sm shadow-2xl card bg-base-100">
+      <div class="card-body">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
+        <div class="form-control">
+          <label class="font-bold">
+            <%= f.label :name, t("user.display_name"),class: "label-text" %>
+          </label>
+          <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "text-white input input-bordered mb-3", required: true %>
+          <em class="text-xs leading-3"><%= t("user.display_describe") %></em>  
+        </div>
+        <div class="form-control">
+          <label class="mt-3 font-bold">
+            <%= f.label :email, class: "label-text" %>
+          </label>
+          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "text-white input input-bordered mb-3", required: true %>
+        </div>
+        <div class="form-control">
+          <label class="font-bold">
+            <%= f.label :password, t("user.password"), class: "label-text" %>
+          </label>
+          <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
+        </div>
+        <div class="form-control">
+          <label class="font-bold">
+            <%= f.label :password_confirmation, t("user.password_confirmation"), class: "label-text" %>
+          </label>
+          <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
+        </div>
+        <div class="mt-3 form-control">
+          <%= f.submit t("user.sign_up"), class: "joband-action-btn" %>
+        </div>
+      <% end %>
+        <%= render "users/shared/links" %>
       </div>
-      <div class="form-control">
-        <label class="mt-3 label">
-          <%= f.label :email, class: "label-text" %>
-        </label>
-        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "text-white input input-bordered mb-3", required: true %>
-      </div>
-      <div class="form-control">
-        <label class="label">
-          <%= f.label :password, t("user.password"), class: "label-text" %>
-        </label>
-        <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
-      </div>
-      <div class="form-control">
-        <label class="label">
-          <%= f.label :password_confirmation, t("user.password_confirmation"), class: "label-text" %>
-        </label>
-        <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
-      </div>
-      <div class="mt-3 form-control">
-        <%= f.submit t("user.sign_up"), class: "btn btn-block btn-warning" %>
-      </div>
-    <% end %>
-      <%= render "users/shared/links" %>
     </div>
   </div>
 </div>
