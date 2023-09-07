@@ -5,4 +5,6 @@ class Post < ApplicationRecord
 
   # associations
   belongs_to :user
+  has_many :like_logs
+  has_many :users, through: :like_logs
 end

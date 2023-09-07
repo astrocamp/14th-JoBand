@@ -18,6 +18,8 @@ class User < ApplicationRecord
   has_many :resume_lists
   has_many :recruits, through: :resume_lists
   has_many :posts
+  has_many :like_logs
+  has_many :liked_posts, through: :like_logs, source: :post
 
   # ransack
   def self.ransackable_attributes(_auth_object = nil)
