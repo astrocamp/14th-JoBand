@@ -15,7 +15,7 @@
   </div>
   <p>需求樂器</p>
   <div class="mt-1 mb-5">
-    <%= f.collection_check_boxes :instrument_ids, instruments_all, :id, :name do |i| %>
+    <%= f.collection_check_boxes :instrument_ids, Instrument.all, :id, :name do |i| %>
       <%= i.check_box %>
       <%= i.label %>
     <% end %>
