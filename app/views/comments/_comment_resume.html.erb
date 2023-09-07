@@ -3,7 +3,7 @@
   <% comments.each do |comment| %>
     <li>
       <div>
-        <%= link_to comment.user.name, profile_path(comment.user_id)%>
+        <%= link_to comment.user.name, profile_path(comment.user_id)%>:
       </div>
       <div>
         <%= comment.content %>
