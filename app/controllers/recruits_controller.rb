@@ -6,12 +6,13 @@ class RecruitsController < ApplicationController
   before_action :set_recruit, only: %i[edit update show destroy]
 
   def new
-    @recruit = Recruit.new
+    @recruit = Recruit.new(band: @band)
+    authorize @recruit
   end
 
   def create
     @recruit = @band.build_recruit(recruit_params)
-
+    authorize @recruit 
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
@@ -19,9 +20,12 @@ class RecruitsController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @recruit
+  end
 
   def update
+    authorize @recruit
     if @recruit.update(recruit_params)
       redirect_to recruit_path(@recruit), notice: '招募更新成功'
     else
@@ -30,8 +34,12 @@ class RecruitsController < ApplicationController
   end
 
   def destroy
-    @recruit.destroy
-    redirect_to band_path(@recruit.band), notice: '刪除成功'
+    authorize @recruit
+    if @recruit.destroy
+      redirect_to band_path(@recruit.band), notice: '刪除成功'
+    else
+      redirect_to recruit_path(@recruit), alert: '刪除失敗'
+    end
   end
 
   def show
