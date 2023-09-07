@@ -1,32 +1,28 @@
-<div class="bg-dark rounded-md px-20 py-5 my-10 mx-auto flex justify-center w-2/4">
-  <div class="mx-auto">
-    <header class="flex text-white">
-      <h2 class="h2"><%= t("user.login") %></h2>
-    </header>
-
+<div class="px-5 py-3 mx-auto mt-10 rounded-lg flex-warp theme-bg theme-text w-fit">
+  <div class="card-body">
     <div class="flex mx-auto">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="field my-3">
-        <%= f.label :email, class: "text-white" %><br />
-        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input-md" %>
+      <div class="my-3 field">
+        <%= f.label :email, class: "font-bold" %><br />
+        <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3" %>
       </div>
 
-      <div class="field my-3">
-        <%= f.label :password, t("user.password"), class: "text-white" %><br />
-        <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password", class: "input-md" %>
+      <div class="my-3 field">
+        <%= f.label :password, t("user.password"), class: "font-bold" %><br />
+        <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password", class: "input input-bordered mb-3" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
-        <div class="field my-3">
+        <div class="my-3 field">
           <label class="cursor-pointer label">
-            <%= f.check_box :remember_me, checked: "checked", class: "checkbox checkbox-success mr-1" %>
+            <%= f.check_box :remember_me, checked: "checked", class: "checkbox-md check-boxes mr-1" %>
             <span class="mr-auto"><%= t("user.remember_me") %></span>
           </label>
         </div>
       <% end %>
 
-      <div class="actions">
-        <%= f.submit t("user.login"), class: "btn btn-block" %>
+      <div class="mt-3 form-control">
+        <%= f.submit t("user.login"), class: "joband-action-btn" %>
       </div>
     <% end %>
     </div>

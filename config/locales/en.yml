@@ -25,6 +25,7 @@ en:
     resend_confirm_email: "Resend confirmation Email"
     resend_button: "Resend"
     login: "Log In"
+    google_login: "Sign in with Google"
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
     forgot_password_submit: "Send mail to reset password"
