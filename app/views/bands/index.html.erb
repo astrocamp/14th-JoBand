@@ -4,11 +4,11 @@
     <%= search_form_for @search_band do |f| %>
       <div class="flex justify-center my-10">
         <%= f.search_field :name_or_styles_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset' %>
-        <%= f.submit class:'joband-action-btn' %>
+        <%= f.submit class:'joband-search-btn' %>
       </div>
-      <div class="flex search_by_instruments">
+      <div class="flex h-[90px] items-center">
         <% Style.all.each do |style| %>
-          <div class="lg:w-[60px] lg:h-[60px] w-[20px] h-[20px] mx-5">
+          <div class="lg:w-[50px] lg:h-[50px] w-[20px] h-[20px] m-5 hover:w-[100px] hover:h-[100px] h4 hover:text-3xl duration-300">
             <%= render "shared/style_search", style: style.name %>
           </div>
         <% end %>

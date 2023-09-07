@@ -4,13 +4,13 @@
     <%= search_form_for @search_profile do |user| %>
       <div class="flex justify-center my-10">
         <%= user.search_field :user_name_or_instruments_name_cont, class:'p-3 mx-3 rounded-xl joband-ring-offset'%>
-        <%= user.submit class:'joband-action-btn' %>
+        <%= user.submit class:'joband-search-btn' %>
       </div>
     <% end %>
   </div>
-  <div class="flex search_by_instruments">
+  <div class="flex h-[90px] items-center">
     <% Instrument.all.each do |instrument| %>
-      <div class="lg:w-[90px] lg:h-[90px] w-[30px] h-[30px] mx-5">
+      <div id="instrnment_search" class="lg:w-[50px] lg:h-[50px] w-[20px] h-[20px] m-5 hover:w-[100px] hover:h-[100px] duration-300">
         <%= render "shared/instrument_search", instrument: instrument.name %>
       </div>
     <% end %>
