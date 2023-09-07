@@ -1,4 +1,18 @@
 tw:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "少於 8 個字元"
+              too_long: "多過 16 個字元"
+            password_confirmation:
+              confirmation: "有誤，請再試一次！"
+    attributes:
+      user:
+        password: "密碼"
+        password_confirmation: 確認密碼欄位
   user:
     sign_up: "加入 JoBand！"
     display_name: "暱稱"
