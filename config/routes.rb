@@ -39,4 +39,14 @@ Rails.application.routes.draw do
   scope "communities" do
     resources :posts, only: %i[index create show destroy]
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :posts, only: [] do
+        member do
+          patch :like
+        end
+      end
+    end
+  end
 end
