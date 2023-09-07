@@ -5,27 +5,27 @@
     <%= f.text_field :title, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
     <%= f.label :banner, '上傳照片', class: "lg:w-[120px] block" %>
     <%= f.file_field :banner, accept: "image/png, image/jpeg",class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
     <%= f.label '活動內容', class: "lg:w-[120px] block" %>
     <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
     <%= f.label '活動日期', class: "lg:w-[120px] block" %>
     <%= f.date_field :begin_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
     <%= f.label '開始時間', class: "lg:w-[120px] block" %>
     <%= f.time_field :time_start, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
     <%= f.label '結束時間', class: "lg:w-[120px] block" %>
     <%= f.time_field :time_end, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
@@ -35,10 +35,10 @@
     <%= f.select :city, Activity.cities.keys %>
   </div>
   
-    <div class="flex items-center my-5">
+  <div class="flex items-center my-5">
       <%= f.label '活動地點', class: "lg:w-[120px] block" %>
       <%= f.text_field :location, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
-    </div>
+  </div>
   
   <div class="flex items-center justify-center w-full mt-10">
     <% if action_name == "new" %>
@@ -49,4 +49,3 @@
   </div>
 
 <%end%>
-</div>
