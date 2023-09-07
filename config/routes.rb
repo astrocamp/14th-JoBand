@@ -33,11 +33,6 @@ Rails.application.routes.draw do
       end
     end
     resources :activities, shallow: true
-    resources :donations, only: [:new, :create, :show] do
-      member do
-        post :paid
-      end
-    end
   end
 
 

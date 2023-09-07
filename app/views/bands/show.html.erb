@@ -23,8 +23,6 @@
       <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-action-btn mx-5' %>
     <% end %>  
 
-    <% end %> 
-    <%= link_to "贊助", new_band_donation_path(@band), class: "joband-action-btn" %>
   </section>
   <div class="flex flex-wrap justify-around mb-5">
     <% if @band.styles.present? %>
