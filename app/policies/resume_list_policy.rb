@@ -1,5 +1,6 @@
-class ResumeListPolicy < ApplicationPolicy
+# frozen_string_literal: true
 
+class ResumeListPolicy < ApplicationPolicy
   def initialize(user, resume_list)
     @user = user
     @resume_list = resume_list
@@ -15,7 +16,7 @@ class ResumeListPolicy < ApplicationPolicy
 
   def band_manager?
     manager.exists?(band_id: @resume_list.recruit.band.id)
-  end 
+  end
 
   def band_leader?
     leader.exists?(band_id: @resume_list.recruit.band.id)
@@ -24,7 +25,7 @@ class ResumeListPolicy < ApplicationPolicy
   def resume_list_owner?
     @resume_list.user == user
   end
-  
+
   def approve?
     band_leader?
   end

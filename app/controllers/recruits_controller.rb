@@ -12,7 +12,7 @@ class RecruitsController < ApplicationController
 
   def create
     @recruit = @band.build_recruit(recruit_params)
-    authorize @recruit 
+    authorize @recruit
     if @recruit.save
       redirect_to recruit_path(@recruit), notice: '招募創建成功'
     else
