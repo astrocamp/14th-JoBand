@@ -20,7 +20,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @user = @post.user
+    @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
+  end
 
   def destroy
     authorize @post
