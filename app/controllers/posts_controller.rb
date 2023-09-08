@@ -13,6 +13,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
+    authorize @post
     if @post.save
       redirect_to posts_path, notice: '貼文已發佈！'
     else
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   def show; end
 
   def destroy
+    authorize @post
     @post.destroy
     redirect_to posts_path, notice: '貼文已刪除！'
   end
