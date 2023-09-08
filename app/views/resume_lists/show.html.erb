@@ -1,55 +1,60 @@
 <!-- app/views/resume_lists/show.html.erb -->
-<article>
-  <%= link_to profile_path(@resume_list.user.profile), action: 'go' do %>
-    <%= User.find(@resume_list.user_id).name %>
-    <div class="w-20 h-20 relative ">
-      <%= render 'shared/avatar', model: @resume_list.user.profile %>
-    </div>
-  <% end %>
-  <p>
-    <strong>Role:</strong>
-    <%= @resume_list.role %>
-  </p>
-  <p>
-    <strong>Status:</strong>
-    <%= @resume_list.status %>
-  </p>
-  <p>
-    <strong>Description:</strong><br>
-    <%= @resume_list.description %>
-  </p>
-  <% if current_user&.id === @resume_list.recruit.band.band_members.find_by(identity: :leader).user_id %>                              
-    <%= link_to "加入",
-                approve_resume_list_path(@resume_list),
-                data: {
-                  turbo_method: :post, 
-                  turbo_confirm: '確認加入?'
-                },
-                class: 'btn btn-accent' %>
-                
-    <%= link_to '拒絕',
-                reject_resume_list_path(@resume_list),
-                data: {
-                  turbo_method: :patch,
-                  turbo_confirm: '拒絕此申請'
-                },
-                class: 'joband-action-btn' %>
-  <% end %>
-  <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'btn btn-accent' %>
-  <hr>
-  <%= form_with(model: [@resume_list, @comment]) do |f| %>
-    <div>
-      <%= f.label :content, '留言內容' %><br />
-      <%= f.text_area :content%>
-    </div>
-      <%= f.submit '送出留言', class: 'btn btn-accent'%>
-    </div>
-  <% end %>
-  <h2>留言</h2>
-    <ul>
-      <%= render "comments/comment", comments: @comments, resume_list: @resume_list %>
-    </ul>
-  <hr>
+<article class="center">
+  <div>
+    <%= link_to profile_path(@resume_list.user.profile), action: 'go' do %>
+      <%= User.find(@resume_list.user_id).name %>
+      <div class="w-20 h-20 relative ">
+        <%= render 'shared/avatar', model: @resume_list.user.profile %>
+      </div>
+    <% end %>
+    <p>
+      <strong>Role:</strong>
+      <%= @resume_list.role %>
+    </p>
+    <p>
+      <strong>Status:</strong>
+      <%= @resume_list.status %>
+    </p>
+    <p>
+      <strong>Description:</strong><br>
+      <%= @resume_list.description %>
+    </p>
+    <% if policy(@resume_list).approve? %>
+      <%= link_to "加入",
+                  approve_resume_list_path(@resume_list),
+                  data: {
+                    turbo_method: :post, 
+                    turbo_confirm: '確認加入?'
+                  },
+                  class: 'btn btn-accent' %>
+
+      <%= link_to '拒絕',
+                  reject_resume_list_path(@resume_list),
+                  data: {
+                    turbo_method: :patch,
+                    turbo_confirm: '拒絕此申請'
+                  },
+                  class: 'joband-action-btn' %>
+    <% end %>
+
+    <% if policy(@resume_list).update? %>
+      <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'btn btn-accent' %>
+    <% end %>
+  </div>
+  <div>
+    <%= form_with(model: [@resume_list, @comment]) do |f| %>
+      <div>
+        <%= f.label :content, '留言內容' %><br />
+        <%= f.text_area :content%>
+      </div>
+        <%= f.submit '送出留言', class: 'btn btn-accent'%>
+      </div>
+    <% end %>
+      <ul>
+        <%= render "comments/comment", comments: @comments, resume_list: @resume_list %>
+      </ul>
+    <hr>
+  </div>
 
 </article>
 

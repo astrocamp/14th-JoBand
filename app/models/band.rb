@@ -39,8 +39,6 @@ class Band < ApplicationRecord
     East: 3
   }, _prefix: true
 
-  private
-
   def self.ransackable_attributes(_auth_object = nil)
     %w[area content name state]
   end
