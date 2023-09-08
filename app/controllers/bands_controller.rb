@@ -26,7 +26,7 @@ class BandsController < ApplicationController
       @band.band_members.create(user: current_user, identity: :leader, role: @role)
       redirect_to band_path(@band), notice: '成功創立樂團'
     else
-      flash.now[:alert] = '創建樂團失敗，樂團名稱重複。'
+      flash.now[:alert] = "創建失敗，請檢查輸入。"
       render :new
     end
   end
@@ -40,7 +40,8 @@ class BandsController < ApplicationController
     if @band.update(band_params)
       redirect_to band_path(@band), notice: '更新成功'
     else
-      render :edit, notice: '失敗'
+      flash.now[:alert] = "更新失敗，請檢查輸入。"
+      render :edit
     end
   end
 

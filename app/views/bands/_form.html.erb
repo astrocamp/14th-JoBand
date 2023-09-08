@@ -1,71 +1,69 @@
 <div class="w-full text-base joband-text-bk lg:flex lg:justify-center lg:text-lg">
 <%= form_with(model: band , data:{ turbo: false } ) do |f| %>
 
-    <div class="flex items-center my-5">
-    <%= f.label :name, "樂團名稱：", class: "lg:w-[120px] block" %>
+  <%= render 'error_messages'%>
+
+  <div class="flex items-center my-5">
+    <%= f.label :name, class: "lg:w-[120px] block" %>
     <%= f.text_field :name , class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
   </div>
   
   <% if action_name.in?(['new', 'create']) %>
     <div class="flex items-center my-5">
-    <%= f.label :role, '您的角色：', class: "lg:w-[120px] block" %>
+    <%= f.label :role, class: "lg:w-[120px] block" %>
     <%= f.select :role, BandMember.default_roles, class: "select select-bordered select-lg w-full max-w-xs" %>
   </div>
   <% end %>
   
     <div class="flex items-center my-5">
-    <%= f.label :banner, '樂團佈景：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.label :banner, class: "lg:w-[120px] block" %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
-    <%= f.label :avatar, '樂團頭像：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.label :avatar, class: "lg:w-[120px] block" %>
+    <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
   
   <div class="flex items-center my-5">
-    <%= f.label :style_ids, "演奏風格：", class: "lg:w-[120px] block" %>
+    <%= f.label :style_ids, class: "lg:w-[120px] block" %>
     <div class="space-x-2">
       <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
     </div>
   </div>
 
     <div class="flex items-center my-5">
-    <%= f.label :music, '上傳音樂：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.label :music, class: "lg:w-[120px] block" %>
+    <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
     <div class="flex items-center my-5">
-    <%= f.label :video, '上傳影片：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.label :video, class: "lg:w-[120px] block" %>
+    <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
-    <%= f.label :area, "活動地區：", class: "lg:w-[120px] block" %>
+    <%= f.label :area, class: "lg:w-[120px] block" %>
     <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg w-full max-w-xs" %>
   </div>
 
   <div class="flex flex-wrap items-center my-5">
-    <%= f.label :content, "對樂團的描述：", class: "lg:w-full block my-5" %>
+    <%= f.label :content, class: "lg:w-full block my-5" %>
     <%= f.rich_text_area :content, class:"text-black bg-white w-full rounded-xl" %>
   </div>
 
     <div class="flex items-center my-5">
-    <%= f.label :state, "樂團狀態：", class: "lg:w-[120px] block" %>
+    <%= f.label :state, class: "lg:w-[120px] block" %>
     <%= f.select :state , Band.states.keys%>
   </div>
 
     <div class="flex items-center my-5">
-    <%= f.label :founded_at, "成立時間：", class: "lg:w-[120px] block" %>
+    <%= f.label :founded_at, class: "lg:w-[120px] block" %>
     <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center justify-center w-full mt-10">
-    <% if action_name == "new" %>
-      <%= f.submit "創建樂團", class: "joband-action-btn" %>
-    <% else %>
-      <%= f.submit "修改樂團資料", class: "joband-action-btn" %>
-    <% end %>
+      <%= f.submit class: "joband-action-btn" %>
   </div>
 
 <% end %>
