@@ -46,7 +46,9 @@ Rails.application.routes.draw do
   
 
   scope "communities" do
-    resources :posts, only: %i[index create show destroy]
+    resources :posts, only: %i[index create show destroy] do
+      resources :comments, only: %i[create destroy], shallow: true
+    end
   end
 
   namespace :api do
