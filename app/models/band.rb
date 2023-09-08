@@ -39,8 +39,6 @@ class Band < ApplicationRecord
     East: 3
   }, _prefix: true
 
-  private
-
   def self.ransackable_attributes(_auth_object = nil)
     %w[area content name state]
   end
@@ -49,4 +47,7 @@ class Band < ApplicationRecord
     %w[rich_text_content styles]
   end
 
+  def normalize_friendly_id(input)
+    input.to_s.to_slug.normalize.to_s
+  end
 end
