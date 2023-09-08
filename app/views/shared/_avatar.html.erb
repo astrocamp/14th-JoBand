@@ -1,6 +1,6 @@
 <% if model.avatar.attached? %>
-    <%= image_tag model.avatar.variant(:thumb), class: "absolute rounded-full w-full h-full object-cover joband-shadow" %>
-    <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
+  <%= image_tag model.avatar.variant(:thumb), class: "absolute rounded-full w-full h-full object-cover joband-shadow" %>
+  <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
 <% else %>
   <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full" >
   <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">

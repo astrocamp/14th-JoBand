@@ -21,13 +21,15 @@
   
   <div class="w-35 mx-auto mt-12 mb-5 text-center">
     <% if policy(@activity).update? %>
-        <%= link_to '更新活動', edit_activity_path(@activity), class: "joband-tag-location" %>
-        <%= link_to '刪除活動', activity_path(@activity), 
+      <div class="mb-6">
+        <%= link_to '更新', edit_activity_path(@activity), class: "joband-tag-location" %>
+        <%= link_to '刪除', activity_path(@activity), 
                               data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
                               class: "joband-tag-seniority" %>
-    <% end %>  
-    <div class='pt-1'>
-      <%= link_to "返回活動列表", band_activities_path(@band), class: "joband-tag-location" %>
+      </div>
+    <% end %>
+    <div>
+      <%= link_to "返回樂團活動列表", band_activities_path(@band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
     </div>
   </div>
 

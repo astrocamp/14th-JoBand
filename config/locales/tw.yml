@@ -123,19 +123,37 @@ tw:
   helpers: 
     label: 
       band:
-        name: 團名
-        area: 地區
-        content: 介紹
-        state: 狀態
-        founded_at: 創立時間
-        style_ids: 曲風
+        name: 樂團名稱：
+        role: 您的角色：
+        banner: 樂團佈景：
+        avatar: 樂團頭像：
+        style_ids: 演奏風格：
+        music: 上傳音樂：
+        video: 上傳影片：
+        area: 活動地區：
+        content: 對樂團的描述：
+        state: 樂團狀態
+        founded_at: 創立時間：
+        
     submit:
       band: 
-        create: 創立
+        create: 創建樂團
         update: 更新
       recruit:
         create: 開始徵人
         update: 更新內容
+
+  activerecord:
+    errors:
+      models:
+        band:
+          attributes:
+            name:
+              blank: 不能為空
+              taken: 已經存在
+    attributes:
+      band:
+        name: 樂團名稱
 
   music:
     style:
