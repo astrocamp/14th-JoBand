@@ -1,7 +1,5 @@
-# README
-
-JoBand
-Website 網站: https://www.JoBand.cc
+# JoBand
+Website 網站: https://JoBand.co
 
 ![](https://hackmd.io/_uploads/S1wM-jEp2.jpg)
 **JoBand 樂團組團網站 - ReadMe**
@@ -10,7 +8,9 @@ Website 網站: https://www.JoBand.cc
 
 ## 關於 JoBand
 
-JoBand 是一個原創型的樂團社群網站，專為音樂家、樂手和音樂愛好者打造的線上平台。我們的目標是連結世界各地的音樂人，促進合作、交流和音樂創作。透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。
+JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台。
+我們的目標是連結世界各地的音樂人，促進合作、交流和音樂創作。
+透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。
 
 ## 如何開始
 
@@ -36,7 +36,8 @@ JoBand 是一個原創型的樂團社群網站，專為音樂家、樂手和音�
 
 ## 聯絡我們
 
-如果您在使用過程中遇到任何問題，或者有建議和意見，請隨時聯絡我們的客服團隊。 support@joband.co
+如果您在使用過程中遇到任何問題，或者有建議和意見，請隨時聯絡我們的客服團隊。 
+support@joband.co
 
 感謝您選擇 JoBand！
 享受音樂、享受生活。
@@ -61,13 +62,13 @@ Github: https://github.com/fr715464
 Github: https://github.com/vito588p
 
 ## 使用技術
-* Frontend : HTML / CSS / Tailwind CSS / JavaScript / Stimilus
-* Backend : Ruby on Rails / Node.js
+* Frontend : HTML / Tailwind CSS / Stimilus JS
+* Backend : Ruby on Rails
 * Database : PostgreSQL
-* Deployment : Zeabur
+* Deployment : Heroku
 * Version Control : Git / GitHub
-* Third-Party Login : Google / Facebook
-* Other Technologies : AWS S3
+* Third-Party Login : Google
+* Cloud Server : AWS S3
 
 
-*最後更新：Aug 24 2023*
+*最後更新：Sep 08 2023*
