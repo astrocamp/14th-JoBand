@@ -62,7 +62,7 @@
                   data-liked="<%= current_user.liked?(post) %>" 
                   data-id="<%= post.id %>">
                 <div class="flex">
-                  <a href="#" data-like-target="likeBtn" data-action="click->like#toggle"></a>
+                  <button data-like-target="likeBtn" data-action="click->like#toggle"></button>
                   <span data-like-target="count" class="mx-2">
                   <%= post.like_logs.count %>
                   </span>
