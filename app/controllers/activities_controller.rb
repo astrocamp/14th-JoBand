@@ -5,10 +5,6 @@ class ActivitiesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_activity, only: %i[show edit update destroy]
 
-  def new
-    @activity = Activity.new
-  end
-
   def index
     @band = Band.find_by(slug: params[:band_slug])
     @activities = @band.activities.order(id: :desc)
@@ -27,9 +23,14 @@ class ActivitiesController < ApplicationController
     
   end
 
+  def new
+    @activity = Activity.new(band: @band)
+    authorize @activity
+  end
+
   def create
     @activity = @band.activities.build(activity_params)
-
+    authorize @activity
     if @activity.save
       redirect_to activity_path(@activity), notice: '成功建立活動'
     else
@@ -37,9 +38,12 @@ class ActivitiesController < ApplicationController
     end
   end
 
-  def edit; end
+  def edit
+    authorize @activity
+  end
 
   def update
+    authorize @activity
     if @activity.update(activity_params)
       redirect_to activity_path(@activity), notice: '更新成功'
     else
@@ -48,6 +52,7 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
+    authorize @activity
     @activity.destroy
     redirect_to band_path(@activity.band), notice: '刪除成功'
   end

@@ -12,11 +12,11 @@
     <% if @band.recruit.present? %>
       <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
     <% else %>
-      <% if current_user === band_leader %>
+      <% if policy(@band).band_leader? %>
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
     <% end %>  
-    <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+    <% if policy(@band).band_leader? %>
       <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
     <% end %>  
     <% if @band.activities.present? %>
