@@ -7,11 +7,11 @@ class BandPolicy < ApplicationPolicy
   end
 
   def band_manager?
-    manager.exists?(band_id: @band.id)
+    user && manager.exists?(band_id: @band.id)
   end
 
   def band_leader?
-    leader.exists?(band_id: @band.id)
+    user && leader.exists?(band_id: @band.id)
   end
 
   def create?
