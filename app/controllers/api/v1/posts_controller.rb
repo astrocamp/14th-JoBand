@@ -6,9 +6,9 @@ class Api::V1::PostsController < ApplicationController
     liked = current_user.liked?(post)
 
     if liked
-        current_user.unlike!(post)
+      current_user.unlike!(post)
     else
-        current_user.like!(post)
+      current_user.like!(post)
     end
     render json: { liked: !liked }
   end
