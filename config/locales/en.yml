@@ -152,6 +152,9 @@ submit:
     create: Start Recruitment
     update: Update Content
 
+  order:
+    coffee: "Buy us coffees！"
+
   music:
     style:
       classic: "Classic"
