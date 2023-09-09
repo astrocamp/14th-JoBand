@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_06_214424) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_09_061738) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -137,6 +137,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_214424) do
     t.index ["user_id"], name: "index_like_logs_on_user_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "amount"
+    t.text "note"
+    t.bigint "user_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_orders_on_band_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.text "body"
     t.datetime "deleted_at"
@@ -235,6 +246,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_06_214424) do
   add_foreign_key "comments", "users"
   add_foreign_key "like_logs", "posts"
   add_foreign_key "like_logs", "users"
+  add_foreign_key "orders", "bands"
+  add_foreign_key "orders", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "profile_and_instruments", "instruments"
   add_foreign_key "profile_and_instruments", "profiles"
