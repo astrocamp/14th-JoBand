@@ -4,7 +4,17 @@
   </section>
 
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
-    <p class="mb-12 h1"><%= @activity.title %></p>
+    <p class="h1"><%= @activity.title %></p>
+    <div class="w-[900px] text-center my-7">
+     <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+      <div>
+        <%= link_to '修改活動', edit_activity_path(@activity), class: "joband-hover-action mr-3" %>
+        <%= link_to '刪除活動', activity_path(@activity), 
+                              data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
+                              class: "joband-hover-action" %>
+      </div>
+    <% end %> 
+    </div>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">主辦：<%= link_to @activity.band.name, band_path(@activity.band_id) %></p>
     <span class="w-full joband-line-bk"></span>
@@ -19,7 +29,7 @@
     <p class="w-full h3">地點：<%= @activity.location %></p>
   </div>
   
-  <div class="w-35 mx-auto mt-12 mb-5 text-center">
+  <div class="mx-auto mt-12 mb-5 text-center w-35">
     <% if policy(@activity).update? %>
       <div class="mb-6">
         <%= link_to '更新', edit_activity_path(@activity), class: "joband-tag-location" %>
@@ -36,17 +46,17 @@
 </div>
 <div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto rounded-[100px] mt-30 overflow-hidden joband-shadow bg-white m-5 p-10 text-center"> 
   <div class='w-full'>  
-    <h2 class='h2 pb-6'>留言內容</h2>
+    <h2 class='pb-6 h2'>留言內容</h2>
     <%= form_with(model: [@activity, @comment]) do |f| %>
       <div>
         <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
       </div>
-      <div class='mb-2 mt-3'>
-        <%= f.submit '送出留言', class: 'joband-tag-location text-sm'%>
+      <div class='mt-3 mb-2'>
+        <%= f.submit '送出留言', class: 'joband-hover-action text-sm'%>
       </div>
     <% end %>
     <div class="m-5 text-center"><h2>留言</h2></div>
-    <ul class='flex justify-center items-center flex-col'>
+    <ul class='flex flex-col items-center justify-center'>
       <%= render "comments/comment_activity", comments: @comments, activities: @activities %>
     </ul>
   </div>

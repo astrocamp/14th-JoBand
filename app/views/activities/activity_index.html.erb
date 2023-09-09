@@ -2,12 +2,15 @@
   <h1 class="lg:text-4xl h2 theme-text">尋找您想參加的活動</h1>
 <div class="flex flex-wrap justify-center w-full">
 <%= search_form_for @search_activity, url: activities_activity_index_path do |f| %>
-  <div class="flex justify-center my-10">
-    <%= f.search_field :title_or_content_or_band_name_cont, class: 'p-3 mx-3 rounded-xl joband-ring-offset' %>
-    <%= f.submit class: 'joband-action-btn', value: '搜索' %>
+  <div class="flex items-center justify-center my-10">
+    <div>
+      <%= f.search_field :title_or_content_or_band_name_cont, class: 'p-3 mx-3 rounded-xl joband-ring-offset' %>
+    </div>
+    <button class="flex justify-center mx-2 w-14 h-14">
+      <%= render "shared/search_btn" %>
+    </button>
   </div>
 <% end %>
-
 
 <div class="flex flex-wrap justify-center w-full">
   <div class="my-10">

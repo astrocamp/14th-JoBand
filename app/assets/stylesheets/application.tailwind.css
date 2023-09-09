@@ -62,22 +62,42 @@
   @apply cursor-pointer select-none rounded-md
 } */
 
-
-
 .joband-action-btn {
   @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
+/* (no hover) */
 .joband-tag-location {
-  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300 joband-shadow
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white select-none joband-shadow
 }
 
 .joband-tag-seniority {
-  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#eb656b] hover:duration-300 joband-shadow
+  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white select-none joband-shadow
 }
 
 .joband-tag-style {
-  @apply bg-[#F1C04A] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#e9ab75] hover:duration-300 joband-shadow
+  @apply bg-[#F1C04A] rounded-full px-4 py-2 text-white select-none joband-shadow
+}
+
+/* (hover) */
+.joband-hover-action {
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#f97869] hover:duration-300 select-none joband-shadow
+}
+
+.joband-hover-location {
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#4aceca] joband-shadow select-none joband-shadow
+}
+
+.joband-hover-seniority {
+  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#eb656b] hover:duration-300 select-none joband-shadow
+}
+
+.joband-hover-style {
+  @apply bg-[#F1C04A] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#e9ab75] hover:duration-300 select-none joband-shadow
+}
+
+.joband-hover-gray{
+  @apply bg-[#868686] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#b4b4b4] hover:duration-300 select-none joband-shadow 
 }
 
 .joband-text-bk{
@@ -122,5 +142,21 @@
   @apply flex justify-center 
 }
 
+/* activity-select-area */
+#activity_city {
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
+/* band-select-area */
+#band_area{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
+/* band-select-state */
+#band_state{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
 @import 'actiontext.css';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
