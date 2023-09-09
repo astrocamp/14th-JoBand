@@ -35,8 +35,18 @@ Rails.application.routes.draw do
     resources :activities, shallow: true do
       resources :comments, only: %i[create destroy], shallow: true
     end
+
+    resources :orders, only: [:new, :create, :show] do
+      collection do
+        post :notify # 接收藍新導回來的資料
+      end
+      member do 
+        get :paid # 付款完導到的頁面
+      end
+    end
   end
 
+  
 
   scope "communities" do
     resources :posts, only: %i[index create show destroy]
