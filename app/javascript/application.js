@@ -6,6 +6,4 @@ import "@rails/actiontext"
 import 'sweetalert2'
 import * as ActiveStorage from "@rails/activestorage"
 ActiveStorage.start()
-
 import './direct_uploads'
-

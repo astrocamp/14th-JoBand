@@ -104,6 +104,8 @@
 
 #instrument_name {
   opacity: 0;
+}
+
 /* 播放器自定義 */
 .custom-audio-player {
   border: 2px solid transparent;
