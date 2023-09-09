@@ -84,14 +84,10 @@
         </div>
       <% else %>
         <% if @band.recruit.present? %>
-          <% if user_signed_in? %>
-            <% if current_user.profile.present? %>
-              <%= link_to '招募中', recruit_path(@band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
-            <% else %>
-              <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先完成個人資料！" %>
-            <% end %>
+          <% if current_user&.profile.present? %>
+            <%= link_to '招募中', recruit_path(@band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
           <% else %>
-            <%= link_to "招募中", new_user_session_path, class: "z-[1] shadow-md joband-tag-seniority", alert: "請先登入！" %>
+            <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority" %>
           <% end %>
         <% end %>
       <% end %>  

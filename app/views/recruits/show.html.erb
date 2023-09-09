@@ -40,7 +40,7 @@
             <%= link_to "申請加入樂團",  new_recruit_resume_list_path(@recruit), class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2"%>
           <% end %>
         <% else %>
-          <%= link_to '申請加入樂團', letsjam_profiles_path, class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2", alert: "請先完成個人資料！" %>
+          <%= link_to '申請加入樂團', letsjam_profiles_path, class: "my-3 bg-red-500 hover:bg-red-600 text-white rounded-md p-2" %>
         <% end %>
         
         <%= link_to "返回樂團首頁", band_path(@recruit.band), class: "bg-[#2A323A] text-white rounded-md p-2" %>
