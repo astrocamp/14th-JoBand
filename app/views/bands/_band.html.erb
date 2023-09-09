@@ -48,7 +48,7 @@
 <%# ---------------------手機版------------------- %>
 <%= link_to band_path(band),class:'lg:hidden' do %>
   <div class="mx-auto items-center w-[300px] h-auto  bg-[#bdcbd2] rounded-[60px] joband-shadow my-14 p-5 lg:hidden">
-    <div class="w-full flex flex-wrap p-5 ">
+    <div class="flex flex-wrap w-full p-5 ">
       <div class="flex">
         <div class="mx-auto w-[80px] h-[80px] relative center flex-col">
           <%= render "shared/avatar", model: band  %>
@@ -63,14 +63,14 @@
       <div class="mx-auto mt-4 ">
         <%= render "bands/recruit", band: band %>
       </div>
-      <p class="w-full mt-5 joband-text-bk text-center block ">
+      <p class="block w-full mt-5 text-center joband-text-bk ">
         <%= band.content.body.to_plain_text.truncate(40) %>
       </p>
       <div class="flex flex-wrap w-full mt-4 justify-evenly">
       
         <div class="w-[100px] h-[100px] mx-auto  flex justify-center items-center ">
           <% if band.styles.present? %>
-            <div class="w-h-full flex relative ">
+            <div class="relative flex w-h-full ">
               <%= render "bands/style", style: band.styles.first %>
             </div>
           <% else %>
@@ -80,7 +80,7 @@
           <% end %>
         </div>
   
-        <div class="center flex-col">
+        <div class="flex-col center">
           <div class=" z-[1] text-center joband-tag-location mb-1">
             <%= band.area %>
           </div>

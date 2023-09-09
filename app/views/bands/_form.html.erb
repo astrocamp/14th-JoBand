@@ -1,12 +1,12 @@
 <div class="center flex-wrap  w-[80%] lg:w-[70%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">
-  <div class="w-full text-base joband-text-bk p-5 ml-auto">
+  <div class="w-full p-5 ml-auto text-base joband-text-bk">
     <%= form_with(model: band , data:{ turbo: false } ) do |f| %>
     
       <%= render 'error_messages'%>
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :name, class: "mb-3 lg:w-[120px] block" %>
-        <%= f.text_field :name , class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
+        <%= f.text_field :name, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
       </div>
       
       <% if action_name.in?(['new', 'create']) %>
@@ -18,12 +18,12 @@
       
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :banner, class: "lg:w-[120px] block" %>
-        <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+        <%= f.file_field :banner, direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
       </div>
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :avatar, class: "lg:w-[120px] block" %>
-        <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+        <%= f.file_field :avatar,direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
       </div>
       
       <div class="flex flex-wrap items-center my-5">
@@ -35,12 +35,12 @@
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :music, class: "lg:w-[120px] block" %>
-        <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+        <%= f.file_field :music, direct_upload: true, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
       </div>
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :video, class: "lg:w-[120px] block" %>
-        <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+        <%= f.file_field :video, direct_upload: true, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
       </div>
     
       <div class="flex flex-wrap items-center my-5">
@@ -55,7 +55,7 @@
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :state, class: "lg:w-[120px] block" %>
-        <%= f.select :state , Band.states.keys%>
+        <%= f.select :state, Band.states.keys%>
       </div>
     
       <div class="flex flex-wrap items-center my-5">
