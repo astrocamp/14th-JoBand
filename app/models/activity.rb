@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Activity < ApplicationRecord
-  validates :title, :content, :location, :time_start, :time_end, presence: true
+  validates :title, :content, :location, :time_start, :time_end,  presence: true
 
   # associations
   has_one_attached :banner do |attachable|

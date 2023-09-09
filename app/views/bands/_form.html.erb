@@ -15,12 +15,12 @@
   
     <div class="flex items-center my-5">
     <%= f.label :banner, '樂團佈景：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.file_field :banner, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
     <%= f.label :avatar, '樂團頭像：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
   
   <div class="flex items-center my-5">
@@ -32,12 +32,12 @@
 
     <div class="flex items-center my-5">
     <%= f.label :music, '上傳音樂：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
     <div class="flex items-center my-5">
     <%= f.label :video, '上傳影片：', class: "lg:w-[120px] block" %>
-    <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+    <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
