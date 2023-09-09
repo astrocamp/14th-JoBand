@@ -17,8 +17,8 @@ class OrdersController < ApplicationController
   end
   
   def create
-    @order = @band.orders.new(order_params) # Associate the band with the order
-    @order.user = current_user # Associate the user with the order
+    @order = @band.orders.new(order_params) 
+    @order.user = current_user
     if @order.save
       redirect_to band_order_path(@order, @order), notice: "啤酒裝箱中！"
     else
