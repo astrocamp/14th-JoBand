@@ -1,15 +1,7 @@
 # frozen_string_literal: true
 
 class Activity < ApplicationRecord
-  validates :title, :content, :begin_at, :time_start, :time_end, :location, presence: true
-  validate :start_time_must_be_before_end_time
-
-  private
-  def start_time_must_be_before_end_time
-    if time_end <= time_start
-      errors.add(:notice, '：開始時間必須早於結束時間')
-    end
-  end
+  validates :title, :content, :location, :time_start, :time_end,  presence: true
 
   # associations
   has_one_attached :banner do |attachable|
