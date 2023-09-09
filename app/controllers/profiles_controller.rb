@@ -12,10 +12,12 @@ class ProfilesController < ApplicationController
 
   def new
     @profile = Profile.new
+    authorize @profile
   end
 
   def create
     @profile = current_user.create_profile(params_profile)
+    authorize @profile
     if @profile.save
       redirect_to profile_path(@profile), notice: '新增 profile 成功'
     else

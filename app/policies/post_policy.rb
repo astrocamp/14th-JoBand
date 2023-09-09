@@ -5,7 +5,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def post_owner?
-    user && @post.user == user
+    user && user == @post.user
   end
 
   def create?
