@@ -151,6 +151,9 @@ tw:
         create: 開始徵人
         update: 更新內容
 
+  order:
+    coffee: "請我們喝杯咖啡吧！"
+
   music:
     style:
       classic: "古典"

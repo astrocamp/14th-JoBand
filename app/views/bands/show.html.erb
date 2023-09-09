@@ -14,6 +14,10 @@
       <%= @band.name %>
     </h1>
 
+    <%= link_to new_order_path(@band), class: "btn" do %>
+        <%= image_tag "icon/cafe.svg", alt: t("order.coffee")%>
+      <% end %>
+
     <% if @band.recruit.present? %>
       <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-style text-xl mx-2"%>
     <% else %>
