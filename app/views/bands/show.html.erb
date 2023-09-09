@@ -14,8 +14,8 @@
       <%= @band.name %>
     </h1>
 
-    <%= link_to new_order_path(@band), class: "btn" do %>
-        <%= image_tag "icon/cafe.svg", alt: t("order.coffee")%>
+    <%= link_to new_band_order_path(@band), class: "btn" do %>
+        <%= image_tag "icon/beer.svg", alt: t("order.beer")%>
       <% end %>
 
     <% if @band.recruit.present? %>
