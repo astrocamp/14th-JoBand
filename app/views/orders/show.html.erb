@@ -1,0 +1,27 @@
+<%= form_with(url: 'https://ccore.newebpay.com/MPG/mpg_gateway', method: "post") do |form| %>
+  <input type="hidden" id="MerchantID" name="MerchantID" value="<%= @form_info[:MerchantID] %>">
+  <input type="hidden" id="TradeInfo" name="TradeInfo" value="<%= @form_info[:TradeInfo] %>">
+  <input type="hidden" id="TradeSha" name="TradeSha" value="<%= @form_info[:TradeSha] %>">
+  <input type="hidden" id="Version" name="Version" value="<%= @form_info[:Version] %>">
+
+  <section class="w-10/12 mx-auto my-20 mt-40 border-2">
+    <div class="flex items-center justify-around px-2 pb-4">
+      <p class="w-1/2 text-base text-center">對樂團說的話：</p>
+      <p class="w-1/2 text-base text-center break-words"><%= @order.note %></p>
+    </div>
+    <div class="flex items-center justify-around px-2 pb-4">
+      <p class="w-1/2 text-xl text-center text-red-600">贊助金額：</p>
+      <p class="w-1/2 text-xl text-center text-red-600"><%=  @order.amount %></p>
+    </div>
+
+    <div class="flex justify-center m-2">
+      <div class="w-4/5 border"></div> 
+    </div>
+
+    <div class="flex justify-around mb-2">
+      <div class="flex items-center justify-around w-1/2 px-3">
+        <%= form.submit "確認無誤", class: "border text-green-500 text-base bg-green-50 hover:cursor-pointer p-2 m-2 rounded hover:bg-green-100" %>
+      </div>
+    </div>
+  </section>
+<% end %>

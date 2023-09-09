@@ -1,0 +1,22 @@
+<div class="flex items-center justify-center min-h-screen">
+  <div class="w-full max-w-md p-6 rounded-lg shadow-lg theme-bg">
+    <h2 class="mb-6 text-xl text-center theme-text">替樂團買一輪啤酒吧！</h2>
+
+    <%= form_with(model: [@band, @order], data:{ turbo: false }) do |form| %>
+      
+      <div class="mb-4">
+        <%= form.label :amount, "贊助金額：", class: "theme-text"%>
+        <%= form.number_field :amount, class: "theme-text block w-full mt-1 p-2 border rounded-lg", required: true %>
+      </div>
+
+      <div class="mb-4">
+        <%= form.label :note, "對樂團說的話：", class: "theme-text" %>
+        <%= form.text_area :note, class: "theme-text block w-full mt-1 p-2 border rounded-lg", style: "resize: none;" %>
+      </div>
+
+      <div class="text-center">
+        <%= form.submit '贊助', class: "joband-action-btn"  %>
+      </div>
+    <% end %>
+  </div>
+</div>
