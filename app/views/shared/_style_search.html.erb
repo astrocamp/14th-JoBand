@@ -1,7 +1,9 @@
 <div class="relative flex flex-wrap justify-center w-h-full joband-shadow">
   <%= link_to '', bands_path({"q"=>{"styles_name_cont_any"=>[style]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
   <div class="flex items-center justify-center w-full h-full">
-    <p class="absolute font-semibold joband-text-bk"><%= style %></p>
+    <p class="absolute font-semibold joband-text-bk">
+      <%= style %>
+    </p>
     <div class="rounded-full shadow-inner circle-bg w-h-full"></div>
   </div>
 </div>

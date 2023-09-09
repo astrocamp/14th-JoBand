@@ -26,17 +26,16 @@ class Band < ApplicationRecord
 
   # enum
   enum state: {
-    active: 0,      # 活躍中
-    recruiting: 1,  # 招募中
-    on_break: 2,    # 暫時休團
-    disbanded: 3    # 解散
+    活躍中: 0,
+    暫時休團: 1,
+    解散: 2
   }, _prefix: true
 
   enum area: {
-    North: 0,
-    Central: 1,
-    South: 2,
-    East: 3
+    北部: 0,
+    中部: 1,
+    南部: 2,
+    東部: 3
   }, _prefix: true
 
   def self.ransackable_attributes(_auth_object = nil)
