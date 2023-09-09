@@ -20,6 +20,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :like_logs
   has_many :liked_posts, through: :like_logs, source: :post
+  has_many :orders
 
   # ransack
   def self.ransackable_attributes(_auth_object = nil)
