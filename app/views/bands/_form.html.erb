@@ -1,70 +1,72 @@
-<div class="w-full text-base joband-text-bk lg:flex lg:justify-center lg:text-lg">
-<%= form_with(model: band , data:{ turbo: false } ) do |f| %>
-
-  <%= render 'error_messages'%>
-
-  <div class="flex items-center my-5">
-    <%= f.label :name, class: "lg:w-[120px] block" %>
-    <%= f.text_field :name , class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
+<div class="center flex-wrap  w-[80%] lg:w-[70%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">
+  <div class="w-full text-base joband-text-bk p-5 ml-auto">
+    <%= form_with(model: band , data:{ turbo: false } ) do |f| %>
+    
+      <%= render 'error_messages'%>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :name, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.text_field :name , class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
+      </div>
+      
+      <% if action_name.in?(['new', 'create']) %>
+        <div class="flex flex-wrap items-center my-5">
+          <%= f.label :role, class: "lg:w-[120px] block" %>
+          <%= f.select :role, BandMember.default_roles, class: "select select-bordered select-lg w-full max-w-xs" %>
+        </div>
+      <% end %>
+      
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :banner, class: "lg:w-[120px] block" %>
+        <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :avatar, class: "lg:w-[120px] block" %>
+        <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      </div>
+      
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :style_ids, class: "lg:w-[120px] block" %>
+        <div class="space-x-2">
+          <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
+        </div>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :music, class: "lg:w-[120px] block" %>
+        <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :video, class: "lg:w-[120px] block" %>
+        <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :area, class: "lg:w-[120px] block" %>
+        <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg w-full max-w-xs" %>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :content, class: "lg:w-full block my-5" %>
+        <%= f.rich_text_area :content, class:"text-black bg-white w-full rounded-xl" %>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :state, class: "lg:w-[120px] block" %>
+        <%= f.select :state , Band.states.keys%>
+      </div>
+    
+      <div class="flex flex-wrap items-center my-5">
+        <%= f.label :founded_at, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+      </div>
+    
+      <div class="flex items-center justify-center w-full mt-10">
+          <%= f.submit class: "joband-action-btn" %>
+      </div>
+    
+    <% end %>
   </div>
-  
-  <% if action_name.in?(['new', 'create']) %>
-    <div class="flex items-center my-5">
-    <%= f.label :role, class: "lg:w-[120px] block" %>
-    <%= f.select :role, BandMember.default_roles, class: "select select-bordered select-lg w-full max-w-xs" %>
-  </div>
-  <% end %>
-  
-    <div class="flex items-center my-5">
-    <%= f.label :banner, class: "lg:w-[120px] block" %>
-    <%= f.file_field :banner, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-  </div>
-
-  <div class="flex items-center my-5">
-    <%= f.label :avatar, class: "lg:w-[120px] block" %>
-    <%= f.file_field :avatar, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-  </div>
-  
-  <div class="flex items-center my-5">
-    <%= f.label :style_ids, class: "lg:w-[120px] block" %>
-    <div class="space-x-2">
-      <%= f.collection_check_boxes :style_ids, Style.all, :id, :name %>
-    </div>
-  </div>
-
-    <div class="flex items-center my-5">
-    <%= f.label :music, class: "lg:w-[120px] block" %>
-    <%= f.file_field :music, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-  </div>
-
-    <div class="flex items-center my-5">
-    <%= f.label :video, class: "lg:w-[120px] block" %>
-    <%= f.file_field :video, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-  </div>
-
-  <div class="flex items-center my-5">
-    <%= f.label :area, class: "lg:w-[120px] block" %>
-    <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg w-full max-w-xs" %>
-  </div>
-
-  <div class="flex flex-wrap items-center my-5">
-    <%= f.label :content, class: "lg:w-full block my-5" %>
-    <%= f.rich_text_area :content, class:"text-black bg-white w-full rounded-xl" %>
-  </div>
-
-    <div class="flex items-center my-5">
-    <%= f.label :state, class: "lg:w-[120px] block" %>
-    <%= f.select :state , Band.states.keys%>
-  </div>
-
-    <div class="flex items-center my-5">
-    <%= f.label :founded_at, class: "lg:w-[120px] block" %>
-    <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
-  </div>
-
-  <div class="flex items-center justify-center w-full mt-10">
-      <%= f.submit class: "joband-action-btn" %>
-  </div>
-
-<% end %>
 </div>

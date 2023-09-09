@@ -27,6 +27,12 @@ module.exports = {
       center: true
     },
 
+    screens: {
+      'sm': {'max': '767px'},
+      'md': {'min': '767px'},
+      'lg': {'min': '1279px'},
+      },
+
     extend: {
       fontFamily: {
         sans: ['Noto Sans TC'],

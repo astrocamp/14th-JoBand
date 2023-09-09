@@ -1,13 +1,18 @@
-<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto rounded-[100px] mt-20 overflow-hidden joband-shadow bg-white">  
-  <section class="relative w-full h-[500px] overflow-hidden mb-10">
+<div class="flex flex-wrap justify-center h-auto mx-auto  overflow-hidden joband-shadow bg-white
+            lg:w-[80%] lg:mt-20 lg:rounded-[100px]">  
+  <section class="relative w-full h-[200px] overflow-hidden mb-10 lg:h-[500px]">
     <%= render "shared/banner", model: @band  %>
   </section>
   <div class="my-5 h-[200px] w-[200px] relative">
     <%= render "shared/avatar", model: @band  %>
   </div>
-  <section class="flex flex-wrap justify-center w-full mb-5">
-    <a href="#" class="z-[1] shadow-md joband-tag-style"><%= @band.state %></a>
-    <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk"><%= @band.name %></h1>
+  <section class="flex flex-wrap justify-center w-full mb-5 ">
+    <div class="z-[1] shadow-md joband-tag-style">
+      <%= @band.state %>
+    </div>
+    <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
+      <%= @band.name %>
+    </h1>
 
     <% if @band.recruit.present? %>
       <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
@@ -24,7 +29,7 @@
     <% end %>  
 
   </section>
-  <div class="flex flex-wrap justify-around mb-5">
+  <div class="flex flex-wrap justify-center mb-5">
     <% if @band.styles.present? %>
       <% @band.styles.each do |style| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
@@ -38,7 +43,7 @@
     <% end %>
   </div>
     
-  <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
+  <div class="flex flex-wrap justify-center w-full px-2 mt-5 joband-text-bk lg:px-40  ">
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">創立時間：<%= @band.founded_at %></p>
     <span class="w-full joband-line-bk"></span>
@@ -47,7 +52,7 @@
     <p class="w-full h3">介紹：<%= @band.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">成員：</p>
-    <div class="flex flex-wrap w-full my-5 ">
+    <div class="center flex-wrap  w-full my-5 ">
       <%= render @band_members %>
     </div>
     

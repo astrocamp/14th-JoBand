@@ -10,7 +10,12 @@ en:
             password_confirmation:
               confirmation: "does not match"
             email:
-              taken: "have been taken"
+              taken: "has been taken"
+        band:
+          attributes:
+            name:
+              blank: "Cant Be Blank "
+              taken: "Has Been taken"
     attributes:
       user:
         password: "Password"
@@ -146,18 +151,6 @@ submit:
   recruit:
     create: Start Recruitment
     update: Update Content
-
-activerecord:
-  errors:
-    models:
-      band:
-        attributes:
-          name:
-            blank: can't be blank
-            taken: has already been taken
-  attributes:
-    band:
-      name: Band Name
 
   music:
     style:
