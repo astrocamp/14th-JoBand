@@ -11,10 +11,6 @@ module Newebpay
       set_info(params)
     end
 
-    def test
-      "Test success!"
-    end
-
     def form_info
       {
         MerchantID: @merchant_id,
@@ -31,15 +27,14 @@ module Newebpay
       info[:RespondType] = "JSON"
       info[:TimeStamp] = Time.now.to_i 
       info[:Version] = "2.0"
-      info[:MerchantOrderNo] = @info[:MerchantOrderNo]
-      info[:Amt] = @info[:Amt]
-      info[:ItemDesc] = @info[:ItemDesc]
-      info[:Email] = @info[:Email]
-      info[:ReturnURL] = "https://#{ENV['DOMAIN']}/orders/notify"
+      info[:MerchantOrderNo] = order[:MerchantOrderNo]
+      info[:Amt] = order[:Amt]
+      info[:ItemDesc] = order[:ItemDesc]
+      info[:Email] = order[:Email]
+      info[:ReturnURL] = "https://#{ENV['DOMAIN']}/orders/paid"
       info[:NotifyURL] = "https://#{ENV['DOMAIN']}/orders/notify"
       info[:LoginType] = 0 
       info[:CREDIT] =  1
-      info[:LINEPAY] = 1
       info[:VACC] = 1
     end
     

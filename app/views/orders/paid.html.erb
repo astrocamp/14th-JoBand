@@ -1,0 +1,56 @@
+<section class="w-10/12 mx-auto mt-12 mb-20 border-2">
+  <div class="flex justify-center bg-gray-100 border-b-2">
+    <h1 class="m-2 text-xl">訂單資訊</h1>
+  </div>
+  <div class="flex items-center justify-around px-3 pt-2">
+    <p class="w-1/2 text-lg text-center">訂單編號</p>
+    <p class="w-1/2 text-lg text-center break-words"><%= @order.tracking_number %></p>
+  </div>
+
+  <div class="flex justify-around px-3 pt-2">
+    <p class="w-1/2 text-lg text-center">付款方式</p>
+    <p class="w-1/2 text-lg text-center">信用卡</p>
+  </div>
+  <div class="flex items-center justify-around px-3 pt-2">
+    <p class="w-1/2 text-xl text-center text-red-600">總價</p>
+    <p class="w-1/2 text-xl text-center text-red-600 break-words">
+      <%= @order.amount %>
+    </p>
+  </div>
+
+  <div class="flex justify-center m-3">
+    <div class="w-4/5 border-b"></div>
+  </div>
+
+    <%= form_with(url: 'https://ccore.newebpay.com/MPG/mpg_gateway', method: "post") do |form| %>
+      <input type="hidden" id="MerchantID" name="MerchantID" value="<%= @form_info[:MerchantID] %>">
+      <input type="hidden" id="TradeInfo" name="TradeInfo" value="<%= @form_info[:TradeInfo] %>">
+      <input type="hidden" id="TradeSha" name="TradeSha" value="<%= @form_info[:TradeSha] %>">
+      <input type="hidden" id="Version" name="Version" value="<%= @form_info[:Version] %>">
+      <%# 客戶資訊 %>
+      <div class="flex items-center justify-around px-3 pt-2">
+        <p class="w-1/2 text-lg text-center">收件人</p>
+        <p class="w-1/2 text-lg text-center break-words"><%= @order.receiver %></p>
+      </div>
+      <div class="flex items-center justify-around px-3 pt-2">
+        <p class="w-1/2 text-lg text-center">配送地址</p>
+        <p class="w-1/2 text-lg text-center break-words"><%= @order.shipping_address %></p>
+      </div>
+      <div class="flex justify-around p-2 px-3">
+        <p class="w-1/2 text-lg text-center">配送方式</p>
+        <p class="w-1/2 text-lg text-center">宅配</p>
+      </div>
+      <div class="flex items-center justify-around p-2 px-3">
+        <p class="w-1/2 text-lg text-center">備註</p>
+        <p class="w-1/2 text-lg text-center break-words"><%= @order.note %></p>
+      </div>
+      <div class="flex justify-around">
+        <div class="flex items-center justify-around w-1/2 p-2 px-3">
+          <%= link_to "首頁", root_path, class: "border text-green-500 text-lg bg-green-50 hover:cursor-pointer p-2 m-2 rounded hover:bg-green-100" %>
+        </div>
+        <div class="flex items-center justify-around w-1/2 p-2 px-3">
+          <%= form.submit "重新結帳", class: "border text-green-500 text-lg bg-green-50 hover:cursor-pointer p-2 m-2 rounded hover:bg-green-100" %>
+        </div>
+      </div>
+    <% end %>
+</section>
