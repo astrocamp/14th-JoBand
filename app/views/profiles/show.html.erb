@@ -3,7 +3,7 @@
     <%= render "shared/avatar", model: @profile  %>
   </div>
   <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
-  <div class="flex flex-wrap justify-center w-full mt-5 px-28 joband-text-bk">
+  <div class="flex flex-wrap justify-center w-full px-28 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
@@ -48,7 +48,7 @@
       </div>
     </div>
     <% if policy(@profile).profile? %>
-      <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mr-3'%>
+      <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mr-5'%>
     <% end %>
     <% if policy(@profile).update? %>
       <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn'%>

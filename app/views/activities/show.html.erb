@@ -4,11 +4,11 @@
   </section>
 
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
-    <p class="h1"><%= @activity.title %></p>
+    <p class="my-5 h1"><%= @activity.title %></p>
    
     <div class="w-[900px] my-7 text-center"> 
       <div>
-        <%= link_to "查看此樂團所有活動", band_activities_path(@band), class: "joband-hover-location text-xl w-full mx-auto mr-3" %>
+        <%= link_to "查看此樂團所有活動", band_activities_path(@band), class: "joband-hover-location text-xl w-full mx-auto mr-5" %>
         <%= link_to "返回活動搜尋列表", activities_activity_index_path, class: "joband-hover-seniority text-xl" %>
       </div>
     </div>
@@ -30,7 +30,7 @@
    <div class="w-[900px] text-center mt-12">
      <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
       <div>
-        <%= link_to '修改活動資料', edit_activity_path(@activity), class: "joband-action-btn mr-3" %>
+        <%= link_to '修改活動資料', edit_activity_path(@activity), class: "joband-action-btn mr-5" %>
         <%= link_to '刪除活動資料', activity_path(@activity), 
                               data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
                               class: "joband-action-btn" %>
