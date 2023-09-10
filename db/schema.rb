@@ -140,6 +140,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_061738) do
   create_table "orders", force: :cascade do |t|
     t.integer "amount"
     t.text "note"
+    t.string "tracking_number"
     t.bigint "user_id"
     t.bigint "band_id"
     t.datetime "created_at", null: false
