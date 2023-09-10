@@ -18,3 +18,6 @@ application.register("showband", ShowbandController);
 
 import SwitchController from "./switch_controller";
 application.register("switch", SwitchController);
+
+import CommentsController from "./comments_controller";
+application.register("comments", CommentsController);

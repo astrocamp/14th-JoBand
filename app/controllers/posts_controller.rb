@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def index
     @post = Post.new
+    @comment = Comment.new
     @posts = Post.includes(:like_logs).all.order(created_at: :desc)
   end
 
@@ -21,10 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
-    @user = @post.user
-    @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+
   end
 
   def destroy
