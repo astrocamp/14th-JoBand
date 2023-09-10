@@ -38,10 +38,10 @@ Rails.application.routes.draw do
 
     resources :orders, only: [:new, :create, :show] do
       collection do
-        post :notify # 接收藍新導回來的資料
+        post :notify
       end
       member do 
-        get :paid # 付款完導到的頁面
+        get :paid
       end
     end
   end
