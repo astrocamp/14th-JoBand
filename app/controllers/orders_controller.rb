@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     @form_info = Newebpay::Mpg.new(
       {MerchantOrderNo: @order.id,
         Amt: @order.amount.to_i,
-        ItemDesc: Order.generate_item_desc(order_products),
+        ItemDesc: @order.band_id,
         Email: @order.user.email}
       ).form_info
   end

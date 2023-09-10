@@ -17,7 +17,7 @@ module Newebpay
 
     def form_info
       {
-        MerchantID: @merchant_id
+        MerchantID: @merchant_id,
         TradeInfo: trade_info,
         TradeSha: trade_sha,
         Version: "2.0"
@@ -31,12 +31,12 @@ module Newebpay
       info[:RespondType] = "JSON"
       info[:TimeStamp] = Time.now.to_i 
       info[:Version] = "2.0"
-      info[:MerchantOrderNo] = order.id
-      info[:Amt] = order.amount
-      info[:ItemDesc] = "贊助"
-      info[:Email] = order.email
+      info[:MerchantOrderNo] = @info[:MerchantOrderNo]
+      info[:Amt] = @info[:Amt]
+      info[:ItemDesc] = @info[:ItemDesc]
+      info[:Email] = @info[:Email]
       info[:ReturnURL] = "https://#{ENV['DOMAIN']}/orders/notify"
-      info[:NotifyURL] = "https://...."
+      info[:NotifyURL] = "https://#{ENV['DOMAIN']}/orders/notify"
       info[:LoginType] = 0 
       info[:CREDIT] =  1
       info[:LINEPAY] = 1
