@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @form_info = Newebpay::Mpg.new(
-      {MerchantOrderNo: @order.id,
+      {MerchantOrderNo: @order.created_at.strftime('%Y:%H:%M')
         Amt: @order.amount.to_i,
         ItemDesc: @order.band_id,
         Email: @order.user.email}
