@@ -162,6 +162,16 @@
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
+/* profile-select-location */
+#profile_location{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
+/* profile-select-seniority */
+#profile_seniority{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
 @import 'actiontext.css';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
 

@@ -3,9 +3,6 @@
     <%= render "shared/avatar", model: @profile  %>
   </div>
   <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
-  <% if policy(@profile).profile? %>
-    <%= link_to '創建樂團', new_band_path, class:'joband-action-btn'%>
-  <% end %>
   <div class="flex flex-wrap justify-center w-full mt-5 px-28 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
@@ -19,9 +16,9 @@
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">居住城市：<%= @profile.location %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">樂齡：<%= @profile.seniority %> 年</p>
+    <p class="w-full h3">樂齡：<%= @profile.seniority %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">內容：<%= @profile.content %></p>
+    <p class="w-full h3">簡介：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
     <div class="flex flex-wrap w-full ">
@@ -50,8 +47,11 @@
         <% end %>
       </div>
     </div>
+    <% if policy(@profile).profile? %>
+      <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mr-3'%>
+    <% end %>
     <% if policy(@profile).update? %>
-      <%= link_to '資料更新', edit_profile_path, class:'joband-action-btn'%>
+      <%= link_to '修改個人資料', edit_profile_path, class:'joband-action-btn'%>
     <% end %>
   </div>  
 </div>
