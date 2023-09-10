@@ -6,7 +6,7 @@
     
       <div class="flex flex-wrap items-center my-5">
         <%= f.label :name, class: "mb-3 lg:w-[120px] block" %>
-        <%= f.text_field :name, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
+        <%= f.text_field :name, maxlength: 10, placeholder: "請輸入10個字以內的團名",  required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
       </div>
       
       <% if action_name.in?(['new', 'create']) %>

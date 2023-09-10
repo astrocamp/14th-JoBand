@@ -86,7 +86,7 @@
           <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
             <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
           <% end %>
-          <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
+          <%= link_to '修改樂團資料', edit_band_path(@band), class:"joband-action-btn" %>
         </div>
       <% else %>
         <% if @band.recruit.present? %>
