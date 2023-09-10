@@ -6,7 +6,7 @@
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
     <p class="my-5 h1"><%= @activity.title %></p>
    
-    <div class="w-[900px] my-7 text-center"> 
+    <div class="w-full text-center my-7"> 
       <div>
         <%= link_to "查看此樂團所有活動", band_activities_path(@band), class: "joband-hover-location text-xl w-full mx-auto mr-5" %>
         <%= link_to "返回活動搜尋列表", activities_activity_index_path, class: "joband-hover-seniority text-xl" %>
