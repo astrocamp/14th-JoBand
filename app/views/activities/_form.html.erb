@@ -2,7 +2,7 @@
 
   <div class="flex items-center my-5">
     <%= f.label '活動標題', class: "lg:w-[120px] block" %>
-    <%= f.text_field :title, required: true, maxlength: 20, placeholder: "請輸入20字以內的活動標題", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_field :title, required: true, maxlength: 20, placeholder: "請輸入20個字以內的活動標題", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
@@ -12,7 +12,7 @@
 
   <div class="flex items-center my-5">
     <%= f.label '活動內容', class: "lg:w-[120px] block" %>
-    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: "跟大家介紹一下活動內容", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: "跟大家介紹活動的內容", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
@@ -37,7 +37,7 @@
   
   <div class="flex items-center my-5">
     <%= f.label '活動地點', class: "lg:w-[120px] block" %>
-    <%= f.text_field :location, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_field :location, required: true, placeholder: '請輸入活動地點', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <% if activity.errors.any? %>
@@ -52,9 +52,9 @@
   
   <div class="flex items-center justify-center w-full mt-10">
     <% if action_name == "new" %>
-      <%= f.submit "建立活動", class: "joband-action-btn" %>
+      <%= f.submit "建立活動資料", class: "joband-action-btn" %>
     <% else %>
-      <%= f.submit "更新活動", class: "joband-action-btn" %>
+      <%= f.submit "更新活動資料", class: "joband-action-btn" %>
     <% end %>
   </div>
 

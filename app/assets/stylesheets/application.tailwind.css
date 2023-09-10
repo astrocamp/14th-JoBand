@@ -66,6 +66,11 @@
   @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
+/* 招募的更新和刪除 */
+.joband-recruit-btn {
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none joband-shadow
+}
+
 /* (no hover) */
 .joband-tag-location {
   @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white select-none joband-shadow
@@ -169,6 +174,10 @@
 
 /* profile-select-seniority */
 #profile_seniority{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
+#recruit_area{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
