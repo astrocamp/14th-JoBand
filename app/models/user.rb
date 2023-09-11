@@ -42,7 +42,7 @@ class User < ApplicationRecord
     user
   end
 
-  #like
+  # like
   def liked?(record)
     liked_posts.include?(record)
   end
@@ -51,9 +51,7 @@ class User < ApplicationRecord
     liked_posts << record
   end
 
-
   def unlike!(record)
     liked_posts.destroy(record)
   end
-  
 end

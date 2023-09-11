@@ -1,15 +1,21 @@
-class Api::V1::PostsController < ApplicationController
-  before_action :authenticate_user!
+# frozen_string_literal: true
 
-  def like
-    post = Post.find(params[:id])
-    liked = current_user.liked?(post)
+module Api
+  module V1
+    class PostsController < ApplicationController
+      before_action :authenticate_user!
 
-    if liked
-      current_user.unlike!(post)
-    else
-      current_user.like!(post)
+      def like
+        post = Post.find(params[:id])
+        liked = current_user.liked?(post)
+
+        if liked
+          current_user.unlike!(post)
+        else
+          current_user.like!(post)
+        end
+        render json: { liked: !liked }
+      end
     end
-    render json: { liked: !liked }
   end
 end

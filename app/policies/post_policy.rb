@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostPolicy < ApplicationPolicy
   def initialize(user, post)
     @user = user
@@ -27,5 +29,4 @@ class PostPolicy < ApplicationPolicy
   def destroy?
     post_owner?
   end
-
 end
