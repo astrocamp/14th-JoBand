@@ -3,7 +3,7 @@
 </div>
 <div class="flex flex-wrap justify-center">
   <div class="flex flex-wrap justify-center w-[80%] lg:w-[50%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">  
-    <%= form_with(model: [@band, @band_member] , data:{ trubo: false } ) do |f| %>
+    <%= form_with(model: [@band, @band_member] ) do |f| %>
       <div class="flex justify-center font-bold h3 joband-text-bk" >
         <%= @band_member.user.name %>
       </div>
