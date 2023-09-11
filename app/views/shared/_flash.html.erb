@@ -1,3 +1,4 @@
+<div id='flash_container'>
 <% if flash[:notice] %>
   <p class="hidden" data-controller="flash" data-icon="success"><%= flash[:notice] %></p>
 <% end %>
@@ -5,3 +6,4 @@
 <% if flash[:alert] %>
   <p class="hidden" data-controller="flash" data-icon="warning"><%= flash[:alert] %></p>
 <% end %>
+</div>
