@@ -1,6 +1,6 @@
 <div class="grid grid-cols-1 mx-auto lg:grid-cols-12">
   <div class="pt-6 pr-6 lg:col-span-2">
-    <div class="mt-6 ml-5 theme-text">
+    <div class="sticky mt-6 ml-5 top-20 theme-text">
       <ul>
         <li>
           <%= link_to posts_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
@@ -58,12 +58,14 @@
       <% end %>
     <% end %>
   </div>
-  <div class="relative pt-6 pl-6 lg:col-span-4">
-    <div class="sticky top-0 w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</div>
-    <div class="p-3 border-2 theme-bg rounded-xl">
-      <h2 class="h2">FuJi Rock Festival 2023</h2>
-      <p>Jul 28 - 30</p><span cleass="text-end">NAEBA SKI RESORT</span>
-      <%= image_tag "fuji.jpg", class: "rounded-lg my-3" %>
+  <div class="pt-6 pl-6 lg:col-span-4">
+    <div class="sticky top-20">
+      <h2 class="w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</h2>
+      <div class="p-3 border-2 theme-bg rounded-xl">
+        <h2 class="h2">FuJi Rock Festival 2023</h2>
+        <p>Jul 28 - 30</p><span cleass="text-end">NAEBA SKI RESORT</span>
+        <%= image_tag "fuji.jpg", class: "rounded-lg my-3" %>
+      </div>
     </div>
   </div>
 </div>
