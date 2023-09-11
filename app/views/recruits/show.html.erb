@@ -1,5 +1,5 @@
 <div class="flex justify-center gap-5">
-  <article class="p-10 mt-20 border-2 rounded-md shadow-md w-fit theme-bg">
+  <article class="p-10 mt-10 border-2 rounded-md shadow-md w-fit theme-bg">
     <h1 class="mb-5 text-[70px] font-bold text-center theme-text border-b-2">
       徵
     </h1>
@@ -51,18 +51,23 @@
   <article>
     <% @resume_lists.where(status: :pending).each do |list| %>
       <div class="m-3">
-        <%= link_to resume_list_path(list), action: 'go' do %>
-          <div class="p-10 mt-20 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]">
+        <%= link_to resume_list_path(list) do %>
+          <div class="p-3 mt-10 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]
+                      lg:p-8">
             <p class="my-3 text-sm border-b">
               應徵: 
               <span class="text-xl">
                 <%= list.role %>
               </span>
             </p>
-            <span>
-              <%= link_to list.user.name %><br/>
-              <%= list.description %>
-            </span>
+            <p>
+              <%= list.user.name %><br/>
+            </p>
+            <p class="text-xs">
+              <%= list.description.truncate(20) %>
+            </p>
+              
+            
           </div>
         <% end %>
       </div>
