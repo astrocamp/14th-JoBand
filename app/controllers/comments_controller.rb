@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
       @commentable = ResumeList.find(params[:resume_list_id])
     elsif params[:activity_id]
       @commentable = Activity.find(params[:activity_id])
-  end
+    end
   end
 
   def comment_params

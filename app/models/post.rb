@@ -7,5 +7,4 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :like_logs, dependent: :destroy
   has_many :users, through: :like_logs
-  
 end

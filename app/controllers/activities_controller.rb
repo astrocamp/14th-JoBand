@@ -20,7 +20,6 @@ class ActivitiesController < ApplicationController
     @band = @activity.band
     @comment = Comment.new
     @comments = @activity.comments.order(created_at: :desc)
-    
   end
 
   def new

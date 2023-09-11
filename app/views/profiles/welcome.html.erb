@@ -1,5 +1,5 @@
-<div class="hero min-h-screen bg-base-200">
-  <div class="hero-content absolute top-20 lg:absolute">
+<div class="min-h-screen hero bg-base-200">
+  <div class="absolute hero-content top-20 lg:absolute">
     <ul class="steps">
       <li class="step step-warning"><%= t("step.one") %></li>
       <li class="step step-warning"><%= t("step.two") %></li>
@@ -7,11 +7,11 @@
       <li class="step"><%= t("step.four") %></li>
     </ul>
   </div>
-  <div class="hero-content flex-col lg:flex-row-reverse">
+  <div class="flex-col hero-content lg:flex-row-reverse">
     <%= image_tag("zooey.png", alt: "ava", class: "mx-auto lg:ml-5 max-w-xs lg:max-w-sm rounded-full shadow-2xl") %>
     <div>
-      <h2 class="text-5xl font-bold">Hi~ <%= current_user.name %></h2>
-      <h2 class="text-5xl font-bold py-6">歡迎加入 JoBand ! 🎉</h2>
+      <h2 class="text-5xl font-bold">Welcome~</h2>
+      <h2 class="py-6 text-5xl font-bold">歡迎加入 JoBand ! 🎉</h2>
       <p>確認信件已送至您的 Email 信箱，請點擊信件內連結完成驗證！</p>
     </div>
   </div>

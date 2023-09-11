@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ActivityPolicy < ApplicationPolicy
   def initialize(user, activity)
     @user = user

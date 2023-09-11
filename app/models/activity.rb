@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Activity < ApplicationRecord
-  validates :title, :content, :location, :time_start, :time_end,  presence: true
+  validates :title, :content, :location, :time_start, :time_end, presence: true
 
   # associations
   has_one_attached :banner do |attachable|
@@ -9,7 +9,7 @@ class Activity < ApplicationRecord
   end
   has_many :comments, as: :commentable
   belongs_to :band
-  
+
   enum city: {
     基隆市: 0,
     臺北市: 1,
@@ -45,6 +45,7 @@ class Activity < ApplicationRecord
   def self.ransackable_attributes(_auth_object = nil)
     %w[title content name]
   end
+
   def self.ransackable_associations(_auth_object = nil)
     %w[band]
   end
