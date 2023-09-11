@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :paid
+
   before_action :authenticate_user!, only: %i[index new create]
   before_action :set_band, only: %i[new create]
   
@@ -8,7 +10,8 @@ class OrdersController < ApplicationController
       {MerchantOrderNo: @order.tracking_number,
         Amt: @order.amount.to_i,
         ItemDesc: @order.band_id,
-        Email: @order.user.email}
+        Email: @order.user.email,
+        Band: @order.band}
       ).form_info
   end
   
@@ -43,10 +46,11 @@ class OrdersController < ApplicationController
 
   def paid
     response = Newebpay::MpgResponse.new(params[:TradeInfo])
-
-    response.result
-    response.success?
-    response.message
+    if response.success?
+      @order  = Order.find_by(tracking_number: response.order_no)
+    else
+      redirect_to root_path, alert: "啤酒似乎缺貨了，請再試一次"
+    end
   end
 
   private
