@@ -1,6 +1,6 @@
-<div class="px-5 py-3 mx-auto mt-10 rounded-lg flex-warp theme-bg theme-text w-fit">
+<div class="px-5 py-5 mx-auto mt-10 bg-white rounded-lg joband-shadow flex-warp theme-bg theme-text w-fit">
   <header class="block font-bold text-center">
-    <h2 class="h2"><%= t("user.forgot_password") %></h2>
+    <h2 class="h2 joband-text-bk"><%= t("user.forgot_password") %></h2>
   </header>
   <div class="card-body">
     <div class="block mx-auto w-fit">
@@ -8,7 +8,7 @@
         <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="my-3 field">
-          <%= f.label :email, class: "font-bold" %><br />
+          <%= f.label :email, class: "font-bold joband-text-bk" %><br />
           <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3", required: true %>
         </div>
 
