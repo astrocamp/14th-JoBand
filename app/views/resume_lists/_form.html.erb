@@ -6,14 +6,18 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :status, value: :pending %>
     
-    <div class="flex items-center my-5">
-      <%= f.label :role, '應徵位置', class: "lg:w-[120px] block" %> <br>
+    <div class="m-5 text-center theme-text">
+      <p class="mb-5">
+        <%= f.label :role, '應徵位置'%> <br>
+      </p> 
       <%= f.select :role, recruits_roles %>
     </div>
 
-    <div class="flex items-center my-5">
-      <%= f.label :description, '簡短描述', class: "lg:w-[180px] block" %> <br>
-      <%= f.text_area :description, style: "resize: none;", required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <div class="m-5 text-center theme-text">
+      <p class="mb-5">
+        <%= f.label :description, '簡短描述', class:'mb-5'%>
+      </p>
+      <%= f.text_area :description, required: true, class:'joband-ring-offset rounded-xl input-md input-bordered w-full h-20 max-w-xs' %>
     </div>
 
     <div class="mt-10 center">

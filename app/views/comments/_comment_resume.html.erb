@@ -1,23 +1,30 @@
 
-<li>
+
   <% comments.each do |comment| %>
     <li>
       <div>
-        <%= link_to comment.user.name, profile_path(comment.user_id)%>:
+        <%= link_to comment.user.name, profile_path(comment.user_id), 
+                                      class:'text-sky-400 border-b border-sky-400' %>
       </div>
-      <div>
+      <div class="m-3 joband-text-bk">
         <%= comment.content %>
       </div>
-      <div>
-        (<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>)
-          <% if comment.user == current_user %>
-           <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id),
-                              data: {turbo_method: 'delete',
+      <div class="flex justify-end">
+        <% if comment.user == current_user %>
+         <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id),
+                            class:'text-xs text-red-400',
+                            data: {
+                              turbo_method: 'delete',
                               turbo_confirm: '確定刪除？'
-                              } %>
-          <% end %>
+                            } %>
+        <% end %>
       </div>
-      <hr>
+
+      <div class="text-xs mb-1 joband-text-bk">
+        (<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>)
+      </div>
+
+      <hr class="mb-3 bg-black ">
     </li>
   <% end %>
-</li>
+
