@@ -1,23 +1,23 @@
-<div class="center items-center w-3/4 theme-bg border-2 rounded-[80px] shadow-md my-10 p-8 ">
+<h2 class="p-10 my-5 text-4xl font-bold theme-text">為什麼想加入我們？</h2>
+
+<div class="center items-center w-3/4 theme-bg border-2 rounded-[80px] shadow-md p-8 bg-white">
   <%= form_with(model:, data: { turbo: false }) do |f| %>
 
     <%= f.hidden_field :user_id, value: current_user.id %>
     <%= f.hidden_field :status, value: :pending %>
-  
-    <h1 class="text-center h1 theme-text">為什麼想加入我們？</h1>
     
-    <div class="m-5 text-center theme-text">
-      <%= f.label :role, '應徵位置'%> <br>
+    <div class="flex items-center my-5">
+      <%= f.label :role, '應徵位置', class: "lg:w-[120px] block" %> <br>
       <%= f.select :role, recruits_roles %>
     </div>
 
-    <div class="m-5 text-center theme-text">
-      <%= f.label :description, '簡短描述' %> <br>
-      <%= f.text_area :description, style: "resize: none;", required: true %>
+    <div class="flex items-center my-5">
+      <%= f.label :description, '簡短描述', class: "lg:w-[180px] block" %> <br>
+      <%= f.text_area :description, style: "resize: none;", required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
 
-    <div class="mb-3 center">
-      <%= f.submit '送出申請' ,class:'btn btn-accent' %>
+    <div class="mt-10 center">
+      <%= f.submit '送出申請' ,class:'joband-action-btn ' %>
     </div>
     
   <% end %>

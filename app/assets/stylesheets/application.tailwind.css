@@ -199,6 +199,10 @@
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
+#resume_list_role{
+  @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
+}
+
 @import 'actiontext.css';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
 
