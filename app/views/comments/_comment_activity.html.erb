@@ -1,19 +1,27 @@
 <% comments.each do |comment| %>
-  <li class='border-b w-full max-w-md my-2'>
-    <div class='text-left joband-text-bk'>
-      <%= link_to comment.user.name, profile_path(comment.user_id)%>:
+  <li class='w-full max-w-md my-2 border-b'>
+    <div class='flex text-left joband-text-bk h4'>
+      <div class="w-[30px] h-[30px] relative mr-2">
+        <%= render "shared/avatar", model: comment.user.profile %>
+      </div>
+      <%= link_to comment.user.name, profile_path(comment.user_id), class: " font-semibold"%>
     </div>
-    <div class='text-left my-1 break-words'>
+    <div class='p-3 my-1 text-left break-words h4'>
       <p><%= comment.content %></p>
     </div>
-    <div class='text-right text-sm'>
-    [<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>]
-      <% if comment.user == current_user %>
-      <%= link_to '刪除', comment_path(comment, activity_id: @activity.id),
-                        data: {turbo_method: 'delete',
-                        turbo_confirm: '確定刪除？'
-                              } %>
+    <div class='flex flex-row-reverse mb-2 text-base mt-7'>
+      <% if comment.user == current_user %> 
+        <%= link_to comment_path(comment, activity_id: @activity.id),
+                          data: {turbo_method: 'delete',
+                          turbo_confirm: '確定刪除？'
+                                } do %>
+            <div class="relative flex justify-center items-center w-[30px] h-[30px] align-middle mx-2">
+              <img src="/icon_img/bin_icon.svg" alt="bin_icon" class="absolute w-1/2">
+              <div class="top-0 left-0 w-full h-full bg-[#D2545B] rounded-full"></div>
+            </div>
+        <% end %>
       <% end %>
+      <p>[<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>]</p>
     </div>
   </li>
 <% end %>
