@@ -6,17 +6,20 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.build(comment_params)
 
-    if @comment.save
-      redirect_to @commentable
-    else
+
+    @comments = @commentable.comments
+
+  if @comment.save
+     comment_route()
+    else 
       redirect_to @commentable, alert: '留言不得為空白'
     end
-  end
+  end  
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to @commentable
+    comment_route()
   end
 
   private
@@ -26,6 +29,8 @@ class CommentsController < ApplicationController
       @commentable = ResumeList.find(params[:resume_list_id])
     elsif params[:activity_id]
       @commentable = Activity.find(params[:activity_id])
+    elsif params[:post_id]
+      @commentable = Post.find(params[:post_id])
     end
   end
 
@@ -34,4 +39,16 @@ class CommentsController < ApplicationController
           .permit(:content)
           .merge(user: current_user, commentable: @commentable)
   end
+
+  def comment_route
+    if @commentable.is_a?(Post)
+      redirect_to posts_path, notice: '留言成功'
+    elsif
+      @commentable.is_a?(Activity)
+      redirect_to activity_path, notice: '留言成功'
+    elsif
+      @commentable.is_a? (ResumeList)
+      redirect_to resume_list_path, notice: '留言成功'
+    end  
+  end  
 end
