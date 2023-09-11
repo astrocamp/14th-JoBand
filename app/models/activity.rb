@@ -45,9 +45,10 @@ class Activity < ApplicationRecord
   end
 
   private
+
   def start_time_must_be_before_end_time
-    if time_end <= time_start
-      errors.add(:base, '開始時間必須早於結束時間')
-    end
+    return unless time_end <= time_start
+
+    errors.add(:base, '開始時間必須早於結束時間')
   end
 end
