@@ -1,0 +1,25 @@
+<ul class="flex items-start justify-start -ml-3 list-none space-x-14">
+  <li>
+    <div data-controller="like" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>">
+      <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost">♡
+      </button>
+      <span data-like-target="count" class="mx-2">
+        <%= post.like_logs.count %>
+      </span>
+    </div>
+  </li>
+  <li>
+    <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-sky-50">
+      <%= image_tag "icon/comment.svg" %>
+    </div>
+  </li>
+  <li>
+    <% if policy(post).destroy? %>
+      <%= button_to post_path(post), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
+        <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50">
+          <%= image_tag "icon/del.svg" %>
+        </div>
+      <% end %>
+    <% end %>
+  </li>
+</ul>
