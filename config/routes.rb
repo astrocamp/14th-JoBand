@@ -38,10 +38,7 @@ Rails.application.routes.draw do
 
     resources :orders, only: [:new, :create, :show] do
       collection do
-        post :notify
-      end
-      member do 
-        get :paid
+        post :paid
       end
     end
   end
