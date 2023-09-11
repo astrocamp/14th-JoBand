@@ -31,7 +31,7 @@ module Newebpay
       info[:Amt] = order[:Amt]
       info[:ItemDesc] = order[:ItemDesc]
       info[:Email] = order[:Email]
-      info[:ReturnURL] = "https://268d-61-220-182-115.ngrok-free.app/bands/#{order[:Band].slug}/orders/paid"
+      info[:ReturnURL] = "ENV["DOMAIN"]/#{order[:Band].slug}/orders/paid"
       info[:LoginType] = 0 
       info[:CREDIT] =  1
       info[:VACC] = 1
