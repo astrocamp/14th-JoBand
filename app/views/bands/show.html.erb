@@ -1,12 +1,12 @@
-<div class="flex flex-wrap justify-center h-auto mx-auto  overflow-hidden joband-shadow bg-white
+<div class="flex flex-wrap justify-center h-auto mx-auto overflow-hidden joband-shadow bg-white
             lg:w-[80%] lg:mt-20 lg:rounded-[100px]">  
   <section class="relative w-full h-[200px] overflow-hidden mb-10 lg:h-[500px]">
     <%= render "shared/banner", model: @band  %>
   </section>
-  <div class="my-5 h-[200px] w-[200px] relative">
+  <div class="my-5 w-[100px] h-[100px] lg:h-[200px] lg:w-[200px] relative">
     <%= render "shared/avatar", model: @band  %>
   </div>
-  <section class="flex flex-wrap justify-center w-full mb-5 ">
+  <section class="flex flex-wrap justify-center w-full mb-5">
     <div class="z-[1] shadow-md joband-tag-style">
       <%= @band.state %>
     </div>
@@ -20,7 +20,7 @@
       <% if policy(@band).band_leader? %>
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
       <% end %>
-    <% end %>  
+    <% end %>
     <% if policy(@band).band_leader? %>
       <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
     <% end %>  
@@ -32,7 +32,7 @@
   <div class="flex flex-wrap justify-center mb-5">
     <% if @band.styles.present? %>
       <% @band.styles.each do |style| %>
-        <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
+        <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:w-[100px] lg:h-[100px] ">
           <%= render "style", style: style %>
         </div>
       <% end %>
@@ -43,7 +43,7 @@
     <% end %>
   </div>
     
-  <div class="flex flex-wrap justify-center w-full px-2 mt-5 joband-text-bk lg:px-40  ">
+  <div class="flex flex-wrap justify-center w-full px-5 mt-5 joband-text-bk lg:px-40">
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">創立時間：<%= @band.founded_at %></p>
     <span class="w-full joband-line-bk"></span>

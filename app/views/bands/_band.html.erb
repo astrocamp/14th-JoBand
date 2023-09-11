@@ -1,89 +1,96 @@
-<div class="mx-auto lg:flex lg:flex-wrap lg:justify-evenly items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#bdcbd2] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0
-            sm:hidden md:hidden">
-  <div class="mx-auto lg:w-[200px] lg:h-[200px] relative ">
-    <%= render "shared/avatar", model: band  %>
-  </div>
+<%= link_to band_path(band),class:'lg:flex hidden' do %>
+  <div class="lg:flex lg:flex-wrap lg:justify-evenly lg:items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#bdcbd2] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0
+              hidden ">
 
-  <div class="w-full lg:w-[450px] flex flex-wrap p-5">
-    <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow"><%= band.name %></p>
-    <div class="mx-auto mt-4 lg:hidden">
-      <%= render "bands/recruit", band: band %>
+    <div class="ml-[60px] lg:w-[200px] lg:h-[200px] relative">
+      <%= render "shared/avatar", model: band  %>
     </div>
-    <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block">
-      <%= band.content.body.to_plain_text.truncate(45) %>
-    </p>
-    <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
-      <div class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
-        <%= band.area %>
-      </div>
-      <div class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
-        <%= band.state %>
-      </div>
-      <div class="lg:flex">
+
+    <div class="w-full lg:w-[450px] flex flex-wrap p-5">
+      <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow">
+        <%= band.name %>
+      </p>
+      <div class="mx-auto mt-4 lg:hidden">
         <%= render "bands/recruit", band: band %>
       </div>
-    </div>
-  </div>
-
-  <div class="w-[100px] h-[100px] mx-auto lg:w-[150px] lg:h-[150px] flex justify-center items-center">
-    <% if band.styles.present? %>
-      <div class="w-h-full lg:w-[150px] lg:h-[150px] flex relative">
-        <%= render "bands/style", style: band.styles.first %>
-      </div>
-    <% else %>
-      <div class="relative flex flex-wrap justify-center w-h-full">
-        <%= render "bands/freestyle" %>
-      </div>
-    <% end %>
-  </div>
-  <%= link_to '', band_path(band), class: "block w-full h-full absolute top-0 left-0" %>
-</div>
-
-<%# ---------------------手機版------------------- %>
-<div class="mx-auto items-center w-[300px] h-auto  bg-[#bdcbd2] rounded-[60px] joband-shadow my-14 p-5 lg:hidden">
-  <div class="w-full flex flex-wrap p-5 ">
-    <div class="flex">
-      <div class="mx-auto w-[80px] h-[80px] relative">
-        <%= render "shared/avatar", model: band  %>
-      </div>
-      <div class="center flex-col ml-3 flex ">
-        <p class=" font-semibold text-center joband-text-bk h2 joband-shadow">
-          <%= band.name %>
-        </p>
-      </div>
-    </div>
-
-    <div class="mx-auto mt-4 ">
-      <%= render "bands/recruit", band: band %>
-    </div>
-    <p class="w-full mt-5 joband-text-bk text-center block ">
-      <%= band.content.body.to_plain_text.truncate(40) %>
-    </p>
-    <div class="flex flex-wrap w-full mt-4 justify-evenly">
-
-      <div class="w-[100px] h-[100px] mx-auto  flex justify-center items-center ">
-        <% if band.styles.present? %>
-          <div class="w-h-full flex relative ">
-            <%= render "bands/style", style: band.styles.first %>
-          </div>
-        <% else %>
-          <div class="relative flex flex-wrap justify-center w-h-full">
-            <%= render "bands/freestyle" %>
-          </div>
-        <% end %>
-      </div>
-
-      <div class="center flex-col">
-        <div class=" z-[1] text-center joband-tag-location mb-1">
+      <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block">
+        <%= band.content.body.to_plain_text.truncate(45) %>
+      </p>
+      <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
+        <div class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
           <%= band.area %>
         </div>
-        <div class="z-[1] text-center joband-tag-style mt-1">
+        <div class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
           <%= band.state %>
         </div>
+        <div class="lg:flex">
+          <%= render "bands/recruit", band: band %>
+        </div>
       </div>
+    </div>
 
+    <div class="w-[100px] h-[100px] mx-auto lg:w-[150px] lg:h-[150px] flex justify-center items-center">
+      <% if band.styles.present? %>
+        <div class="w-h-full lg:w-[150px] lg:h-[150px] flex relative">
+          <%= render "bands/style", style: band.styles.first %>
+        </div>
+      <% else %>
+        <div class="relative flex flex-wrap justify-center w-h-full">
+          <%= render "bands/freestyle" %>
+        </div>
+      <% end %>
     </div>
 
   </div>
-  <%= link_to '', band_path(band), class: "block w-full h-full absolute top-0 left-0" %>
-</div>
+<% end %>
+
+
+<%# ---------------------手機版------------------- %>
+<%= link_to band_path(band),class:'lg:hidden' do %>
+  <div class="mx-auto items-center w-[300px] h-auto  bg-[#bdcbd2] rounded-[60px] joband-shadow my-14 p-5 lg:hidden">
+    <div class="w-full flex flex-wrap p-5 ">
+      <div class="flex">
+        <div class="mx-auto w-[80px] h-[80px] relative center flex-col">
+          <%= render "shared/avatar", model: band  %>
+        </div>
+        <div class="center flex-col ml-1 flex w-[160px]">
+          <p class="w-full font-semibold text-center joband-text-bk h2 joband-shadow">
+            <%= band.name %>
+          </p>
+        </div>
+      </div>
+  
+      <div class="mx-auto mt-4 ">
+        <%= render "bands/recruit", band: band %>
+      </div>
+      <p class="w-full mt-5 joband-text-bk text-center block ">
+        <%= band.content.body.to_plain_text.truncate(40) %>
+      </p>
+      <div class="flex flex-wrap w-full mt-4 justify-evenly">
+      
+        <div class="w-[100px] h-[100px] mx-auto  flex justify-center items-center ">
+          <% if band.styles.present? %>
+            <div class="w-h-full flex relative ">
+              <%= render "bands/style", style: band.styles.first %>
+            </div>
+          <% else %>
+            <div class="relative flex flex-wrap justify-center w-h-full">
+              <%= render "bands/freestyle" %>
+            </div>
+          <% end %>
+        </div>
+  
+        <div class="center flex-col">
+          <div class=" z-[1] text-center joband-tag-location mb-1">
+            <%= band.area %>
+          </div>
+          <div class="z-[1] text-center joband-tag-style mt-1">
+            <%= band.state %>
+          </div>
+        </div>
+  
+      </div>
+  
+    </div>
+  </div>
+<% end %>

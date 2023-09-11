@@ -1,10 +1,11 @@
-<div class="relative flex flex-wrap justify-center w-h-full">
-  <a href="#" class="flex h-full w-full items-center justify-center z-[1]">
-    <p class="absolute z-10 font-semibold joband-text-bk h2 lg:text-4xl">
+<div class="relative flex flex-wrap justify-center w-h-full bg-[#f3f3f2] rounded-full joband-shadow shadow-inner">
+  <%= link_to bands_path({"q"=>{"styles_name_cont_any"=>[style.name]}, "commit"=>"Search"}),
+               class: "absolute w-full h-full z-10 center flex-col" do %>
+    <p class="text-center center items-center font-semibold joband-text-bk h2 lg:text-4xl">
       <%= style.name %>
     </p>
     <div class="rounded-full"></div>
     <%# 之後放style_icon圖片 %>
-    <div class="bg-[#f3f3f2] rounded-full joband-shadow shadow-inner w-h-full"></div>
   </a>
+  <% end %>
 </div>
