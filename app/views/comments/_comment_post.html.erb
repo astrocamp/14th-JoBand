@@ -3,7 +3,7 @@
 
     <% comments.each do |comment| %>
     <div class='border-b w-full max-w-md my-2'>
-        <div class='text-left joband-text-bk'>
+        <div class='text-left break-words'>
         <%= link_to comment.user.name, profile_path(comment.user_id)%>:
         </div>
         <div class='text-left my-1 break-words'>
