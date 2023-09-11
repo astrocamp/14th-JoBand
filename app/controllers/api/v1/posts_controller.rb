@@ -14,7 +14,7 @@ module Api
         else
           current_user.like!(post)
         end
-        render json: { liked: !liked }
+        render json: { liked: !liked, likeCount: post.like_logs.count }
       end
     end
   end

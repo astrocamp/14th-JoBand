@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @posts = Post.includes(:like_logs).all.order(created_at: :desc)
-    @liked_count = @post.like_logs.count
   end
 
   def create

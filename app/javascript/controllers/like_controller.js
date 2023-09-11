@@ -15,21 +15,20 @@ export default class extends Controller {
     // API
     const url = `/api/v1/posts/${this.id}/like`;
     const token = document.querySelector("meta[name=csrf-token]").content;
-    const method = this.liked ? "DELETE" : "POST";
 
     fetch(url, {
-      method: method,
+      method: "PATCH",
       headers: {
         "X-CSRF-Token": token,
       },
     })
       .then((resp) => {
-        return resp.json();
+        return resp.json()
       })
-      .then(({ liked, like_count }) => {
+      .then(({ liked, likeCount }) => {
         this.liked = liked;
         this.likeBtnTarget.textContent = liked ? "♥" : "♡";
-        this.countTarget.textContent = like_count;
+        this.countTarget.textContent = likeCount;
       })
       .catch((err) => {
         console.log(err);
