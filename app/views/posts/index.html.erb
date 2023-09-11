@@ -82,13 +82,16 @@
                 </div>
               </div>
               <!-- ♡ -->
-              <div class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
-                <div >
-                  <a href="#">
-                    <%= image_tag "icon/comment.svg" %>
-                  </a>
-                </div>
-              </div>
+            <div class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
+              <a href="#" class="flex items-center">
+                <%= image_tag "icon/comment.svg" %>
+                <% if post.comments.any? %>
+                  <div class="comment-count ml-1">
+                  <%= post.comments.count %>
+                  </div>
+                <% end %>
+              </a>
+            </div>
               <% if user_signed_in? %>
                 <% if current_user.id == post.user.id %>
                   <%= link_to post_path(post.id), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
