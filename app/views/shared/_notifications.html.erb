@@ -1,107 +1,33 @@
-<!--
-<% if current_user %>
-  <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <span class="badge rounded-pill bg-danger">
-        <%= @unread.count >= 9 ? "9+" : @unread.count %> <i class="bi bi-suit-heart-fill"></i>
-      </span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-      <% @unread.each do |notification| %>
-        <%= render 'shared/notification', notification: notification %>
-      <% end %>
-      <% if @read.count > 0 && @unread.count > 0 %>
-        <li>
-          <hr class="dropdown-divider">
-        </li>
-      <% elsif @read.count + @unread.count == 0 %>
-        <li class="dropdown-item">
-          
-        </li>
-      <% end %>
-      <% @read.each do |notification| %>
-        <%= render 'shared/notification', notification: notification %>
-      <% end %>
-    </ul>
-  </li>
-<% end %>
-dropdown-->
-
-<!--
 <% if current_user %>
   <li class="flex align-middle">
     <details class="flex items-center mx-5 cursor-pointer theme-text dropdown dropdown-bottom dropdown-end">
-      <summary class="flex">
-        <i class="fa fa-bell" style="font-size: 1.8em;"></i> 
+      <summary class="block relative">
+        <div class="relative items-center w-10 joband-shadow">
+          <%= image_tag "icon/bell.svg", width: "30", height: "30" %>
+          <% if @unread.count > 0 %>
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
+              <%= @unread.count >= 9 ? "9+" : @unread.count %>
+            </div>
+          <% end %>
+        </div>
       </summary>
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        <li>
-          <% @unread.each do |notification| %>
-            <%= render 'shared/notification', notification: notification %>
-          <% end %>
-          <% if @read.count > 0 && @unread.count > 0 %>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          <% elsif @read.count + @unread.count == 0 %>
-            <li class="dropdown-item">
-              
-            </li>
-          <% end %>
-          <% @read.each do |notification| %>
-            <%= render 'shared/notification', notification: notification %>
-          <% end %>
-        </li>
+        <% @unread.each do |notification| %>
+          <%= render 'shared/notification', notification: notification %>
+        <% end %>
+        <% if @read.count > 0 && @unread.count > 0 %>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+        <% end %>
+        <% @read.each do |notification| %>
+          <%= render 'shared/notification', notification: notification %>
+        <% end %>
       </ul>
     </details>
   </li>
 <% end %>
--->
 
 
 
-
-<% if current_user %>
-  <li class="flex align-middle">
-    <details class="flex items-center mx-5 cursor-pointer theme-text dropdown dropdown-bottom dropdown-end">
-    <% if current_user.profile.present? %>
-      <summary class="block">
-        <div class="relative items-center w-10 joband-shadow">
-          <%= render "shared/avatar", model: current_user.profile %>
-        </div>
-      </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        <li>
-          <% @unread.each do |notification| %>
-            <%= render 'shared/notification', notification: notification %>
-          <% end %>
-          <% if @read.count > 0 && @unread.count > 0 %>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          <% elsif @read.count + @unread.count == 0 %>
-            <li class="dropdown-item">
-            </li>
-          <% end %>
-          <% @read.each do |notification| %>
-            <%= render 'shared/notification', notification: notification %>
-          <% end %>
-        </li>
-      </ul>
-    <% else %>
-      <summary class="flex">
-        <div class="relative items-center w-10 joband-shadow">
-          <img src="/bell.svg" alt="bell" class="absolute w-full rounded-full" >
-          <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full drop-shadow-2xl">
-        </div>
-      </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        <li>
-          <%= link_to "個人檔案", current_user.confirmed? ? letsjam_profiles_path : welcome_profiles_path, class: "nav-link" %>
-        </li>
-      </ul>
-    <% end %>
-    </details>
-  </li>
-<% end %>
 
