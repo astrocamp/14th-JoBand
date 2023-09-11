@@ -23,7 +23,7 @@ class ProfilePolicy < ApplicationPolicy
   end
 
   def create?
-   !user&.profile.present?
+    !user&.profile.present?
   end
 
   def new?

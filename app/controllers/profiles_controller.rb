@@ -3,7 +3,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update letsjam]
   before_action :set_profile, only: %i[edit update show]
-  before_action :set_user, only: %i[show]
 
   def index
     @search_profile = Profile.ransack(params[:q])
@@ -17,7 +16,6 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = current_user.create_profile(params_profile)
-    authorize @profile
     if @profile.save
       redirect_to profile_path(@profile), notice: '新增 profile 成功'
     else
@@ -53,9 +51,5 @@ class ProfilesController < ApplicationController
 
   def set_profile
     @profile = Profile.find(params[:id])
-  end
-
-  def set_user
-    @user = User.find(params[:id])
   end
 end
