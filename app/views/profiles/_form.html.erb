@@ -6,7 +6,7 @@
     </div>
     <div class="flex items-center my-5">
       <%= f.label :phone, "電話", class: "lg:w-[120px] block" %>
-      <%= f.phone_field :phone, placeholder: '請輸入電話號碼',maxlength: 10, pattern: "[0-9]{8,10}", title: "至少8碼的電話號碼", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+      <%= f.phone_field :phone, placeholder: '請輸入 8 - 10 碼',maxlength: 10, pattern: "[0-9]{8,10}", title: "至少8碼的電話號碼", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
     <div class="flex items-center my-5">
       <%= f.label :location, "居住城市", class: "lg:w-[120px] block" %>
@@ -18,7 +18,7 @@
     </div>
     <div class="flex items-center my-5">
       <%= f.label :content, "簡介", class: "lg:w-[120px] block"  %>
-      <%= f.text_area :content, placeholder: '跟大家介紹自己', style: "resize: none;", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+      <%= f.text_area :content, placeholder: '介紹一下自己', style: "resize: none;", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
     </div>
     <div class="flex items-center my-5">
       <p class="lg:w-[120px]">彈奏樂器 </p>

@@ -66,31 +66,30 @@
   @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
-/* 招募的更新和刪除 */
-.joband-recruit-btn {
-  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none joband-shadow
-}
-
 /* (no hover) */
 .joband-tag-location {
-  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white select-none joband-shadow
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white select-none shadow-inner
 }
 
 .joband-tag-seniority {
-  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white select-none joband-shadow
+  @apply bg-[#D2545B] rounded-full px-4 py-2 text-white select-none shadow-inner
 }
 
 .joband-tag-style {
-  @apply bg-[#F1C04A] rounded-full px-4 py-2 text-white select-none joband-shadow
+  @apply bg-[#5ba4ee] rounded-full px-4 py-2 text-white select-none shadow-inner
 }
 
-/* (hover) */
+.joband-tag-state{
+  @apply bg-[#ffba19] rounded-full px-4 py-2 text-white select-none shadow-inner
+}
+
+/* (hover-btn) */
 .joband-hover-action {
-  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#f97869] hover:duration-300 select-none joband-shadow
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#f8a097] hover:duration-300 select-none joband-shadow
 }
 
 .joband-hover-location {
-  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#4aceca] joband-shadow select-none joband-shadow
+  @apply bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#4aceca] joband-shadow hover:duration-300 select-none joband-shadow
 }
 
 .joband-hover-seniority {
@@ -98,11 +97,24 @@
 }
 
 .joband-hover-style {
-  @apply bg-[#F1C04A] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#e9ab75] hover:duration-300 select-none joband-shadow
+  @apply bg-[#5ba4ee] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#85bef8] hover:duration-300 select-none joband-shadow
+}
+
+.joband-hover-style-activity {
+  @apply bg-[#5ba4ee] rounded-full p-2 text-white cursor-pointer hover:bg-[#85bef8] hover:duration-300 select-none joband-shadow
+}
+
+.joband-hover-state {
+  @apply bg-[#ffba19] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#ffcb52] hover:duration-300 select-none joband-shadow
 }
 
 .joband-hover-gray{
   @apply bg-[#868686] rounded-full px-4 py-2 text-white cursor-pointer hover:bg-[#b4b4b4] hover:duration-300 select-none joband-shadow 
+}
+
+/* 招募的更新和刪除 */
+.joband-recruit-btn {
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
 .joband-text-bk{
@@ -147,36 +159,34 @@
   @apply flex justify-center 
 }
 
-/* activity-select-area */
+/* activity */
 #activity_city {
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
-/* band-select-area */
+/* band */
 #band_area{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
-/* band-select-state */
 #band_state{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
-/* band-select-role */
 #band_role{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
-/* profile-select-location */
+/* profile */
 #profile_location{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
-/* profile-select-seniority */
 #profile_seniority{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }
 
+/* recruit */
 #recruit_area{
   @apply ring-2 ring-[#C5C8C9] ring-offset-2 rounded-xl select-md select-bordered;
 }

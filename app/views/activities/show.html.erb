@@ -2,19 +2,22 @@
   <section class="relative w-full h-[500px] overflow-hidden mb-10">
     <%= render "shared/banner", model: @activity  %>
   </section>
-
+  <div class="mx-auto w-[100px] h-[100px] bg-[#f3f3f2] joband-shadow shadow-inner rounded-full lg:w-[150px] lg:h-[150px] flex justify-center items-center">
+    <p class="h2 joband-text-bk">BAND</p>
+    <%#= render "shared/avatar", model: activity.band %>
+    <%# 之後 render 所屬的 band avatar %>
+  </div>
   <div class="flex flex-wrap justify-center w-full px-40 mt-5 joband-text-bk">
     <p class="my-5 h1"><%= @activity.title %></p>
-   
-    <div class="w-full text-center my-7"> 
-      <div>
-        <%= link_to "查看此樂團所有活動", band_activities_path(@band), class: "joband-hover-location text-xl w-full mx-auto mr-5" %>
-        <%= link_to "返回活動搜尋列表", activities_activity_index_path, class: "joband-hover-seniority text-xl" %>
-      </div>
-    </div>
-   
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">主辦：<%= link_to @activity.band.name, band_path(@activity.band_id) %></p>
+      <div class="flex items-center w-full">
+        <p class="block h3">主辦樂團：</p>
+        <div class="mx-2 h-[50px] w-[50px] relative">
+          <%= render "shared/avatar", model: @activity.band %>
+        </div>
+        <p class="block ml-2 mr-auto h3"><%= @activity.band.name %></p>
+        <%= link_to "查看此樂團活動", band_activities_path(@band), class: "joband-hover-style-activity text-center w-[150px]" %>
+      </div>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">內容：<%= @activity.content %></p>
     <span class="w-full joband-line-bk"></span>
@@ -30,10 +33,10 @@
    <div class="w-[900px] text-center mt-12">
      <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
       <div>
-        <%= link_to '修改活動資料', edit_activity_path(@activity), class: "joband-action-btn mr-5" %>
+        <%= link_to '修改活動資料', edit_activity_path(@activity), class: "joband-action-btn mx-2" %>
         <%= link_to '刪除活動資料', activity_path(@activity), 
                               data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
-                              class: "joband-action-btn" %>
+                              class: "joband-action-btn mx-2" %>
       </div>
     <% end %> 
     </div>
@@ -41,17 +44,16 @@
 </div>
 <div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto rounded-[100px] mt-30 overflow-hidden joband-shadow bg-white m-5 p-10 text-center"> 
   <div class='w-full'>  
-    <h2 class='pb-6 h2'>留言內容</h2>
+    <h2 class='pb-6 h2 joband-text-bk'>留言內容</h2>
     <%= form_with(model: [@activity, @comment]) do |f| %>
       <div>
         <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
       </div>
       <div class='mt-3 mb-2'>
-        <%= f.submit '送出留言', class: 'joband-hover-action text-sm'%>
+        <%= f.submit '送出留言', class: 'joband-action-btn'%>
       </div>
     <% end %>
-    <div class="m-5 text-center"><h2>留言</h2></div>
-    <ul class='flex flex-col items-center justify-center'>
+    <ul class='flex flex-col items-center justify-center my-5'>
       <%= render "comments/comment_activity", comments: @comments, activities: @activities %>
     </ul>
   </div>

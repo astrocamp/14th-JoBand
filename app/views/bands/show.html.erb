@@ -7,7 +7,7 @@
     <%= render "shared/avatar", model: @band  %>
   </div>
   <section class="flex flex-wrap justify-center w-full mb-5">
-    <p class="z-[1] shadow-md joband-tag-style mb-5">
+    <p class="z-[1] shadow-md joband-tag-state mb-5">
       <%= @band.state %>
     </p>
     <h1 class="w-full mb-5 font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
@@ -15,7 +15,7 @@
     </h1>
 
     <% if @band.recruit.present? %>
-      <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-seniority text-xl mr-5"%>
+      <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-style text-xl mx-2"%>
     <% else %>
       <% if current_user === band_leader %>
         <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-hover-seniority text-xl" %>
@@ -26,7 +26,7 @@
     <% end %>  
     
     <% if @band.activities.present? %>
-      <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-hover-seniority text-xl' %>
+      <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-hover-style text-xl mx-2' %>
     <% end %>  
 
   </section>
@@ -97,6 +97,28 @@
             <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority" %>
           <% end %>
         <% end %>
+      </div>
+      <span class="w-full joband-line-bk"></span>
+      <div class="w-full my-3">
+        <% if @band.video.attached? %>
+          <video width="640" height="360" controls controlsList="nodownload" class="w-full">
+            <source src="<%= url_for(@band.video) %>" type="video/mp4">
+            您的瀏覽器不支援影片格式
+          </video>
+        <% else %>
+          <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
+        <% end %>
+        
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center mb-8">
+      <% if user_signed_in? && policy(@band).update? %>
+        <div class="flex w-fullalign-middle">
+          <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+            <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-2' %>
+          <% end %>
+          <%= link_to '修改樂團資料', edit_band_path(@band), class:"joband-action-btn mx-2" %>
+        </div>
       <% end %>  
     </div>
 

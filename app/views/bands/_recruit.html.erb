@@ -1,7 +1,0 @@
-<% if band.recruit.present? %>
-  <% if user_signed_in? %>
-    <%= link_to '招募資訊', recruit_path(band.recruit), class: "z-[1] shadow-md joband-hover-seniority" %>
-  <% else %>
-    <%= link_to "招募資訊", new_user_session_path, class: "z-[1] shadow-md joband-hover-seniority", alert: "請先登入！" %>
-  <% end %>
-<% end %>

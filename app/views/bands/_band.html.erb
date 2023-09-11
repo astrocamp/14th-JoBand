@@ -17,12 +17,12 @@
         <%= band.content.body.to_plain_text.truncate(45) %>
       </p>
       <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
-        <div class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
+        <p class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
           <%= band.area %>
-        </div>
-        <div class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
+        </p>
+        <p class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
           <%= band.state %>
-        </div>
+        </p>
         <div class="lg:flex">
           <%= render "bands/recruit", band: band %>
         </div>

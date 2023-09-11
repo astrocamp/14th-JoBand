@@ -1,8 +1,20 @@
  <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
 
   <div class="flex items-center my-5">
+    <% if activity.errors.any? %>
+      <div class="w-full py-3 text-center rounded-2xl" style="border: 2px solid rgba(239, 68, 68, 0.8) ">
+        <% activity.errors.full_messages.each do |message| %>
+          <% if message == '開始時間必須早於結束時間' %>
+            <p class="text-xl text-red-500 fold-extrabold"><%= message %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="flex items-center my-5">
     <%= f.label '活動標題', class: "lg:w-[120px] block" %>
-    <%= f.text_field :title, required: true, maxlength: 20, placeholder: "請輸入20個字以內的活動標題", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_field :title, required: true, maxlength: 20, placeholder: "請輸入 20 字以內的標題", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
@@ -12,22 +24,22 @@
 
   <div class="flex items-center my-5">
     <%= f.label '活動內容', class: "lg:w-[120px] block" %>
-    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: "跟大家介紹活動的內容", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: "描述一下內容", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
     <%= f.label '活動日期', class: "lg:w-[120px] block" %>
-    <%= f.date_field :begin_at, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.date_field :begin_at, required: true, value: Date.current.to_s, min: Date.current.to_s, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
 
   <div class="flex items-center my-5">
     <%= f.label '開始時間', class: "lg:w-[120px] block" %>
-    <%= f.time_field :time_start, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.time_field :time_start, required: true, value: "09:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs", id: "time_start" %>
   </div>
 
   <div class="flex items-center my-5">
     <%= f.label '結束時間', class: "lg:w-[120px] block" %>
-    <%= f.time_field :time_end, required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.time_field :time_end, required: true, value: "18:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs", id: "time_end" %>
   </div>
 
   <div class="flex items-center my-5">
@@ -37,18 +49,8 @@
   
   <div class="flex items-center my-5">
     <%= f.label '活動地點', class: "lg:w-[120px] block" %>
-    <%= f.text_field :location, required: true, placeholder: '請輸入活動地點', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+    <%= f.text_field :location, required: true, placeholder: '請輸入地點', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
-
-  <% if activity.errors.any? %>
-    <div class="w-full py-3 text-center rounded-2xl bg-neutral-200">
-        <% activity.errors.full_messages.each do |message| %>
-          <% if message == '開始時間必須早於結束時間' %>
-            <p class="text-xl text-red-500 fold-extrabold"><%= message %></p>
-          <% end %>
-        <% end %>
-    </div>
-  <% end %>
   
   <div class="flex items-center justify-center w-full mt-10">
     <% if action_name == "new" %>
