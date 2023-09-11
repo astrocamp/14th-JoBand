@@ -17,13 +17,14 @@ class Profile < ApplicationRecord
   belongs_to :user
 
   enum seniority: {
-    '1年以下': 0,
-    '1 - 3年': 1,
-    '3 - 5年': 2,
-    '5 - 10年': 3,
-    '10 - 15年': 4,
-    '15 - 20年': 5,
-    '20年以上': 6
+    '無經驗': 0,
+    '1年以下': 1,
+    '1 - 3年': 2,
+    '3 - 5年': 3,
+    '5 - 10年': 4,
+    '10 - 15年': 5,
+    '15 - 20年': 6,
+    '20年以上': 7
   }, _prefix: true
 
   def default_instrument(profile)
