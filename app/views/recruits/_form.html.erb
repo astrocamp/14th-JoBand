@@ -1,31 +1,33 @@
-<div class="flex justify-center mt-5 theme-text">
+<div class="w-[700px] joband-text-bk lg:flex lg:justify-center text-base lg:text-lg">
   <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, recruit] : [recruit]), data: { turbo: false }) do |f| %>
 
-  <div class="mb-5">
-    <%= f.label :title, "標題" %>
-    <%= f.text_field :title, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5">
+    <%= f.label :title, "招募標題", class: "lg:w-[120px] block" %>
+    <%= f.text_field :title, maxlength: 20, placeholder: "請輸入 20 字以內的標題", required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
-  <div class="mb-5">
-    <%= f.label :condition, "希望條件" %>
-    <%= f.text_area :condition, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5">
+    <%= f.label :condition, "希望條件", style: "resize: none;", class: "lg:w-[120px] block" %>
+    <%= f.text_area :condition, placeholder: "描述一下條件", required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
-  <div class="mb-5">
-    <%= f.label :practice_time, "練習時間" %>
-    <%= f.text_field :practice_time, class: "mt-1 input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5">
+    <%= f.label :practice_time, "練習時間", class: "lg:w-[120px] block" %>
+    <%= f.text_field :practice_time, placeholder: "請輸入練習時間", required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
-  <p>需求樂器</p>
-  <div class="mt-1 mb-5">
-    <%= f.collection_check_boxes :instrument_ids, Instrument.all, :id, :name do |i| %>
-      <%= i.check_box %>
-      <%= i.label %>
-    <% end %>
+  <div class="flex items-center my-5">
+    <p class="lg:w-[110px]">需求樂器</p>
+    <div class="space-x-2">
+      <%= f.collection_check_boxes :instrument_ids, Instrument.all, :id, :name do |i| %>
+        <%= i.check_box %>
+        <%= i.label %>
+      <% end %>
+    </div>
   </div>
-  <div class="mb-8">
-    <%= f.label :area, "地區" %>
+  <div class="flex items-center my-5">
+    <%= f.label :area, "招募地區", class: "lg:w-[120px] block" %>
     <%= f.select :area, Recruit.areas.keys %>
   </div>
-  <div class="w-32 p-1 mx-auto mb-5 font-semibold text-center bg-blue-500 rounded-lg hover:bg-blue-600">
-    <%= f.submit %>
+  <div class="flex justify-center w-full mt-10">
+    <%= f.submit '開始徵人' , class: "joband-action-btn" %>
   </div>
   <% end %>
 </div>

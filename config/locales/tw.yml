@@ -139,14 +139,14 @@ tw:
         music: 上傳音樂：
         video: 上傳影片：
         area: 活動地區：
-        content: 對樂團的描述：
+        content: 樂團簡介：
         state: 樂團狀態
         founded_at: 創立時間：
         
     submit:
       band: 
-        create: 創建樂團
-        update: 更新
+        create: 建立樂團資料
+        update: 更新樂團資料
       recruit:
         create: 開始徵人
         update: 更新內容

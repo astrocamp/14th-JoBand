@@ -3,10 +3,7 @@
     <%= render "shared/avatar", model: @profile  %>
   </div>
   <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
-  <% if policy(@profile).profile? %>
-    <%= link_to '創建樂團', new_band_path, class:'joband-action-btn'%>
-  <% end %>
-  <div class="flex flex-wrap justify-center w-full mt-5 px-28 joband-text-bk">
+  <div class="flex flex-wrap justify-center w-full px-28 joband-text-bk">
     <div class="flex justify-around w-auto mb-12">
       <% @profile.instruments.each do |instrument| %>
         <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
@@ -19,17 +16,17 @@
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">居住城市：<%= @profile.location %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">樂齡：<%= @profile.seniority %> 年</p>
+    <p class="w-full h3">樂齡：<%= @profile.seniority %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">內容：<%= @profile.content %></p>
+    <p class="w-full h3">簡介：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
     <div class="flex flex-wrap w-full ">
       <%= render 'band' %>
     </div>
     <span class="w-full joband-line-bk"></span>
-    <div class="flex flex-col w-full my-5">
-      <div class="my-3 ">
+    <div class="flex flex-col w-full">
+      <div class="my-3">
         <% if @profile.music.attached? %>
           <audio controls controlsList="nodownload" class="w-full custom-audio-player">
             <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
@@ -39,7 +36,7 @@
           <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
         <% end %>
       </div>
-      <div class="my-3 ">
+      <div class="my-3">
         <% if @profile.video.attached? %>
           <video width="640" height="360" controls controlsList="nodownload" class="w-full">
             <source src="<%= url_for(@profile.video) %>" type="video/mp4">
@@ -50,9 +47,14 @@
         <% end %>
       </div>
     </div>
-    <% if policy(@profile).update? %>
-      <%= link_to '資料更新', edit_profile_path, class:'joband-action-btn'%>
-    <% end %>
+    <div class="mt-5">
+      <% if policy(@profile).profile? %>
+        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
+      <% end %>
+      <% if policy(@profile).update? %>
+        <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
+      <% end %>
+    </div>
   </div>  
 </div>
 

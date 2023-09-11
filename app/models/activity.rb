@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Activity < ApplicationRecord
-  validates :title, :content, :location, :time_start, :time_end, presence: true
+  validates :title, :content, :begin_at, :time_start, :time_end, :location, presence: true
+  validate :start_time_must_be_before_end_time
 
   # associations
   has_one_attached :banner do |attachable|
@@ -11,35 +12,28 @@ class Activity < ApplicationRecord
   belongs_to :band
 
   enum city: {
-    基隆市: 0,
-    臺北市: 1,
-    新北市: 2,
+    臺北市: 0,
+    新北市: 1,
+    基隆市: 2,
     桃園市: 3,
-    新竹縣: 4,
-    新竹市: 5,
+    新竹市: 4,
+    新竹縣: 5,
     苗栗縣: 6,
-    苗栗市: 7,
-    臺中市: 8,
+    臺中市: 7,
+    彰化縣: 8,
     南投縣: 9,
-    南投市: 10,
-    彰化縣: 11,
-    彰化市: 12,
-    雲林縣: 13,
-    嘉義縣: 14,
-    嘉義市: 15,
-    臺南市: 16,
-    高雄市: 17,
-    宜蘭縣: 18,
-    宜蘭市: 19,
-    花蓮縣: 20,
-    花蓮市: 21,
-    屏東縣: 22,
-    屏東市: 23,
-    臺東縣: 24,
-    臺東市: 25,
-    澎湖縣: 26,
-    金門縣: 27,
-    連江縣: 28
+    雲林縣: 10,
+    嘉義市: 11,
+    嘉義縣: 12,
+    臺南市: 13,
+    高雄市: 14,
+    屏東縣: 15,
+    宜蘭縣: 16,
+    花蓮縣: 17,
+    臺東縣: 18,
+    澎湖縣: 19,
+    金門縣: 20,
+    連江縣: 21
   }, _prefix: true
 
   def self.ransackable_attributes(_auth_object = nil)
@@ -48,5 +42,12 @@ class Activity < ApplicationRecord
 
   def self.ransackable_associations(_auth_object = nil)
     %w[band]
+  end
+
+  private
+  def start_time_must_be_before_end_time
+    if time_end <= time_start
+      errors.add(:base, '開始時間必須早於結束時間')
+    end
   end
 end

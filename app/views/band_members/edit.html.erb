@@ -1,26 +1,28 @@
-<div class="center">
-  <div class="center items-center w-3/4 bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl py-5 mt-20
-              lg:w-1/4">
-    <%= form_with(model: [@band, @band_member]) do |f| %>
-
-      <div class="m-5 h1 joband-text-bk">
+<div class="flex flex-wrap justify-center p-10">
+  <h2 class="my-5 text-4xl font-bold theme-text">設定您的權限</h2>
+</div>
+<div class="flex flex-wrap justify-center">
+  <div class="flex flex-wrap justify-center w-[80%] lg:w-[50%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">  
+    <%= form_with(model: [@band, @band_member] , data:{ trubo: false } ) do |f| %>
+      <div class="flex justify-center font-bold h3 joband-text-bk" >
         <%= @band_member.user.name %>
       </div>
-
-      <div class="m-5">
-        <%= f.label :identity, '權限', class:"joband-text-bk h2" %>
+    
+      <div class="flex items-center my-5 joband-text-bk">
+        <%= f.label :identity, '權限', class: "lg:w-[70px] block" %>
         <%= f.select :identity, BandMember.identities.keys %>
       </div>
-
-      <div class="m-5">
-        <%= f.label :role , '職位', class:"joband-text-bk h2" %>
+    
+      <div class="flex items-center my-5 joband-text-bk">
+        <%= f.label :role, '職位', class: "lg:w-[70px] block" %>
         <%= f.select :role, BandMember.default_roles %>
       </div> 
-
-      <div class="center mb-5">
-        <%=f.submit '更新', class:'btn btn-accent' %>
+    
+      <div class="flex items-center justify-center w-full mt-5">
+        <%=f.submit '更新', class:'joband-action-btn' %>
       </div>
-
     <% end %>
   </div>
 </div>
+
+

@@ -8,11 +8,11 @@ class BandMember < ApplicationRecord
 
   def self.default_roles
     %w[
-      Guitar
-      Bass
-      Vocal
-      Drum
-      Keyboard
+      吉他手
+      貝斯手
+      主唱
+      鼓手
+      鍵盤手
     ]
   end
 end

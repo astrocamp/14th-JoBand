@@ -9,10 +9,10 @@
     <p class="w-full h-[70px] h4 mt-5 joband-text-bk text-center block lg:hidden"><%= profile.content.truncate(50) %></p>
     <div class="flex w-full mt-4 justify-evenly lg:justify-start">
       <% if profile.location.present? %>
-        <a href="#" class=" z-[1] mr-5 joband-tag-location"><%= profile.location %></a>
+        <p class=" z-[1] mr-5 joband-tag-location"><%= profile.location %></p>
       <% end %>
       <% if profile.seniority.present? %>
-        <a href="#" class="z-[1] joband-tag-seniority"><%= profile.seniority %> 年</a>
+        <p class="z-[1] joband-tag-style"><%= profile.seniority %></p>
       <% end %>
     </div>
   </div>

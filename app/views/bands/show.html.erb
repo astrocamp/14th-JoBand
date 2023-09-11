@@ -7,25 +7,23 @@
     <%= render "shared/avatar", model: @band  %>
   </div>
   <section class="flex flex-wrap justify-center w-full mb-5">
-    <div class="z-[1] shadow-md joband-tag-style">
+    <p class="z-[1] shadow-md joband-tag-state mb-5">
       <%= @band.state %>
-    </div>
-    <h1 class="w-full font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
+    </p>
+    <h1 class="w-full mb-5 font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
       <%= @band.name %>
     </h1>
 
     <% if @band.recruit.present? %>
-      <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-action-btn"%>
+      <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-style text-xl mx-2"%>
     <% else %>
-      <% if policy(@band).band_leader? %>
-        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-action-btn" %>
+      <% if current_user === band_leader %>
+        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-hover-style text-xl" %>
       <% end %>
     <% end %>
-    <% if policy(@band).band_leader? %>
-      <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
-    <% end %>  
+    
     <% if @band.activities.present? %>
-      <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-action-btn mx-5' %>
+      <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-hover-style text-xl mx-2' %>
     <% end %>  
 
   </section>
@@ -52,49 +50,41 @@
     <p class="w-full h3">介紹：<%= @band.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">成員：</p>
-    <div class="center flex-wrap  w-full my-5 ">
+    <div class="flex-wrap w-full my-5 center ">
       <%= render @band_members %>
     </div>
     
     <span class="w-full joband-line-bk"></span>
-    <div class="w-full my-5">
-      <% if @band.music.attached? %>
-        <audio controls controlsList="nodownload" class="w-full custom-audio-player">
-          <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
-          您的瀏覽器不支援音樂格式
-        </audio>
-      <% else %>
-        <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
-      <% end %>
-    </div>
-    <span class="w-full joband-line-bk"></span>
-    <div class="w-full my-5">
-      <% if @band.video.attached? %>
-        <video width="640" height="360" controls controlsList="nodownload" class="w-full">
-          <source src="<%= url_for(@band.video) %>" type="video/mp4">
-          您的瀏覽器不支援影片格式
-        </video>
-      <% else %>
-        <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
-      <% end %>
-      
-    </div>
-    <div class="flex flex-wrap justify-center my-10">
-
-      <% if user_signed_in? && policy(@band).update? %>
-        <div class="w-full mb-10 align-middle">
-          <div class="w-32 mx-auto text-center ">
-            <%= link_to '編輯樂團', edit_band_path(@band), class:"joband-action-btn" %>
-          </div>
-        </div>
-      <% else %>
-        <% if @band.recruit.present? %>
-          <% if current_user&.profile.present? %>
-            <%= link_to '招募中', recruit_path(@band.recruit), class: "z-[1] shadow-md joband-tag-seniority" %>
-          <% else %>
-            <%= link_to '招募中', letsjam_profiles_path, class: "z-[1] shadow-md joband-tag-seniority" %>
-          <% end %>
+    <div class="flex flex-col w-full my-3">
+      <div class="w-full my-3">
+        <% if @band.music.attached? %>
+          <audio controls controlsList="nodownload" class="w-full custom-audio-player">
+            <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
+            您的瀏覽器不支援音樂格式
+          </audio>
+        <% else %>
+          <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
         <% end %>
+      </div>
+      <div class="w-full my-3">
+        <% if @band.video.attached? %>
+          <video width="640" height="360" controls controlsList="nodownload" class="w-full">
+            <source src="<%= url_for(@band.video) %>" type="video/mp4">
+            您的瀏覽器不支援影片格式
+          </video>
+        <% else %>
+          <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
+        <% end %>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center mb-8">
+      <% if user_signed_in? && policy(@band).update? %>
+        <div class="flex w-full align-middle">
+          <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+            <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-2' %>
+          <% end %>
+          <%= link_to '修改樂團資料', edit_band_path(@band), class:"joband-action-btn mx-2" %>
+        </div>
       <% end %>  
     </div>
 
