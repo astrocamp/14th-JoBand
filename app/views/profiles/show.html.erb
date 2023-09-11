@@ -1,5 +1,5 @@
 <div class="center flex-wrap rounded-[80px] w-full h-auto mx-auto mt-10 p-10 joband-shadow bg-white
-            lg:mt-20 lg:rounded-[100px]">  
+            lg:mt-20 lg:rounded-[100px] lg:w-2/3">  
   <div class=" h-[200px] w-[200px] relative lg:my-10">
     <%= render "shared/avatar", model: @profile  %>
   </div>
@@ -16,7 +16,7 @@
 
   <div class="flex flex-wrap justify-center mb-5">
     <% @profile.instruments.each do |instrument| %>
-      <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:w-[100px] lg:h-[100px]">
+      <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:mx-5 lg:w-[100px] lg:h-[100px]">
         <%= render "/shared/instrument", instrument: instrument.name %>
       </div>
     <% end %>
