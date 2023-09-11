@@ -1,16 +1,18 @@
 <% if @profile.user.bands.any? %>
+
   <% @profile.user.bands.each do |band| %>
-    <%= link_to band_path(band), action: 'go' do %>
-    <div class="flex justify-center flex-wrap mx-2 w-[180px]">
-      <div class="relative w-[120px] h-[120px] mt-5">
-        <%= render 'shared/avatar' , model: band %>
+    <%= link_to band_path(band) do %>
+      <div class="center flex-wrap mx-2 w-full">
+        <div class="relative mt-5 center w-[60px] h-[60px] lg:w-[120px] lg:h-[120px]">
+          <%= render 'shared/avatar' , model: band %>
+        </div>
+        <div class="w-full my-5 text-center h3 joband-text-bk joband-shadow">
+          <%= band.name %>
+        </div>
       </div>
-      <div class="w-full my-5 text-center h3 joband-text-bk joband-shadow">
-        <%= band.name %>
-      </div>
-    </div>
     <% end %>
   <% end %>
+
 <% else %>
   <p class="w-full my-3 text-gray-400 h4">未加入樂團</p>
 <% end %>

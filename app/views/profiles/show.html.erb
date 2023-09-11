@@ -1,16 +1,30 @@
-<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto mt-20 p-10 rounded-[100px] joband-shadow bg-white">  
-  <div class="my-10 h-[200px] w-[200px] relative ">
+<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto mt-10 p-10 rounded-[100px] joband-shadow bg-white
+            lg:mt-20 ">  
+  <div class=" h-[200px] w-[200px] relative lg:my-10">
     <%= render "shared/avatar", model: @profile  %>
   </div>
-  <h1 class="w-full mb-5 text-2xl font-bold text-center joband-shadow joband-text-bk"><%= @profile.user.name %></h1>
-  <div class="flex flex-wrap justify-center w-full px-28 joband-text-bk">
-    <div class="flex justify-around w-auto mb-12">
-      <% @profile.instruments.each do |instrument| %>
-        <div class="w-[100px] h-[100px] flex relative mx-3 my-3">
-          <%= render "/shared/instrument", instrument: instrument.name %>
-        </div>
+
+  <div class="w-full font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
+    <%= @profile.user.name %>
+    <div class="my-5">
+      <% if policy(@profile).profile? %>
+        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn'%>
       <% end %>
     </div>
+
+  </div>
+
+
+  <div class="flex flex-wrap justify-center mb-5">
+    <% @profile.instruments.each do |instrument| %>
+      <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:w-[100px] lg:h-[100px]">
+        <%= render "/shared/instrument", instrument: instrument.name %>
+      </div>
+    <% end %>
+  </div>
+    
+  <div class="flex flex-wrap justify-center w-full lg:mt-5 joband-text-bk lg:px-40">
+  
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">電話號碼：<%= @profile.phone %></p>
     <span class="w-full joband-line-bk"></span>
@@ -21,7 +35,7 @@
     <p class="w-full h3">簡介：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
-    <div class="flex flex-wrap w-full ">
+    <div class="center flex-wrap w-full ">
       <%= render 'band' %>
     </div>
     <span class="w-full joband-line-bk"></span>
