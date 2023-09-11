@@ -1,10 +1,10 @@
 # JoBand
 Website 網站: https://JoBand.co
 
-![](https://hackmd.io/_uploads/S1wM-jEp2.jpg)
+![JoBand](https://imgur.com/B4b63wm)
 **JoBand 樂團組團網站 - ReadMe**
 
-歡迎來到 JoBand 的 ReadMe 文件！以下是您開始使用 JoBand 平台的重要資訊和步驟指南。
+歡迎來到 JoBand！以下是您開始使用 JoBand 平台的重要資訊和步驟指南。
 
 ## 關於 JoBand
 
@@ -62,13 +62,13 @@ Github: https://github.com/fr715464
 Github: https://github.com/vito588p
 
 ## 使用技術
-* Frontend : HTML / Tailwind CSS / Stimilus JS
+* Frontend : Tailwind CSS / Stimilus JS
 * Backend : Ruby on Rails
 * Database : PostgreSQL
 * Deployment : Heroku
-* Version Control : Git / GitHub
+* Version Control : Git
 * Third-Party Login : Google
-* Cloud Server : AWS S3
+* Cloud Service : AWS S3, Mailgun
 
 
-*最後更新：Sep 08 2023*
+*最後更新：Sep 11 2023*
