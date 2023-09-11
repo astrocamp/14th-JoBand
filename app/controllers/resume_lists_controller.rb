@@ -13,7 +13,7 @@ class ResumeListsController < ApplicationController
   def new
     if current_user.band_members.count >= 5
       flash[:alert] = '最多只能擁有5個樂團。'
-      redirect_to recruit_path(@recruit) 
+      redirect_to recruit_path(@recruit)
     else
       @resume_list = ResumeList.new(recruit: @recruit)
       authorize @resume_list
