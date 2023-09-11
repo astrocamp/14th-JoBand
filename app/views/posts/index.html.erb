@@ -57,17 +57,12 @@
           </article>
           <footer class="flex justify-evenly">
             <!-- 按♥ -->
-            <div class="btn btn-ghost">
-                <div data-controller="like" 
-                  data-liked="<%= current_user&.liked?(post) %>" 
-                  data-id="<%= post.id %>">
-                <div class="flex">
-                  <button data-like-target="likeBtn" data-action="click->like#toggle"></button>
-                  <span data-like-target="count" class="mx-2">
-                  <%= post.like_logs.count %>
-                  </span>
-                </div>
-              </div>
+            <div data-controller="like" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>">
+              <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost">♡
+              </button>
+              <span data-like-target="count" class="mx-2">
+                <%= post.like_logs.count %>
+              </span>
             </div>
             <!-- ♡ -->
             
