@@ -42,6 +42,11 @@ class OrdersController < ApplicationController
   end
 
   def paid
+    response = Newebpay::MpgResponse.new(params[:TradeInfo])
+
+    response.result
+    response.success?
+    response.message
   end
 
   private
