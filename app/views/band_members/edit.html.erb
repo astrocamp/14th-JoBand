@@ -1,7 +1,7 @@
 <div class="center">
   <div class="center items-center w-3/4 bg-[#D9D9D9] rounded-[80px] drop-shadow-2xl py-5 mt-20
               lg:w-1/4">
-    <%= form_with(model: [@band, @band_member] , data:{ trubo: false } ) do |f| %>
+    <%= form_with(model: [@band, @band_member]) do |f| %>
 
       <div class="m-5 h1 joband-text-bk">
         <%= @band_member.user.name %>
