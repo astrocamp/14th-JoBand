@@ -11,8 +11,13 @@ class ResumeListsController < ApplicationController
   end
 
   def new
-    @resume_list = ResumeList.new(recruit: @recruit)
-    authorize @resume_list
+    if current_user.band_members.count >= 5
+      flash[:alert] = '最多只能擁有5個樂團。'
+      redirect_to recruit_path(@recruit) 
+    else
+      @resume_list = ResumeList.new(recruit: @recruit)
+      authorize @resume_list
+    end
   end
 
   def create
@@ -39,6 +44,11 @@ class ResumeListsController < ApplicationController
     end
   end
 
+  def destroy
+    @resume_list.destroy
+    redirect_to recruit_path(@resume_list.recruit), notice: '已刪除'
+  end
+
   def approve
     authorize @resume_list
     @recruit = @resume_list.recruit
@@ -46,11 +56,15 @@ class ResumeListsController < ApplicationController
     @role = @resume_list.role
     @user = @resume_list.user
     new_band_member = @band.band_members.new(user: @user, identity: :member, role: @role)
-    if new_band_member.save
+    if @user.band_members.count < 5
+      new_band_member.save
       @resume_list.update(status: :approved)
       redirect_to recruit_path(@recruit), notice: '已加入樂團'
+    elsif @user.band_members.count >= 5
+      redirect_to resume_list_path(@resume_list), alert: '此用戶樂團數量已達上限'
     else
-      render :show, alert: '加入失敗'
+      flash.now[:alert] = '加入失敗'
+      redirect_to resume_list_path(@resume_list)
     end
   end
 
