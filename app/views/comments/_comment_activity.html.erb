@@ -1,15 +1,15 @@
 <% comments.each do |comment| %>
-  <li class='w-full max-w-md my-2 border-b'>
-    <div class='flex text-left joband-text-bk h4'>
-      <div class="w-[30px] h-[30px] relative mr-2">
+  <li class='w-[60%] p-5 my-2 border-b rounded-3xl bg-slate-100'>
+    <div class='flex joband-text-bk h4'>
+      <div class="w-[50px] h-[50px] relative mr-2">
         <%= render "shared/avatar", model: comment.user.profile %>
       </div>
-      <%= link_to comment.user.name, profile_path(comment.user_id), class: " font-semibold"%>
+      <%= link_to comment.user.name, profile_path(comment.user_id), class: "font-semibold"%>
     </div>
     <div class='p-3 my-1 text-left break-words h4'>
       <p><%= comment.content %></p>
     </div>
-    <div class='flex flex-row-reverse mb-2 text-base mt-7'>
+    <div class='flex flex-row-reverse mt-2 mb-2 text-base'>
       <% if comment.user == current_user %> 
         <%= link_to comment_path(comment, activity_id: @activity.id),
                           data: {turbo_method: 'delete',

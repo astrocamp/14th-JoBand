@@ -3,15 +3,12 @@
     <%= render "shared/activityBanner", model: activity %>
   </div>
 
-  <div class="w-[450px] flex flex-wrap p-5">
-    <p class="w-full font-semibold joband-text-bk h2 joband-shadow">
-      <%= activity.title %>
-    </p>
-    <p class="w-full h-[70px] h2 mt-5 joband-text-bk">
-      <%= activity.band.name %>
-    </p>
-    <div class="flex w-full mt-4">
-      <p class=" z-[1] mr-5 shadow-md joband-tag-location">
+  <div class="w-full lg:w-[450px] flex flex-wrap p-5">
+    <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow"><%= activity.title %></p>
+    <p class="w-full h-[70px] h3 mt-5 joband-text-bk hidden lg:block"><%= activity.content.truncate(70) %></p>
+    <p class="w-full h-[70px] h3 mt-5 joband-text-bk text-center block lg:hidden"><%= activity.content.truncate(50) %></p>
+    <div class="flex w-full mt-4 justify-evenly lg:justify-start">
+      <a href="#" class=" z-[1] mr-5 shadow-md joband-tag-location">
         <%= activity.city %>
       </p>
       <p class="z-[1] shadow-md joband-tag-style">
@@ -19,10 +16,13 @@
       </p>
     </div>
   </div>
-  <div class="mx-auto w-[100px] h-[100px] bg-white rounded-full lg:w-[150px] lg:h-[150px] flex justify-center items-center">
-    <p class="h2 joband-text-bk">BAND</p>
-    <%#= render "shared/avatar", model: activity.band %>
-    <%# 之後 render 所屬的 band avatar %>
+  <div class="mx-auto relative rounded-full lg:w-[150px] lg:h-auto flex justify-center flex-wrap items-center">
+    <div class="w-[150px] h-[150px] relative">
+      <%= render "shared/avatar", model: activity.band %>
+    </div>
+    <div class="hidden mt-2 lg:block h3 joband-text-bk">
+      <%= activity.band.name %>
+    </div>
   </div>
   <%= link_to '', activity_path(activity), class: "block w-full h-full absolute" %>
 </div>
