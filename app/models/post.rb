@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   acts_as_paranoid
+  validates :body, length: { maximum: 240 }, allow_blank: false
 
   # associations
   belongs_to :user

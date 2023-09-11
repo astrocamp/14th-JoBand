@@ -1,4 +1,4 @@
-<div class="grid h-screen grid-cols-1 mx-auto lg:grid-cols-12">
+<div class="grid grid-cols-1 mx-auto lg:grid-cols-12">
   <div class="pt-6 pr-6 lg:col-span-2">
     <div class="mt-6 ml-5 theme-text">
       <ul>
@@ -39,42 +39,16 @@
     </div>
   </div>
   <div class="lg:col-span-6 border-x theme-border">
+  
     <!-- new -->
     <div class="mb-8">
       <%= render 'new', post: @post %>
-
     </div>
+
     <!-- show -->
     <%= turbo_frame_tag "post" do %>
       <% @posts.each do |post| %>
-        <div class="px-4 border-2 border-b border-x-0">
-          <header class="flex justify-between">
-            <%= link_to post.user.name, "#", class: "text-blue-500 hover:underline" %>
-            <em class="inline-block pr-10 text-xs"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
-          </header>
-          <article class= "theme-text">
-            <%= post.body %>
-          </article>
-          <footer class="flex justify-evenly">
-            <!-- 按♥ -->
-            <div data-controller="like" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>">
-              <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost">♡
-              </button>
-              <span data-like-target="count" class="mx-2">
-                <%= post.like_logs.count %>
-              </span>
-            </div>
-            <!-- ♡ -->
-            
-            <div class="btn btn-ghost"><%= image_tag "icon/comment.svg" %></div>
-            <% if policy(post).destroy? %>
-              <%= link_to post_path(post.id), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
-                <%= image_tag "icon/del.svg" %>
-              <% end %>
-            <% end %>
-            
-          </footer>
-        </div>
+        <%= render partial: "posts/posts", locals: { post: post } %>
       <% end %>
     <% end %>
 
@@ -84,8 +58,8 @@
       <% end %>
     <% end %>
   </div>
-  <div class="pt-6 pl-6 lg:col-span-3">
-    <div class="w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</div>
+  <div class="relative pt-6 pl-6 lg:col-span-4">
+    <div class="sticky top-0 w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</div>
     <div class="p-3 border-2 theme-bg rounded-xl">
       <h2 class="h2">FuJi Rock Festival 2023</h2>
       <p>Jul 28 - 30</p><span cleass="text-end">NAEBA SKI RESORT</span>
