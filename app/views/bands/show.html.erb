@@ -18,12 +18,9 @@
       <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-style text-xl mx-2"%>
     <% else %>
       <% if current_user === band_leader %>
-        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-hover-seniority text-xl" %>
+        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-hover-style text-xl" %>
       <% end %>
     <% end %>
-    <% if policy(@band).band_leader? %>
-      <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-5' %>
-    <% end %>  
     
     <% if @band.activities.present? %>
       <%= link_to '查看樂團活動', band_activities_path(@band), class:'joband-hover-style text-xl mx-2' %>

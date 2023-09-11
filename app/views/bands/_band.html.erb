@@ -1,5 +1,5 @@
 <%= link_to band_path(band),class:'lg:flex hidden' do %>
-  <div class="lg:flex lg:flex-wrap lg:justify-evenly lg:items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#bdcbd2] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0
+  <div class="lg:flex lg:flex-wrap lg:justify-evenly lg:items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#D9D9D9] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0
               hidden ">
 
     <div class="ml-[60px] lg:w-[200px] lg:h-[200px] relative">
@@ -10,9 +10,7 @@
       <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow">
         <%= band.name %>
       </p>
-      <div class="mx-auto mt-4 lg:hidden">
-        <%= render "bands/recruit", band: band %>
-      </div>
+
       <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block">
         <%= band.content.body.to_plain_text.truncate(45) %>
       </p>
@@ -20,12 +18,9 @@
         <p class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
           <%= band.area %>
         </p>
-        <p class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-style">
+        <p class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-state">
           <%= band.state %>
         </p>
-        <div class="lg:flex">
-          <%= render "bands/recruit", band: band %>
-        </div>
       </div>
     </div>
 
@@ -60,9 +55,6 @@
         </div>
       </div>
   
-      <div class="mx-auto mt-4 ">
-        <%= render "bands/recruit", band: band %>
-      </div>
       <p class="block w-full mt-5 text-center joband-text-bk ">
         <%= band.content.body.to_plain_text.truncate(40) %>
       </p>
@@ -84,7 +76,7 @@
           <div class=" z-[1] text-center joband-tag-location mb-1">
             <%= band.area %>
           </div>
-          <div class="z-[1] text-center joband-tag-style mt-1">
+          <div class="z-[1] text-center joband-tag-state mt-1">
             <%= band.state %>
           </div>
         </div>
