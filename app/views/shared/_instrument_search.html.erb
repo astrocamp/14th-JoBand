@@ -1,8 +1,11 @@
 <div class="relative flex flex-wrap justify-center w-h-full joband-shadow">
-  <%= link_to '', profiles_path({"q"=>{"instruments_name_cont_any"=>[instrument]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" %>
+  <%= link_to profiles_path({"q"=>{"instruments_name_cont_any"=>[instrument]}, "commit"=>"Search"}), class: "absolute w-full h-full z-10" do %>
   <div class="flex items-center justify-center w-full h-full">
-    <img src="/icon_img/<%= instrument %>.svg" alt="<%= instrument %>_icon" class="absolute hidden w-2/3 p-1 joband-shadow lg:block">
+    <img src="/icon_img/<%= instrument %>.svg" alt="<%= instrument %>_icon" class="absolute w-2/3 p-1 joband-shadow block">
     <div class="rounded-full shadow-inner circle-bg w-h-full"></div>
   </div>
-  <p id="instrument_name" class="mt-2 font-semibold text-center theme-text"><%= instrument.upcase %></p>
+  <p id="instrument_name" class="mt-2 font-semibold text-center theme-text">
+    <%= instrument.upcase %>
+  </p>
+  <% end %>
 </div>

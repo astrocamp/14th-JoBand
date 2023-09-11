@@ -1,5 +1,5 @@
-<div class="flex flex-wrap justify-center w-[80%] h-auto mx-auto mt-10 p-10 rounded-[100px] joband-shadow bg-white
-            lg:mt-20 ">  
+<div class="center flex-wrap rounded-[80px] w-full h-auto mx-auto mt-10 p-10 joband-shadow bg-white
+            lg:mt-20 lg:rounded-[100px]">  
   <div class=" h-[200px] w-[200px] relative lg:my-10">
     <%= render "shared/avatar", model: @profile  %>
   </div>
@@ -13,7 +13,6 @@
     </div>
 
   </div>
-
 
   <div class="flex flex-wrap justify-center mb-5">
     <% @profile.instruments.each do |instrument| %>
@@ -62,9 +61,6 @@
       </div>
     </div>
     <div class="mt-5">
-      <% if policy(@profile).profile? %>
-        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
-      <% end %>
       <% if policy(@profile).update? %>
         <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
       <% end %>
