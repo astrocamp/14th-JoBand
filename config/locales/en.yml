@@ -20,6 +20,12 @@ en:
       user:
         password: "Password"
         password_confirmation: "Password confirmation"
+
+  notifications:
+    resume_list_notification:
+      message: "You have new apply for recruit"
+      no_notifications: "No notifications yet"
+
   user:
     sign_up: "Sign Up"
     display_name: "Display Name"

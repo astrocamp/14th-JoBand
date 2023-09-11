@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     const { id, liked } = this.element.dataset;
     this.id = id;
-    this.liked = liked === "true";
+    this.liked = liked;
   }
 
   toggle(e) {
@@ -23,7 +23,7 @@ export default class extends Controller {
       },
     })
       .then((resp) => {
-        return resp.json()
+        return resp.json();
       })
       .then(({ liked, likeCount }) => {
         this.liked = liked;

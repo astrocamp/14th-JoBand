@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   around_action :switch_locale
+  before_action :set_notifications, if: :current_user
   include Pundit::Authorization
 
   def user_not_authorized
@@ -22,5 +23,11 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def set_notifications
+    notifications = Notification.includes(:recipient).where(recipient: current_user).newest_first.limit(5)
+    @unread = notifications.unread
+    @read = notifications.read
   end
 end
