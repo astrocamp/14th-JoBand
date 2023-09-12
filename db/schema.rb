@@ -137,16 +137,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
     t.index ["user_id"], name: "index_like_logs_on_user_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "amount"
-    t.text "note"
-    t.string "tracking_number"
-    t.bigint "user_id"
-    t.bigint "band_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["band_id"], name: "index_orders_on_band_id"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   create_table "notifications", force: :cascade do |t|
     t.string "recipient_type", null: false
     t.bigint "recipient_id", null: false
@@ -157,6 +147,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
     t.datetime "updated_at", null: false
     t.index ["read_at"], name: "index_notifications_on_read_at"
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "amount"
+    t.text "note"
+    t.string "tracking_number"
+    t.bigint "user_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_orders_on_band_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -187,8 +189,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.string "slug"
-    t.index ["slug"], name: "index_profiles_on_slug", unique: true
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
