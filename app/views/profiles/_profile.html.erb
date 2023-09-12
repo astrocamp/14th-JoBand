@@ -1,5 +1,5 @@
 <%= link_to profile_path(profile),class:'lg:flex' do %>
-  <div class="mx-auto lg:flex lg:flex-wrap lg:justify-evenly items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#c8c8c8] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0 ">
+  <div class="mx-auto lg:flex lg:flex-wrap lg:justify-evenly items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#D9D9D9] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0 relative ">
     <div class="ml-[60px] w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative">
       <%= render "shared/avatar", model: profile  %>
     </div>
@@ -16,12 +16,12 @@
       </p>
       <div class="flex w-full mt-4 justify-evenly lg:justify-start">
         <% if profile.location.present? %>
-          <p class=" z-[1] mr-5 joband-tag-location">
+          <p class="z-[1] mr-5 joband-tag-location">
             <%= profile.location %>
           </p>
         <% end %>
         <% if profile.seniority.present? %>
-          <p class="z-[1] joband-tag-seniority">
+          <p class="z-[1] joband-tag-style">
             <%= profile.seniority %>
           </p>
         <% end %>
@@ -31,6 +31,5 @@
     <div class="mx-auto w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] flex justify-center items-center">
       <%= render "/shared/instrument", instrument: profile.default_instrument(profile) %>
     </div>
-
   </div>
 <% end %>

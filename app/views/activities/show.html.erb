@@ -29,8 +29,8 @@
   <div class="mx-auto mt-12 mb-5 text-center w-35">
     <% if policy(@activity).update? %>
       <div class="mb-6">
-        <%= link_to '更新', edit_activity_path(@activity), class: "joband-tag-location" %>
-        <%= link_to '刪除', activity_path(@activity), 
+        <%= link_to '修改活動資料', edit_activity_path(@activity), class: "joband-action-btn mx-2" %>
+        <%= link_to '刪除活動資料', activity_path(@activity), 
                               data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
                               class: "joband-action-btn mx-2" %>
       </div>

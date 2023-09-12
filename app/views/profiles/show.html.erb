@@ -6,11 +6,6 @@
 
   <div class="w-full font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
     <%= @profile.user.name %>
-    <div class="my-5">
-      <% if policy(@profile).profile? %>
-        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn'%>
-      <% end %>
-    </div>
 
   </div>
 
@@ -34,7 +29,7 @@
     <p class="w-full h3">簡介：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
-    <div class="center flex-wrap w-full ">
+    <div class="flex-wrap w-full center ">
       <%= render 'band' %>
     </div>
     <span class="w-full joband-line-bk"></span>
@@ -61,6 +56,11 @@
       </div>
     </div>
     <div class="mt-5">
+
+      <% if policy(@profile).profile? %>
+        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
+      <% end %>
+
       <% if policy(@profile).update? %>
         <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
       <% end %>
