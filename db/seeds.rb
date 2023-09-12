@@ -48,7 +48,7 @@ fakewords = [
   fakerpassword = '123123123'
   fakerphone = Faker::PhoneNumber.phone_number
   fakerlocation = Faker::Address.state
-  fakerseniority = rand(1..20).to_s
+  fakerseniority = rand(0..7)
   fakercontent = fakewords.sample
 
   user = User.create!(
@@ -92,7 +92,7 @@ demo_user = User.create!(
 demo_profile = demo_user.create_profile(
   phone: '3345678',
   location: 'Los Angeles',
-  seniority: '20',
+  seniority:  3,
   content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
 )
 
@@ -100,9 +100,9 @@ demo_profile.instruments << Instrument.find_by(name: '主唱')
 
 demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
   name: "大貓會社",
-  area: "North",
+  area: 0,
   content: "你好～歡迎參觀我的樂團",
-  state: "active",
+  state: 0,
   founded_at: "2023-09-01"
 )
 
