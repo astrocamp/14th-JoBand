@@ -5,9 +5,9 @@
         <div class="relative items-center w-10 joband-shadow">
           <%= image_tag "icon/bell.svg", width: "30", height: "30" %>
           <% if @unread.count > 0 %>
-            <!--<div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
               <%= @unread.count >= 9 ? "9+" : @unread.count %>
-            </div>-->
+            </div>
           <% end %>
         </div>
       </summary>
