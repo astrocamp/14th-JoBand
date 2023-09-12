@@ -12,6 +12,18 @@
       <% end %>
 
       <%= render "posts/controls", post: post %>
+
+      <div class="pl-2" data-comments-target="content" data-link-id="<%= post.id %>" style="display: none;">
+        <%= form_with(model: [post, @comment], data: { turbo: false }) do |f| %>
+          <div>
+            <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
+          </div>
+          <div class='mb-2 mt-3'>
+            <%= f.submit '送出留言', class: 'joband-tag-location text-sm'%>
+          </div>
+        <% end %>
+        <%= render "comments/comment_post", comments: post.comments, post: post %>
+      </div>
     </div>
   </div>
 </div>

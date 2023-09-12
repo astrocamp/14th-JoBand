@@ -46,11 +46,13 @@
     </div>
 
     <!-- show -->
-    <%= turbo_frame_tag "post" do %>
-      <% @posts.each do |post| %>
-        <%= render partial: "posts/posts", locals: { post: post } %>
+    <div data-controller='comments'>
+      <%= turbo_frame_tag "post" do %>
+        <% @posts.each do |post| %>
+          <%= render partial: "posts/posts", locals: { post: post } %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <%= turbo_frame_tag Post.new do %>
       <% if Post.all.none? %>
         <%= render "empty", post: @post %>
