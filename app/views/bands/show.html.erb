@@ -1,63 +1,64 @@
-<div class="flex flex-wrap justify-center h-auto mx-auto overflow-hidden joband-shadow bg-white
-            lg:w-[80%] lg:mt-20 lg:rounded-[100px]">  
-  <section class="relative w-full h-[200px] overflow-hidden mb-10 lg:h-[500px]">
+<div class="flex-wrap center w-full h-auto mx-auto overflow-hidden joband-shadow bg-white
+            lg:w-[75%] lg:mt-20 lg:rounded-[80px]">
+  <div class="relative w-full h-[200px] overflow-hidden lg:h-[500px]">
     <%= render "shared/banner", model: @band  %>
-  </section>
-  <div class="my-5 w-[100px] h-[100px] lg:h-[200px] lg:w-[200px] relative">
-    <%= render "shared/avatar", model: @band  %>
   </div>
-  <section class="flex flex-wrap justify-center w-full mb-5">
-    <p class="z-[1] shadow-md joband-tag-state mb-5">
+  <div class="my-10 w-[150px] h-[150px] lg:h-[200px] lg:w-[200px] relative">
+    <%= render "shared/avatar", model: @band  %>
+    <p class="absolute joband-tag-state z-[1] right-[-10px] bottom-0 drop-shadow-xl">
       <%= @band.state %>
     </p>
-    <h1 class="w-full mb-5 font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
-      <%= @band.name %>
-    </h1>
+  </div>
 
-    <%= link_to new_band_order_path(@band), class: "btn" do %>
-        <%= image_tag "icon/beer.svg", alt: t("order.beer")%>
-      <% end %>
-
-    <% if @band.recruit.present? %>
-      <%= link_to '查看招募資訊', recruit_path(@band.recruit), class: "joband-hover-style text-xl mx-2"%>
-    <% else %>
-      <% if current_user === band_leader %>
-        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-hover-style text-xl" %>
-      <% end %>
-    <% end %>
+  <section class="flex flex-wrap justify-center w-full mb-5">
     
-    <% if @band.activities.present? %>
-      <%= link_to '查看活動', band_activities_path(@band), class:'joband-hover-style text-xl mx-2' %>
-    <% end %>  
-
-  </section>
-  <div class="flex flex-wrap justify-center mb-5">
-    <% if @band.styles.present? %>
-      <% @band.styles.each do |style| %>
-        <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:w-[100px] lg:h-[100px] ">
-          <%= render "style", style: style %>
+    <div class="w-full my-5 lg:my-10 center">
+      <h1 class="flex items-center mx-2 font-semibold text-center h1 joband-shadow joband-text-bk">
+        <%= @band.name %>
+      </h1>
+      <%= link_to new_band_order_path(@band), class: "center joband-beer-btn" do %>
+        <div class="w-6 h-6 center">
+          <%= image_tag "icon/beer.svg", alt: t("order.beer")%>
         </div>
       <% end %>
-    <% else %>
-      <div class="relative flex flex-wrap justify-center w-[100px] h-[100px]">
-        <%= render "freestyle" %>
+    </div>
+    
+  </section>
+  
+  <div class="flex flex-wrap w-full px-1 mb-10 center">
+    <% @band.styles.each do |style| %>
+      <div class="w-[80px] h-[80px] flex relative mx-2 my-2 lg:w-[100px] lg:h-[100px] ">
+        <%= render "style", style: style %>
       </div>
     <% end %>
   </div>
+
+    <% if @band.recruit.present? %>
+      <%= link_to '查看招募', recruit_path(@band.recruit), class: "joband-info-btn mx-1"%>
+    <% else %>
+      <% if current_user === band_leader %>
+        <%= link_to "建立招募", new_band_recruit_path(@band), class: "joband-info-btn mx-1" %>
+      <% end %>
+    <% end %>
+    <% if @band.activities.present? %>
+      <%= link_to '查看活動', band_activities_path(@band), class:'joband-info-btn mx-1' %>
+    <% end %>  
     
-  <div class="flex flex-wrap justify-center w-full px-5 mt-5 joband-text-bk lg:px-40">
+  <div class="flex flex-wrap w-full p-16 px-8 lg:px-32 joband-text-bk">
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">創立時間：<%= @band.founded_at %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">地區：<%= @band.area %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">介紹：<%= @band.content %></p>
+    <p class="w-full h3">介紹：</p>
+      <div class="my-5">
+        <%= @band.content %>
+      </div>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">成員：</p>
-    <div class="flex-wrap w-full my-5 center ">
+    <div class="flex flex-wrap w-full my-5">
       <%= render @band_members %>
     </div>
-    
     <span class="w-full joband-line-bk"></span>
     <div class="flex flex-col w-full my-3">
       <div class="w-full my-3">
@@ -81,16 +82,17 @@
         <% end %>
       </div>
     </div>
-    <div class="flex flex-wrap justify-center mb-8">
-      <% if user_signed_in? && policy(@band).update? %>
-        <div class="flex w-full align-middle">
-          <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
-            <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-2' %>
-          <% end %>
-          <%= link_to '修改樂團資料', edit_band_path(@band), class:"joband-action-btn mx-2" %>
-        </div>
-      <% end %>  
+    <div class="w-full center">
+      <div class="flex justify-center">
+        <% if user_signed_in? && policy(@band).update? %>
+          <div class="flex w-full align-middle">
+            <% if current_user&.id === @band.band_members.find_by(identity: :leader).user_id %>
+              <%= link_to '創建活動', new_band_activity_path(@band), class:'joband-action-btn mx-2' %>
+            <% end %>
+            <%= link_to '修改樂團資料', edit_band_path(@band), class:"joband-action-btn mx-2" %>
+          </div>
+        <% end %>  
+      </div>
     </div>
-
   </div>
 </div>

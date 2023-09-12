@@ -102,6 +102,10 @@
   opacity: 0;
 }
 
+.trix-content {
+  font-size: 1.25rem;
+}
+
 /* 播放器自定義 */
 .custom-audio-player {
   border: 2px solid transparent;
