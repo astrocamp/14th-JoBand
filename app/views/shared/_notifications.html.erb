@@ -6,13 +6,14 @@
           <%= image_tag "icon/bell.svg", width: "30", height: "30" %>
           <% if @unread.count > 0 %>
             <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
-              <%= @unread.count >= 9 ? "9+" : @unread.count %>
+              <!-- 使用紅點代替數字，如果沒有未讀通知則不顯示紅點 -->
+              <%= content_tag(:div, '', class: 'red-dot') %>
             </div>
           <% end %>
         </div>
       </summary>
       <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-        <% @unread.each do |notification| %>
+        <% @unread.take(5).each do |notification| %>
           <%= render 'shared/notification', notification: notification %>
         <% end %>
         <% if @read.count > 0 && @unread.count > 0 %>
@@ -31,7 +32,5 @@
     </details>
   </li>
 <% end %>
-
-
 
 
