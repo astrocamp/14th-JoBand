@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     const { id, liked } = this.element.dataset;
     this.id = id;
-    this.liked = liked;
+    this.liked = liked === "true";
   }
 
   toggle(e) {
