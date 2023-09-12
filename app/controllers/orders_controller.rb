@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.generate_tracking_number()
     if @order.save
-      redirect_to band_order_path(@order, @order), notice: "啤酒裝箱中！"
+      redirect_to band_order_path(@band, @order), notice: "啤酒裝箱中！"
     else
       flash.now[:alert] = "交易失敗，請再試一次"
       puts @order.errors.full_messages
