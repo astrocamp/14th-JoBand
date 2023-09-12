@@ -5,8 +5,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.build(comment_params)
-
-
     @comments = @commentable.comments
 
   if @comment.save
@@ -19,7 +17,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    comment_route()
+    comment_delete()
   end
 
   private
@@ -45,10 +43,22 @@ class CommentsController < ApplicationController
       redirect_to posts_path, notice: '留言成功'
     elsif
       @commentable.is_a?(Activity)
-      redirect_to activity_path, notice: '留言成功'
+      redirect_to activity_path(@commentable), notice: '留言成功'
     elsif
       @commentable.is_a? (ResumeList)
-      redirect_to resume_list_path, notice: '留言成功'
+      redirect_to resume_list_path(@commentable), notice: '留言成功'
+    end  
+  end  
+
+    def comment_delete
+    if @commentable.is_a?(Post)
+      redirect_to posts_path, notice: '刪除成功'
+    elsif
+      @commentable.is_a?(Activity)
+      redirect_to activity_path(@commentable), notice: '刪除成功'
+    elsif
+      @commentable.is_a? (ResumeList)
+      redirect_to resume_list_path(@commentable), notice: '刪除成功'
     end  
   end  
 end
