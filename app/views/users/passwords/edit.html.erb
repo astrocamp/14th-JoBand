@@ -1,30 +1,31 @@
-<div class="bg-dark rounded-md px-10 py-5 flex-wrap w-60%">
-  <header class="block w-100% text-white">
-    <h2 class="h2"><%= t("user.change_your_password")%></h2>
+<div class="px-5 py-5 mx-auto mt-10 bg-white rounded-lg joband-shadow flex-warp theme-text w-fit">
+  <header class="block font-bold text-center">
+    <h2 class="h2 joband-text-bk"><%= t("user.change_your_password")%></h2>
   </header>
+  <div class="card-body">
+    <div class="block mx-auto w-fit">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource, class: "font-bold joband-text-bk" %>
+        <%= f.hidden_field :reset_password_token %>
 
-  <div class="block mx-auto w-100%">
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
-      <%= f.hidden_field :reset_password_token %>
+        <div class="my-3 field">
+          <%= f.label :password, t("user.new_password"), class: "font-bold joband-text-bk" %><br />
+          <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: t("user.min_password_placeholder"), class: "input input-bordered mb-3" %>
+        </div>
 
-      <div class="my-2 field">
-        <%= f.label :password, t("user.new_password"), class: "text-white" %><br />
-        <%= f.password_field :password, autofocus: true, autocomplete: "new-password", placeholder: t("user.min_password_placeholder") %>
-      </div>
+        <div class="my-3 field">
+          <%= f.label :password_confirmation, t("user.confirm_new_password"), class: "font-bold joband-text-bk" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("user.password_confirmation_placeholder"), class: "input input-bordered mb-3" %>
+        </div>
 
-      <div class="my-2 field">
-        <%= f.label :password_confirmation, t("user.confirm_new_password"), class: "text-white" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t("user.password_confirmation_placeholder") %>
-      </div>
+        <div class="mt-5 form-control">
+          <%= f.submit t("user.change_your_password"), class: "joband-action-btn" %>
+        </div>
+      <% end %>
+    </div>
 
-      <div class="actions">
-        <%= f.submit t("user.change_your_password"), class: "btn" %>
-      </div>
-    <% end %>
-  </div>
-
-  <div class="text-white aside-info">
-    <%= render "users/shared/links" %>
+    <div class="my-3 form-control">
+      <%= render "users/shared/links" %>
+    </div>
   </div>
 </div>
