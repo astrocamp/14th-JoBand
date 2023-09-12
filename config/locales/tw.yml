@@ -150,8 +150,8 @@ tw:
         
     submit:
       band: 
-        create: 建立樂團資料
-        update: 更新樂團資料
+        create: 建立樂團
+        update: 更新樂團
       recruit:
         create: 開始徵人
         update: 更新內容
