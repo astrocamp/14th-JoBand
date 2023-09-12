@@ -9,9 +9,17 @@
     </div>
   </li>
   <li>
-    <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-sky-50">
-      <%= image_tag "icon/comment.svg" %>
-    </div>
+
+            <div class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
+              <a href="#" class="flex items-center">
+                <%= image_tag "icon/comment.svg" %>
+                <% if post.comments.any? %>
+                  <div class="comment-count ml-1">
+                  <%= post.comments.count %>
+                  </div>
+                <% end %>
+              </a>
+            </div>
   </li>
   <li>
     <% if policy(post).destroy? %>
