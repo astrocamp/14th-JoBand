@@ -9,17 +9,22 @@ en:
               too_long: "is too long"
             password_confirmation:
               confirmation: "does not match"
+            current_password:
+              blank: "can't be blank"
+              invalid: "does not match, please try again"
             email:
               taken: "has been taken"
         band:
           attributes:
             name:
-              blank: "Cant Be Blank "
+              blank: "Can't Be Blank "
               taken: "Has Been taken"
+
     attributes:
       user:
         password: "Password"
         password_confirmation: "Password confirmation"
+      current_password: "Current password"
 
   notifications:
     resume_list_notification:

@@ -6,9 +6,9 @@
     <div class="flex flex-wrap justify-center w-full mb-5 field">
       <input type="text" placeholder="<%= @current_user.email %>" class="w-full max-w-xs input input-bordered" disabled /><br/>
       <% if current_user.confirmed? %>
-        <span class="w-full my-2 text-center text-lime-400"> Email 已驗證</span>
+        <span class="w-full my-2 font-bold text-center text-lime-400"> Email 已驗證</span>
       <% else %>  
-        <span class="w-full my-2 text-center text-orange-400"> Email 尚未驗證</span><br/>
+        <span class="w-full my-2 font-bold text-center text-orange-400"> Email 尚未驗證</span><br/>
         <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
           <%= link_to t("user.not_receive_confirm"), new_confirmation_path(resource_name), class: "link" %><br />
         <% end %>
@@ -18,8 +18,8 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
       <div class="mb-5 field">
-        <%= f.label :name, t("user.display_name"),class: "text-white" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: :off, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+        <%= f.label :name, t("user.display_name"),class: "joband-text-bk font-bold" %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: :off, class: "focus:joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs py-3" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -27,23 +27,25 @@
       <% end %>
 
       <div class="mb-5 field">
-        <%= f.label :password, t("user.new_password"), class: "text-white" %> <br />
-        <%= f.password_field :password, placeholder: t("user.min_password_placeholder"),autocomplete: "new-password", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
-        <br /><i class="block my-2 joband-text-bk"><%= t("user.leave_blank") %></i>
+        <%= f.label :password, t("user.new_password"), class: "label-text joband-text-bk font-bold" %> <br />
+        <%= f.password_field :password, placeholder: t("user.min_password_placeholder"),autocomplete: "new-password", class: "focus:joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+        <br /><i class="block my-2 text-sm joband-text-bk"><%= t("user.leave_blank") %></i>
       </div>
 
       <div class="mb-5 field">
-        <%= f.label :password_confirmation, t("user.password_confirmation"), class: "text-white" %><br />
-        <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+        <%= f.label :password_confirmation, t("user.password_confirmation"), class: "label-text joband-text-bk font-bold" %><br />
+        <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "focus:joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
       </div>
 
       <div class="mb-5 field">
-        <%= f.label :current_password, t("user.current_password"), class: "text-white" %><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+        <%= f.label :current_password, t("user.current_password"), class: "label-text joband-text-bk font-bold" %><br />
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "focus:joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
         <br /><i class="block my-2 joband-text-bk"><%= t("user.need_current_password") %></i>
       </div>
+        <%= link_to t("user.forgot_password"), new_password_path(resource_name), class: "link joband-text-bk" %><br />
       <div class="flex justify-center w-full">
-        <%= f.submit t("user.update"), class: "joband-action-btn" %>
+        <%= f.submit t("user.update"), class: "joband-hover-style my-5" %>
+        <%= button_to "返回", root_path, class: "ml-auto joband-reject-btn my-5" %>
       </div>
     <% end %>
   </div>

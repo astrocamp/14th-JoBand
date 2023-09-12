@@ -1,8 +1,8 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-turbo-cache="false">
+  <div id="error_explanation" data-turbo-cache="false", class="font-bold joband-text-bk">
     <ul>
       <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+        <li><% flash.now[:alert] = message %></li>
       <% end %>
     </ul>
   </div>

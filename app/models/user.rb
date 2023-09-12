@@ -8,7 +8,6 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[google_oauth2]
 
   # validates
-  validates :password, presence: true, length: { in: 8..16 }
   validates :email, presence: true, format: { with: Devise.email_regexp }
 
   # associations
