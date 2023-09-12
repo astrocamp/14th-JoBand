@@ -10,23 +10,13 @@
           <% end %>
         </li>
       <% if user_signed_in? %>
-        <% if current_user.profile.present?%>
-          <li>
-            <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
-              <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-                <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
-              </div>
-            <% end %>
-          </li>
-        <% else %>
-          <li>
-            <%= link_to new_profile_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
-              <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-                <%= image_tag "icon/plus.svg" %><span class= "ml-4 theme-text" ><%= t("post.add_profile") %></span>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
+        <li>
+          <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
+            <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+              <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
+            </div>
+          <% end %>
+        </li>
         <% if current_user&.bands.present? %>
           <% current_user.bands.each do |band| %>
             <li>
@@ -49,72 +39,18 @@
     </div>
   </div>
   <div class="lg:col-span-6 border-x theme-border">
-  
+
     <!-- new -->
     <div class="mb-8">
       <%= render 'new', post: @post %>
     </div>
 
     <!-- show -->
-    <div data-controller="comments">
-      <%= turbo_frame_tag "post" do %>
-        <% @posts.each do |post| %>
-          <div class="px-4 border-2 border-b border-x-0">
-            <div class="flex justify-between">
-              <%= link_to post.user.name, "#", class: "text-blue-500 hover:underline" %>
-              <em class="inline-block pr-10 text-xs"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
-            </div>
-            <article class= "theme-text">
-              <%= post.body %>
-            </article>
-            <div class="flex justify-evenly">
-              <!-- 按♥ -->
-              <div class="btn btn-ghost">
-                  <div data-controller="like" 
-                    data-liked="<%= current_user.liked?(post) %>" 
-                    data-id="<%= post.id %>">
-                  <div class="flex">
-                    <button data-like-target="likeBtn" data-action="click->like#toggle"></button>
-                    <span data-like-target="count" class="mx-2">
-                    <%= post.like_logs.count %>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <!-- ♡ -->
-            <div class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
-              <a href="#" class="flex items-center">
-                <%= image_tag "icon/comment.svg" %>
-                <% if post.comments.any? %>
-                  <div class="comment-count ml-1">
-                  <%= post.comments.count %>
-                  </div>
-                <% end %>
-              </a>
-            </div>
-              <% if user_signed_in? %>
-                <% if current_user.id == post.user.id %>
-                  <%= link_to post_path(post.id), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
-                    <%= image_tag "icon/del.svg" %>
-                  <% end %>
-                <% end %>
-              <% end %>
-            </div>
-           <div class="pl-2" data-comments-target="content" data-link-id="<%= post.id %>" style="display: none;">
-              <%= form_with(model: [post, @comment], data: { turbo: false }) do |f| %>
-                <div>
-                  <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
-                </div>
-                <div class='mb-2 mt-3'>
-                  <%= f.submit '送出留言', class: 'joband-tag-location text-sm'%>
-                </div>
-              <% end %>
-              <%= render "comments/comment_post", comments: post.comments, post: post %>
-            </div>
-          </div>
-        <% end %>
+    <%= turbo_frame_tag "post" do %>
+      <% @posts.each do |post| %>
+        <%= render partial: "posts/posts", locals: { post: post } %>
       <% end %>
-    </div>
+    <% end %>
     <%= turbo_frame_tag Post.new do %>
       <% if Post.all.none? %>
         <%= render "empty", post: @post %>
