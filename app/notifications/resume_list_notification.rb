@@ -20,17 +20,7 @@ class ResumeListNotification < Noticed::Base
   def message
     t(".message")
   end
-  # def message
-  #   @band = Band.find(params[:resume_list][:band_slug])
-  #   @reseme_list = ResumeList.find(params[:resume_list][:id])
-  #   @user = User.find(@reseme_list.user_id)
 
-  #   email_username = @user.email.split('@').first
-
-  #   "#{email_username} 申請加入 #{@recruit.title.truncate(10)}"
-    
-  # end
-  #
   def url
     recruit_path(params[:band].recruit)
   end
