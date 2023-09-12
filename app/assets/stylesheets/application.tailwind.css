@@ -62,13 +62,22 @@
   @apply cursor-pointer select-none rounded-md
 } */
 
-.joband-hover-style {
-  @apply h3 bg-[#4aceca] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#4aceca] hover:duration-300 joband-shadow
-}
+
+/* btn */
 
 .joband-action-btn {
-  @apply h3 bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
+  @apply h4 lg:text-xl bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
+
+.joband-beer-btn {
+  @apply items-center w-10 h-10 rounded-xl bg-[#ffba19] hover:bg-[#ffd571]
+}
+
+.joband-info-btn {
+  @apply h4 lg:text-xl bg-[#5ba4ee] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#7cb4eb] hover:duration-300 joband-shadow
+}
+
+
 
 .joband-reject-btn {
   @apply h3 bg-[#ec4040] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
@@ -88,7 +97,7 @@
 }
 
 .joband-tag-state{
-  @apply bg-[#ffba19] rounded-full px-4 py-2 text-white select-none shadow-inner
+  @apply bg-[#F46A5B] rounded-full px-4 py-2 text-white select-none shadow-inner
 }
 
 /* (hover-btn) */
