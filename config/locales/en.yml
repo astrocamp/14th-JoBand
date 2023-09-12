@@ -67,6 +67,7 @@ en:
   post:
     lobby: "Lobby"
     profile: "Profile"
+    add_profile: "Create My File"
     add_band: "Add a Band"
     post_holder: "What's on your mind?"
     empty: "Say hello to everyone!"

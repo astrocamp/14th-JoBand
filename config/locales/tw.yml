@@ -68,7 +68,8 @@ tw:
   post:
     lobby: "大廳"
     profile: "個人檔案"
-    add_band: "新增一個樂團"
+    add_profile: "新建個人檔案"
+    add_band: "加入一個樂團"
     post_holder: "在想些什麼？"
     empty: "跟大家打聲招呼吧！"
   devise:

@@ -10,13 +10,23 @@
           <% end %>
         </li>
       <% if user_signed_in? %>
-        <li>
-          <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
-            <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
-            </div>
-          <% end %>
-        </li>
+        <% if current_user.profile.present?%>
+          <li>
+            <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
+              <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+                <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
+              </div>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to new_profile_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
+              <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
+                <%= image_tag "icon/plus.svg" %><span class= "ml-4 theme-text" ><%= t("post.add_profile") %></span>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
         <% if current_user&.bands.present? %>
           <% current_user.bands.each do |band| %>
             <li>

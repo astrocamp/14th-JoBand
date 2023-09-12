@@ -15,7 +15,7 @@
   </li>
   <li>
     <% if policy(post).destroy? %>
-      <%= button_to post_path(post), data: { turbo_method: "delete", turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
+      <%= button_to post_path(post), method: "delete", data: { turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
         <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50">
           <%= image_tag "icon/del.svg" %>
         </div>
