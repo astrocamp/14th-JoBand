@@ -10,14 +10,14 @@
   </li>
   <li>            
     <span class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
-              <a href="#" class="flex items-center">
-                <%= image_tag "icon/comment.svg" %>
-                <% if post.comments.any? %>
-                  <div class="comment-count ml-1">
-                    <%= post.comments.count %>
-                  </div>
-                <% end %>
-              </a>
+      <a href="#" class="flex items-center">
+      <%= image_tag "icon/comment.svg" %>
+      <% if post.comments.any? %>
+        <div class="comment-count ml-1">
+          <%= post.comments.count %>
+        </div>
+      <% end %>
+      </a>
     </span>
   </li>
   <li>
