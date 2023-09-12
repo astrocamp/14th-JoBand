@@ -1,0 +1,37 @@
+<% if current_user %>
+  <li class="flex align-middle">
+    <details class="flex items-center mx-5 cursor-pointer theme-text dropdown dropdown-bottom dropdown-end">
+      <summary class="block relative">
+        <div class="relative items-center w-10 joband-shadow">
+          <%= image_tag "icon/bell.svg", width: "30", height: "30" %>
+          <% if @unread.count > 0 %>
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
+              <%= @unread.count >= 9 ? "9+" : @unread.count %>
+            </div>
+          <% end %>
+        </div>
+      </summary>
+      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+        <% @unread.each do |notification| %>
+          <%= render 'shared/notification', notification: notification %>
+        <% end %>
+        <% if @read.count > 0 && @unread.count > 0 %>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+        <% elsif @read.count + @unread.count == 0 %>
+        <li class="dropdown-item">
+          <%= t('目前沒有任何通知') %>
+        </li>
+        <% end %>
+        <% @read.each do |notification| %>
+          <%= render 'shared/notification', notification: notification %>
+        <% end %>
+      </ul>
+    </details>
+  </li>
+<% end %>
+
+
+
+

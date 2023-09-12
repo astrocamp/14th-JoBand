@@ -23,7 +23,7 @@ export default class extends Controller {
       },
     })
       .then((resp) => {
-        return resp.json()
+        return resp.json();
       })
       .then(({ liked, likeCount }) => {
         this.liked = liked;
