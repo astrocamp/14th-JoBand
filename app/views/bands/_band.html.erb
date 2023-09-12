@@ -1,88 +1,37 @@
-<%= link_to band_path(band),class:'lg:flex hidden' do %>
-  <div class="lg:flex lg:flex-wrap lg:justify-evenly lg:items-center w-[300px] h-auto lg:w-[1000px] lg:h-[300px] bg-[#D9D9D9] rounded-[60px] joband-shadow mb-14 p-5 lg:p-0
-              hidden ">
+<%= link_to band_path(band),class:'lg:flex lg:mb-14' do %>
 
-    <div class="ml-[60px] lg:w-[200px] lg:h-[200px] relative">
+  <div class="lg:flex items-center w-[300px] h-[500px] lg:w-[1000px] lg:h-[300px] bg-[#D9D9D9] rounded-[80px] joband-shadow p-5 my-10 lg:my-5 relative ">
+
+    <div class="mx-auto w-[150px] h-[150px] lg:w-[200px] lg:h-[200px] relative">
       <%= render "shared/avatar", model: band  %>
     </div>
 
     <div class="w-full lg:w-[450px] flex flex-wrap p-5">
+      
       <p class="w-full font-semibold text-center lg:text-left joband-text-bk h2 joband-shadow">
         <%= band.name %>
       </p>
-
-      <p class="w-full h-[50px] h4 mt-5 joband-text-bk hidden lg:block">
+      <p class="w-full h-[70px] h4 mt-5 joband-text-bk hidden lg:block">
         <%= band.content.body.to_plain_text.truncate(45) %>
       </p>
-      <div class="flex flex-wrap w-full mt-4 justify-evenly lg:justify-start">
-        <p class=" z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-location">
+      <p class="w-full h-[70px] h4 mt-5 joband-text-bk text-center block lg:hidden">
+        <%= band.content.body.to_plain_text.truncate(25) %>
+      </p>
+
+      <div class="flex w-full justify-evenly lg:justify-start">
+        <p class="joband-tag-location lg:mr-5">
           <%= band.area %>
         </p>
-        <p class="z-[1] mx-auto lg:mx-0 lg:mr-5 joband-tag-state">
+        <p class="joband-tag-state">
           <%= band.state %>
         </p>
       </div>
+
     </div>
 
-    <div class="w-[100px] h-[100px] mx-auto lg:w-[150px] lg:h-[150px] flex justify-center items-center">
-      <% if band.styles.present? %>
-        <div class="w-h-full lg:w-[150px] lg:h-[150px] flex relative">
-          <%= render "bands/style", style: band.styles.first %>
-        </div>
-      <% else %>
-        <div class="relative flex flex-wrap justify-center w-h-full">
-          <%= render "bands/freestyle" %>
-        </div>
-      <% end %>
+    <div class="mx-auto w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] flex justify-center items-center">
+      <%= render "bands/style", style: band.styles.first %>
     </div>
 
-  </div>
-<% end %>
-
-
-<%# ---------------------手機版------------------- %>
-<%= link_to band_path(band),class:'lg:hidden' do %>
-  <div class="mx-auto items-center w-[300px] h-auto  bg-[#bdcbd2] rounded-[60px] joband-shadow my-14 p-5 lg:hidden">
-    <div class="flex flex-wrap w-full p-5 ">
-      <div class="flex">
-        <div class="mx-auto w-[80px] h-[80px] relative center flex-col">
-          <%= render "shared/avatar", model: band  %>
-        </div>
-        <div class="center flex-col ml-1 flex w-[160px]">
-          <p class="w-full font-semibold text-center joband-text-bk h2 joband-shadow">
-            <%= band.name %>
-          </p>
-        </div>
-      </div>
-  
-      <p class="block w-full mt-5 text-center joband-text-bk ">
-        <%= band.content.body.to_plain_text.truncate(40) %>
-      </p>
-      <div class="flex flex-wrap w-full mt-4 justify-evenly">
-      
-        <div class="w-[100px] h-[100px] mx-auto  flex justify-center items-center ">
-          <% if band.styles.present? %>
-            <div class="relative flex w-h-full ">
-              <%= render "bands/style", style: band.styles.first %>
-            </div>
-          <% else %>
-            <div class="relative flex flex-wrap justify-center w-h-full">
-              <%= render "bands/freestyle" %>
-            </div>
-          <% end %>
-        </div>
-  
-        <div class="flex-col center">
-          <div class=" z-[1] text-center joband-tag-location mb-1">
-            <%= band.area %>
-          </div>
-          <div class="z-[1] text-center joband-tag-state mt-1">
-            <%= band.state %>
-          </div>
-        </div>
-  
-      </div>
-  
-    </div>
   </div>
 <% end %>
