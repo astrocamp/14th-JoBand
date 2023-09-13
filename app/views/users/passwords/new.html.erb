@@ -9,15 +9,15 @@
 
         <div class="my-3 field">
           <%= f.label :email, class: "font-bold joband-text-bk" %><br />
-          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3", required: true %>
+          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3 mt-1", required: true %>
         </div>
 
-        <div class="mt-5 form-control">
+        <div class="my-5 form-control">
           <%= f.submit t("user.forgot_password_submit"), class: "joband-action-btn" %>
         </div>
       <% end %>
     </div>
-    <div class="my-3 form-control">
+    <div class="form-control">
       <%= render "users/shared/links" %>
     </div>
   </div>

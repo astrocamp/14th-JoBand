@@ -8,16 +8,16 @@
         <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="my-3 field">
-          <%= f.label :email, class: "font-bold joband-text-bk" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "email@example.com", class: "input input-bordered mb-3", required: true %>
+          <%= f.label :email, class: "font-bold joband-text-bk mb-1" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), placeholder: "email@example.com", class: "input input-bordered mb-3 mt-1", required: true %>
         </div>
 
-        <div class="mt-5 form-control">
+        <div class="my-5 form-control">
           <%= f.submit t("user.resend_button"), class: "joband-action-btn" %>
         </div>
       <% end %>
     </div>
-    <div class="my-3 form-control">
+    <div class="form-control">
       <%= render "users/shared/links" %>
     </div>
   </div>
