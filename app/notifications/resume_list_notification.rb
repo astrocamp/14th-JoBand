@@ -22,14 +22,11 @@ class ResumeListNotification < Noticed::Base
   end
 
   def url
-    resume_list_path(params[:band].recruit)
+    resume_list_path(params[:ResumeList])
   end
   # def url
   #   band_path(Band.find(params[:resume_list][:band_slug]))
   # end
 
 
-  # def url
-  #   article_path(Article.find(params[:comment][:article_id]))
-  # end
 end
