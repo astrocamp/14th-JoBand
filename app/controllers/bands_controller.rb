@@ -24,15 +24,16 @@ class BandsController < ApplicationController
     @user = current_user
     authorize @band
     if @user.band_members.count < 5
-      @band.save
-      @band.band_members.create(user: @user, identity: :leader, role: @role)
-      redirect_to band_path(@band), notice: '成功創立樂團'
-    elsif @user.band_members.count >= 5
+      if @band.save
+        @band.band_members.create(user: @user, identity: :leader, role: @role)
+        redirect_to band_path(@band), notice: '成功創立樂團'
+      else
+        flash.now[:alert] = '創建失敗，請檢查輸入。'
+        render :new 
+      end
+    else @user.band_members.count >= 5
       @band.errors.add(:base, '最多只能擁有5個樂團。')
       flash.now[:alert] = '最多只能擁有5個樂團。'
-      render :new
-    else
-      flash.now[:alert] = '創建失敗，請檢查輸入。'
       render :new
     end
   end

@@ -5,6 +5,7 @@ class Band < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
 
+  validates :style_ids, presence: true
   validates :name, presence: true, uniqueness: true
 
   # associations
