@@ -4,12 +4,12 @@
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="my-3 field">
             <%= f.label :email, class: "font-bold joband-text-bk" %><br />
-            <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3" %>
+            <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "input input-bordered mb-3 mt-1" %>
           </div>
 
           <div class="my-3 field">
             <%= f.label :password, t("user.password"), class: "font-bold joband-text-bk" %><br />
-            <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password", class: "input input-bordered mb-3" %>
+            <%= f.password_field :password, placeholder: t("user.password"),autocomplete: "current-password", class: "input input-bordered mb-3 mt-1" %>
           </div>
 
           <% if devise_mapping.rememberable? %>
@@ -21,12 +21,12 @@
             </div>
           <% end %>
 
-          <div class="mt-3 form-control">
+          <div class="my-5 form-control">
             <%= f.submit t("user.login"), class: "joband-action-btn" %>
           </div>
         <% end %>
       </div>
-      <div class="my-5 text-white">
+      <div class="form-control">
         <%= render "users/shared/links" %>
       </div>
     </div>

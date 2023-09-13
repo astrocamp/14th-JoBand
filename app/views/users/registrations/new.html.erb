@@ -1,6 +1,6 @@
 
 <div class="min-h-screen my-20 rounded-lg theme-text theme-bg">
-  <div class="block text-center theme-bg">
+  <div class="left-0 right-0 block text-center top-20 lg:absolute theme-bg">
     <ul class="steps">
       <li class="step step-warning"><%= t("step.one") %></li>
       <li class="step"><%= t("step.two") %></li>
@@ -11,41 +11,43 @@
   <div class="flex-col mx-auto my-5 theme-text theme-bg hero-content lg:flex-row-reverse">
     <div class="mx-20 text-center lg:text-left">
       <h1 class="font-bold text-7xl"><%= t("user.sign_up") %></h1>
-      <p class="py-6 h2">
-        JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台。<br/>
-        透過 JoBand，您可以輕鬆尋找適合的樂團成員或音樂項目，同時也能進一步提升您的音樂技能和知識。
-      </p>
+      <div class="py-4 h3">
+        <p class="mb-2">JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台
+        </p>
+        <p>透過 JoBand，您可以輕鬆尋找適合的樂團成員或是音樂項目，同時也能進一步提升您的音樂技能和知識
+        </p>
+      </div>
     </div>
     <div class="flex-shrink-0 w-full max-w-sm bg-white joband-shadow card">
       <div class="card-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
         <div class="form-control">
-          <label class="font-bold">
-            <%= f.label :name, t("user.display_name"),class: "label-text joband-text-bk" %>
+          <label class="mt-3 mb-1 font-bold">
+            <%= f.label :name, t("user.display_name"),class: "joband-text-bk" %>
           </label>
-          <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "text-white input input-bordered mb-3", required: true %>
+          <%= f.text_field :name, placeholder: "David Bowie", autofocus: true, autocomplete: :off, class: "text-white input input-bordered mb-2", required: true %>
           <em class="text-xs leading-3 joband-text-bk"><%= t("user.display_describe") %></em>  
         </div>
         <div class="form-control">
-          <label class="mt-3 font-bold">
-            <%= f.label :email, class: "label-text joband-text-bk" %>
+          <label class="mt-5 mb-1 font-bold">
+            <%= f.label :email, class: "joband-text-bk" %>
           </label>
-          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "text-white input input-bordered mb-3", required: true %>
+          <%= f.email_field :email, placeholder: "email@example.com", autofocus: true, autocomplete: "email", class: "text-white input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="font-bold">
-            <%= f.label :password, t("user.password"), class: "label-text joband-text-bk" %>
+          <label class="mt-5 mb-1 font-bold">
+            <%= f.label :password, t("user.password"), class: "joband-text-bk" %>
           </label>
-          <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
+          <%= f.password_field :password, placeholder: t("user.min_password_placeholder") ,autocomplete: "new-password", class: "text-white input input-bordered", required: true %>
         </div>
         <div class="form-control">
-          <label class="font-bold">
-            <%= f.label :password_confirmation, t("user.password_confirmation"), class: "label-text joband-text-bk" %>
+          <label class="mt-5 mb-1 font-bold">
+            <%= f.label :password_confirmation, t("user.password_confirmation"), class: "joband-text-bk" %>
           </label>
           <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "text-white input input-bordered mb-3", required: true %>
         </div>
-        <div class="mt-3 form-control">
+        <div class="my-5 form-control">
           <%= f.submit t("user.sign_up"), class: "joband-action-btn" %>
         </div>
       <% end %>
