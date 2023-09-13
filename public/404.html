@@ -109,8 +109,11 @@
         ERROR 404 
       </h1>
       <h2 style="text-shadow: -3px 0 0 rgba(255,0,0,.7),3px 0 0 rgba(0,255,255,.7);">
+        Page Not Found
+      </h2>
+      <h2 style="text-shadow: -3px 0 0 rgba(255,0,0,.7),3px 0 0 rgba(0,255,255,.7);">
         Go 
-        <a href="https://joband.co/?locale=tw" target="_blank">
+        <a href="javascript:void(0);" onclick="redirectToHomePage();">
           hom<span>e</span>
         </a>
         &nbsp; You're Drunk 
@@ -119,10 +122,10 @@
   </div>
   
   <script>
-    particlesJS.load('particles-js', 'javascript/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
-  </script>
+    function redirectToHomePage() {
+        window.location.href = "https://joband.co/?locale=tw";
+    }
+    </script>
   
 </body>
 </html>
