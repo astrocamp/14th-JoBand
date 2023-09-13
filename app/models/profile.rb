@@ -6,6 +6,8 @@ class Profile < ApplicationRecord
 
   # validates
   validate :avatar_size
+  validate :music_size
+  validate :video_size
 
   # associations
   has_one_attached :avatar do |attachable|
@@ -51,6 +53,18 @@ class Profile < ApplicationRecord
   def avatar_size
     if avatar.attached? && avatar.blob.byte_size > 3.megabytes
       return errors.add(:avatar, "不能大於3MB")
+    end
+  end
+
+  def music_size
+    if music.attached? && music.byte_size > 10.megabytes
+      errors.add(:music, "不能大於10MB")
+    end
+  end
+
+  def video_size
+    if video.attached? && video.byte_size > 20.megabytes
+      errors.add(:video, "不能大於20MB")
     end
   end
 end

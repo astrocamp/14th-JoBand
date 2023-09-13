@@ -9,6 +9,8 @@ class Band < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validate :avatar_size
   validate :banner_size
+  validate :music_size
+  validate :video_size
 
   # associations
   has_rich_text :content
@@ -88,6 +90,18 @@ class Band < ApplicationRecord
   def banner_size
     if banner.attached? && banner.blob.byte_size > 10.megabytes
       return errors.add(:banner, "不能大於10MB")
+    end
+  end
+
+  def music_size
+    if music.attached? && music.byte_size > 10.megabytes
+      errors.add(:music, "不能大於10MB")
+    end
+  end
+
+  def video_size
+    if video.attached? && video.byte_size > 20.megabytes
+      errors.add(:video, "不能大於20MB")
     end
   end
 end
