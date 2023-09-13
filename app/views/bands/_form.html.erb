@@ -1,6 +1,6 @@
 <div class="center flex-wrap w-full lg:w-[60%] h-auto mx-auto p-10 lg:rounded-[80px] joband-shadow bg-white">
-  <div class="p-5 text-base center joband-text-bk">
-    <%= form_with(model: band , data:{ turbo: false }, class: "w-auto center flex-wrap" ) do |f| %>
+  <div class="text-base center joband-text-bk">
+    <%= form_with(model: band , data:{ turbo: false }, class: "center flex-wrap" ) do |f| %>
     
       <%= render 'error_messages'%>
     
@@ -28,7 +28,7 @@
       
       <div class="flex flex-wrap items-center my-5 w-[90%]">
         <%= f.label :style_ids, class: "mb-3 lg:w-[120px] block" %>
-        <div class="w-[311px] space-x-2 lg:w-auto">
+        <div class="w-[310px] space-x-1 lg:w-auto">
           <%= f.collection_check_boxes :style_ids, Style.all, :id, :name, checked: [1] %>
         </div>
       </div>
