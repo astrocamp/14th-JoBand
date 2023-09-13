@@ -106,6 +106,9 @@
   font-size: 1.25rem;
 }
 
+[data-theme="dark"] .bell {
+  fill: white
+}
 
 @media (max-width: 1024px) {
   .trix-button-row {

@@ -1,11 +1,13 @@
 <% if current_user %>
   <li class="flex align-middle">
-    <details class="flex items-center cursor-pointer theme-text dropdown dropdown-bottom dropdown-end">
+    <details class="flex items-center cursor-pointer theme-text dropdown dropdown-bottom dropdown-end white">
       <summary class="items-center h-full center">
         <div class="joband-shadow">
-          <%= image_tag "icon/bell.svg", class: "w-6" %>  
+          <div>
+            <%= File.read('app/assets/images/icon/bell.svg').html_safe %>
+          </div>
           <% if @unread.count > 0 %>
-            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-semibold">
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-2 h-2 flex items-center justify-center text-sm font-semibold">
               <!-- 使用紅點代替數字，如果沒有未讀通知則不顯示紅點 -->
               <%= content_tag(:div, '', class: 'red-dot') %>
             </div>
