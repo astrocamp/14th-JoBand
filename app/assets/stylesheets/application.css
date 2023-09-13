@@ -106,6 +106,13 @@
   font-size: 1.25rem;
 }
 
+
+@media (max-width: 1024px) {
+  .trix-button-row {
+    display: none !important;
+  }
+}
+
 /* 播放器自定義 */
 .custom-audio-player {
   border: 2px solid transparent;

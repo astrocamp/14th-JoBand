@@ -1,65 +1,65 @@
-<div class="center flex-wrap w-[80%] lg:w-[70%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">
-  <div class="w-full p-5 ml-auto text-base joband-text-bk">
-    <%= form_with(model: band , data:{ turbo: false } ) do |f| %>
+<div class="center flex-wrap w-full lg:w-[60%] h-auto mx-auto p-10 lg:rounded-[80px] joband-shadow bg-white">
+  <div class="p-5 text-base center joband-text-bk">
+    <%= form_with(model: band , data:{ turbo: false }, class: "w-auto center flex-wrap" ) do |f| %>
     
       <%= render 'error_messages'%>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :name, class: "mb-3 lg:w-[120px] block" %>
-        <%= f.text_field :name, maxlength: 10, placeholder: "請輸入 10 字以內的團名",  required: true, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs"%>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :name, class: "w-full mb-3 lg:w-[120px] block" %>
+        <%= f.text_field :name, maxlength: 10, placeholder: "請輸入 10 字以內的團名",  required: true, class: "joband-ring-offset rounded-xl input-md input-bordered lg:w-1/2 w-full"%>
       </div>
       
       <% if action_name.in?(['new', 'create']) %>
-        <div class="flex flex-wrap items-center my-5">
-          <%= f.label :role, class: "lg:w-[120px] block" %>
+        <div class="flex flex-wrap items-center my-5 w-[90%] ">
+          <%= f.label :role, class: "w-full mb-3 lg:w-[120px] block" %>
           <%= f.select :role, BandMember.default_roles, class: "select select-bordered select-lg w-full max-w-xs" %>
         </div>
       <% end %>
       
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :banner, class: "lg:w-[120px] block" %>
-        <%= f.file_field :banner, direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :banner, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.file_field :banner, direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning lg:w-1/2 w-full" %>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :avatar, class: "lg:w-[120px] block" %>
-        <%= f.file_field :avatar,direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :avatar, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.file_field :avatar,direct_upload: true, accept: "image/png, image/jpeg", class: "file-input file-input-sm file-input-warning lg:w-1/2 w-full" %>
       </div>
       
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :style_ids, class: "lg:w-[120px] block" %>
-        <div class="space-x-2">
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :style_ids, class: "mb-3 lg:w-[120px] block" %>
+        <div class="w-[311px] space-x-2 lg:w-auto">
           <%= f.collection_check_boxes :style_ids, Style.all, :id, :name, checked: [1] %>
         </div>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :music, class: "lg:w-[120px] block" %>
-        <%= f.file_field :music, direct_upload: true, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :music, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.file_field :music, direct_upload: true, accept: "audio/mpeg", class: "file-input file-input-sm file-input-warning lg:w-1/2 w-full" %>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :video, class: "lg:w-[120px] block" %>
-        <%= f.file_field :video, direct_upload: true, accept: "video/mp4", class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :video, class: "mb-3 lg:w-[120px] block" %>
+        <%= f.file_field :video, direct_upload: true, accept: "video/mp4", class: "file-input file-input-sm file-input-warning lg:w-1/2 w-full" %>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :area, class: "lg:w-[120px] block" %>
-        <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg w-full max-w-xs" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :area, class: "w-full mb-3 lg:w-[120px] block" %>
+        <%= f.select :area , Band.areas.keys , class: "select select-bordered select-lg " %>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
+      <div class="flex flex-wrap items-center my-5 w-[90%] lg:w-[90%]">
         <%= f.label :content, class: "lg:w-full block my-5" %>
         <%= f.rich_text_area :content, class:"text-black bg-white w-full rounded-xl" %>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :state, class: "lg:w-[120px] block" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :state, class: "w-full mb-3 lg:w-[120px] block" %>
         <%= f.select :state, Band.states.keys%>
       </div>
     
-      <div class="flex flex-wrap items-center my-5">
-        <%= f.label :founded_at, class: "mb-3 lg:w-[120px] block" %>
+      <div class="flex flex-wrap items-center my-5 w-[90%]">
+        <%= f.label :founded_at, class: "mb-3 mb-3 lg:w-[120px] block w-full" %>
         <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
       </div>
     
