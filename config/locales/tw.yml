@@ -27,9 +27,17 @@ tw:
         password: "密碼"
         password_confirmation: 確認密碼欄位
         current_password: 現有密碼
+        avatar: 頭像
+        banner: 橫幅
+        music: 音樂
+        video: 影片
       band:
         style_ids: 演奏風格
         name: 樂團名稱
+        avatar: 頭像
+        banner: 橫幅
+        music: 音樂
+        video: 影片
 
   notifications:
     resume_list_notification:
