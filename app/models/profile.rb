@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class Profile < ApplicationRecord
+  before_validation :avatar_size
+
+
   # validates
-  # validates :phone, presence: true
+  validate :avatar_size
 
   # associations
   has_one_attached :avatar do |attachable|
@@ -41,5 +44,13 @@ class Profile < ApplicationRecord
 
   def self.ransackable_associations(_auth_object = nil)
     %w[band_members bands instruments profile_and_instrument user]
+  end
+
+  private
+
+  def avatar_size
+    if avatar.attached? && avatar.blob.byte_size > 3.megabytes
+      return errors.add(:avatar, "不能大於3MB")
+    end
   end
 end

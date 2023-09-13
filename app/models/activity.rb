@@ -3,6 +3,7 @@
 class Activity < ApplicationRecord
   validates :title, :content, :begin_at, :time_start, :time_end, :location, presence: true
   validate :start_time_must_be_before_end_time
+  validate :banner_size
 
   # associations
   has_one_attached :banner do |attachable|
@@ -48,7 +49,12 @@ class Activity < ApplicationRecord
 
   def start_time_must_be_before_end_time
     return unless time_end <= time_start
-
     errors.add(:base, '開始時間必須早於結束時間')
+  end
+
+  def banner_size
+    if banner.attached? && banner.blob.byte_size > 10.megabytes
+      return errors.add(:banner, "不能大於10MB")
+    end
   end
 end
