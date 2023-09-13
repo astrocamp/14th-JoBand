@@ -11,8 +11,6 @@ class ResumeList < ApplicationRecord
   before_destroy :cleanup_notifications
   has_noticed_notifications model_name: 'Notification'
 
-  validates :user_id, uniqueness: true
-
   # enum
   enum status: {
     pending: 0,

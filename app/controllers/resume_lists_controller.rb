@@ -26,7 +26,7 @@ class ResumeListsController < ApplicationController
     if @resume_list.save
       redirect_to resume_list_path(@resume_list), notice: '申請成功'
     else
-      render :new
+      render :new, alert:'失敗'
     end
   end
 
@@ -50,6 +50,7 @@ class ResumeListsController < ApplicationController
   end
 
   def approve
+    
     authorize @resume_list
     @recruit = @resume_list.recruit
     @band = @recruit.band
