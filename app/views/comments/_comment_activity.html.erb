@@ -4,7 +4,7 @@
       <div class="w-[50px] h-[50px] relative mr-2">
         <%= render "shared/avatar", model: comment.user.profile %>
       </div>
-      <%= link_to comment.user.name, profile_path(comment.user_id), class: "font-semibold"%>
+      <%= link_to comment.user.name, profile_path(comment.user_id), target: "_blank", class: "font-semibold"%>
     </div>
     <div class='p-3 my-1 text-left break-words h4'>
       <p><%= comment.content %></p>

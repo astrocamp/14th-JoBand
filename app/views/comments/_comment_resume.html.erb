@@ -3,7 +3,7 @@
   <% comments.each do |comment| %>
     <li>
       <div>
-        <%= link_to comment.user.name, profile_path(comment.user_id), 
+        <%= link_to comment.user.name, profile_path(comment.user_id), target: "_blank", 
                                       class:'text-sky-400 border-b border-sky-400' %>
       </div>
       <div class="m-3 joband-text-bk">
