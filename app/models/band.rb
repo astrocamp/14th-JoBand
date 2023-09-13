@@ -29,10 +29,9 @@ class Band < ApplicationRecord
   has_one :recruit
   has_many :activities
   has_many :orders
-  
+
   has_noticed_notifications model_name: 'Notification'
   has_many :notifications, through: :user
-  
 
   # enum
   enum state: {
