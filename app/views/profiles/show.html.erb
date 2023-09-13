@@ -1,15 +1,14 @@
-<div class="center flex-wrap rounded-[80px] w-full h-auto mx-auto mt-10 p-10 joband-shadow bg-white
-            lg:mt-20 lg:rounded-[100px] lg:w-2/3">  
-  <div class=" h-[200px] w-[200px] relative lg:my-10">
+<div class="flex-wrap center w-full h-auto mx-auto overflow-hidden joband-shadow bg-white
+            lg:w-[75%] lg:mt-20 lg:rounded-[80px]">
+  <div class=" h-[200px] w-[200px] relative my-10">
     <%= render "shared/avatar", model: @profile  %>
   </div>
 
   <div class="w-full font-bold text-center h1 joband-shadow joband-text-bk lg:m-5">
     <%= @profile.user.name %>
-
   </div>
 
-  <div class="flex flex-wrap justify-center mb-5">
+  <div class="flex flex-wrap justify-center">
     <% @profile.instruments.each do |instrument| %>
       <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:mx-5 lg:w-[100px] lg:h-[100px]">
         <%= render "/shared/instrument", instrument: instrument.name %>
@@ -17,7 +16,7 @@
     <% end %>
   </div>
     
-  <div class="flex flex-wrap justify-center w-full lg:mt-5 joband-text-bk lg:px-40">
+  <div class="flex flex-wrap w-full p-16 px-8 lg:px-32 joband-text-bk">
   
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">電話號碼：<%= @profile.phone %></p>
@@ -29,7 +28,7 @@
     <p class="w-full h3">簡介：<%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
     <p class="w-full h3">所屬樂團：</p>
-    <div class="flex-wrap w-full center ">
+    <div class="flex flex-wrap w-full">
       <%= render 'band' %>
     </div>
     <span class="w-full joband-line-bk"></span>
@@ -55,16 +54,18 @@
         <% end %>
       </div>
     </div>
-    <div class="mt-5">
+    <div class="w-full center">
+      <div class="flex justify-center">
+        <% if policy(@profile).profile? %>
+          <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
+        <% end %>
 
-      <% if policy(@profile).profile? %>
-        <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
-      <% end %>
-
-      <% if policy(@profile).update? %>
-        <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
-      <% end %>
+        <% if policy(@profile).update? %>
+          <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
+        <% end %>
+      </div>
     </div>
+    
   </div>  
 </div>
 
