@@ -7,6 +7,7 @@
         <div class="flex flex-wrap items-center my-3 lg:my-8">
           <%= f.label :avatar, "上傳大頭照", class: "w-full lg:w-[120px] my-2 lg:my-0 block" %>
           <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+          <em class="block text-xs joband-text-bk">PNG, JPG 檔格式，檔案大小不得大於3MB</em>
         </div>
         <div class="flex flex-wrap items-center lg my-3:lg:my-8">
           <%= f.label :phone, "電話", class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
@@ -33,10 +34,12 @@
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <%= f.label :music, "上傳音樂",class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
           <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+          <em class="block text-xs joband-text-bk">mpeg, mp3 檔格式，檔案大小不得大於10MB</em>
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <%= f.label :video, "上傳影片",class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
           <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+          <em class="block text-xs joband-text-bk">mp4 檔格式，檔案大小不得大於20MB</em>
         </div>
         <div class="flex flex-wrap items-center justify-center w-full mt-10", data-controller="submited">
           <% if action_name == "new" %>
