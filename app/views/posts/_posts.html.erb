@@ -4,13 +4,9 @@
       <%= post_avatar(post.user.profile) %>
     </div>
     <div class="justify-between flex-auto">
-      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold", data: {turbo: false} %>
+      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold", data: {turbo: false} , target: "_blank"%>
       <em class="inline-block pr-10 text-xs text-end"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
-    
-      <%= link_to post, data: {turbo: false} do %>
-        <div class="prose prose-lg"><%= post.body %></div>
-      <% end %>
-
+    <div class="prose prose-lg"><%= post.body %></div>
       <%= render "posts/controls", post: post %>
 
       <div class="pl-2" data-comments-target="content" data-link-id="<%= post.id %>" style="display: none;">
