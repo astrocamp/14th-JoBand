@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
   if @comment.save
      comment_route()
     else 
-      redirect_to @commentable, alert: '留言不得為空白'
+      comment_fail()
     end
   end  
 
@@ -50,7 +50,7 @@ class CommentsController < ApplicationController
     end  
   end  
 
-    def comment_delete
+  def comment_delete
     if @commentable.is_a?(Post)
       redirect_to posts_path, notice: '刪除成功'
     elsif
@@ -59,6 +59,18 @@ class CommentsController < ApplicationController
     elsif
       @commentable.is_a? (ResumeList)
       redirect_to resume_list_path(@commentable), notice: '刪除成功'
+    end  
+  end  
+
+  def comment_fail
+    if @commentable.is_a?(Post)
+      redirect_to posts_path, alert: '留言不得為空白'
+    elsif
+      @commentable.is_a?(Activity)
+      redirect_to activity_path(@commentable), alert: '留言不得為空白'
+    elsif
+      @commentable.is_a? (ResumeList)
+      redirect_to resume_list_path(@commentable), alert: '留言不得為空白'
     end  
   end  
 end
