@@ -7,11 +7,11 @@ class ResumeListPolicy < ApplicationPolicy
   end
 
   def repeat?
-    !user.resume_lists&.exists?(@resume_lists)
+    !user.resume_lists&.exists?(recruit: @resume_list.recruit)
   end
 
-  def member
-    @resume_list.recruit.band.band_members.exists?(user_id: user.id)
+  def member?
+    !@resume_list.recruit.band.band_members.exists?(user_id: @user.id)
   end
 
   def band_manager?
@@ -39,7 +39,7 @@ class ResumeListPolicy < ApplicationPolicy
   end
 
   def create?
-    user&.profile.present? && !member && repeat?
+    user&.profile.present? && member? && repeat?
   end
 
   def new?

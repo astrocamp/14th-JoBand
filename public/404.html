@@ -2,66 +2,127 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    .container {
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    overflow: hidden !important;
+    }
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    h1 {
+      font-family: "Source Sans Pro", sans-serif;
+      font-weight: bold;
+      font-size: 90px;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #B5B5B5;
+      margin: 0px;
+      padding: 0px;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    h2 {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      color: #B5B5B5;
+      line-height: 50px;
+      padding: 0px;
+      margin: 0px;
+    }
+    h2 a {
+      color: #B5B5B5;
+      text-decoration: none;
+      border-bottom: 5px solid #B5B5B5;
+      margin: 0;
+      padding: 0;
+    }
+    h2 a span {
+      letter-spacing: 0px !important;
+      padding-right: 3px;
+    }
+    h2 a:hover {
+      color: #808080;
+      border-bottom: 5px solid #808080;
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    #scene ul {
+      width: 100% !important;
+      height: 100% !important;
+      height: 100vh !important;
+      overflow: hidden;
+      position: relative;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .text {
+      position: relative;
+      top: 50%;
+      -webkit-transform: translateY(-50%) !important;
+      -ms-transform: translateY(-50%) !important;
+      transform: translateY(-50%) !important;
+      z-index: 3;
+      display: block;
+    }
+
+    /* ---- reset ---- */
+
+    body {
+      margin: 0;
+      font:normal 75% Arial, Helvetica, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      vertical-align: bottom;
+    }
+
+    /* ---- particles.js container ---- */
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #b61924;
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
+  <div id="particles-js">
+    <canvas class="particles-js-canvas-el"  style="width: 100%; height: 100%;">
+    </canvas>
   </div>
+  
+  <div class="container">
+    <div class="text">
+      <h1 style="text-shadow: -3px 0 0 rgba(255,0,0,.7),3px 0 0 rgba(0,255,255,.7);"> 
+        ERROR 404 
+      </h1>
+      <h2 style="text-shadow: -3px 0 0 rgba(255,0,0,.7),3px 0 0 rgba(0,255,255,.7);">
+        Go 
+        <a href="https://joband.co/?locale=tw" target="_blank">
+          hom<span>e</span>
+        </a>
+        &nbsp; You're Drunk 
+      </h2>
+    </div>
+  </div>
+  
+  <script>
+    particlesJS.load('particles-js', 'javascript/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+  </script>
+  
 </body>
 </html>
