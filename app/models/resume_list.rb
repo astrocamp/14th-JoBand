@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ResumeList < ApplicationRecord
-  
   # associations
   belongs_to :user
   belongs_to :recruit
@@ -19,15 +18,14 @@ class ResumeList < ApplicationRecord
   }, _prefix: true
 
   private
-  
+
   # 通知寄給創建招募的人
   def notify_recipient
-    
     band_leader = recruit.band.band_members.leader.take.user
 
     return if band_leader == user
 
-    ResumeListNotification.with(ResumeList: self, band: self.recruit.band).deliver_later(band_leader)
+    ResumeListNotification.with(ResumeList: self, band: recruit.band).deliver_later(band_leader)
   end
 
   def cleanup_notifications

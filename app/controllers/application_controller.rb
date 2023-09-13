@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def switch_locale(&action)
     locale = session[:locale] || params[:locale] || I18n.default_locale
     locale = 'tw' unless I18n.available_locales.include?(locale.to_sym)
-    I18n.with_locale(locale, &action) 
+    I18n.with_locale(locale, &action)
   end
 
   def default_url_options
