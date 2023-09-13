@@ -12,7 +12,7 @@
       <div class="flex justify-end">
         <% if comment.user == current_user %>
          <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id),
-                            class:'text-xs text-red-400',
+                            class:'text-sm text-red-400',
                             data: {
                               turbo_method: 'delete',
                               turbo_confirm: '確定刪除？'
@@ -20,7 +20,7 @@
         <% end %>
       </div>
 
-      <div class="text-xs mb-1 joband-text-bk">
+      <div class="text-sm mb-1 joband-text-bk">
         (<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>)
       </div>
 
