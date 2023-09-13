@@ -1,5 +1,6 @@
- <%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
-
+<%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
+  <%= render "users/shared/error_messages", resource: activity %>
+  
   <div class="flex items-center my-5">
     <% if activity.errors.any? %>
       <div class="w-full py-3 text-center rounded-2xl" style="border: 2px solid rgba(239, 68, 68, 0.8) ">
@@ -52,11 +53,11 @@
     <%= f.text_field :location, required: true, placeholder: '請輸入地點', class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
   </div>
   
-  <div class="flex items-center justify-center w-full mt-10">
+  <div class="flex items-center justify-center w-full mt-10", data-controller="submited">
     <% if action_name == "new" %>
-      <%= f.submit "建立活動", class: "joband-action-btn" %>
+      <%= f.submit "建立活動", class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
     <% else %>
-      <%= f.submit "更新活動", class: "joband-action-btn" %>
+      <%= f.submit "更新活動", class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
     <% end %>
   </div>
 

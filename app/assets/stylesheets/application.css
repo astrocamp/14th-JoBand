@@ -133,6 +133,8 @@
 [data-theme="light"] .email-disabled::placeholder {
   color: rgb(164, 164, 164)
 }
-  .field_with_errors {
-  display: inline;
+
+.field_with_errors {
+  display: block !important;
+  color: #ec4040;
 }

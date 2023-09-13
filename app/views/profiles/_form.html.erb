@@ -2,6 +2,8 @@
   <div class="w-full p-5 text-base center joband-text-bk">
     <div class="w-[90%] center">
       <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
+        <%= render "users/shared/error_messages", resource: profile %>
+
         <div class="flex flex-wrap items-center my-3 lg:my-8">
           <%= f.label :avatar, "上傳大頭照", class: "w-full lg:w-[120px] my-2 lg:my-0 block" %>
           <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
@@ -36,11 +38,11 @@
           <%= f.label :video, "上傳影片",class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
           <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
         </div>
-        <div class="flex flex-wrap items-center justify-center w-full mt-10">
+        <div class="flex flex-wrap items-center justify-center w-full mt-10", data-controller="submited">
           <% if action_name == "new" %>
-            <%= f.submit "建立個人檔案", class: "joband-action-btn" %>
+            <%= f.submit "建立個人檔案", class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
           <% else %>
-            <%= f.submit "更新個人檔案", class: "joband-action-btn" %>
+            <%= f.submit "更新個人檔案", class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
           <% end %>
           </div>
       <% end %>

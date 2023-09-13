@@ -1,9 +1,8 @@
 <div class="center flex-wrap w-full lg:w-[60%] h-auto mx-auto p-10 lg:rounded-[80px] joband-shadow bg-white">
   <div class="text-base center joband-text-bk">
     <%= form_with(model: band , data:{ turbo: false }, class: "center flex-wrap" ) do |f| %>
-    
-      <%= render 'error_messages'%>
-    
+      <%= render "users/shared/error_messages", resource: band %>
+
       <div class="flex flex-wrap items-center my-5 w-[90%]">
         <%= f.label :name, class: "w-full mb-3 lg:w-[120px] block" %>
         <%= f.text_field :name, maxlength: 10, placeholder: "請輸入 10 字以內的團名",  required: true, class: "joband-ring-offset rounded-xl input-md input-bordered lg:w-1/2 w-full"%>
@@ -63,8 +62,8 @@
         <%= f.date_field :founded_at, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
       </div>
     
-      <div class="flex items-center justify-center w-full mt-10">
-          <%= f.submit class: "joband-action-btn" %>
+      <div class="flex items-center justify-center w-full mt-10" data-controller="submited">
+          <%= f.submit class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
       </div>
 
     <% end %>

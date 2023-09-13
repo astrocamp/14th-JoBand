@@ -7,6 +7,8 @@ class Band < ApplicationRecord
 
   validates :style_ids, presence: true
   validates :name, presence: true, uniqueness: true
+  validate :avatar_size
+  validate :banner_size
 
   # associations
   has_rich_text :content
@@ -73,5 +75,19 @@ class Band < ApplicationRecord
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize.to_s
+  end
+
+  private
+
+  def avatar_size
+    if avatar.attached? && avatar.blob.byte_size > 3.megabytes
+      return errors.add(:avatar, "不能大於3MB")
+    end
+  end
+
+  def banner_size
+    if banner.attached? && banner.blob.byte_size > 10.megabytes
+      return errors.add(:banner, "不能大於10MB")
+    end
   end
 end
