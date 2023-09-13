@@ -24,7 +24,17 @@ en:
       user:
         password: "Password"
         password_confirmation: "Password confirmation"
-      current_password: "Current password"
+        current_password: "Current password"
+        avatar: Avatar
+        banner: Banner
+        music: Music
+        video: Video
+      band:
+        name: "Band name"
+        avatar: Avatar
+        banner: Banner
+        music: Music
+        video: Video
 
   notifications:
     resume_list_notification:
