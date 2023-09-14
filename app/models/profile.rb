@@ -33,11 +33,7 @@ class Profile < ApplicationRecord
   }, _prefix: true
 
   def default_instrument(profile)
-    if profile.instruments.present?
-      instruments.first.name
-    else
-      'listener'
-    end
+    instruments.first.name if profile.instruments.present?
   end
 
   def self.ransackable_attributes(_auth_object = nil)
