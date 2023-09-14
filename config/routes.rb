@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
   resources :bands, param: :slug, except: [:destroy] do
     resources :band_members, except: %i[new show index]
+    resources :channels, only: %i[create update]
     resources :recruits, shallow: true do
       resources :resume_lists, except: %i[index] do
         member do
@@ -43,8 +44,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-  
 
   scope "communities" do
     resources :posts, only: %i[index create show destroy] do

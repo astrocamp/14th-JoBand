@@ -3,6 +3,7 @@
 class BandsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_band, only: %i[show edit update]
+  after_action :create_channel, only: %i[create]
   before_action :mark_notice_as_read, only: %i[show]
 
   def index
@@ -23,6 +24,7 @@ class BandsController < ApplicationController
     @band = Band.new(band_params.except(:role))
     @role = band_params[:role]
     @user = current_user
+    
     authorize @band
     if @user.band_members.count < 5
       if @band.save
@@ -72,5 +74,9 @@ class BandsController < ApplicationController
   def band_params
     params.require(:band).permit(:name, :content, :area, :state, :founded_at, :avatar, :music, :video, :banner, :role,
                                  style_ids: [])
+  end
+
+  def create_channel
+    @band.create_channel(user: @user)
   end
 end
