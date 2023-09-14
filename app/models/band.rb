@@ -27,6 +27,7 @@ class Band < ApplicationRecord
   has_many :band_members
   has_many :users, through: :band_members
   has_one :recruit
+  has_one :channel
   has_many :activities
   has_many :orders
 

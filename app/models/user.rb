@@ -22,6 +22,7 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :like_logs, source: :post
   has_many :orders
   has_many :notifications, as: :recipient
+  has_many :channels
 
   # ransack
   def self.ransackable_attributes(_auth_object = nil)

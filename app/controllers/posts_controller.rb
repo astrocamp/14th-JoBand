@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     @comment = @post.comments.new
-    @posts = Post.includes(:like_logs).all.order(created_at: :desc)
+    @posts = Post.includes(:like_logs).where(channel_id: nil).order(created_at: :desc)
     @activity = Activity.with_attached_banner.sample
   end
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body)
+    params.require(:post).permit(:body, :channel_id)
   end
 
   def set_post

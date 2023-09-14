@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_14_140512) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -98,6 +98,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
     t.index ["slug"], name: "index_bands_on_slug", unique: true
   end
 
+  create_table "channels", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_channels_on_band_id"
+    t.index ["user_id"], name: "index_channels_on_user_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
@@ -167,6 +176,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "channel_id"
+    t.index ["channel_id"], name: "index_posts_on_channel_id"
     t.index ["deleted_at"], name: "index_posts_on_deleted_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -256,11 +267,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_09_140253) do
   add_foreign_key "band_members", "users"
   add_foreign_key "band_styles", "bands"
   add_foreign_key "band_styles", "styles"
+  add_foreign_key "channels", "bands"
+  add_foreign_key "channels", "users"
   add_foreign_key "comments", "users"
   add_foreign_key "like_logs", "posts"
   add_foreign_key "like_logs", "users"
   add_foreign_key "orders", "bands"
   add_foreign_key "orders", "users"
+  add_foreign_key "posts", "channels"
   add_foreign_key "posts", "users"
   add_foreign_key "profile_and_instruments", "instruments"
   add_foreign_key "profile_and_instruments", "profiles"

@@ -71,14 +71,16 @@ demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
   style_ids: 10
 )
 
+puts "已建立樂團 大貓會社"
+
 demo_band.band_members.first.update(identity: :leader, role: "主唱")
+demo_band.create_channel(user: demo_user)
 
 demo_profile.avatar.attach(
   io: StringIO.new(demo_avatar),
   filename: 'zooey.png',
   content_type: 'image/png'
 )
-puts "已建立使用者 Zooey"
 
 demo_band.avatar.attach(
   io: StringIO.new(demo_band_avatar),

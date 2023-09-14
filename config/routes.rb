@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
   end
 
-  
+  resources :channels, only: %i[create update show]
 
   scope "communities" do
     resources :posts, only: %i[index create show destroy] do
