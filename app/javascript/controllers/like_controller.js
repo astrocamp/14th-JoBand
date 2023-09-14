@@ -7,6 +7,8 @@ export default class extends Controller {
     const { id, liked } = this.element.dataset;
     this.id = id;
     this.liked = liked === "true";
+
+    this.updateLikeAppearance();
   }
 
   toggle(e) {
@@ -27,11 +29,15 @@ export default class extends Controller {
       })
       .then(({ liked, likeCount }) => {
         this.liked = liked;
-        this.likeBtnTarget.textContent = liked ? "♥" : "♡";
+        this.updateLikeAppearance();
         this.countTarget.textContent = likeCount;
       })
       .catch((err) => {
         console.log(err);
       });
+  }
+
+  updateLikeAppearance() {
+    this.likeBtnTarget.textContent = this.liked ? "♥" : "♡";
   }
 }
