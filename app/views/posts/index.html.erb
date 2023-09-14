@@ -67,12 +67,14 @@
     <div class="sticky top-20">
       <h2 class="w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</h2>
       <% if @activity.present?%>
+        <%= link_to activity_path(@activity.id), class: "theme-text space-x-2 group flex items-center justify-center" do %>
         <div class="p-3 border-2 theme-bg rounded-xl">
           <h2 class="font-bold h2 theme-text"><%= @activity.title %></h2>
           <p><%= @activity.time_start.strftime('%m %d') %> ~ <%= @activity.time_end.strftime('%m %d') %></p>
           <span class="text-end"><%= @activity.location %></span>
           <%= render "shared/banner", model: @activity  %>
         </div>
+        <% end %>
       <% else %>
         <div class="p-3 border-2 theme-bg rounded-xl">
           <h2 class="font-bold h2 theme-text">FuJi Rock Festival 2023</h2>
