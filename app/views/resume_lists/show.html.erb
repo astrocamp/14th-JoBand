@@ -1,19 +1,18 @@
-<!-- app/views/resume_lists/show.html.erb -->
-<article class="mx-auto w-[85%] lg:mx-auto bg-white rounded-[60px] joband-shadow ">
+<article class="mx-auto w-full lg:w-[50%] lg:mx-auto bg-white lg:rounded-[80px] joband-shadow mt-16">
   <div>
     <div>
-      <div class="center my-5 ">
+      <div class="my-5 center ">
         <%= link_to profile_path(@resume_list.user.profile),class:'flex mt-3' do %>
 
-          <div class="w-20 h-20 m-5 relative ">
+          <div class="relative w-20 h-20 m-5 ">
             <%= render 'shared/avatar', model: @resume_list.user.profile %>
           </div>
-          <div>
-            <p class="h1 my-3 joband-text-bk">
+          <div class="">
+            <p class="flex w-full my-3 text-center h1 joband-text-bk">
               <%= User.find(@resume_list.user_id).name %>
             </p>
 
-            <p class="joband-text-bk">
+            <p class="flex w-full joband-text-bk">
               應徵職位
               <strong>
                 <%= @resume_list.role %>
@@ -55,7 +54,7 @@
 
 
       <% if policy(@resume_list).update? %>
-        <div class="center mb-5">
+        <div class="mb-5 center">
           <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'joband-hover-style mr-2' %>
           <%= link_to '刪除', resume_list_path(@resume_list), class: "joband-reject-btn",
                               data: {
@@ -70,14 +69,14 @@
     <div class="m-5 center">
       <div class="w-full lg:w-2/3 joband-text-bk">
         <%= form_with(model: [@resume_list, @comment]) do |f| %>
-          <div class="center mb-3">
+          <div class="mb-3 center">
             <%= f.label :content, '討論區' %>
           </div>
           <div class="center">
             <%= f.text_area :content, class:'joband-ring-offset rounded-xl input-md input-bordered w-2/3 max-w-xs'%>
           </div>
           
-          <div class="center my-5">
+          <div class="my-5 center">
             <%= f.submit '送出留言', class: 'joband-hover-style'%>
           </div>
           
