@@ -42,6 +42,50 @@ fakewords = [
   "安得為紅顏，不負春風？吾有心而忘形。"
 ]
 
+demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
+
+demo_band_avatar = File.binread(Rails.root.join('public', 'band_avatar.png'))
+
+demo_user = User.create!(
+  name: 'Zooey Deschanel',
+  email: 'zooey@gg.gg',
+  password: '123123123',
+  confirmed_at: Time.now
+)
+
+demo_profile = demo_user.create_profile(
+  phone: '3345678',
+  location: 'Los Angeles',
+  seniority:  3,
+  content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
+)
+
+demo_profile.instruments << Instrument.find_by(name: '主唱')
+
+demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
+  name: "大貓會社",
+  area: 0,
+  content: "你好～歡迎參觀我的樂團",
+  state: 0,
+  founded_at: "2023-09-01",
+  style_ids: 10
+)
+
+demo_band.band_members.first.update(identity: :leader, role: "主唱")
+
+demo_profile.avatar.attach(
+  io: StringIO.new(demo_avatar),
+  filename: 'zooey.png',
+  content_type: 'image/png'
+)
+puts "已建立使用者 Zooey"
+
+demo_band.avatar.attach(
+  io: StringIO.new(demo_band_avatar),
+  filename: 'band_avatar.png',
+  content_type: 'image/png'
+)
+
 5.times do |i|
   fakername = Faker::Name.unique.name
   fakeremail = Faker::Internet.unique.email
@@ -77,48 +121,3 @@ fakewords = [
 
   puts "已建立使用者 #{i + 1}: #{fakername} - #{fakeremail}"
 end
-
-demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
-
-demo_band_avatar = File.binread(Rails.root.join('public', 'band_avatar.png'))
-
-demo_user = User.create!(
-  name: 'Zooey Deschanel',
-  email: 'zooey@gg.gg',
-  password: '123123123',
-  confirmed_at: Time.now
-)
-
-demo_profile = demo_user.create_profile(
-  phone: '3345678',
-  location: 'Los Angeles',
-  seniority:  3,
-  content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
-)
-
-demo_profile.instruments << Instrument.find_by(name: '主唱')
-
-demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
-  name: "大貓會社",
-  area: 0,
-  content: "你好～歡迎參觀我的樂團",
-  state: 0,
-  founded_at: "2023-09-01"
-)
-
-demo_band.band_members.first.update(identity: :leader, role: "主唱")
-
-demo_band.styles << Style.find_by(name: '搖滾')
-
-demo_profile.avatar.attach(
-  io: StringIO.new(demo_avatar),
-  filename: 'zooey.png',
-  content_type: 'image/png'
-)
-puts "已建立使用者 Zooey"
-
-demo_band.avatar.attach(
-  io: StringIO.new(demo_band_avatar),
-  filename: 'band_avatar.png',
-  content_type: 'image/png'
-)
