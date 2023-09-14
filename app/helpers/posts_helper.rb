@@ -14,7 +14,7 @@ module PostsHelper
     classes = "#{size} flex-skrink-0 rounded-full border-2 border-white"
 
     if user.avatar.attached?
-      image_tag user.avatar, class: classes
+      image_tag user.avatar.variant(:thumb), class: classes
     else
       image_tag '/default_avatar.png', class: classes
     end
