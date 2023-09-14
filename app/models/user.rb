@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   # associations
   has_one :profile
+
   has_many :band_members
   has_many :bands, through: :band_members
   has_many :resume_lists
@@ -20,7 +21,7 @@ class User < ApplicationRecord
   has_many :like_logs
   has_many :liked_posts, through: :like_logs, source: :post
   has_many :orders
-  has_many :notifications, as: :recipient, dependent: :destroy
+  has_many :notifications, as: :recipient
 
   # ransack
   def self.ransackable_attributes(_auth_object = nil)
