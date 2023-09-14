@@ -3,9 +3,11 @@
 class ResumeListsController < ApplicationController
   before_action :set_resume_list, only: %i[show edit update destroy approve reject]
   before_action :set_recruit, only: %i[new create]
+  before_action :notice_as_read, only: %i[show]
 
   def show
     authorize @resume_list
+
     @comment = Comment.new
     @comments = @resume_list.comments.order(created_at: :desc)
   end
@@ -50,7 +52,6 @@ class ResumeListsController < ApplicationController
   end
 
   def approve
-    
     authorize @resume_list
     @recruit = @resume_list.recruit
     @band = @recruit.band
@@ -75,6 +76,15 @@ class ResumeListsController < ApplicationController
       redirect_to recruit_path(@resume_list.recruit), notice: '已拒絕申請'
     else
       reder resume_list_path(@resume_list), alert: '操作失敗'
+    end
+  end
+
+  def notice_as_read
+    if current_user == @resume_list.band_leader
+      @notification = Notification.find_by("params->>'ResumeList'  = ?", "#{@resume_list.id}" )
+      if @notification.present?
+        @notification.update(read_at: Time.now)
+      end
     end
   end
 

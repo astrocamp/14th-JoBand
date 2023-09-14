@@ -20,18 +20,10 @@ class ResumeListNotification < Noticed::Base
   # Define helper methods to make rendering easier.
   #
   def message
-    t('.message')
+    t('notice.resume_list.message')
   end
 
   def url
     resume_list_path(params[:ResumeList])
   end
-  
-  # def url
-  #   band_path(Band.find(params[:resume_list][:band_slug]))
-  # end
-
-  # def url
-  #   article_path(Article.find(params[:comment][:article_id]))
-  # end
 end

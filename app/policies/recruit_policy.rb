@@ -12,6 +12,10 @@ class RecruitPolicy < ApplicationPolicy
       !user.resume_lists.exists?(recruit_id: @recruit.id)
   end
 
+  def band_manager?
+    user && manager.exists?(band_id: @recruit.band.id)
+  end
+
   def band_leader?
     user && leader.exists?(band_id: @recruit.band.id)
   end
@@ -25,7 +29,7 @@ class RecruitPolicy < ApplicationPolicy
   end
 
   def update?
-    create?
+    band_leader? || band_manager?
   end
 
   def edit?

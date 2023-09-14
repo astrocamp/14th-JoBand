@@ -29,9 +29,9 @@ class BandsController < ApplicationController
         redirect_to band_path(@band), notice: '成功創立樂團'
       else
         flash.now[:alert] = '創建失敗，請檢查輸入。'
-        render :new 
+        render :new
       end
-    else @user.band_members.count >= 5
+    else
       @band.errors.add(:base, '最多只能擁有5個樂團。')
       flash.now[:alert] = '最多只能擁有5個樂團。'
       render :new

@@ -7,29 +7,24 @@
             <%= File.read('app/assets/images/icon/bell.svg').html_safe %>
           </div>
           <% if @unread.count > 0 %>
-            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-2 h-2 flex items-center justify-center text-sm font-semibold">
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-[15px] h-[15px] flex items-center justify-center text-sm font-semibold">
               <!-- 使用紅點代替數字，如果沒有未讀通知則不顯示紅點 -->
-              <%= content_tag(:div, '', class: 'red-dot') %>
+              <%= @unread.count %>
             </div>
           <% end %>
         </div>
       </summary>
-      <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+      <ul class="py-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-[160px]">
         <% @unread.take(5).each do |notification| %>
           <%= render 'shared/notification', notification: notification %>
         <% end %>
-        <% if @read.count > 0 && @unread.count > 0 %>
-          <li>
-            <hr class="dropdown-divider">
-          </li>
-        <% elsif @read.count + @unread.count == 0 %>
-        <li class="dropdown-item">
-          <%= t('目前沒有任何通知') %>
+        
+        <% if @unread.count == 0 %>
+        <li class="dropdown-item text-center text-gray-600">
+          <%= t('notice.resume_list.nothing')%>
         </li>
         <% end %>
-        <% @read.each do |notification| %>
-          <%= render 'shared/notification', notification: notification %>
-        <% end %>
+
       </ul>
     </details>
   </li>

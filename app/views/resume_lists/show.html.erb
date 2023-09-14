@@ -19,18 +19,20 @@
                 <%= @resume_list.role %>
               </strong>
             </p>
-
           </div>
-
-        <% end %>
-
+        <% end %>      
       </div>
+      <div class="text-center">
+        <%= link_to '返回招募', recruit_path(@resume_list.recruit),class:'joband-hover-style mr-2' %>
+      </div>
+      
       <p class="w-2/3 mx-auto joband-text-bk">
         自我描述：<br>
         <strong>
           <%= @resume_list.description %>
         </strong>
-      </p>    
+      </p>
+
       <div class='center'>
         <% if policy(@resume_list).approve? %>
           <%= link_to "加入團員",

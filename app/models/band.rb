@@ -81,26 +81,26 @@ class Band < ApplicationRecord
   private
 
   def avatar_size
-    if avatar.attached? && avatar.blob.byte_size > 3.megabytes
-      return errors.add(:avatar, "不能大於3MB")
-    end
+    return unless avatar.attached? && avatar.blob.byte_size > 3.megabytes
+
+    errors.add(:avatar, '不能大於3MB')
   end
 
   def banner_size
-    if banner.attached? && banner.blob.byte_size > 5.megabytes
-      return errors.add(:banner, "不能大於5MB")
-    end
+    return unless banner.attached? && banner.blob.byte_size > 5.megabytes
+
+    errors.add(:banner, '不能大於5MB')
   end
 
   def music_size
-    if music.attached? && music.byte_size > 10.megabytes
-      errors.add(:music, "不能大於10MB")
-    end
+    return unless music.attached? && music.byte_size > 10.megabytes
+
+    errors.add(:music, '不能大於10MB')
   end
 
   def video_size
-    if video.attached? && video.byte_size > 20.megabytes
-      errors.add(:video, "不能大於20MB")
-    end
+    return unless video.attached? && video.byte_size > 20.megabytes
+
+    errors.add(:video, '不能大於20MB')
   end
 end

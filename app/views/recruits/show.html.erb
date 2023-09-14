@@ -49,28 +49,30 @@
     </div>
   </article>
   <article>
+    
     <% @resume_lists.where(status: :pending).each do |list| %>
-      <div class="m-3">
-        <%= link_to resume_list_path(list) do %>
-          <div class="p-3 mt-10 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]
-                      lg:p-8">
-            <p class="my-3 text-sm border-b">
-              應徵: 
-              <span class="text-xl">
-                <%= list.role %>
-              </span>
-            </p>
-            <p>
-              <%= list.user.name %><br/>
-            </p>
-            <p class="text-xs">
-              <%= list.description.truncate(20) %>
-            </p>
-              
-            
-          </div>
-        <% end %>
-      </div>
+      <% if policy(@recruit).update? || list.user == current_user %>
+        <div class="m-3">
+          <%= link_to resume_list_path(list) do %>
+            <div class="p-3 mt-10 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]
+                        lg:p-8">
+              <p class="my-3 text-sm border-b">
+                應徵: 
+                <span class="text-xl">
+                  <%= list.role %>
+                </span>
+              </p>
+              <p>
+                <%= list.user.name %><br/>
+              </p>
+              <p class="text-xs">
+                <%= list.description.truncate(20) %>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
+    
   </article>
 </div>
