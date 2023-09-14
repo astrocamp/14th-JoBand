@@ -10,16 +10,13 @@ class BandMember < ApplicationRecord
 
   def notify_recipient
     
-    new_member = resume_list.user
+    new_member = self.user
 
     return if new_member == user
 
-    BandMemberNotification.with(BandMember: self, resume_list: resume_list).deliver_later(new_member)
+    BandMemberNotification.with(BandMember: self.id, band: self.band).deliver_later(new_member)
   end
 
-  def cleanup_notifications
-    notifications_as_resume_list.destroy_all
-  end
 
   enum identity: %i[leader manager member]
 
