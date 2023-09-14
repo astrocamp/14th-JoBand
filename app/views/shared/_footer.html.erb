@@ -1,13 +1,18 @@
-<footer class="p-10 shadow-inner footer footer-center navbg text-neutral-content">
+<footer class="p-5 shadow-inner footer footer-center navbg text-neutral-content">
   <div>
-    <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10">
-    <p class="mt-5 font-bold theme-text">
-      JoBand Industries Ltd.
+    <div class="flex justify-center mt-3 mb-5">
+      <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10 lg:w-[50px] mx-1">
+      <img src="/Joband_footer.svg" alt="Joband_footer" class="items-center w-[90px] lg:w-[100px] mx-1">
+    </div>
+    <p class="theme-text">
+      JoBand  揪團有限公司
     </p> 
-    <div class="grid grid-flow-col gap-5 my-5">
-      <a class="link link-hover theme-text">About us</a> 
-      <a class="link link-hover theme-text">Contact</a> 
+    <div class="grid grid-flow-col mt-3">
+      <a><%= link_to '關於我們', about_path, class: "font-bold link link-hover theme-text mx-2" %></a>
     </div> 
-    <p class="theme-text">Copyright © 2023 - All right reserved</p>
+    <a target="_blank" href="https://github.com/astrocamp/14th-JoBand">
+      <img src="/github_footer.png" alt="Github_footer" class="items-center w-[30px] lg:w-[40px] mx-1 my-2">
+    </a>
+    <p class="theme-text">版權所有 © 2023</p>
   </div>
 </footer>
