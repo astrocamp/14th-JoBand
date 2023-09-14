@@ -61,7 +61,8 @@
         <%= link_to activity_path(@activity.id), class: "theme-text space-x-2 group flex items-center justify-center" do %>
         <div class="p-3 border-2 theme-bg rounded-xl">
           <h2 class="font-bold h2 theme-text"><%= @activity.title %></h2>
-          <p><%= @activity.time_start.strftime('%m %d') %> ~ <%= @activity.time_end.strftime('%m %d') %></p>
+          <p><%= @activity.begin_at %> 
+          <p><%= @activity.time_start.strftime('%H:%M') %> ~ <%= @activity.time_end.strftime('%H:%M') %></p>
           <span class="text-end"><%= @activity.location %></span>
           <%= render "shared/banner", model: @activity  %>
         </div>
