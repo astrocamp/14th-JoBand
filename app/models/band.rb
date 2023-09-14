@@ -88,8 +88,8 @@ class Band < ApplicationRecord
   end
 
   def banner_size
-    if banner.attached? && banner.blob.byte_size > 10.megabytes
-      return errors.add(:banner, "不能大於10MB")
+    if banner.attached? && banner.blob.byte_size > 5.megabytes
+      return errors.add(:banner, "不能大於5MB")
     end
   end
 
