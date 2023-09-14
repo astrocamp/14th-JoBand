@@ -90,10 +90,11 @@ en:
     my_band: "My Bands"
 
   notice:
+    nothing: "--No notifications yet--"
     resume_list:
-      message: "You have new apply for recruit"
-      nothing: "--No notifications yet--"
-
+      message: "You have new apply for recruit！"
+    band_member:
+      message: "Welcome to join band！"
   user:
     sign_up: "Sign Up"
     display_name: "Display Name"
