@@ -2,8 +2,8 @@
 
   <% @profile.user.bands.each do |band| %>
     <%= link_to band_path(band) do %>
-      <div class="flex-wrap w-full mx-2 center">
-        <div class="relative mt-5 center w-[60px] h-[60px] lg:w-[120px] lg:h-[120px]">
+      <div class="flex-wrap w-[150px] center">
+        <div class="relative mt-5 center w-[100px] h-[100px] lg:w-[120px] lg:h-[120px]">
           <%= render 'shared/avatar' , model: band %>
           <div class="relative">
             <div id="band_member" class="absolute w-[50px] h-[50px] bottom-0 left-[-40px] joband-shadow">
