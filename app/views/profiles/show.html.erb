@@ -9,9 +9,15 @@
   </div>
 
   <div class="flex flex-wrap justify-center">
-    <% @profile.instruments.each do |instrument| %>
+    <% if @profile.instruments.present? %>
+      <% @profile.instruments.each do |instrument| %>
+        <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:mx-5 lg:w-[100px] lg:h-[100px]">
+          <%= render "/shared/instrument", instrument: instrument.name %>
+        </div>
+      <% end %>
+    <% else %>
       <div class="w-[60px] h-[60px] flex relative mx-1 my-3 lg:mx-5 lg:w-[100px] lg:h-[100px]">
-        <%= render "/shared/instrument", instrument: instrument.name %>
+        <%= render "/shared/instrument", instrument: nil %>
       </div>
     <% end %>
   </div>

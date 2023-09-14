@@ -46,11 +46,19 @@
 }
 
 [data-theme="light"] .circle-bg {
-  background-color: #dcc7ae;
+  background-color: #2A323A
 }
 
 [data-theme="dark"] .circle-bg {
   background-color: #f3f3f2;
+}
+
+[data-theme="light"] .joband-text-search {
+  color: #f3f3f2
+}
+
+[data-theme="dark"] .joband-text-search {
+  color: #2A323A;
 }
 
 [data-theme="light"] input {
@@ -110,12 +118,30 @@
   opacity: 0;
 }
 
+#band_member div p{
+  display: none !important;
+}
+
+.band_member_edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  margin-top: 15px;
+  width: 60px;
+  height: 40px;
+}
+
 .trix-content {
   font-size: 1.25rem;
 }
 
 [data-theme="dark"] .bell {
   fill: white;
+}
+
+[data-theme="light"] .search_instrument {
+  fill: white
 }
 
 @media (max-width: 1024px) {

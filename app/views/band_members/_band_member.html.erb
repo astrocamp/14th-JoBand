@@ -1,12 +1,14 @@
-<div class="flex justify-center flex-wrap mx-2 w-[180px]">
-  <div class="relative w-[120px] h-[120px] mt-5 joband-shadow">
+<div class="flex justify-center flex-wrap mx-5 w-[120px]">
+  <div class="relative w-[120px] h-[120px] mt-5  joband-shadow">
     <%= link_to '', profile_path(band_member.user.profile), class: "block w-full h-full absolute z-[1]" %>
     <%= render 'shared/avatar' , model: band_member.user.profile %>
   </div>
-  <div class="w-full my-2 text-center h4 joband-text-bk joband-shadow">
-    <%= band_member.role %>
+  <div class="relative">
+    <div id="band_member" class="absolute w-[50px] h-[50px] bottom-0 left-[-40px] joband-shadow">
+      <%= render "shared/instrument", instrument: band_member.role %>
+    </div>
   </div>
   <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
-    <%= link_to '編輯', edit_band_band_member_path(@band, band_member) , class: 'btn btn-xs mt-2'%>
+    <%= link_to '編輯', edit_band_band_member_path(@band, band_member) , class: 'band_member_edit joband-info-btn'%>
   <% end %>
 </div>

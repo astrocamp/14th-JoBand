@@ -35,9 +35,9 @@ class Band < ApplicationRecord
 
   # enum
   enum state: {
-    活躍中: 0,
-    招募中: 1,
-    暫時休團: 2,
+    活躍: 0,
+    招募: 1,
+    休團: 2,
     解散: 3
   }, _prefix: true
 
