@@ -25,15 +25,15 @@
   <div class="flex flex-wrap w-full p-16 px-8 lg:px-32 joband-text-bk">
   
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">電話號碼：<%= @profile.phone %></p>
+    <p class="w-full h3"><%= t('show.phone')%> <%= @profile.phone %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">居住城市：<%= @profile.location %></p>
+    <p class="w-full h3"><%= t('show.city')%> <%= @profile.location %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">樂齡：<%= @profile.seniority %></p>
+    <p class="w-full h3"><%= t('show.music_years')%> <%= @profile.seniority %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">簡介：<%= @profile.content %></p>
+    <p class="w-full h3"><%= t('show.intro')%> <%= @profile.content %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">所屬樂團：</p>
+    <p class="w-full h3"><%= t('show.belongs_band')%> </p>
     <div class="flex flex-wrap w-full">
       <%= render 'band' %>
     </div>
@@ -43,20 +43,20 @@
         <% if @profile.music.attached? %>
           <audio controls controlsList="nodownload" class="w-full custom-audio-player">
             <source src="<%= url_for(@profile.music) %>" type="audio/mpeg">
-            您的瀏覽器不支援音樂格式
+            <%= t('show.no_support_music')%>
           </audio>
         <% else %>
-          <p class="w-full text-gray-400 h4">沒有上傳任何音樂檔案</p>
+          <p class="w-full text-gray-400 h4"><%= t('show.no_music')%></p>
         <% end %>
       </div>
       <div class="my-3">
         <% if @profile.video.attached? %>
           <video width="640" height="360" controls controlsList="nodownload" class="w-full">
             <source src="<%= url_for(@profile.video) %>" type="video/mp4">
-            您的瀏覽器不支援影片格式
+            <%= t('show.no_support_video')%>
           </video>
         <% else %>
-          <p class="w-full text-gray-400 h4">沒有上傳任何影片檔案</p>
+          <p class="w-full text-gray-400 h4"><%= t('show.no_video')%></p>
         <% end %>
       </div>
     </div>

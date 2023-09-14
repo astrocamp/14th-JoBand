@@ -35,6 +35,58 @@ en:
         banner: Banner
         music: Music
         video: Video
+      current_password: "Current password"
+  joband:
+    info: "JoBand is an original social media platform for bands, especially design for music enthusiasts"
+    description: "Through JoBand, you can easily find suitable band members or music projects, while also enhancing your music skills and knowledge."
+    slogan: "Expand Your Music Path and Find Your Perfect Partners"
+    music: "Present Your Musical Creations"
+    music_desc: "Quickly show yourself through the photo card"
+    band: "Present Your Bands"
+    band_desc: "The Band Cards Record Every Important Moment"
+    band_desc_more: "Let your musical journey shine brightly at every moment"
+    find_bands: "Find the band that suits you best"
+    find_activities: "Search for the activities you want to participate in"
+    find_players: "Looking for the musicians you want to know"
+
+  show:
+    recruit: "Recruit"
+    create_recruit: "Create Recruit"
+    edit_recruit: "Edit Recruit"
+    found_at: "Found at:"
+    area: "Area :"
+    intro: "Intro :"
+    members: "Members :"
+    create_event: "Create Activity"
+    edit_band: "Edit Band"
+    edit: "Edit"
+    no_music: "No Music yet"
+    no_video: "No Videos yet"
+    no_support_music: "Browser does not support the music format"
+    no_support_video: "Browser does not support the video format"
+    phone: "Phone :"
+    city: "City :"
+    music_years: "Music years :"
+    belongs_band: "My Bands :"
+    no_join_band: "Not Join Any Band Yet"
+    host: "Host :"
+    content: "Content :"
+    date: "Date :"
+    time: "Time :"
+    county: "County :"
+    place: "Place :"
+    checkout: "check this out"
+    edit_event: "EDIT"
+    delete_event: "DELETE"
+    comment_content: "Comments"
+    send_comment: "SEND"
+  nav:
+    find_players: "Players"
+    find_bands: "Bands"
+    find_activities: "Activities"
+    discuss: "Forums"
+    personal_profile: "My Profile"
+    my_band: "My Bands"
 
   notice:
     resume_list:
