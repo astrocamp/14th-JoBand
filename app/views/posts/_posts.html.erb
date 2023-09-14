@@ -4,7 +4,7 @@
       <%= post_avatar(post.user.profile) %>
     </div>
     <div class="justify-between flex-auto">
-      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold", data: {turbo: false} , target: "_blank"%>
+      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold", data: {turbo: false} , target: "_top"%>
       <em class="inline-block pr-10 text-xs text-end"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
     <div class="prose prose-lg"><%= post.body %></div>
       <%= render "posts/controls", post: post %>

@@ -5,7 +5,8 @@
         <li>
           <%= link_to posts_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/home.svg" %><span class="ml-5 theme-text"><%= t("post.lobby") %></span>
+              <%= File.read('app/assets/images/icon/home.svg').html_safe %>
+              <span class="ml-5 theme-text"><%= t("post.lobby") %></span>
             </div>
           <% end %>
         </li>
@@ -13,7 +14,8 @@
         <li>
           <%= link_to profile_path(current_user.profile), class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/profile.svg" %><span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
+              <%= File.read('app/assets/images/icon/profile.svg').html_safe %>
+              <span class= "ml-4 theme-text" ><%= t("post.profile") %></span>
             </div>
           <% end %>
         </li>
@@ -22,7 +24,8 @@
             <li>
               <%= link_to "#", class: "theme-text space-x-2 group flex items-center justify-center" do %>
                 <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-                  <%= image_tag "icon/play.svg" %><span class= "ml-4 theme-text" ><%= band.name %></span>
+                  <%= File.read('app/assets/images/icon/play.svg').html_safe %>
+                  <span class= "ml-4 theme-text" ><%= band.name %></span>
                 </div>
               <% end %>
             </li>
@@ -31,7 +34,8 @@
         <li>
           <%= link_to bands_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
-              <%= image_tag "icon/plus.svg" %><span class= "ml-4 theme-text" ><%= t("post.add_band") %></span>
+              <%= File.read('app/assets/images/icon/plus.svg').html_safe %>
+              <span class= "ml-4 theme-text" ><%= t("post.add_band") %></span>
             </div>
           <% end %>
         </li>

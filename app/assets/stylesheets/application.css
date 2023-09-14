@@ -14,31 +14,39 @@
  *= require_self
  */
 
- .swal2-toast{
+.swal2-toast {
   display: flex !important;
   justify-content: center !important;
   background-color: rgb(241 245 249) !important;
   margin-top: 75px;
- }
- .swal2-toast h2{
-  color: #2A323A !important;
- }
- .btn{
+}
+.swal2-toast h2 {
+  color: #2a323a !important;
+}
+.btn {
   border-radius: 20px !important;
-  font-size: 1rem/* 20px */ !important;
-  line-height: 1.5rem/* 28px */ !important;
- }
+  font-size: 1rem /* 20px */ !important;
+  line-height: 1.5rem /* 28px */ !important;
+}
 
 [data-theme="light"] .theme-text {
-  color: #2A323A
+  color: #2a323a;
 }
 
 [data-theme="dark"] .theme-text {
-  color: #f3f3f2
+  color: #f3f3f2;
+}
+
+[data-theme="light"] .icon-text {
+  fill: #2a323a;
+}
+
+[data-theme="dark"] .icon-text {
+  fill: #f3f3f2;
 }
 
 [data-theme="light"] .circle-bg {
-  background-color: #dcc7ae
+  background-color: #dcc7ae;
 }
 
 [data-theme="dark"] .circle-bg {
@@ -46,19 +54,19 @@
 }
 
 [data-theme="light"] input {
-  color: #2A323A 
+  color: #2a323a;
 }
 
 [data-theme="light"] textarea {
-  color: #2A323A 
+  color: #2a323a;
 }
 
 [data-theme="dark"] input {
-  color: white
+  color: white;
 }
 
 [data-theme="dark"] textarea {
-  color: white
+  color: white;
 }
 
 [data-theme="dark"] select {
@@ -78,24 +86,24 @@
 }
 
 [data-theme="light"] .nav-link:hover {
-  background-color: hsl(var(--bc)/.1) !important;
+  background-color: hsl(var(--bc) / 0.1) !important;
 }
 
 [data-theme="light"] .hamberger {
-  background-color: #2A323A
+  background-color: #2a323a;
 }
 
 [data-theme="dark"] .hamberger {
-  background-color: white
+  background-color: white;
 }
 
 .joband-action-btn {
-  color: white !important
+  color: white !important;
 }
 
 #instrnment_search:hover #instrument_name {
-  opacity: 1;  
-  transition-duration: 1000ms
+  opacity: 1;
+  transition-duration: 1000ms;
 }
 
 #instrument_name {
@@ -107,7 +115,7 @@
 }
 
 [data-theme="dark"] .bell {
-  fill: white
+  fill: white;
 }
 
 @media (max-width: 1024px) {
@@ -127,11 +135,11 @@
 
 /* set-email-disabled-color */
 [data-theme="dark"] .email-disabled::placeholder {
-  color: rgb(164, 164, 164)
+  color: rgb(164, 164, 164);
 }
 
 [data-theme="light"] .email-disabled::placeholder {
-  color: rgb(164, 164, 164)
+  color: rgb(164, 164, 164);
 }
 
 .field_with_errors {
