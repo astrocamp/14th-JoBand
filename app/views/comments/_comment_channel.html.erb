@@ -11,11 +11,11 @@
         <div class='text-right text-sm'>
         [<%= comment.created_at.strftime('%Y-%m-%d %H:%M') %>]
         <% if comment.user == current_user %>
-        <%= link_to '刪除', channel_path(comment, channel_id: channel.id),
+        <%# <%= link_to '刪除', channel_path(comment, channel_id: channel.id),
                             class:'text-sm text-red-400',
                             data: {turbo_method: 'delete',
                             turbo_confirm: '確定刪除？'
-                                } %>
+                                } %> 
         <% end %>
         </div>
     </div>
