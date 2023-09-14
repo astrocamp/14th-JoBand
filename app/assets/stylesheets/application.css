@@ -110,6 +110,20 @@
   opacity: 0;
 }
 
+#band_member div p{
+  display: none !important;
+}
+
+.band_member_edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: small;
+  margin-top: 15px;
+  width: 60px;
+  height: 40px;
+}
+
 .trix-content {
   font-size: 1.25rem;
 }
