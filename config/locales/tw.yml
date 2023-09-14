@@ -40,9 +40,13 @@ tw:
         video: 影片
 
   notice:
+    nothing: －－目前沒有通知－－
     resume_list:
       message: "新的招募申請！"
-      nothing: －－目前沒有通知－－
+    band_member:
+      message: "歡迎加入樂團！"
+      
+  
   user:
     sign_up: "加入 JoBand！"
     display_name: "暱稱"

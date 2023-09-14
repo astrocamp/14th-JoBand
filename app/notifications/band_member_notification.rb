@@ -18,10 +18,10 @@ class BandMemberNotification < Noticed::Base
   # Define helper methods to make rendering easier.
   #
   def message
-    t(".message")
+    t("notice.band_member.message")
   end
   #
   def url
-    band_path(params[:band])
+    band_path(params[:Band])
   end
 end
