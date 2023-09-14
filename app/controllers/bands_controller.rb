@@ -3,7 +3,7 @@
 class BandsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_band, only: %i[show edit update]
-  after_action :create_channel, only: %i[create]
+  # after_action :create_channel, only: %i[create]
   before_action :mark_notice_as_read, only: %i[show]
 
   def index
@@ -29,6 +29,7 @@ class BandsController < ApplicationController
     if @user.band_members.count < 5
       if @band.save
         @band.band_members.create(user: @user, identity: :leader, role: @role)
+        @band.create_channel(user: @user)
         redirect_to band_path(@band), notice: '成功創立樂團'
       else
         flash.now[:alert] = '創建失敗，請檢查輸入。'

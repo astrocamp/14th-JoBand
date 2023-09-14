@@ -14,7 +14,7 @@
         <% if current_user&.bands.present? %>
           <% current_user.bands.each do |band| %>
             <li>
-              <%= link_to channel_path(band), class: "theme-text space-x-2 group flex items-center justify-center" do %>
+              <%= link_to channel_path(band.id), class: "theme-text space-x-2 group flex items-center justify-center" do %>
                 <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
                   <%= File.read('app/assets/images/icon/play.svg').html_safe %>
                   <span class= "ml-4 theme-text" ><%= band.name %></span>
