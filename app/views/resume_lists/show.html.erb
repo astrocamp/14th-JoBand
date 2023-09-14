@@ -1,36 +1,42 @@
 <article class="mx-auto w-full lg:w-[50%] lg:mx-auto bg-white lg:rounded-[80px] joband-shadow mt-16">
   <div>
     <div>
-      <div class="my-5 center ">
-        <%= link_to profile_path(@resume_list.user.profile),class:'flex mt-3' do %>
 
-          <div class="relative w-20 h-20 m-5 ">
+      <div class="my-5 center">
+        <%= link_to profile_path(@resume_list.user.profile),class:'my-5' do %>
+
+          <div class="relative w-[100px] h-[100px] mx-auto">
             <%= render 'shared/avatar', model: @resume_list.user.profile %>
           </div>
-          <div class="">
-            <p class="flex w-full my-3 text-center h1 joband-text-bk">
+          
+          <div class="flex-wrap center">
+            <p class="w-full my-3 text-center h2 joband-text-bk">
               <%= User.find(@resume_list.user_id).name %>
             </p>
-
-            <p class="flex w-full joband-text-bk">
+            <p class="w-full text-center joband-text-bk">
               應徵職位
               <strong>
                 <%= @resume_list.role %>
               </strong>
             </p>
           </div>
+
         <% end %>      
       </div>
+      
       <div class="text-center">
-        <%= link_to '返回招募', recruit_path(@resume_list.recruit),class:'joband-hover-style mr-2' %>
+        <%= link_to '返回招募', recruit_path(@resume_list.recruit),class:'joband-hover-gray' %>
       </div>
       
-      <p class="w-2/3 mx-auto joband-text-bk">
-        自我描述：<br>
-        <strong>
+      <div class="my-10">
+        <p class="flex-wrap mx-auto center joband-text-bk">
+          自我推薦
+        </p>
+        <strong class="center joband-text-bk">
           <%= @resume_list.description %>
         </strong>
-      </p>
+      </div>
+      
 
       <div class='center'>
         <% if policy(@resume_list).approve? %>
@@ -40,7 +46,7 @@
                         turbo_method: :post, 
                         turbo_confirm: '確認加入?'
                       },
-                      class: 'joband-hover-style mr-2' %>
+                      class: 'joband-ok-btn mr-2' %>
 
           <%= link_to '拒絕申請',
                       reject_resume_list_path(@resume_list),
@@ -48,15 +54,15 @@
                         turbo_method: :patch,
                         turbo_confirm: '拒絕此申請'
                       },
-                      class: 'joband-reject-btn' %>
+                      class: 'joband-del-btn' %>
         <% end %>
       </div>
 
 
       <% if policy(@resume_list).update? %>
         <div class="mb-5 center">
-          <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'joband-hover-style mr-2' %>
-          <%= link_to '刪除', resume_list_path(@resume_list), class: "joband-reject-btn",
+          <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'joband-ok-btn mr-5' %>
+          <%= link_to '刪除', resume_list_path(@resume_list), class: "joband-del-btn",
                               data: {
                                 turbo_method: 'delete',
                                 turbo_confirm: '確定刪除？'
@@ -66,18 +72,18 @@
       
     </div>
     
-    <div class="m-5 center">
+    <div class="m-5 my-10 center">
       <div class="w-full lg:w-2/3 joband-text-bk">
         <%= form_with(model: [@resume_list, @comment]) do |f| %>
           <div class="mb-3 center">
-            <%= f.label :content, '討論區' %>
+            <%= f.label :content, '留言區' %>
           </div>
           <div class="center">
             <%= f.text_area :content, class:'joband-ring-offset rounded-xl input-md input-bordered w-2/3 max-w-xs'%>
           </div>
           
-          <div class="my-5 center">
-            <%= f.submit '送出留言', class: 'joband-hover-style'%>
+          <div class="my-10 center">
+            <%= f.submit '送出留言', class: 'joband-action-btn'%>
           </div>
           
         <% end %>
