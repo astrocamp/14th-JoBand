@@ -176,7 +176,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_140512) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
     t.bigint "channel_id"
+    t.index ["band_id"], name: "index_posts_on_band_id"
     t.index ["channel_id"], name: "index_posts_on_channel_id"
     t.index ["deleted_at"], name: "index_posts_on_deleted_at"
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -274,6 +276,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_140512) do
   add_foreign_key "like_logs", "users"
   add_foreign_key "orders", "bands"
   add_foreign_key "orders", "users"
+  add_foreign_key "posts", "bands"
   add_foreign_key "posts", "channels"
   add_foreign_key "posts", "users"
   add_foreign_key "profile_and_instruments", "instruments"
