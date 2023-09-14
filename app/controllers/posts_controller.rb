@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @comment = @post.comments.new
     @posts = Post.includes(:like_logs).all.order(created_at: :desc)
+    @activity = Activity.with_attached_banner.sample
   end
 
   def create
