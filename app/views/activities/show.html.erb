@@ -12,25 +12,25 @@
           <%= render "shared/avatar", model: @activity.band %>
         </div>
         <p class="block ml-2 mr-auto h3"><%= @activity.band.name %></p>
-        <%= link_to "查看此樂團活動", band_activities_path(@band), class: "joband-hover-style-activity text-center w-[150px] sm:text-xs sm:w-[80px]"  %>
+        <%= link_to t('show.checkout'), band_activities_path(@band), class: "joband-hover-style-activity text-center w-[150px] sm:text-xs sm:w-[80px]"  %>
       </div>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">內容：<%= @activity.content %></p>
+    <p class="w-full h3"><%= t('show.content')%> <%= @activity.content %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">日期：<%= @activity.begin_at %></p>
+    <p class="w-full h3"><%= t('show.date')%> <%= @activity.begin_at %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">時間：<%= @activity.time_start.strftime('%H:%M') %> - <%= @activity.time_end.strftime('%H:%M') %></p>
+    <p class="w-full h3"><%= t('show.time')%> <%= @activity.time_start.strftime('%H:%M') %> - <%= @activity.time_end.strftime('%H:%M') %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">縣市：<%= @activity.city %></p>
+    <p class="w-full h3"><%= t('show.county')%> <%= @activity.city %></p>
     <span class="w-full joband-line-bk"></span>
-    <p class="w-full h3">地點：<%= @activity.location %></p>
+    <p class="w-full h3"><%= t('show.place')%> <%= @activity.location %></p>
   </div>
   
   <div class="mx-auto mt-12 mb-5 text-center w-35">
     <% if policy(@activity).update? %>
       <div class="mb-6">
-        <%= link_to '修改活動', edit_activity_path(@activity), class: "joband-action-btn mx-2" %>
-        <%= link_to '刪除活動', activity_path(@activity), 
+        <%= link_to t('show.edit_event'), edit_activity_path(@activity), class: "joband-action-btn mx-2" %>
+        <%= link_to t('show.delete_event'), activity_path(@activity), 
                               data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
                               class: "joband-action-btn mx-2" %>
       </div>
@@ -41,13 +41,13 @@
 <div class="flex-wrap center w-full h-auto mx-auto overflow-hidden joband-shadow bg-white m-5 p-5
             lg:w-[75%] lg:mt-20 lg:rounded-[80px]">
   <div class='w-full'>  
-    <h2 class='my-10 h1 joband-text-bk center'>留言內容</h2>
+    <h2 class='my-10 h1 joband-text-bk center'><%= t('show.comment_content')%></h2>
     <%= form_with(model: [@activity, @comment]) do |f| %>
       <div class='center'>
         <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3 " %>
       </div>
       <div class='mt-3 mb-2 center'>
-        <%= f.submit '送出留言', class: 'joband-action-btn my-5'%>
+        <%= f.submit t('show.send_comment'), class: 'joband-action-btn my-5'%>
       </div>
     <% end %>
     <ul class='flex flex-wrap items-center justify-center w-full'>

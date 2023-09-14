@@ -38,6 +38,50 @@ tw:
         banner: 橫幅
         music: 音樂
         video: 影片
+  joband:
+    info: "JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台"
+    description: "透過 JoBand，您可以輕鬆尋找適合的樂團成員或是音樂項目，同時也能進一步提升您的音樂技能和知識"
+    slogan: "拓展音樂之路，尋找完美夥伴"
+    music: "展示你的音樂作品集"
+    music_desc: "藉由簡潔明瞭的音樂人小卡快速展示自己"
+    band: "秀出你的樂團"
+    band_desc: "樂團小卡記錄每個重要時刻"
+    band_desc_more: "讓您的音樂旅程無時不刻地閃耀"
+    find_bands: "尋找最適合您的樂團"
+    find_activities: "尋找您想參加的活動"
+    find_players: "尋找您想認識的音樂家"
+  
+  show:
+    recruit: "查看招募"
+    create_recruit: "建立招募"
+    edit_recruit: "編輯招募"
+    found_at: "創立時間 :"
+    area: "地區 :"
+    intro: "介紹 :"
+    members: "成員 :"
+    create_event: "創建活動"
+    edit_band: "修改樂團資料"
+    edit: "編輯"
+    no_music: "沒有上傳任何音樂檔案"
+    no_video: "沒有上傳任何影片檔案"
+    no_support_music: "您的瀏覽器不支援音樂格式"
+    no_support_video: "您的瀏覽器不支援影片格式"
+    phone: "電話號碼 :"
+    city: "居住城市 :"
+    music_years: "樂齡 :"
+    belongs_band: "所屬樂團 :"
+    no_join_band: "未加入樂團"
+    host: "主辦樂團 :"
+    content: "內容 :"
+    date: "日期 :"
+    time: "時間 :"
+    county: "縣市 :"
+    place: "地點 :"
+    checkout: "查看此樂團活動"
+    edit_event: "修改活動資料"
+    delete_event: "刪除活動資料"
+    comment_content: "留言內容"
+    send_comment: "送出留言"
 
   notice:
     nothing: －－目前沒有通知－－
@@ -46,6 +90,15 @@ tw:
     band_member:
       message: "歡迎加入樂團！"
       
+  
+
+  nav:
+    find_players: "找樂手"
+    find_bands: "找樂團"
+    find_activities: "找活動"
+    discuss: "討論區"
+    personal_profile: "個人檔案"
+    my_band: "我的樂團"
   
   user:
     sign_up: "加入 JoBand！"
@@ -62,6 +115,7 @@ tw:
     resend_confirm_email: "重新發送認證信"
     resend_button: "發送信件"
     login: "登入"
+    logout: "登出"
     google_login: "使用 Google 帳戶登入"
     remember_me: "記住我"
     forgot_password: "忘記密碼"

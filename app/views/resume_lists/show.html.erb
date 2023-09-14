@@ -61,7 +61,7 @@
 
       <% if policy(@resume_list).update? %>
         <div class="mb-5 center">
-          <%= link_to '編輯', edit_resume_list_path(@resume_list), class: 'joband-ok-btn mr-5' %>
+          <%= link_to t('show.edit'), edit_resume_list_path(@resume_list), class: 'joband-ok-btn mr-5' %>
           <%= link_to '刪除', resume_list_path(@resume_list), class: "joband-del-btn",
                               data: {
                                 turbo_method: 'delete',
@@ -83,7 +83,7 @@
           </div>
           
           <div class="my-10 center">
-            <%= f.submit '送出留言', class: 'joband-action-btn'%>
+            <%= f.submit t('show.send_comment'), class: 'joband-action-btn'%>
           </div>
           
         <% end %>
