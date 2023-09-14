@@ -3,6 +3,7 @@
 class BandsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create edit update]
   before_action :set_band, only: %i[show edit update]
+  before_action :mark_notice_as_read, only: %i[show]
 
   def index
     @search_band = Band.ransack(params[:q])
@@ -49,6 +50,16 @@ class BandsController < ApplicationController
     else
       flash.now[:alert] = '更新失敗，請檢查輸入。'
       render :edit
+    end
+  end
+
+  def mark_notice_as_read
+    new_member = @band.band_members.last.user
+    if current_user == new_member
+      @notification = Notification.find_by(recipient_id: new_member.id)
+      if @notification.present?
+        @notification.update(read_at: Time.now)
+      end
     end
   end
 

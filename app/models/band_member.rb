@@ -8,14 +8,15 @@ class BandMember < ApplicationRecord
   before_destroy :cleanup_notifications
   has_noticed_notifications model_name: 'Notification'
 
+
   def notify_recipient
-    
     new_member = self.user
-
-    return if new_member == user
-
-    BandMemberNotification.with(BandMember: self.id, band: self.band).deliver_later(new_member)
+    BandMemberNotification.with(BandMember: self.id, Band: self.band.id).deliver(new_member)
   end
+
+  # def new_member
+  #   self.user
+  # end
 
 
   enum identity: %i[leader manager member]
