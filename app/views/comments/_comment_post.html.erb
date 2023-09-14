@@ -14,9 +14,10 @@
         <% if comment.user == current_user %>
         <%= link_to '刪除', comment_path(comment, post_id: post.id),
                             class:'text-sm text-red-400',
-                            data: {turbo_method: 'delete',
-                            turbo_confirm: '確定刪除？'
-                                } %>
+                            data: {
+                              turbo_method: 'delete',
+                              turbo_confirm: '確定刪除？'
+                            } %>
         <% end %>
         </div>
     </div>
