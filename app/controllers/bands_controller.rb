@@ -54,9 +54,9 @@ class BandsController < ApplicationController
   end
 
   def mark_notice_as_read
-    new_member = @band.band_members.last.user
-    if current_user == new_member
-      @notification = Notification.find_by(recipient_id: new_member.id)
+    
+    if @band.band_members.pluck(:user_id).include?current_user.id
+      @notification = Notification.find_by(recipient_id: current_user.id)
       if @notification.present?
         @notification.update(read_at: Time.now)
       end
