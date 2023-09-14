@@ -3,7 +3,7 @@
   <% comments.each do |comment| %>
     <li>
       <div>
-        <%= link_to comment.user.name, profile_path(comment.user_id), target: "_blank", 
+        <%= link_to comment.user.name, profile_path(comment.user_id), target: "_top", 
                                       class:'font-bold' %>
       </div>
       <div class="m-3 break-words">

@@ -1,30 +1,30 @@
 <ul class="flex items-start justify-start -ml-3 list-none space-x-14">
   <li>
     <div data-controller="like" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>">
-      <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost">♡
+      <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost theme-text">♡
       </button>
-      <span data-like-target="count" class="mx-2">
+      <span data-like-target="count" class="mx-2 theme-text">
         <%= post.like_logs.count %>
       </span>
     </div>
   </li>
   <li>            
     <span class="btn btn-ghost" data-action="click->comments#toggleContent" data-link-id="<%= post.id %>">
-      <a href="#" class="flex items-center">
-      <%= image_tag "icon/comment.svg" %>
-      <% if post.comments.any? %>
-        <div class="comment-count ml-1">
-          <%= post.comments.count %>
-        </div>
-      <% end %>
+      <a href="#" class="flex items-center theme-text">
+        <%= File.read('app/assets/images/icon/comment.svg').html_safe %>
+        <% if post.comments.any? %>
+          <div class="comment-count ml-1">
+            <%= post.comments.count %>
+          </div>
+        <% end %>
       </a>
     </span>
   </li>
   <li>
     <% if policy(post).destroy? %>
       <%= button_to post_path(post), method: "delete", data: { turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
-        <div class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50">
-          <%= image_tag "icon/del.svg" %>
+        <div class="flex items-center justify-center ">
+          <%= File.read('app/assets/images/icon/del.svg').html_safe %>
         </div>
       <% end %>
     <% end %>
