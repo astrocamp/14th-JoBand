@@ -10,15 +10,15 @@
   </div>
   <div class="flex-col mx-auto my-5 theme-text theme-bg hero-content lg:flex-row-reverse">
     <div class="mx-20 text-center lg:text-left">
-      <h1 class="font-bold text-7xl"><%= t("user.sign_up") %></h1>
+      <h1 class="font-bold text-7xl sm:text-left"><%= t("user.sign_up") %></h1>
       <div class="py-4 h3">
-        <p class="mb-2">JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台
+        <p class="mb-2 sm:text-left">JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台
         </p>
-        <p>透過 JoBand，您可以輕鬆尋找適合的樂團成員或是音樂項目，同時也能進一步提升您的音樂技能和知識
+        <p class="sm:text-left">透過 JoBand，您可以輕鬆尋找適合的樂團成員或是音樂項目，同時也能進一步提升您的音樂技能和知識
         </p>
       </div>
     </div>
-    <div class="flex-shrink-0 w-full max-w-sm bg-white joband-shadow card">
+    <div class="flex-shrink-0 w-full max-w-sm bg-white joband-shadow lg:card">
       <div class="card-body">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "users/shared/error_messages", resource: resource %>
