@@ -20,7 +20,7 @@ class ResumeListNotification < Noticed::Base
   # Define helper methods to make rendering easier.
   #
   def message
-    t('.message')
+    t("notice.resume_list.message")
   end
 
   def url

@@ -3,12 +3,11 @@
 class ResumeListsController < ApplicationController
   before_action :set_resume_list, only: %i[show edit update destroy approve reject]
   before_action :set_recruit, only: %i[new create]
+  before_action :notice_as_read, only: %i[show]
 
   def show
     authorize @resume_list
-    if current_user == @band_leader
-      notice_as_read()
-    end
+
     @comment = Comment.new
     @comments = @resume_list.comments.order(created_at: :desc)
   end
@@ -81,9 +80,11 @@ class ResumeListsController < ApplicationController
   end
 
   def notice_as_read
-    @notification = Notification.find_by(recipient_id: current_user.id)
-    if @notification.present?
-      @notification.update(read_at: Time.now)
+    if current_user == @resume_list.band_leader
+      @notification = Notification.find_by(recipient_id: current_user.id)
+      if @notification.present?
+        @notification.update(read_at: Time.now)
+      end
     end
   end
 

@@ -36,10 +36,10 @@ en:
         music: Music
         video: Video
 
-  notifications:
-    resume_list_notification:
+  notice:
+    resume_list:
       message: "You have new apply for recruit"
-      no_notifications: "No notifications yet"
+      nothing: "--No notifications yet--"
 
   user:
     sign_up: "Sign Up"

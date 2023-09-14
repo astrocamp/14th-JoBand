@@ -19,16 +19,15 @@ class ResumeList < ApplicationRecord
     rejected: 2
   }, _prefix: true
 
-  private
-
   def band_leader
-    @band_leader = self.recruit.band.band_members.leader.take.user
+    self.recruit.band.band_members.leader.take.user
   end
+
+  private
   
   # 通知寄給創建招募的人
   def notify_recipient
     band_leader = recruit.band.band_members.leader.take.user
-    return if band_leader == user
     ResumeListNotification.with(ResumeList: self.id).deliver(band_leader)
   end
 

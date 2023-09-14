@@ -39,10 +39,10 @@ tw:
         music: 音樂
         video: 影片
 
-  notifications:
-    resume_list_notification:
-      message: "您有新的招募申請"
-      no_notifications: "目前沒有通知"
+  notice:
+    resume_list:
+      message: "新的招募申請！"
+      nothing: －－目前沒有通知－－
   user:
     sign_up: "加入 JoBand！"
     display_name: "暱稱"
