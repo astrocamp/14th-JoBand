@@ -8,15 +8,15 @@
       }
     </style>
   </defs>
-  <path class="cls-1" d="m55.78,35.39H1.27c-.7,0-1.27-.57-1.27-1.27V1.27C0,.57.57,0,1.27,0h54.51c.7,0,1.27.57,1.27,1.27v32.85c0,.7-.57,1.27-1.27,1.27Zm-53.24-2.55h51.96V2.55H2.55v30.3Z"/>
-  <rect class="cls-1" x="8.42" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="15.95" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="23.49" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="31.02" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="38.56" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="46.09" y=".88" width="2.55" height="32.43"/>
-  <rect class="cls-1" x="6.58" y="1.27" width="6.22" height="21.74"/>
-  <rect class="cls-1" x="44.25" y="1.27" width="6.22" height="21.74"/>
-  <rect class="cls-1" x="36.72" y="1.27" width="6.22" height="21.74"/>
-  <rect class="cls-1" x="21.65" y="1.27" width="6.22" height="21.74"/>
+  <path class="cls-1 search_instrument" d="m55.78,35.39H1.27c-.7,0-1.27-.57-1.27-1.27V1.27C0,.57.57,0,1.27,0h54.51c.7,0,1.27.57,1.27,1.27v32.85c0,.7-.57,1.27-1.27,1.27Zm-53.24-2.55h51.96V2.55H2.55v30.3Z"/>
+  <rect class="cls-1 search_instrument" x="8.42" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="15.95" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="23.49" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="31.02" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="38.56" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="46.09" y=".88" width="2.55" height="32.43"/>
+  <rect class="cls-1 search_instrument" x="6.58" y="1.27" width="6.22" height="21.74"/>
+  <rect class="cls-1 search_instrument" x="44.25" y="1.27" width="6.22" height="21.74"/>
+  <rect class="cls-1 search_instrument" x="36.72" y="1.27" width="6.22" height="21.74"/>
+  <rect class="cls-1 search_instrument" x="21.65" y="1.27" width="6.22" height="21.74"/>
 </svg>

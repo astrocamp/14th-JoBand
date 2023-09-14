@@ -46,11 +46,19 @@
 }
 
 [data-theme="light"] .circle-bg {
-  background-color: #dcc7ae;
+  background-color: #2A323A
 }
 
 [data-theme="dark"] .circle-bg {
   background-color: #f3f3f2;
+}
+
+[data-theme="light"] .joband-text-search {
+  color: #f3f3f2
+}
+
+[data-theme="dark"] .joband-text-search {
+  color: #2A323A;
 }
 
 [data-theme="light"] input {
@@ -130,6 +138,10 @@
 
 [data-theme="dark"] .bell {
   fill: white;
+}
+
+[data-theme="light"] .search_instrument {
+  fill: white
 }
 
 @media (max-width: 1024px) {
