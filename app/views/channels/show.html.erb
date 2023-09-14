@@ -6,7 +6,9 @@
           <%= link_to posts_path, class: "theme-text space-x-2 group flex items-center justify-center" do %>
             <div class="flex items-center justify-center w-full h-10 p-5 mb-5 rounded-lg hover:bg-sky-50">
               <%= File.read('app/assets/images/icon/home.svg').html_safe %>
-              <span class="ml-5 theme-text"><%= t("post.lobby") %></span>
+              <span class="ml-5 theme-text">
+                <%= t("post.lobby") %>
+              </span>
             </div>
           <% end %>
         </li>
@@ -54,6 +56,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="pt-6 pl-6 lg:col-span-4">
     <div class="sticky top-20">
       <h2 class="w-full pt-6 mb-3 text-center rounded-lg theme-text h1 theme-bg">熱門活動</h2>

@@ -18,7 +18,7 @@
             <%= f.submit '送出留言', class: 'joband-tag-location text-sm'%>
           </div>
         <% end %>
-        <%= render "comments/comment_channel", comments: channel.comments, channel: channel %>
+        <%= render "comments/comment_post", comments: channel.comments, post: channel %>
       </div>
     </div>
   </div>

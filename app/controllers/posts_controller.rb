@@ -16,7 +16,11 @@ class PostsController < ApplicationController
     @post.user = current_user
     authorize @post
     if @post.save
-      redirect_to posts_path, notice: '貼文已發佈！'
+      if @post.channel_id.present?
+        redirect_to channels_path, notice: '貼文已發佈！'
+      else
+        redirect_to posts_path, notice: '貼文已發佈！'
+      end
     else
       redirect_to posts_path, alert: '貼文失敗。'
     end
@@ -27,7 +31,11 @@ class PostsController < ApplicationController
   def destroy
     authorize @post
     @post.destroy
-    redirect_to posts_path, notice: '貼文已刪除！'
+    if @post.channel.present?
+      redirect_to channel_path(@post.channel), notice: '貼文已刪除！'
+    else
+      redirect_to posts_path, notice: '貼文已刪除！'
+    end
   end
 
   private

@@ -36,7 +36,11 @@ class CommentsController < ApplicationController
 
   def comment_route
     if @commentable.is_a?(Post)
-      redirect_to posts_path, notice: '留言成功'
+      if @commentable.channel.present?
+        redirect_to channel_path(@commentable.channel.id), notice: '留言成功'
+      else
+        redirect_to posts_path, notice: '留言成功'
+      end
     elsif
       @commentable.is_a?(Activity)
       redirect_to activity_path(@commentable), notice: '留言成功'
@@ -51,7 +55,11 @@ class CommentsController < ApplicationController
 
   def comment_delete
     if @commentable.is_a?(Post)
-      redirect_to posts_path, notice: '刪除成功'
+      if @commentable.channel.present?
+        redirect_to channel_path(@commentable.channel.id), notice: '刪除成功'
+      else
+        redirect_to posts_path, notice: '刪除成功'
+      end
     elsif
       @commentable.is_a?(Activity)
       redirect_to activity_path(@commentable), notice: '刪除成功'
