@@ -81,7 +81,7 @@ class ResumeListsController < ApplicationController
 
   def notice_as_read
     if current_user == @resume_list.band_leader
-      @notification = Notification.find_by(recipient_id: current_user.id)
+      @notification = Notification.find_by("params->>'ResumeList'  = ?", "#{@resume_list.id}" )
       if @notification.present?
         @notification.update(read_at: Time.now)
       end

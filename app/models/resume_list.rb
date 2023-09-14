@@ -32,6 +32,6 @@ class ResumeList < ApplicationRecord
   end
 
   def cleanup_notifications
-    Notification.where("params->>'ResumeList'  = ?", "#{self.id}" ).first.destroy
+    Notification.find_by("params->>'ResumeList'  = ?", "#{self.id}" ).destroy
   end
 end
