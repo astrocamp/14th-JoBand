@@ -10,7 +10,7 @@
     <h1 class="w-full my-2 text-xl text-center text-white lg:text-4xl"><%= t('joband.slogan')%> </h1>
     <% if user_signed_in? %>
     <% else %>
-      <%= link_to '現在就加入', new_user_registration_path, class: "joband-action-btn my-12" %>
+      <%= link_to t("joband.join"), new_user_registration_path, class: "joband-action-btn my-12" %>
     <% end %>
   </div>
 </header>

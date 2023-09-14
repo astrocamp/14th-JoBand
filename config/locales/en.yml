@@ -37,7 +37,7 @@ en:
         video: Video
       current_password: "Current password"
   joband:
-    info: "JoBand is an original social media platform for bands, especially design for music enthusiasts"
+    info: "JoBand is an original social media platform for bands, especially design for music enthusiasts."
     description: "Through JoBand, you can easily find suitable band members or music projects, while also enhancing your music skills and knowledge."
     slogan: "Expand Your Music Path and Find Your Perfect Partners"
     music: "Present Your Musical Creations"
@@ -48,6 +48,7 @@ en:
     find_bands: "Find the band that suits you best"
     find_activities: "Search for the activities you want to participate in"
     find_players: "Looking for the musicians you want to know"
+    join: "Join us now"
 
   show:
     recruit: "Recruit"
