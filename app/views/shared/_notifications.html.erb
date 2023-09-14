@@ -7,7 +7,7 @@
             <%= File.read('app/assets/images/icon/bell.svg').html_safe %>
           </div>
           <% if @unread.count > 0 %>
-            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-2 h-2 flex items-center justify-center text-sm font-semibold">
+            <div class="absolute top-0 right-[-5px] bg-red-500 text-white rounded-full w-[15px] h-[15px] flex items-center justify-center text-sm font-semibold">
               <!-- 使用紅點代替數字，如果沒有未讀通知則不顯示紅點 -->
               <%= @unread.count %>
             </div>
