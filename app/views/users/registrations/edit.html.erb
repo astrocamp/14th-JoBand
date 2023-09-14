@@ -2,7 +2,7 @@
   <h2 class="my-5 text-4xl font-bold theme-text"><%= t("user.settings") %></h2>
 </div>
 <div class="flex flex-wrap justify-center">
-  <div class="flex flex-wrap justify-center w-[60%] lg:w-[50%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">  
+  <div class="flex flex-wrap justify-center lg:w-[50%] h-auto mx-auto p-10 lg:rounded-[100px] joband-shadow bg-white">  
     <div class="flex flex-wrap justify-center w-full mb-5 field">
       <input type="text" placeholder="<%= @current_user.email %>" class="w-full max-w-xs input input-bordered email-disabled" disabled /><br/>
       <% if current_user.confirmed? %>
@@ -14,7 +14,7 @@
         <% end %>
       <% end %> 
     </div>
-    <div class="w-[66%]">
+    <div class="w-[90%] lg:w-[70%]">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= render "users/shared/error_messages", resource: resource %>
 
@@ -34,7 +34,7 @@
           <%= f.label :password, t("user.new_password"), class: "joband-text-bk font-bold" %>
         </label>
         <%= f.password_field :password, placeholder: t("user.min_password_placeholder"), autocomplete: "new-password", class: "text-white input input-bordered mb-2" %>
-        <em class="block text-xs joband-text-bk"><%= t("user.leave_blank") %></em>
+        <em class="block text-xs joband-text-em"><%= t("user.leave_blank") %></em>
       </div>
 
       <div class="form-control">
@@ -42,7 +42,7 @@
           <%= f.label :password_confirmation, t("user.password_confirmation"), class: "joband-text-bk font-bold" %>
         </label>
         <%= f.password_field :password_confirmation, placeholder: t("user.password_confirmation_placeholder"), autocomplete: "new-password", class: "text-white input input-bordered mb-2" %>
-         <em class="block text-xs joband-text-bk"><%= t("user.leave_blank") %></em>
+         <em class="block text-xs joband-text-em"><%= t("user.leave_blank") %></em>
       </div>
 
       <div class="form-control">
@@ -50,7 +50,7 @@
           <%= f.label :current_password, t("user.current_password"), class: "joband-text-bk font-bold" %>
         </label>
         <%= f.password_field :current_password, placeholder: t("user.enter_current_password"), autocomplete: "current-password", class: "text-white input input-bordered mb-2" %>
-         <em class="block mb-3 text-xs joband-text-bk"><%= t("user.need_current_password") %></em>
+         <em class="block mb-3 text-xs joband-text-em"><%= t("user.need_current_password") %></em>
       </div>
       <div class="flex justify-center w-full mt-5 mb-7">
         <%= f.submit t("user.update"), class: "joband-action-btn" %>

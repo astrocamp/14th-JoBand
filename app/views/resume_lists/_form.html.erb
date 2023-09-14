@@ -1,28 +1,31 @@
-<h2 class="p-10 my-5 text-4xl font-bold joband-text-bk">為什麼想加入我們？</h2>
+<h2 class="w-full p-10 my-5 text-4xl font-bold text-center theme-text">為什麼想加入我們？</h2>
 
-<div class="center items-center w-3/4 theme-bg border-2 rounded-[80px] shadow-md p-8 bg-white">
-  <%= form_with(model:, data: { turbo: false }) do |f| %>
+<div class="center items-center w-full lg:w-[60%] theme-bg border-2 lg:rounded-[80px] shadow-md p-8 bg-white">
+  <div class="w-full">
+    <%= form_with(model:, data: { turbo: false }) do |f| %>
 
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.hidden_field :status, value: :pending %>
-    
-    <div class="m-5 text-center joband-text-bk">
-      <p class="mb-5">
-        <%= f.label :role, '應徵位置'%> <br>
-      </p> 
-      <%= f.select :role, recruits_roles %>
-    </div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :status, value: :pending %>
+      
+      <div class="m-5 text-center joband-text-bk">
+        <p class="mb-5">
+          <%= f.label :role, '應徵位置'%> <br>
+        </p> 
+        <%= f.select :role, recruits_roles %>
+      </div>
 
-    <div class="m-5 text-center joband-text-bk">
-      <p class="mb-5">
-        <%= f.label :description, '簡短描述', class:'mb-5'%>
-      </p>
-      <%= f.text_area :description, required: true, class:'joband-ring-offset rounded-xl input-md input-bordered w-full h-20 max-w-xs' %>
-    </div>
+      <div class="m-5 text-center joband-text-bk">
+        <p class="mb-5">
+          <%= f.label :description, '簡短描述', class:'mb-5'%>
+        </p>
+        <%= f.text_area :description, required: true, class:'joband-ring-offset rounded-xl input-md input-bordered w-full h-20 max-w-xs' %>
+      </div>
 
-    <div class="mt-10 center">
-      <%= f.submit '送出申請' ,class:'joband-action-btn ' %>
-    </div>
-    
-  <% end %>
+      <div class="mt-10 center">
+        <%= f.submit '送出申請' ,class:'joband-action-btn ' %>
+      </div>
+      
+    <% end %>
+  </div>
+  
 </div> 

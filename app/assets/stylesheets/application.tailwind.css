@@ -69,6 +69,14 @@
   @apply h4 lg:text-xl bg-[#F46A5B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#f97869] hover:duration-300 joband-shadow
 }
 
+.joband-del-btn {
+  @apply h4 lg:text-xl bg-[#D2545B] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#da787d] hover:duration-300 joband-shadow
+}
+
+.joband-ok-btn {
+  @apply h4 lg:text-xl bg-[#42B5B2] rounded-full px-4 py-2 text-white cursor-pointer select-none hover:bg-[#78ccc9] hover:duration-300 joband-shadow
+}
+
 .joband-beer-btn {
   @apply items-center w-10 h-10 rounded-xl bg-[#ffba19] hover:bg-[#ffd571]
 }
@@ -136,6 +144,10 @@
 
 .joband-text-bk{
   @apply text-[#2A323A]
+}
+
+.joband-text-em{
+  @apply text-[#7e8181]
 }
 
 .joband-ring-offset{
