@@ -20,11 +20,11 @@
       </a>
     </span>
   </li>
-  <%# <li>
-      <%= button_to channel_path(channel), method: "delete", data: { turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
-        <%# <div class="flex items-center justify-center ">
+  <li>
+      <%= button_to post_path(channel), method: "delete", data: { turbo: false, turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
+        <div class="flex items-center justify-center ">
           <%= File.read('app/assets/images/icon/del.svg').html_safe %>
-        <%# </div>
-      <% end %> 
-  <%# </li>  %>
+        </div>
+      <% end %>
+   </li> 
 </ul>
