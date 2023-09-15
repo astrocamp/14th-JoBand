@@ -22,7 +22,7 @@
   </li>
   <li>
     <% if policy(post).destroy? %>
-      <%= button_to post_path(post), method: "delete", data: { turbo_confirm: "確定刪除嗎？" }, class: "btn btn-ghost" do %>
+      <%= button_to post_path(post), method: "delete", data: { turbo_confirm: t("show.delete") }, class: "btn btn-ghost" do %>
         <div class="flex items-center justify-center ">
           <%= File.read('app/assets/images/icon/del.svg').html_safe %>
         </div>

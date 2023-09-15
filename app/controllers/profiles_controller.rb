@@ -17,7 +17,7 @@ class ProfilesController < ApplicationController
   def create
     @profile = current_user.create_profile(params_profile)
     if @profile.save
-      redirect_to profile_path(@profile), notice: '新增 profile 成功'
+      redirect_to profile_path(@profile), notice: t("create.success")
     else
       render :new
     end
@@ -36,7 +36,7 @@ class ProfilesController < ApplicationController
   def update
     authorize @profile
     if @profile.update(params_profile)
-      redirect_to profile_path(@profile), notice: '修改profile 成功'
+      redirect_to profile_path(@profile), notice: t("update.success")
     else
       render :edit
     end

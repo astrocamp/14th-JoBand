@@ -30,14 +30,14 @@ class BandsController < ApplicationController
       if @band.save
         @band.band_members.create(user: @user, identity: :leader, role: @role)
         @band.create_channel(user: @user)
-        redirect_to band_path(@band), notice: '成功創立樂團'
+        redirect_to band_path(@band), notice: t("create.success")
       else
-        flash.now[:alert] = '創建失敗，請檢查輸入。'
+        flash.now[:alert] = t("create.fail")
         render :new
       end
     else
-      @band.errors.add(:base, '最多只能擁有5個樂團。')
-      flash.now[:alert] = '最多只能擁有5個樂團。'
+      @band.errors.add(:base, t("check.success"))
+      flash.now[:alert] = t("check.success")
       render :new
     end
   end
@@ -49,9 +49,9 @@ class BandsController < ApplicationController
   def update
     authorize @band
     if @band.update(band_params)
-      redirect_to band_path(@band), notice: '更新成功'
+      redirect_to band_path(@band), notice: t("update.success")
     else
-      flash.now[:alert] = '更新失敗，請檢查輸入。'
+      flash.now[:alert] = t("update.fail")
       render :edit
     end
   end

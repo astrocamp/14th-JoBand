@@ -13,9 +13,9 @@
 
   <div class="flex justify-end px-6 -mt-20">
     <% if policy(@post).create? %>
-      <%= form.submit "送出", class: "px-6 py-2 bg-sky-400 text-white font-semibold rounded-full text-center cursor-pointer inline-block hover:bg-sky-500 transition ease-in-out duration-300"%>
+      <%= form.submit t("show.send"), class: "px-6 py-2 bg-sky-400 text-white font-semibold rounded-full text-center cursor-pointer inline-block hover:bg-sky-500 transition ease-in-out duration-300"%>
     <% else %>
-      <%= link_to '送出', letsjam_profiles_path, class: "px-6 py-2 bg-sky-400 text-white font-semibold rounded-full text-center cursor-pointer inline-block hover:bg-sky-500 transition ease-in-out duration-300" %>
+      <%= link_to t("show.send"), letsjam_profiles_path, class: "px-6 py-2 bg-sky-400 text-white font-semibold rounded-full text-center cursor-pointer inline-block hover:bg-sky-500 transition ease-in-out duration-300" %>
     <% end %>
   </div>
 <% end %>

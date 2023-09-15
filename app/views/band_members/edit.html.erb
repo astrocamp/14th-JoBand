@@ -1,5 +1,5 @@
 <div class="flex flex-wrap justify-center p-10">
-  <h2 class="my-5 text-4xl font-bold theme-text">設定您的權限</h2>
+  <h2 class="my-5 text-4xl font-bold theme-text"> <%= t("set.permit")%> </h2>
 </div>
 <div class="flex flex-wrap justify-center">
   <div class="flex flex-wrap justify-center w-[80%] lg:w-[50%] h-auto mx-auto p-10 rounded-[60px] lg:rounded-[100px] joband-shadow bg-white">  
@@ -9,17 +9,17 @@
       </div>
     
       <div class="flex items-center my-5 joband-text-bk">
-        <%= f.label :identity, '權限', class: "lg:w-[70px] block" %>
+        <%= f.label :identity, t("show.permit"), class: "lg:w-[70px] block" %>
         <%= f.select :identity, BandMember.identities.keys %>
       </div>
     
       <div class="flex items-center my-5 joband-text-bk">
-        <%= f.label :role, '職位', class: "lg:w-[70px] block" %>
+        <%= f.label :role, t("show.position"), class: "lg:w-[70px] block" %>
         <%= f.select :role, BandMember.default_roles %>
       </div> 
     
       <div class="flex items-center justify-center w-full mt-5">
-        <%=f.submit '更新', class:'joband-action-btn' %>
+        <%=f.submit t("user.update"), class:'joband-action-btn' %>
       </div>
     <% end %>
   </div>

@@ -63,11 +63,11 @@
     <div class="w-full center">
       <div class="flex justify-center">
         <% if policy(@profile).profile? %>
-          <%= link_to '創建樂團', new_band_path, class:'joband-action-btn mx-2'%>
+          <%= link_to t("show.create_band"), new_band_path, class:'joband-action-btn mx-2'%>
         <% end %>
 
         <% if policy(@profile).update? %>
-          <%= link_to '修改個人檔案', edit_profile_path, class:'joband-action-btn mx-2'%>
+          <%= link_to ("show.edit_profile"), edit_profile_path, class:'joband-action-btn mx-2'%>
         <% end %>
       </div>
     </div>

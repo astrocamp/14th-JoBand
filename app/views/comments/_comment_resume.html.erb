@@ -11,11 +11,11 @@
       </div>
       <div class="flex justify-end">
         <% if comment.user == current_user %>
-         <%= link_to '刪除', comment_path(comment, resume_list_id: resume_list.id),
+         <%= link_to t('joband.delete'), comment_path(comment, resume_list_id: resume_list.id),
                             class:'text-sm text-red-400',
                             data: {
                               turbo_method: 'delete',
-                              turbo_confirm: '確定刪除？'
+                              turbo_confirm: t("show.delete")
                             } %>
         <% end %>
       </div>

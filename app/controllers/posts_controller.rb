@@ -17,12 +17,12 @@ class PostsController < ApplicationController
     authorize @post
     if @post.save
       if @post.channel_id.present?
-        redirect_to channels_path, notice: '貼文已發佈！'
+        redirect_to channels_path, notice: t("post.posted")
       else
-        redirect_to posts_path, notice: '貼文已發佈！'
+        redirect_to posts_path, notice: t("post.posted")
       end
     else
-      redirect_to posts_path, alert: '貼文失敗。'
+      redirect_to posts_path, alert: t("post.fail")
     end
   end
 
@@ -32,9 +32,9 @@ class PostsController < ApplicationController
     authorize @post
     @post.destroy
     if @post.channel.present?
-      redirect_to channel_path(@post.channel), notice: '貼文已刪除！'
+      redirect_to channel_path(@post.channel), notice: t("post.deleted")
     else
-      redirect_to posts_path, notice: '貼文已刪除！'
+      redirect_to posts_path, notice: t("post.deleted")
     end
   end
 

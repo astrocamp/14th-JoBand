@@ -41,7 +41,7 @@
       <% end %>
     <% end %>
     <% if @band.activities.present? %>
-      <%= link_to '查看活動', band_activities_path(@band), class:'joband-info-btn mx-1' %>
+      <%= link_to t('show.activities'), band_activities_path(@band), class:'joband-info-btn mx-1' %>
     <% end %>  
     
   <div class="flex flex-wrap w-full p-16 px-8 lg:px-32 joband-text-bk">

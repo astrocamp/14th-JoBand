@@ -14,7 +14,7 @@
               <%= User.find(@resume_list.user_id).name %>
             </p>
             <p class="w-full text-center joband-text-bk">
-              應徵職位
+              <%= t("apply.position")%>
               <strong>
                 <%= @resume_list.role %>
               </strong>
@@ -25,12 +25,12 @@
       </div>
       
       <div class="text-center">
-        <%= link_to '返回招募', recruit_path(@resume_list.recruit),class:'joband-hover-gray' %>
+        <%= link_to t("back.recruit"), recruit_path(@resume_list.recruit),class:'joband-hover-gray' %>
       </div>
       
       <div class="my-10">
         <p class="flex-wrap mx-auto center joband-text-bk">
-          自我推薦
+          <%= t("apply.letter")%>
         </p>
         <strong class="center joband-text-bk">
           <%= @resume_list.description %>
@@ -40,19 +40,19 @@
 
       <div class='center'>
         <% if policy(@resume_list).approve? %>
-          <%= link_to "加入團員",
+          <%= link_to t("join.member"),
                       approve_resume_list_path(@resume_list),
                       data: {
                         turbo_method: :post, 
-                        turbo_confirm: '確認加入?'
+                        turbo_confirm: t("check.join")
                       },
                       class: 'joband-ok-btn mr-2' %>
 
-          <%= link_to '拒絕申請',
+          <%= link_to t('apply.fail'),
                       reject_resume_list_path(@resume_list),
                       data: {
                         turbo_method: :patch,
-                        turbo_confirm: '拒絕此申請'
+                        turbo_confirm: t("apply.fail")
                       },
                       class: 'joband-del-btn' %>
         <% end %>
@@ -62,10 +62,10 @@
       <% if policy(@resume_list).update? %>
         <div class="mb-5 center">
           <%= link_to t('show.edit'), edit_resume_list_path(@resume_list), class: 'joband-ok-btn mr-5' %>
-          <%= link_to '刪除', resume_list_path(@resume_list), class: "joband-del-btn",
+          <%= link_to t("joband.delete"), resume_list_path(@resume_list), class: "joband-del-btn",
                               data: {
                                 turbo_method: 'delete',
-                                turbo_confirm: '確定刪除？'
+                                turbo_confirm: t("show.delete")
                               } %>
         </div>                      
       <% end %>
@@ -76,14 +76,14 @@
       <div class="w-full lg:w-2/3 joband-text-bk">
         <%= form_with(model: [@resume_list, @comment]) do |f| %>
           <div class="mb-3 center">
-            <%= f.label :content, '留言區' %>
+            <%= f.label :content, t("joband.comment") %>
           </div>
           <div class="center">
             <%= f.text_area :content, class:'joband-ring-offset rounded-xl input-md input-bordered w-2/3 max-w-xs'%>
           </div>
           
           <div class="my-10 center">
-            <%= f.submit t('show.send_comment'), class: 'joband-action-btn'%>
+            <%= f.submit t("show.send_comment"), class: 'joband-action-btn'%>
           </div>
           
         <% end %>

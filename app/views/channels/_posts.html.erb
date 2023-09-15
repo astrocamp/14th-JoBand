@@ -15,7 +15,7 @@
             <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
           </div>
           <div class='mt-3 mb-2'>
-            <%= f.submit '送出留言', class: 'joband-tag-location text-sm'%>
+            <%= f.submit t("show.send_comment"), class: 'joband-tag-location text-sm'%>
           </div>
         <% end %>
         <%= render "comments/comment_post", comments: channel.comments, post: channel %>

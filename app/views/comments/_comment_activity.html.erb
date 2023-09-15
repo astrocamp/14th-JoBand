@@ -13,7 +13,7 @@
       <% if comment.user == current_user %> 
         <%= link_to comment_path(comment, activity_id: @activity.id),
                           data: {turbo_method: 'delete',
-                          turbo_confirm: '確定刪除？'
+                          turbo_confirm: t("show.delete")
                                 } do %>
             <div class="relative flex justify-center items-center w-[30px] h-[30px] align-middle mx-2">
               <img src="/icon_img/bin_icon.svg" alt="bin_icon" class="absolute w-1/2">

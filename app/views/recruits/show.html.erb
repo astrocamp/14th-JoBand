@@ -8,43 +8,43 @@
       <%= @recruit.title %>
     </h2>
     <div class="flex flex-col items-left">
-      <p class="my-3 text-sm">徵求職位 : <br/>
+      <p class="my-3 text-sm"><%= t("recruit.position")%> <br/>
         <span class="text-xl font-bold theme-text"><% @recruit.instruments.each do |instrument| %>
           <%= instrument.name %>
         <% end %></span>
       </p>
 
-      <p class="my-3 text-sm">希望條件 :<br/>
+      <p class="my-3 text-sm"><%= t("recruit.require")%> <br/>
         <span class="text-xl font-bold theme-text"><%= @recruit.condition %></span>
       </p>
 
-      <p class="my-3 text-sm">練習時間 :<br/>
+      <p class="my-3 text-sm"><%= t("recruit.p_time")%> <br/>
         <span class="text-xl font-bold theme-text"><%= @recruit.practice_time %></span>
       </p>
 
-      <p class="my-3 text-sm">地區 :<br/>
+      <p class="my-3 text-sm"><%= t("show.area")%> <br/>
         <span class="text-xl font-bold theme-text"><%= @recruit.area %></span>
       </p>
       <% if policy(@recruit).update? %>
         <div class="flex justify-center mt-2">
-          <%= link_to '更新', edit_recruit_path(@recruit), class: "joband-recruit-btn mx-2" %>
-          <%= link_to '刪除', recruit_path(@recruit), class: "joband-recruit-btn mx-2",
+          <%= link_to t("user.update"), edit_recruit_path(@recruit), class: "joband-recruit-btn mx-2" %>
+          <%= link_to t("joband.delete"), recruit_path(@recruit), class: "joband-recruit-btn mx-2",
                             data: {
                               turbo_method: 'delete',
-                              turbo_confirm: '確定刪除？'
+                              turbo_confirm: t("show.delete")
                             } %>
         </div>
       <% end %>
       <div class="flex flex-col mt-3">
         <% if current_user&.profile.present? %>
           <% if policy(@recruit).apply? %>
-            <%= link_to "申請加入樂團",  new_recruit_resume_list_path(@recruit), class: "joband-recruit-btn text-center"%>
+            <%= link_to t("recruit.band"),  new_recruit_resume_list_path(@recruit), class: "joband-recruit-btn text-center"%>
           <% end %>
         <% else %>
-          <%= link_to '申請加入樂團', letsjam_profiles_path, class: "joband-recruit-btn text-center" %>
+          <%= link_to t("recruit.band"), letsjam_profiles_path, class: "joband-recruit-btn text-center" %>
         <% end %>
         
-        <%= link_to "返回樂團", band_path(@recruit.band), class: "joband-hover-gray mt-3 text-center" %>
+        <%= link_to t("recruit.back"), band_path(@recruit.band), class: "joband-hover-gray mt-3 text-center" %>
 
       </div>    
     </div>
@@ -58,7 +58,7 @@
             <div class="p-3 mt-10 text-xl font-bold text-black border-1 rounded-br-xl shadow-lg w-fit bg-[#FFA500]
                         lg:p-8">
               <p class="my-3 text-sm border-b">
-                應徵: 
+                <%= t("recruit.apply") %> 
                 <span class="text-xl">
                   <%= list.role %>
                 </span>
