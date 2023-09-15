@@ -1,4 +1,4 @@
-<%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }) do |f| %>
+<%= form_with(model: (action_name.in?(['new', 'create']) ? [band, activity] : [activity]), data: { turbo: false }, class: "w-[80%]") do |f| %>
   <%= render "users/shared/error_messages", resource: activity %>
   
   <div class="flex items-center my-5">
@@ -13,47 +13,49 @@
     <% end %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label t("show.event_title"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.text_field :title, required: true, maxlength: 20, placeholder: t("hint.title"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.event_title"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.text_field :title, required: true, maxlength: 20, placeholder: t("hint.title"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full" %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label :banner, t("show.upload_pic"), class: "lg:w-[120px] block joband-text-bk" %>
-    <div class="flex flex-wrap">
-      <%= f.file_field :banner, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label :banner, t("show.upload_pic"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <div class="flex flex-wrap w-full">
+      <%= f.file_field :banner, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full" %>
       <em class="block text-xs joband-text-em"> <%= t("hint.format")%> </em>
     </div>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label t("show.content"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: t("hint.describe"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.content"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.text_area :content, required: true, style: "resize: none;", placeholder: t("hint.describe"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full" %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label t("show.date"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.date_field :begin_at, required: true, value: Date.current.to_s, min: Date.current.to_s, class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.date"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.date_field :begin_at, required: true, value: Date.current.to_s, min: Date.current.to_s, class: "joband-ring-offset rounded-xl input-md input-bordered w-full" %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label t("show.start_at"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.time_field :time_start, required: true, value: "09:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs", id: "time_start" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.start_at"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.time_field :time_start, required: true, value: "09:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full", id: "time_start" %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label t("show.end_at"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.time_field :time_end, required: true, value: "18:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs", id: "time_end" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.end_at"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.time_field :time_end, required: true, value: "18:00", class: "joband-ring-offset rounded-xl input-md input-bordered w-full", id: "time_end" %>
   </div>
 
-  <div class="flex items-center my-5">
-    <%= f.label :city, t("show.city"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.select :city, Activity.cities.keys %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label :city, t("show.city"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <div class="w-full">
+      <%= f.select :city, Activity.cities.keys %>
+    </div>
   </div>  
   
-  <div class="flex items-center my-5">
-    <%= f.label t("show.place"), class: "lg:w-[120px] block joband-text-bk" %>
-    <%= f.text_field :location, required: true, placeholder: t("hint.place"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+  <div class="flex items-center my-5 sm:flex-wrap lg:center">
+    <%= f.label t("show.place"), class: "my-2 lg:w-[120px] block joband-text-bk" %>
+    <%= f.text_field :location, required: true, placeholder: t("hint.place"), class: "joband-ring-offset rounded-xl input-md input-bordered w-full" %>
   </div>
   
   <div class="flex items-center justify-center w-full mt-10", data-controller="submited">
