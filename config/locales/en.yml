@@ -90,10 +90,6 @@ en:
     apply: "Apply :"
     band: "Apply for joining band"
     back: "Back"
-  post:
-    posted: "Posted"
-    fail: "Failed to post"
-    delete: "Post deleted"
 
   show:
     permit: "Admin Permission"
@@ -205,6 +201,9 @@ en:
     add_band: "Add a Band"
     post_holder: "What's on your mind?"
     empty: "Say hello to everyone!"
+    posted: "Posted"
+    fail: "Failed to post"
+    delete: "Post deleted"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
