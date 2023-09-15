@@ -54,13 +54,15 @@ demo_user = User.create!(
 )
 
 demo_profile = demo_user.create_profile(
-  phone: '3345678',
-  location: 'Los Angeles',
+  phone: '0933456788',
+  location: '台北市',
   seniority:  3,
-  content: 'Hi, welcome to Joband ! You can make your music life become amazing !'
+  content: '介紹 : 哈囉～歡迎來到揪團網，在這裡你可以盡情的與音樂同好們一起交流組團，實現你們的音樂夢！'
 )
 
 demo_profile.instruments << Instrument.find_by(name: '主唱')
+
+puts "已建立使用者 Zooey"
 
 demo_band = User.find_by(email: 'zooey@gg.gg').bands.create(
   name: "大貓會社",
