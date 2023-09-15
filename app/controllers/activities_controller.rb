@@ -31,9 +31,9 @@ class ActivitiesController < ApplicationController
     @activity = @band.activities.build(activity_params)
     authorize @activity
     if @activity.save
-      redirect_to activity_path(@activity), notice: '成功建立活動'
+      redirect_to activity_path(@activity), notice: t("create.success")
     else
-      render :new, alert: '建立失敗'
+      render :new, alert: t("create.fail")
     end
   end
 
@@ -44,16 +44,16 @@ class ActivitiesController < ApplicationController
   def update
     authorize @activity
     if @activity.update(activity_params)
-      redirect_to activity_path(@activity), notice: '更新成功'
+      redirect_to activity_path(@activity), notice: t("delete.success")
     else
-      render :edit, alert: '更新失敗'
+      render :edit, alert: t("update.fail")
     end
   end
 
   def destroy
     authorize @activity
     @activity.destroy
-    redirect_to band_path(@activity.band), notice: '刪除成功'
+    redirect_to band_path(@activity.band), notice: t("delete.success")
   end
 
   private

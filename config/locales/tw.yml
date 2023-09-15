@@ -38,6 +38,34 @@ tw:
         banner: 橫幅
         music: 音樂
         video: 影片
+
+  create:
+    success: "創立成功！"
+    fail: "創立失敗，請檢查輸入！"
+  update:
+    success: "更新成功！"
+    fail: "更新失敗，請檢查輸入！"
+  delete:
+    success: "已刪除！"
+    fail: "刪除失敗，請檢查！"
+  check:
+    max_bands: "最多只能擁有5個樂團。"
+    comment: "留言不得為空白"
+    fail: "操作失敗"
+    join: "確認加入？"
+  comment:
+    success: "成功留言！"
+  apply:
+    success: "申請成功"
+    fail: "已拒絕申請"
+    position: "應徵職位"
+    letter: "自我推薦"
+  join:
+    success: "已加入樂團"
+    member: "加入團員"
+  back:
+    recruit: "返回招募"
+
   joband:
     info: "JoBand 是一個原創型的樂團社群網站，專為樂手和音樂愛好者打造的線上平台"
     description: "透過 JoBand，您可以輕鬆尋找適合的樂團成員或是音樂項目，同時也能進一步提升您的音樂技能和知識"
@@ -51,8 +79,25 @@ tw:
     find_activities: "尋找您想參加的活動"
     find_players: "尋找您想認識的音樂家"
     join: "現在就加入"
+    delete: "刪除"
+    comment: "留言區"
+  set:
+    permit: "設定您的權限"
+  recruit:
+    position: "徵求職位 :"
+    require: "希望條件 :"
+    p_time: "練習時間 :"
+    apply: "應徵 :"
+    band: "申請加入樂團"
+    back: "返回樂團"
+  post:
+    posted: "貼文已發佈"
+    fail: "貼文失敗"
+    delete: "貼文刪除"
   
   show:
+    permit: "權限"
+    position: "位置"
     recruit: "查看招募"
     create_recruit: "建立招募"
     edit_recruit: "編輯招募"
@@ -61,7 +106,10 @@ tw:
     intro: "介紹 :"
     members: "成員 :"
     create_event: "創建活動"
+    create_band: "創建樂團"
+    create_your_band: "創建您的樂團"
     edit_band: "修改樂團資料"
+    edit_profile: "修改個人檔案"
     edit: "編輯"
     no_music: "沒有上傳任何音樂檔案"
     no_video: "沒有上傳任何影片檔案"
@@ -79,10 +127,24 @@ tw:
     county: "縣市 :"
     place: "地點 :"
     checkout: "查看此樂團活動"
-    edit_event: "修改活動資料"
+    edit_event: "修改活動"
     delete_event: "刪除活動資料"
     comment_content: "留言內容"
     send_comment: "送出留言"
+    pop_activities: "熱門活動"
+    send: "送出"
+    delete: "確定刪除？"
+    activities: "查看活動"
+    start_at: "開始時間"
+    end_at: "結束時間"
+    event_title: "活動標題"
+    upload_pic: "上傳照片"
+  hint:
+    time: "開始時間必須早於結束時間" 
+    title: "請輸入 20 字以內的標題"
+    format: "PNG, JPG 檔格式，檔案大小不得大於5MB"
+    describe: "描述一下內容"
+    place: "請輸入地點"
 
   notice:
     nothing: －－目前沒有通知－－

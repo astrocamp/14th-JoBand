@@ -14,9 +14,9 @@ class RecruitsController < ApplicationController
     @recruit = @band.build_recruit(recruit_params)
     authorize @recruit
     if @recruit.save
-      redirect_to recruit_path(@recruit), notice: '招募創建成功'
+      redirect_to recruit_path(@recruit), notice: t("create.success")
     else
-      render :new, alert: '創建失敗'
+      render :new, alert: t("create.fail")
     end
   end
 
@@ -27,18 +27,18 @@ class RecruitsController < ApplicationController
   def update
     authorize @recruit
     if @recruit.update(recruit_params)
-      redirect_to recruit_path(@recruit), notice: '招募更新成功'
+      redirect_to recruit_path(@recruit), notice: t("create.success")
     else
-      render :edit, alert: '招募更新失敗'
+      render :edit, alert: t("create.fail")
     end
   end
 
   def destroy
     authorize @recruit
     if @recruit.destroy
-      redirect_to band_path(@recruit.band), notice: '刪除成功'
+      redirect_to band_path(@recruit.band), notice: t("delete.success")
     else
-      redirect_to recruit_path(@recruit), alert: '刪除失敗'
+      redirect_to recruit_path(@recruit), alert: t("delete.fail")
     end
   end
 

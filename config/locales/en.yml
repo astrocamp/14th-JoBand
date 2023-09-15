@@ -36,6 +36,34 @@ en:
         music: Music
         video: Video
       current_password: "Current password"
+  create:
+    success: "Created Successfully！"
+    fail: "Failed！ Please check again!"
+  update:
+    success: "Updated Successfully！"
+    fail: "Failed！ Please check again!"
+  delete:
+    success: "Deleted！"
+    fail: "Failed！ Please check again!"
+  check:
+    max_bands: "Maximum 5 bands "
+    comment: "Comment cannot be blank"
+    fail: "failed! Please check again!"
+    join: "Confirm Join？"
+  comment:
+    success: "Commented！"
+  apply:
+    success: "Applied Successfully！"
+    fail: "Failed! Sorry!"
+    position: "Position"
+    letter: "Self-Recommendation"
+  join:
+    success: "已加入樂團"
+    member: "Join member"
+  back:
+    recruit: "Back to Recruit"
+  
+
   joband:
     info: "JoBand is an original social media platform for bands, especially design for music enthusiasts."
     description: "Through JoBand, you can easily find suitable band members or music projects, while also enhancing your music skills and knowledge."
@@ -49,8 +77,25 @@ en:
     find_activities: "Search for the activities you want to participate in"
     find_players: "Looking for the musicians you want to know"
     join: "Join us now"
+    delete: "Delete"
+    comment: "Comment Area"
+  set:
+    permit: "Set Permissions"
+  recruit:
+    position: "Position :"
+    require: "Requirement :"
+    p_time: "Practice Time :"
+    apply: "Apply :"
+    band: "Apply for joining band"
+    back: "Back"
+  post:
+    posted: "Posted"
+    fail: "Failed to post"
+    delete: "Post deleted"
 
   show:
+    permit: "Admin Permission"
+    position: "Position"
     recruit: "Recruit"
     create_recruit: "Create Recruit"
     edit_recruit: "Edit Recruit"
@@ -59,7 +104,10 @@ en:
     intro: "Intro :"
     members: "Members :"
     create_event: "Create Activity"
+    create_band: "Create band"
+    create_your_band: "Create Your Band"
     edit_band: "Edit Band"
+    edit_profile: "Edit Profile"
     edit: "Edit"
     no_music: "No Music yet"
     no_video: "No Videos yet"
@@ -74,13 +122,27 @@ en:
     content: "Content :"
     date: "Date :"
     time: "Time :"
-    county: "County :"
+    county: "County/City :"
     place: "Place :"
     checkout: "check this out"
     edit_event: "EDIT"
     delete_event: "DELETE"
     comment_content: "Comments"
     send_comment: "SEND"
+    pop_activities: "Popular Activities"
+    send: "SEND"
+    delete: "Are you sure？"
+    activities: "Activities"
+    start_at: "Start At"
+    end_at: "End At"
+    event_title: "Title"
+    upload_pic: "Upload Picture"
+  hint:
+    time: "Start time must be earlier than end time"
+    title: "No more than 20 words"
+    format: "PNG, JPG, file size no larger than 5MB"
+    describe: "Describe the content"
+    place: "Enter the place"
   nav:
     find_players: "Players"
     find_bands: "Bands"

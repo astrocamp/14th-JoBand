@@ -14,7 +14,7 @@ class ResumeListsController < ApplicationController
 
   def new
     if current_user.band_members.count >= 5
-      flash[:alert] = '最多只能擁有5個樂團。'
+      flash[:alert] = t("check.max_bamnds")
       redirect_to recruit_path(@recruit)
     else
       @resume_list = ResumeList.new(recruit: @recruit)
@@ -26,9 +26,9 @@ class ResumeListsController < ApplicationController
     @resume_list = @recruit.resume_lists.build(resume_list_params)
     authorize @resume_list
     if @resume_list.save
-      redirect_to resume_list_path(@resume_list), notice: '申請成功'
+      redirect_to resume_list_path(@resume_list), notice: t("apply.success")
     else
-      render :new, alert:'失敗'
+      render :new, alert:t("create.fail")
     end
   end
 
@@ -40,7 +40,7 @@ class ResumeListsController < ApplicationController
   def update
     authorize @resume_list
     if @resume_list.update(resume_list_params)
-      redirect_to resume_list_path(@resume_list), notice: '更新成功'
+      redirect_to resume_list_path(@resume_list), notice: t("update.success")
     else
       render :edit
     end
@@ -48,7 +48,7 @@ class ResumeListsController < ApplicationController
 
   def destroy
     @resume_list.destroy
-    redirect_to recruit_path(@resume_list.recruit), notice: '已刪除'
+    redirect_to recruit_path(@resume_list.recruit), notice: t("delete.success")
   end
 
   def approve
@@ -61,11 +61,11 @@ class ResumeListsController < ApplicationController
     if @user.band_members.count < 5
       new_band_member.save
       @resume_list.update(status: :approved)
-      redirect_to recruit_path(@recruit), notice: '已加入樂團'
+      redirect_to recruit_path(@recruit), notice: t("join.success")
     elsif @user.band_members.count >= 5
-      redirect_to resume_list_path(@resume_list), alert: '此用戶樂團數量已達上限'
+      redirect_to resume_list_path(@resume_list), alert: t("check.max_bands")
     else
-      flash.now[:alert] = '加入失敗'
+      flash.now[:alert] = t("create.fail")
       redirect_to resume_list_path(@resume_list)
     end
   end
@@ -73,9 +73,9 @@ class ResumeListsController < ApplicationController
   def reject
     authorize @resume_list
     if @resume_list.update(status: :rejected)
-      redirect_to recruit_path(@resume_list.recruit), notice: '已拒絕申請'
+      redirect_to recruit_path(@resume_list.recruit), notice: t("apply.fail")
     else
-      reder resume_list_path(@resume_list), alert: '操作失敗'
+      reder resume_list_path(@resume_list), alert: t("check.fail")
     end
   end
 

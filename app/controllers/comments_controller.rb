@@ -37,43 +37,43 @@ class CommentsController < ApplicationController
   def comment_route
     if @commentable.is_a?(Post)
       if @commentable.channel.present?
-        redirect_to channel_path(@commentable.channel.id), notice: '留言成功'
+        redirect_to channel_path(@commentable.channel.id), notice: t("comment.success")
       else
-        redirect_to posts_path, notice: '留言成功'
+        redirect_to posts_path, notice: t("comment.success")
       end
     elsif
       @commentable.is_a?(Activity)
-      redirect_to activity_path(@commentable), notice: '留言成功'
+      redirect_to activity_path(@commentable), notice: t("comment.success")
     elsif
       @commentable.is_a? (ResumeList)
-      redirect_to resume_list_path(@commentable), notice: '留言成功'
+      redirect_to resume_list_path(@commentable), notice: t("comment.success")
     end  
   end  
 
   def comment_delete
     if @commentable.is_a?(Post)
       if @commentable.channel.present?
-        redirect_to channel_path(@commentable.channel.id), notice: '刪除成功'
+        redirect_to channel_path(@commentable.channel.id), notice: t("delete.success")
       else
-        redirect_to posts_path, notice: '刪除成功'
+        redirect_to posts_path, notice: t("delete.success")
       end
     elsif
       @commentable.is_a?(Activity)
-      redirect_to activity_path(@commentable), notice: '刪除成功'
+      redirect_to activity_path(@commentable), notice: t("delete.success")
     elsif
       @commentable.is_a? (ResumeList)
-      redirect_to resume_list_path(@commentable), notice: '刪除成功'
+      redirect_to resume_list_path(@commentable), notice: t("delete.success")
     end  
   end  
   def comment_fail
     if @commentable.is_a?(Post)
-      redirect_to posts_path, alert: '留言不得為空白'
+      redirect_to posts_path, alert: t("check.comment")
     elsif
       @commentable.is_a?(Activity)
-      redirect_to activity_path(@commentable), alert: '留言不得為空白'
+      redirect_to activity_path(@commentable), alert: t("check.comment")
     elsif
       @commentable.is_a? (ResumeList)
-      redirect_to resume_list_path(@commentable), alert: '留言不得為空白'
+      redirect_to resume_list_path(@commentable), alert: t("check.comment")
     end  
   end  
 end

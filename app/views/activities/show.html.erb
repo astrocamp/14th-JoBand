@@ -7,7 +7,7 @@
     <p class="my-5 h1"><%= @activity.title %></p>
     <span class="w-full joband-line-bk"></span>
       <div class="flex items-center w-full">
-        <p class="block h3">主辦樂團：</p>
+        <p class="block h3"><%= t('show.host')%> </p>
         <div class="mx-2 h-[50px] w-[50px] relative sm:h-[30px] sm:w-[30px] relative">
           <%= render "shared/avatar", model: @activity.band %>
         </div>
@@ -31,7 +31,7 @@
       <div class="mb-6">
         <%= link_to t('show.edit_event'), edit_activity_path(@activity), class: "joband-action-btn mx-2" %>
         <%= link_to t('show.delete_event'), activity_path(@activity), 
-                              data: { turbo_method: 'delete', turbo_confirm: '確定要刪除嗎？' }, 
+                              data: { turbo_method: 'delete', turbo_confirm: t("show.delete") }, 
                               class: "joband-action-btn mx-2" %>
       </div>
     <% end %> 
