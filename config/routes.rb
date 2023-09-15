@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:new, :create, :show] do
       collection do
         post :paid
+        get :paid_success
       end
     end
   end
