@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class OrdersController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: :paid
+  skip_before_action :verify_authenticity_token, only: [:paid, :paid_success]
 
   before_action :authenticate_user!, only: %i[index new create]
-  before_action :set_band, only: %i[new create]
+  before_action :set_band, only: %i[new create paid]
 
   def show
     @order = Order.find(params[:id])
@@ -48,11 +48,20 @@ class OrdersController < ApplicationController
 
   def paid
     response = Newebpay::MpgResponse.new(params[:TradeInfo])
+
     if response.success?
-      @order = Order.find_by(tracking_number: response.order_no)
+      # @order.update(payment_status: 'paid')
+      # sign_in(@order.user)
+      # sign_in_and_redirect @user, location: paid_order_path(@order)
+
+      redirect_to paid_success_band_orders_path(@band, order: response.order_no), notice: '交易成功'
     else
-      redirect_to root_path, alert: '啤酒似乎缺貨了，請再試一次'
+      redirect_to paid_order_path(@order), alert: '交易失敗，啤酒似乎缺貨了'
     end
+  end
+
+  def paid_success
+    @order = Order.find_by(tracking_number: params[:order])
   end
 
   private
