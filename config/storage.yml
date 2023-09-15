@@ -10,8 +10,8 @@ local:
 amazon:
   service: S3
   access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>  
-  bucket: joband-upload-video-and-music
+  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+  bucket: joband
   region: ap-southeast-2
 # Remember not to checkin your GCS keyfile to a repository
 # google:
