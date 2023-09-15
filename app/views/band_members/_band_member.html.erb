@@ -2,6 +2,9 @@
   <div class="relative w-[120px] h-[120px] mt-5  joband-shadow">
     <%= link_to '', profile_path(band_member.user.profile), class: "block w-full h-full absolute z-[1]" %>
     <%= render 'shared/avatar' , model: band_member.user.profile %>
+    <div class="w-full my-3 text-sm center">
+      <%= band_member.user.name %>
+    </div>
   </div>
   <div class="relative">
     <div id="band_member" class="absolute w-[50px] h-[50px] bottom-0 left-[-40px] joband-shadow">

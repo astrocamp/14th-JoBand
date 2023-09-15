@@ -150,10 +150,6 @@
   @apply text-[#7e8181]
 }
 
-.joband-ring-offset{
-  @apply ring-2 ring-[#C5C8C9] ring-offset-4
-}
-
 .joband-shadow{
   @apply drop-shadow-xl
 }
