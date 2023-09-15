@@ -172,3 +172,7 @@
   display: block !important;
   color: #ec4040;
 }
+
+.joband-ring-offset {
+  border: solid 1px #4f575e;
+}
