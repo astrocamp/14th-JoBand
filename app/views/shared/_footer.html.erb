@@ -1,6 +1,10 @@
 <footer class="p-5 shadow-inner footer footer-center navbg text-neutral-content">
+  <div class="flex gap-5 mt-5 theme-text">
+    <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "tw" %>
+    <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+  </div>
   <div>
-    <div class="flex justify-center mt-3 mb-5">
+    <div class="flex justify-center mb-5">
       <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10 lg:w-[50px] mx-1">
       <img src="/Joband_footer.svg" alt="Joband_footer" class="items-center w-[90px] lg:w-[100px] mx-1">
     </div>
