@@ -78,6 +78,8 @@ puts "已建立樂團 大貓會社"
 demo_band.band_members.first.update(identity: :leader, role: "主唱")
 demo_band.create_channel(user: demo_user)
 
+puts "已建立樂團頻道"
+
 demo_profile.avatar.attach(
   io: StringIO.new(demo_avatar),
   filename: 'zooey.png',
@@ -116,9 +118,9 @@ demo_band.avatar.attach(
   random_instrument = Instrument.order('RANDOM()').first
   demo_profile.instruments << random_instrument
 
-  avatar_url = Net::HTTP.get(URI.parse("https://avatars.dicebear.com/api/shapes/Cookie.svg"))
+  # avatar_url = Net::HTTP.get(URI.parse("https://avatars.dicebear.com/api/shapes/Cookie.svg"))
 
-  demo_profile.avatar.attach(io: StringIO.new(avatar_url), filename: 'avatar.svg', content_type: 'image/svg+xml')
+  # demo_profile.avatar.attach(io: StringIO.new(avatar_url), filename: 'avatar.svg', content_type: 'image/svg+xml')
 
   demo_avatar = File.binread(Rails.root.join('public', 'default_avatar.png'))
   demo_profile.avatar.attach(io: StringIO.new(demo_avatar), filename: 'default_avatar.png', content_type: 'image/png')
