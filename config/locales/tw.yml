@@ -177,6 +177,7 @@ tw:
     not_receive_confirm: "沒有收到認證信嗎？"
     resend_confirm_email: "重新發送認證信"
     resend_button: "發送信件"
+    regist: "註冊"
     login: "登入"
     logout: "登出"
     google_login: "使用 Google 帳戶登入"

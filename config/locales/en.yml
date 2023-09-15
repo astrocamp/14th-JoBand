@@ -168,6 +168,7 @@ en:
     not_receive_confirm: "Didn't receive confirmation email?"
     resend_confirm_email: "Resend confirmation Email"
     resend_button: "Resend"
+    regist: "Regist"
     login: "Log In"
     google_login: "Sign in with Google"
     remember_me: "Remember me"
