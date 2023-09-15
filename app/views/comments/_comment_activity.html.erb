@@ -2,12 +2,21 @@
   <li class='w-[60%] p-5 my-2 border-b rounded-3xl bg-slate-100 sm:w-[95%]'>
     <div class='flex joband-text-bk h4'>
       <div class="w-[50px] h-[50px] relative mr-2">
-        <%= render "shared/avatar", model: comment.user.profile %>
+        <% if comment.user&.profile.present? %>
+          <%= render "shared/avatar", model: comment.user.profile %>
+        <% else %>
+          <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full joband-shadow" >
+          <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full">
+        <% end %>
       </div>
+      
       <% if comment.user&.profile.present? %>
-        <%= link_to comment.user.name, profile_path(comment.user.profile.id),class: "font-bold", target: "_top"%>:
+        <%= link_to comment.user.name, profile_path(comment.user.profile.id),class: "flex items-center font-bold", target: "_top"%>
       <% else %>
+      <p class="flex items-center">
         <%= comment.user.name %>
+      </p>
+        
       <% end %>
     </div>
     <div class='p-3 my-1 text-left break-words'>

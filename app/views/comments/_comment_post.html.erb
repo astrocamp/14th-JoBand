@@ -3,12 +3,24 @@
 
     <% comments.each do |comment| %>
     <div class='border-b w-full max-w-md my-2'>
-        <div class='text-left font-bold'>
-          <% if comment.user&.profile.present? %>
-            <%= link_to comment.user.name, profile_path(comment.user.profile.id), target: "_top"%>:
-          <% else %>
+        <div class='flex joband-text-bk h4'>
+
+          <div class="w-[50px] h-[50px] relative mr-2">
+            <% if comment.user&.profile.present? %>
+              <%= render "shared/avatar", model: comment.user.profile %>
+            <% else %>
+              <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full joband-shadow" >
+              <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full">
+            <% end %>
+          </div>
+
+        <% if comment.user&.profile.present? %>
+          <%= link_to comment.user.name, profile_path(comment.user.profile.id),class: "theme-text flex items-center font-bold", target: "_top"%>
+        <% else %>
+          <p class="flex items-center theme-text">
             <%= comment.user.name %>
-          <% end %>
+          </p>
+        <% end %>
         </div>
         <div class='text-left my-1 break-words'>
         <p><%= comment.content %></p>
