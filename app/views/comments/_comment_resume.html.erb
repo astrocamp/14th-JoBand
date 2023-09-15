@@ -3,8 +3,11 @@
   <% comments.each do |comment| %>
     <li>
       <div>
-        <%= link_to comment.user.name, profile_path(comment.user_id), target: "_top", 
-                                      class:'font-bold' %>
+        <% if comment.user&.profile.present? %>
+          <%= link_to comment.user.name, profile_path(comment.user.profile.id), target: "_top"%>:
+        <% else %>
+          <%= comment.user.name %>
+        <% end %>
       </div>
       <div class="m-3 break-words">
         <%= comment.content %>
