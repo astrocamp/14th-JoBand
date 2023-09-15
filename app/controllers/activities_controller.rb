@@ -44,7 +44,7 @@ class ActivitiesController < ApplicationController
   def update
     authorize @activity
     if @activity.update(activity_params)
-      redirect_to activity_path(@activity), notice: t("delete.success")
+      redirect_to activity_path(@activity), notice: t("update.success")
     else
       render :edit, alert: t("update.fail")
     end
