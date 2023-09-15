@@ -1,21 +1,22 @@
 <div class="center flex-wrap w-full lg:w-[60%] h-auto mx-auto p-10 lg:rounded-[80px] joband-shadow bg-white">
   <div class="w-full p-5 text-base center joband-text-bk">
     <div class="w-[90%] center">
-      <%= form_with( model: profile, data: { turbo: false } ) do |f| %>
+      <%= form_with( model: profile, data: { turbo: false }, class: "w-auto" ) do |f| %>
         <%= render "users/shared/error_messages", resource: profile %>
-
         <div class="flex flex-wrap items-center my-3 lg:my-8">
           <%= f.label :avatar, "上傳大頭照", class: "w-full lg:w-[120px] my-2 lg:my-0 block" %>
-          <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-          <em class="block text-xs joband-text-bk">PNG, JPG 檔格式，檔案大小不得大於3MB</em>
+          <div class="flex flex-wrap">
+            <%= f.file_field :avatar, accept: "image/png, image/jpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-[450px]" %>
+            <em class="block w-full text-xs joband-text-em">PNG, JPG 檔格式，檔案大小不得大於3MB</em>
+          </div>
         </div>
         <div class="flex flex-wrap items-center lg my-3:lg:my-8">
           <%= f.label :phone, "電話", class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
-          <%= f.phone_field :phone, placeholder: '請輸入 8 - 10 碼',maxlength: 10, pattern: "[0-9]{8,10}", title: "至少8碼的電話號碼", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+          <%= f.phone_field :phone, placeholder: '請輸入 8 - 10 碼',maxlength: 10, pattern: "[0-9]{8,10}", title: "至少8碼的電話號碼", class: "joband-ring-offset rounded-xl input-md input-bordered w-[450px]" %>
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8">
           <%= f.label :location, "居住城市", class: "w-full lg:w-[120px] my-2 lg:my-0 block"   %>
-          <%= f.text_field :location, required: true, placeholder: '請輸入居住城市', maxlength: 20, pattern: "^[a-zA-Z\u4e00-\u9fa5]+$", title: "最多20個字", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+          <%= f.text_field :location, required: true, placeholder: '請輸入居住城市', maxlength: 20, pattern: "^[a-zA-Z\u4e00-\u9fa5]+$", title: "最多20個字", class: "joband-ring-offset rounded-xl input-md input-bordered w-[450px]" %>
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8">
           <%= f.label :seniority, "樂齡", class: "w-full lg:w-[120px] my-2 lg:my-0 block"   %>
@@ -23,7 +24,7 @@
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <%= f.label :content, "簡介", class: "w-full lg:w-[120px] my-2 lg:my-0 block"   %>
-          <%= f.text_area :content, placeholder: '介紹一下自己', style: "resize: none;", class: "joband-ring-offset rounded-xl input-md input-bordered w-full max-w-xs" %>
+          <%= f.text_area :content, placeholder: '介紹一下自己', style: "resize: none;", class: "joband-ring-offset rounded-xl input-md input-bordered w-[450px]" %>
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <p class="lg:w-[120px]">彈奏樂器 </p>
@@ -33,15 +34,19 @@
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <%= f.label :music, "上傳音樂",class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
-          <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-          <em class="block text-xs joband-text-bk">mpeg, mp3 檔格式，檔案大小不得大於10MB</em>
+          <div class="flex flex-wrap">
+            <%= f.file_field :music, accept: "audio/mpeg", direct_upload: true, class: "file-input file-input-sm file-input-warning w-[450px]" %>
+            <em class="block w-full text-xs joband-text-em">mpeg, mp3 檔格式，檔案大小不得大於10MB</em>
+          </div>
         </div>
         <div class="flex flex-wrap items-center my-3 lg:my-8 ">
           <%= f.label :video, "上傳影片",class: "w-full lg:w-[120px] my-2 lg:my-0 block"  %>
-          <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-full max-w-xs" %>
-          <em class="block text-xs joband-text-bk">mp4 檔格式，檔案大小不得大於20MB</em>
+          <div class="flex flex-wrap">
+            <%= f.file_field :video, accept: "video/mp4", direct_upload: true, class: "file-input file-input-sm file-input-warning w-[450px]" %>
+            <em class="block w-full text-xs joband-text-em">mp4 檔格式，檔案大小不得大於20MB</em>
+          </div>
         </div>
-        <div class="flex flex-wrap items-center justify-center w-full mt-10", data-controller="submited">
+        <div class="flex flex-wrap items-center justify-center mt-10", data-controller="submited">
           <% if action_name == "new" %>
             <%= f.submit "建立個人檔案", class: "joband-action-btn", data: { action: "click->submited#disable", submited_target: "disable" } %>
           <% else %>
