@@ -63,7 +63,7 @@
     <div class="flex flex-col w-full my-3">
       <div class="w-full my-3">
         <% if @band.music.attached? %>
-          <audio controls controlsList="nodownload" class="w-full custom-audio-player">
+          <audio controls controlsList="nodownload" class="w-full">
             <source src="<%= url_for(@band.music) %>" type="audio/mpeg">
             <%= t('show.no_support_music')%>
           </audio>
