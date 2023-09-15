@@ -12,11 +12,11 @@
       JoBand  揪團有限公司
     </p> 
     <div class="grid grid-flow-col mt-3">
-      <a><%= link_to '關於我們', about_path, class: "font-bold link link-hover theme-text mx-2" %></a>
+      <a><%= link_to t("joband.about") , about_path, class: "font-bold link link-hover theme-text mx-2" %></a>
     </div> 
     <a target="_blank" href="https://github.com/astrocamp/14th-JoBand">
       <img src="/github_footer.png" alt="Github_footer" class="items-center w-[30px] lg:w-[40px] mx-1 my-2">
     </a>
-    <p class="theme-text">版權所有 © 2023</p>
+    <p class="theme-text"> <%= t("joband.copyright")%> </p>
   </div>
 </footer>

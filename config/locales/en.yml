@@ -79,6 +79,8 @@ en:
     join: "Join us now"
     delete: "Delete"
     comment: "Comment Area"
+    about: "About Us"
+    copyright: "Copyright © 2023"
   set:
     permit: "Set Permissions"
   recruit:
@@ -104,7 +106,7 @@ en:
     intro: "Intro :"
     members: "Members :"
     create_event: "Create Activity"
-    create_band: "Create band"
+    create_band: "Create Band"
     create_your_band: "Create Your Band"
     edit_band: "Edit Band"
     edit_profile: "Edit Profile"
@@ -283,10 +285,10 @@ helpers:
       state: Band Status：
       founded_at: Founded At：
 
-submit:
-  band:
-    create: Create Band
-    update: Update
+  submit:
+    band:
+      create: Create Band
+      update: Update
   recruit:
     create: Start Recruitment
     update: Update Content
