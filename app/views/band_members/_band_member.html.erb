@@ -11,7 +11,10 @@
       <%= render "shared/instrument", instrument: band_member.role %>
     </div>
   </div>
-  <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
-    <%= link_to t('show.edit'), edit_band_band_member_path(@band, band_member) , class: 'band_member_edit joband-info-btn'%>
-  <% end %>
+  <div class="mt-5">
+    <% if current_user&.id === @band_members.find_by(identity: "leader").user_id %>
+      <%= link_to t('show.edit'), edit_band_band_member_path(@band, band_member) , class: 'band_member_edit joband-info-btn'%>
+    <% end %>
+  </div>
+
 </div>
