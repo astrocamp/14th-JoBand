@@ -42,8 +42,8 @@
     </div>
 
     <!-- show -->
-    <div data-controller='comments'>
-      <%= turbo_frame_tag "post" do %>
+    <div class="w-full px-5" data-controller='comments'>
+      <%= turbo_frame_tag "post", class: "w-full" do %>
         <% if Post.all.none? %>
           <%= render "empty", post: @post %>
         <% else %>

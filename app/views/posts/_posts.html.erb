@@ -1,12 +1,12 @@
-<div class="px-6 py-3 border-b" id="<%= dom_id(post) %>">
-  <div class="flex items-start space-x-3">
-    <div class="flex-shrink-0">
-      <%= post_avatar(post.user.profile) %>
+<div class="w-full p-3 border-b" id="<%= dom_id(post) %>">
+  <div class="flex space-x-3 justify-evenly">
+    <div class="relative w-[50px] h-[50px] center">
+      <%= render "shared/avatar", model: post.user.profile %>
     </div>
-    <div class="justify-between flex-auto">
-      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold", data: {turbo: false} , target: "_top"%>
+    <div class="justify-between w-10/12">
+      <%= link_to post.user.name, profile_path(post.user), class: "hover:underline font-bold mr-2", data: {turbo: false} , target: "_top"%>
       <em class="inline-block pr-10 text-xs text-end joband-text-em"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
-    <div class="prose prose-lg"><%= post.body %></div>
+      <div class="my-2 break-words"><p><%= post.body %></p></div>
       <%= render "posts/controls", post: post %>
 
       <div class="pl-2" data-comments-target="content" data-link-id="<%= post.id %>" style="display: none;">
