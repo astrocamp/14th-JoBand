@@ -1,9 +1,9 @@
-<ul class="flex items-start justify-start -ml-3 list-none space-x-14">
+<ul class="flex justify-between w-full list-none">
   <li>
-    <div data-controller="like" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>">
-      <button data-like-target="likeBtn" data-action="click->like#toggle", class="btn btn-ghost theme-text">♡
+    <div data-controller="like" data-action="click->like#toggle" data-liked="<%= current_user&.liked?(post) %>" data-id="<%= post.id %>" class="w-20 btn btn-ghost theme-text">
+      <button data-like-target="likeBtn">♡
       </button>
-      <span data-like-target="count" class="mx-2 theme-text">
+      <span data-like-target="count" class="theme-text">
         <%= post.like_logs.count %>
       </span>
     </div>
@@ -13,7 +13,7 @@
       <a href="#" class="flex items-center theme-text">
         <%= File.read('app/assets/images/icon/comment.svg').html_safe %>
         <% if post.comments.any? %>
-          <div class="comment-count ml-1">
+          <div class="ml-1 comment-count">
             <%= post.comments.count %>
           </div>
         <% end %>
