@@ -3,20 +3,37 @@
     <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "tw" %>
     <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
   </div>
-  <div>
-    <div class="flex justify-center mb-5">
-      <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10 lg:w-[50px] mx-1">
-      <img src="/Joband_footer.svg" alt="Joband_footer" class="items-center w-[90px] lg:w-[100px] mx-1">
+  <div class="w-full lg:flex justify-between">
+    <div class="flex mb-5 ml-24 grow">
+      <div>
+        <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10 lg:w-[90px] mx-1 sm:mt-[10px] ">
+      </div>
+     <div>
+      <img src="/Joband_footer.svg" alt="Joband_footer" class="items-center w-[90px] lg:w-[180px] mx-1 my-5 ">
+      <p class="theme-text sm:hidden">
+        JoBand  揪團有限公司
+      </p> 
     </div>
-    <p class="theme-text">
+      
+    </div>
+
+    <p class="theme-text ml-28 lg:hidden">
       JoBand  揪團有限公司
     </p> 
-    <div class="grid grid-flow-col mt-3">
-      <a><%= link_to t("joband.about") , about_path, class: "font-bold link link-hover theme-text mx-2" %></a>
+    
+    <div class=" mt-3 lg:mr-10 sm:ml-28 ">
+      <a class="center flex-col">
+        <%= link_to t("joband.about") , about_path, class: "h3 font-bold link link-hover theme-text lg:mx-2" %>
+      </a>
     </div> 
-    <a target="_blank" href="https://github.com/astrocamp/14th-JoBand">
-      <img src="/github_footer.png" alt="Github_footer" class="items-center w-[30px] lg:w-[40px] mx-1 my-2">
-    </a>
-    <p class="theme-text"> <%= t("joband.copyright")%> </p>
+    
+    <div class="lg:mr-32 sm:ml-28 ">
+      <a target="_blank" href="https://github.com/astrocamp/14th-JoBand" class="">
+        <img src="/github_footer.png" alt="Github_footer" class="items-center w-[30px] lg:w-[40px] my-2 ">
+      </a>
+    </div>
+    <p class="theme-text grow lg:mr-40 sm:ml-28"> 
+      <%= t("joband.copyright")%> 
+    </p>
   </div>
 </footer>

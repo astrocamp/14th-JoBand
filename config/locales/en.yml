@@ -168,6 +168,7 @@ en:
     resend_button: "Resend"
     regist: "Regist"
     login: "Log In"
+    logout: "Log out"
     google_login: "Sign in with Google"
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
@@ -269,28 +270,28 @@ en:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
-helpers:
-  label:
-    band:
-      name: Band Name：
-      role: Your Role：
-      banner: Band Banner：
-      avatar: Band Avatar：
-      style_ids: Playing Styles：
-      music: Upload Music：
-      video: Upload Video：
-      area: Activity Area：
-      content: Description of the Band：
-      state: Band Status：
-      founded_at: Founded At：
+  helpers:
+    label:
+      band:
+        name: Band Name
+        role: Your Role
+        banner: Band Banner
+        avatar: Band Avatar
+        style_ids: Playing Styles
+        music: Upload Music
+        video: Upload Video
+        area: Activity Area
+        content: Description of the Band
+        state: Band Status
+        founded_at: Founded At
 
-  submit:
-    band:
-      create: Create Band
-      update: Update
-  recruit:
-    create: Start Recruitment
-    update: Update Content
+    submit:
+      band:
+        create: Create Band
+        update: Update
+      recruit:
+        create: Start Recruitment
+        update: Update Content
 
   order:
     beer: "Buy us some beer！"
