@@ -1,24 +1,34 @@
-<section class="w-10/12 mx-auto mt-12 mb-20 border-2">
-  <div class="flex justify-center bg-gray-100 border-b-2">
-    <h1 class="m-2 text-xl">訂單資訊</h1>
+<div class="flex flex-wrap justify-center p-10">
+  <h2 class="my-5 text-4xl font-bold theme-text">感謝您的贊助！</h2>
+  <h2 class="my-5 text-4xl font-bold theme-text">啤酒已裝箱好！</h2>
+</div>
+<div class="flex mx-auto sm:flex-wrap w-[80%]">
+  <div class="items-center m-5 center">
+    <img src="/imges/bottle_beer.svg" alt="bottle_beer" class="w-[200px] lg:w-[300px] mx-16">
   </div>
-  <div class="flex items-center justify-around px-3 pt-2">
-    <p class="w-1/2 text-lg text-center">訂單編號</p>
-    <p class="w-1/2 text-lg text-center break-words"><%= @order.tracking_number %></p>
-  </div>
+  <div class="center w-full lg:w-[60%] h-auto mx-auto p-5 lg:rounded-[80px] joband-shadow bg-white"> 
+    <div class="flex-wrap center">
+      <h1 class="w-full my-5 text-xl text-center">訂單資訊</h1>
 
-  <div class="flex justify-around px-3 pt-2">
-    <p class="w-1/2 text-lg text-center">付款方式</p>
-    <p class="w-1/2 text-lg text-center">信用卡</p>
-  </div>
-  <div class="flex items-center justify-around px-3 pt-2">
-    <p class="w-1/2 text-xl text-center text-red-600">總價</p>
-    <p class="w-1/2 text-xl text-center text-red-600 break-words">
-      <%= @order.amount %>
-    </p>
-  </div>
+      <div class="flex items-center justify-between w-full">
+        <p class="text-base text-center w-full-140px lg:w-1/3 lg:text-lg">訂單編號</p>
+        <p class="w-[140px] lg:w-2/3 text-sm text-center break-words "><%= @order.tracking_number %></p>
+      </div>
 
-  <div class="flex justify-center m-3">
-    <div class="w-4/5 border-b"></div>
+      <div class="flex items-center justify-between w-full">
+        <p class="text-base text-center w-full-140px lg:w-1/3 lg:text-lg">付款方式</p>
+        <p class="w-[140px] lg:w-2/3 text-lg text-center">信用卡</p>
+      </div>
+      
+      <span class="w-[90%] joband-line-bk"></span>
+
+      <div class="flex w-full">
+        <p class="w-1/2 text-lg text-center text-red-600">總價</p>
+        <p class="w-1/2 text-xl text-center text-red-600 break-words">
+          <%= @order.amount %>
+        </p>
+      </div>
+      
+    </div>
   </div>
-</section>
+</div>
