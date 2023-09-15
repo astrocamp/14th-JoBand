@@ -128,7 +128,7 @@ tw:
     place: "地點 :"
     checkout: "查看此樂團活動"
     edit_event: "修改活動"
-    delete_event: "刪除活動資料"
+    delete_event: "刪除活動"
     comment_content: "留言內容"
     send_comment: "送出留言"
     pop_activities: "熱門活動"
