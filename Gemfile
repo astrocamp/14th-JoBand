@@ -28,6 +28,7 @@ gem 'pg', '~> 1.1'
 gem 'puma', '~> 5.0'
 gem 'pundit', '~> 2.3'
 gem 'ransack', '~> 4.0'
+gem "sitemap_generator", "~> 6.3"
 gem 'stimulus-rails'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
@@ -49,3 +50,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
