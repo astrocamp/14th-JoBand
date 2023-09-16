@@ -3,7 +3,7 @@
     <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "tw" %>
     <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
   </div>
-  <div class="w-full lg:flex justify-between">
+  <div class="justify-between w-full lg:flex lg:mb-10">
     <div class="flex lg:mb-5 sm:ml-24 lg:ml-36 grow">
       <div>
         <img src="/Joband_icon.svg" alt="Joband_icon" class="w-10 lg:w-[90px] mx-1 sm:mt-[10px] ">
@@ -16,7 +16,7 @@
 
     
     <div class="lg:mt-3 lg:mr-10 sm:ml-28">
-      <a class="center flex-col">
+      <a class="flex-col center">
         <%= link_to t("joband.about") , about_path, class: "h3 font-bold link link-hover theme-text lg:mr-2" %>
       </a>
     </div> 
