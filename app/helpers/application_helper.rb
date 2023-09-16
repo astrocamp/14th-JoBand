@@ -10,4 +10,7 @@ module ApplicationHelper
       canonical: "https://joband.co/"
     }
   end
+  def canonical(url)
+    return url
+  end
 end
