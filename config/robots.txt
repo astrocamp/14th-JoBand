@@ -1,0 +1,26 @@
+Sitemap: http://joband.co/sitemaps/sitemap.xml.gz
+
+# Google adsbot
+User-agent: adsbot-google
+Disallow: /users/
+Disallow: /profiles/welcome
+Disallow: /profiles/letsjam
+Disallow: /channels/
+
+User-agent: Nutch
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
