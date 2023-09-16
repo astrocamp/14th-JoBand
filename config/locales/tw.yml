@@ -239,7 +239,7 @@ tw:
         subject: "密碼修改步驟"
     omniauth_callbacks:
       failure: "無法從 %{kind} 驗證，因為 \"%{reason}\""
-      success: "成功從 %{kind} 驗證"
+      success: "成功從 %{kind} 驗證，請去信箱收取驗證信件"
     passwords:
       no_token: "這是密碼重設頁面，僅能透過密碼重設信件進入如果您是透過重設信件進入的，請確認您的網址是完整的"
       send_instructions: "您將在幾分鐘後收到一封電子郵件，內有重新設定密碼的步驟說明"
