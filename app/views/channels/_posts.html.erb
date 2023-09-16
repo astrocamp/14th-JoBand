@@ -1,12 +1,12 @@
-<div class="px-6 py-3 border-b" id="<%= dom_id(channel) %>">
-  <div class="flex items-start space-x-3">
-    <div class="flex-shrink-0">
-      <%= post_avatar(channel.user.profile) %>
+<div class="w-full p-3 border-b" id="<%= dom_id(channel) %>">
+  <div class="flex space-x-3 justify-evenly">
+    <div class="relative w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] center">
+      <%= render "shared/avatar", model: channel.user.profile %>
     </div>
-    <div class="justify-between flex-auto">
-      <%= link_to channel.user.name, profile_path(channel.user), class: "hover:underline font-bold", data: {turbo: false} , target: "_top"%>
-      <em class="inline-block pr-10 text-xs text-end"><%= channel.created_at.strftime('%m/%d %H:%M') %></em>
-    <div class="prose prose-lg"><%= channel.body %></div>
+    <div class="justify-between w-10/12">
+      <%= link_to channel.user.name, profile_path(channel.user), class: "hover:underline font-bold mr-2", data: {turbo: false} , target: "_top"%>
+      <em class="inline-block pr-10 text-xs text-end joband-text-em"><%= channel.created_at.strftime('%m/%d %H:%M') %></em>
+      <div class="my-2 break-words"><p><%= channel.body %></p></div>
       <%= render "controls", channel: channel %>
 
       <div class="pl-2" data-comments-target="content" data-link-id="<%= channel.id %>" style="display: none;">
@@ -15,7 +15,7 @@
             <%= f.text_area :content, class: "joband-ring-offset rounded-xl input-bordered max-w-md w-full h-32 p-3" %>
           </div>
           <div class='mt-3 mb-2'>
-            <%= f.submit t("show.send_comment"), class: 'joband-tag-location text-sm'%>
+            <%= f.submit t("show.send_comment"), class: 'joband-action-btn'%>
           </div>
         <% end %>
         <%= render "comments/comment_post", comments: channel.comments, post: channel %>
