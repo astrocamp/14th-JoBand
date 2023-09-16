@@ -1,7 +1,7 @@
 # JoBand
 Website 網站: https://JoBand.co
 
-![JoBand](https://imgur.com/B4b63wm)
+![](https://hackmd.io/_uploads/rJYsSaMJp.jpg)
 **JoBand 樂團組團網站 - ReadMe**
 
 歡迎來到 JoBand！以下是您開始使用 JoBand 平台的重要資訊和步驟指南。
