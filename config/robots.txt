@@ -1,4 +1,4 @@
-Sitemap: http://joband.co/sitemaps/sitemap.xml.gz
+Sitemap: http://joband.co/sitemaps/sitemap.xml
 
 # Google adsbot
 User-agent: adsbot-google

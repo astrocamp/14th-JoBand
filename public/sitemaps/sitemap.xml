@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://joband.co/</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://joband.co/?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/activities/activity_index?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/communities/posts?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/sign_in?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/sign_up?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/1?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/%E5%A4%A7%E8%B2%93%E6%9C%83%E7%A4%BE?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/about?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=tw&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E5%90%89%E4%BB%96</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=tw&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E8%B2%9D%E6%96%AF</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=tw&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E4%B8%BB%E5%94%B1</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=tw&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E7%88%B5%E5%A3%AB%E9%BC%93</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=tw&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E9%8D%B5%E7%9B%A4</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/3?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/5?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/7?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/6?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/4?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/2?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E5%8F%A4%E5%85%B8</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%84%89%E6%9D%91</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%9B%BB%E5%AD%90</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%B0%91%E8%AC%A0</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E5%98%BB%E5%93%88</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E7%88%B5%E5%A3%AB</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%87%91%E5%B1%AC</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%B5%81%E8%A1%8C</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E8%BF%B7%E5%B9%BB</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=tw&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%90%96%E6%BB%BE</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/%E5%B0%8F%E5%A7%90%E8%88%87%E6%B5%81%E6%B0%93?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/wicked?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/activities/1?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/activities/activity_index?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/sign_in</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/communities/posts?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/password/new?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/confirmation/new?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/sign_in?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/sign_up?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/1?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/%E5%A4%A7%E8%B2%93%E6%9C%83%E7%A4%BE?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/about?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/3?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/5?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/7?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/6?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/4?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles/2?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=en&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E5%90%89%E4%BB%96</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=en&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E8%B2%9D%E6%96%AF</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=en&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E4%B8%BB%E5%94%B1</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=en&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E7%88%B5%E5%A3%AB%E9%BC%93</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/profiles?commit=Search&amp;locale=en&amp;q%5Binstruments_name_cont_any%5D%5B%5D=%E9%8D%B5%E7%9B%A4</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/%E5%B0%8F%E5%A7%90%E8%88%87%E6%B5%81%E6%B0%93?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/recruits/1?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/wicked/activities?locale=tw</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/wicked?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E5%8F%A4%E5%85%B8</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%84%89%E6%9D%91</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%9B%BB%E5%AD%90</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%B0%91%E8%AC%A0</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E5%98%BB%E5%93%88</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E7%88%B5%E5%A3%AB</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E9%87%91%E5%B1%AC</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%B5%81%E8%A1%8C</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E8%BF%B7%E5%B9%BB</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands?commit=Search&amp;locale=en&amp;q%5Bstyles_name_cont_any%5D%5B%5D=%E6%90%96%E6%BB%BE</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/activities/1?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/password/new?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/users/confirmation/new?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://joband.co/recruits/1?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://joband.co/bands/wicked/activities?locale=en</loc>
+  <lastmod>2023-09-15T22:59:24+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
