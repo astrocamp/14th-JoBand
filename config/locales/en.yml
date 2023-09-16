@@ -195,7 +195,7 @@ en:
     reset_my_password: "Reset My Password"
     reset_password_cancel: "If you didn't request this, please ignore and delete this email, your password won't be change."
   post:
-    lobby: "Lobby"
+    lobby: "Forum Lobby"
     profile: "Profile"
     add_profile: "Create My File"
     add_band: "Add a Band"
