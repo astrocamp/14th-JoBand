@@ -3,6 +3,7 @@
 Rails.application.routes.draw do
   root 'pages#index'
   get "/about", to: "pages#about"
+  get "robots.txt" to: "pages#robots"
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
