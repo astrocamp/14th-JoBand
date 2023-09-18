@@ -1,5 +1,6 @@
 # JoBand
 Website 網站: https://JoBand.co
+Demo 發表影片:  https://youtu.be/Ct36iCblCj8?feature=shared
 
 ![](https://hackmd.io/_uploads/rJYsSaMJp.jpg)
 **JoBand 樂團組團網站 - ReadMe**
@@ -44,22 +45,50 @@ support@joband.co
 
 ## 開發團隊
 梁育豪 Hao
-Github: https://github.com/andy840818
+https://github.com/andy840818
+- 樂團功能 / 團員權限 / 組團系統
+- 搜尋功能
+- 多對多關聯
+- 通知功能
+- RWD設計
 
 劉姮 Heng
-Github: https://github.com/pjwang0109
+https://github.com/pjwang0109
+- 活動系統
+- AWS S3 服務 / 檔案上傳
+- 表單資料驗證
+- 頁面 UI 統整 / RWD設計
+- 簡報及動畫設計
 
 童冠硯 James
-Github: https://github.com/codzilla91
+https://github.com/codzilla91
+- 第三方登入
+- 樂團申請功能
+- 按讚功能 
+- 通知功能
+- i18n 多語言
 
 張宏華 Leo
-Github: https://github.com/LeoChang0808
+https://github.com/LeoChang0808
+- UI/UX / Logo 設計
+- 個人檔案
+- 亮暗模式
+- RWD設計
 
 林靂佑 Matt
-Github: https://github.com/fr715464
+https://github.com/fr715464
+- 招募功能
+- 活動搜尋
+- 全站多型留言功能
+- 多對多關聯
 
 陳韋博 Weber
-Github: https://github.com/vito588p
+https://github.com/vito588p
+- 會員系統 / 驗證信
+- domain / email / 部署管理
+- 公共討論區 / 樂團討論區
+- 金流系統
+- 網站 SEO 規劃 
 
 ## 使用技術
 * Frontend : Tailwind CSS / Stimilus JS
@@ -71,4 +100,4 @@ Github: https://github.com/vito588p
 * Cloud Service : AWS S3, Mailgun
 
 
-*最後更新：Sep 11 2023*
+*最後更新：Sep 19 2023*
