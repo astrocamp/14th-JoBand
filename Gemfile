@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', '~> 11.1', '>= 11.1.3'
   gem 'dotenv-rails'
   gem 'letter_opener', '~> 1.8'
+  gem "rspec-rails", "~> 6.0"
   gem 'rubocop', require: false
 end
 
@@ -50,4 +51,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
 
