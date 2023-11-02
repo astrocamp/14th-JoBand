@@ -6,7 +6,7 @@
     <div class="justify-between w-10/12">
       <%= link_to post.user.name, profile_path(post.user.profile), class: "hover:underline font-bold mr-2", data: {turbo: false} , target: "_top"%>
       <em class="inline-block pr-10 text-xs text-end joband-text-em"><%= post.created_at.strftime('%m/%d %H:%M') %></em>
-      <div class="my-2 break-words"><p><%= post.body %></p></div>s
+      <div class="my-2 break-words"><p><%= post.body %></p></div>
       <%= render "posts/controls", post: post %>
 
       <div class="pl-2" data-comments-target="content" data-link-id="<%= post.id %>" style="display: none;">
