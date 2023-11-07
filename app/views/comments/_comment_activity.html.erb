@@ -5,7 +5,7 @@
         <% if comment.user&.profile.present? %>
           <%= render "shared/avatar", model: comment.user.profile %>
         <% else %>
-          <img src="/default_avatar.png" alt="default_avatar" class="absolute w-full rounded-full joband-shadow" >
+          <img src="/default_avatar.webp" alt="default_avatar" class="absolute w-full rounded-full joband-shadow" >
           <img src="/avatar_flame.svg" alt="avatar_flame" class="relative w-full h-full">
         <% end %>
       </div>

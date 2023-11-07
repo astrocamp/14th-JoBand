@@ -16,7 +16,7 @@ module PostsHelper
     if user.avatar.attached?
       image_tag user.avatar.variant(:thumb), class: classes
     else
-      image_tag '/default_avatar.png', class: classes
+      image_tag '/default_avatar.webp', class: classes
     end
   end
 end

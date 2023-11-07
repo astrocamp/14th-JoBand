@@ -20,13 +20,13 @@ I18n.with_locale do
     Style.create(name: I18n.t("music.style.#{style_key}"))
     puts "已建立樂風 #{style_key}"
   end
-  
+
 
   instruments.each do |instrument_key|
     Instrument.create(name: I18n.t("music.instrument.#{instrument_key}"))
     puts "已建立樂器 #{instrument_key}"
   end
-  
+
 end
 
 fakewords = [
@@ -42,9 +42,9 @@ fakewords = [
   "安得為紅顏，不負春風？吾有心而忘形。"
 ]
 
-demo_avatar = File.binread(Rails.root.join('public', 'zooey.png'))
+demo_avatar = File.binread(Rails.root.join('public', 'zooey.webp'))
 
-demo_band_avatar = File.binread(Rails.root.join('public', 'band_avatar.png'))
+demo_band_avatar = File.binread(Rails.root.join('public', 'band_avatar.webp'))
 
 demo_user = User.create!(
   name: 'Zooey Deschanel',
@@ -82,14 +82,14 @@ puts "已建立樂團頻道"
 
 demo_profile.avatar.attach(
   io: StringIO.new(demo_avatar),
-  filename: 'zooey.png',
-  content_type: 'image/png'
+  filename: 'zooey.webp',
+  content_type: 'image/webp'
 )
 
 demo_band.avatar.attach(
   io: StringIO.new(demo_band_avatar),
-  filename: 'band_avatar.png',
-  content_type: 'image/png'
+  filename: 'band_avatar.webp',
+  content_type: 'image/webp'
 )
 
 5.times do |i|
@@ -122,8 +122,8 @@ demo_band.avatar.attach(
 
   # demo_profile.avatar.attach(io: StringIO.new(avatar_url), filename: 'avatar.svg', content_type: 'image/svg+xml')
 
-  demo_avatar = File.binread(Rails.root.join('public', 'default_avatar.png'))
-  demo_profile.avatar.attach(io: StringIO.new(demo_avatar), filename: 'default_avatar.png', content_type: 'image/png')
+  demo_avatar = File.binread(Rails.root.join('public', 'default_avatar.webp'))
+  demo_profile.avatar.attach(io: StringIO.new(demo_avatar), filename: 'default_avatar.webp', content_type: 'image/webp')
 
   puts "已建立使用者 #{i + 1}: #{fakername} - #{fakeremail}"
 end
